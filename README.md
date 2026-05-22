@@ -38,6 +38,7 @@ www.schneier.com
 googleprojectzero.blogspot.com
 msrc.microsoft.com
 github.com
+isc.sans.edu
 ```
 After the first run, check the routine logs for any other domains your RSS feeds redirect through and add them.
 

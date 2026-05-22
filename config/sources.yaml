@@ -21,6 +21,8 @@ rss:
     url: https://msrc.microsoft.com/blog/feed/
   - name: github_advisories
     url: https://github.com/advisories.atom
+  - name: sans_isc
+    url: https://isc.sans.edu/rssfeed.xml
 
 reddit:
   subreddits: [netsec, cybersecurity, blueteamsec, Malware, AskNetsec]
