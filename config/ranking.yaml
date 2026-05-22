@@ -1,0 +1,21 @@
+# Ranking weights for the top-5 selection. Tunable after observing real runs.
+
+weights:
+  diversity: 2.0     # log(1 + distinct_source_families)
+  recency: 1.5       # exp(-hours_since_newest / 24)
+  engagement: 1.0    # z-scored engagement_sum within source_family
+  severity: 2.5      # +1.0 CVSS>=9, +0.5 KEV, +0.5 "actively exploited"
+  novelty: 1.5       # subtracted if cluster touched in last 7d
+
+thresholds:
+  min_cluster_size: 1
+  min_score: 0.5
+  top_n: 5
+
+severity_phrases:
+  - "actively exploited"
+  - "in the wild"
+  - "zero-day"
+  - "0-day"
+  - "emergency patch"
+  - "out-of-band patch"

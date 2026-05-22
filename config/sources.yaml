@@ -1,0 +1,101 @@
+# OSINT sources for the nightly digest. Lookback window is 24h unless noted.
+
+lookback_hours: 24
+
+rss:
+  - name: krebs
+    url: https://krebsonsecurity.com/feed/
+  - name: bleepingcomputer
+    url: https://www.bleepingcomputer.com/feed/
+  - name: thehackernews
+    url: https://feeds.feedburner.com/TheHackersNews
+  - name: darkreading
+    url: https://www.darkreading.com/rss.xml
+  - name: securityweek
+    url: https://feeds.feedburner.com/securityweek
+  - name: schneier
+    url: https://www.schneier.com/feed/atom/
+  - name: project_zero
+    url: https://googleprojectzero.blogspot.com/feeds/posts/default
+  - name: msrc
+    url: https://msrc.microsoft.com/blog/feed/
+  - name: github_advisories
+    url: https://github.com/advisories.atom
+
+reddit:
+  subreddits: [netsec, cybersecurity, blueteamsec, Malware, AskNetsec]
+  limit_per_sub: 50
+  min_score: 10
+
+hackernews:
+  min_score: 50
+  query_tags: "story"
+  keywords:
+    - security
+    - vulnerability
+    - exploit
+    - malware
+    - ransomware
+    - CVE
+    - breach
+    - cyberattack
+    - zero-day
+
+mastodon:
+  instance: infosec.exchange
+  hashtags: [infosec, cybersecurity, threatintel, malware, ransomware]
+  limit_per_tag: 60
+
+bluesky:
+  queries: [cybersecurity, infosec, ransomware, "zero day", CVE]
+  limit_per_query: 50
+
+cisa:
+  kev_url: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
+  advisories_rss: https://www.cisa.gov/cybersecurity-advisories/all.xml
+
+nvd:
+  min_cvss: 7.0
+  results_per_page: 200
+
+# Curated vendor/product list for entity matching during clustering.
+vendors:
+  - Microsoft
+  - Windows
+  - Office 365
+  - Azure
+  - Cisco
+  - Fortinet
+  - Ivanti
+  - Palo Alto
+  - Citrix
+  - VMware
+  - Apple
+  - macOS
+  - iOS
+  - Google
+  - Chrome
+  - Android
+  - Atlassian
+  - GitLab
+  - GitHub
+  - Okta
+  - CrowdStrike
+  - SentinelOne
+  - Cloudflare
+  - Akamai
+  - Juniper
+  - SonicWall
+  - F5
+  - Oracle
+  - SAP
+  - OpenSSL
+  - OpenSSH
+  - Linux
+  - WordPress
+  - Drupal
+  - Joomla
+  - Adobe
+  - Zoom
+  - Slack
+  - Salesforce
