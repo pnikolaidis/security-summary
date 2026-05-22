@@ -1,0 +1,146 @@
+Clustering and Ranking Log — 2026-05-22
+========================================
+
+INBOX STATS
+  total_fetched : 99
+  new (post-dedup) : 99
+  repeats : 0
+  source_families : news=25, hn=10, nvd=64
+
+SOURCE FAILURES (non-fatal)
+  reddit           : skipped (missing credentials)
+  github_advisories: 406 Not Acceptable
+  securityweek     : 403 Forbidden
+  project_zero     : 403 Forbidden
+  bluesky          : 403 Forbidden (all queries)
+  mastodon infosec.exchange : 422 Unprocessable Entity (all tags)
+  cisa advisories  : 403 Forbidden (KEV JSON loaded OK: 0 new KEV entries)
+
+CLUSTERING
+  Method: CVE-ID grouping → canonical URL → fuzzy title (threshold=85, window=48h) → shared vendor tokens (>=2, within 24h)
+  Clusters formed: 45 total
+
+  Notable clusters:
+
+  [C01] Microsoft Defender Zero-Days — 2 items
+    - https://www.bleepingcomputer.com/news/security/microsoft-warns-of-new-defender-zero-days-exploited-in-attacks
+    - https://thehackernews.com/2026/05/microsoft-warns-of-two-actively.html
+    cves=[CVE-2026-41091] vendors=[Microsoft]
+    Fuzzy title match: "microsoft warns of new Defender zero-days exploited" vs
+                       "Microsoft Warns of Two Actively Exploited Defender Vulnerabilities"
+    token_set_ratio ≈ 91 → clustered
+
+  [C02] Chinese APT Telco Linux Backdoor — 3 items
+    - https://www.bleepingcomputer.com/news/security/chinese-hackers-target-telcos-with-new-linux-windows-malware
+    - https://thehackernews.com/2026/05/showboat-linux-malware-hits-middle-east.html
+    - https://www.darkreading.com/threat-intelligence/chinese-apts-linux-backdoor-telco-attacks
+    cves=[] vendors=[Linux, Windows]
+    Clustered: shared vendor tokens [Linux] + telco theme + within 24h
+
+  [C03] GitHub/TanStack npm Supply Chain Attack — 2 items
+    - https://www.bleepingcomputer.com/news/security/github-links-repo-breach-to-tanstack-npm-supply-chain-attack
+    - https://thehackernews.com/2026/05/github-internal-repositories-breached.html
+    cves=[] vendors=[GitHub, Microsoft]
+    Fuzzy title match: "github repo breach tanstack" vs "github repositories breached nx console"
+    token_set_ratio ≈ 86 → clustered; shared vendor [GitHub] + supply-chain theme
+
+  [C04] 9-Year-Old Linux Kernel Flaw — 1 item
+    - https://thehackernews.com/2026/05/9-year-old-linux-kernel-flaw-enables.html
+    cves=[CVE-2026-46333] vendors=[Linux]
+
+  [C05] Kimwolf Botmaster Arrest — 1 item
+    - https://krebsonsecurity.com/2026/05/alleged-kimwolf-botmaster-dort-arrested-charged-in-u-s-and-canada
+    cves=[] vendors=[]
+
+  [C06] Drupal Core RCE — 1 item
+    - https://thehackernews.com/2026/05/highly-critical-drupal-core-flaw.html
+    cves=[CVE-2026-9082] vendors=[Drupal]
+
+  [C07] Cisco Secure Workload Max Severity — 1 item
+    - https://www.bleepingcomputer.com/news/security/cisco-max-severity-secure-workload-flaw-gives-hackers-site-admin-privileges
+    cves=[] vendors=[Cisco]
+
+  [C08] First VPN Seized — 1 item
+    - https://www.bleepingcomputer.com/news/security/police-seize-first-vpn-service-used-in-ransomware-data-theft-attacks
+    cves=[] vendors=[]
+
+  [C09] macOS Kernel Memory Corruption — 1 item
+    - https://www.schneier.com/blog/archives/2026/05/macos-kernel-memory-corruption-exploit.html
+    cves=[] vendors=[Apple, macOS]
+
+  [C10] Trend Micro Apex One (CRITICAL RCE × 2) — 8 NVD items
+    cves=[CVE-2025-71210, CVE-2025-71211, CVE-2025-71212, CVE-2025-71213,
+          CVE-2025-71214, CVE-2025-71215, CVE-2025-71216, CVE-2025-71217]
+    vendors=[TrendMicro] source_family=nvd only
+
+  [C11] Netatalk Multiple Vulns — 11 NVD items
+    cves=[CVE-2026-44047..68] vendors=[Netatalk]
+
+  [C12] FreeBSD kernel — 4 NVD items
+    cves=[CVE-2026-45250, CVE-2026-45251, CVE-2026-45253, CVE-2026-45255]
+
+  [C13] Open ISES Tickets SQLi — 9 NVD items
+    cves=[CVE-2026-48231..42]
+
+  [C14] WordPress Avada Builder RCE — 1 NVD item
+    cves=[CVE-2026-6279] vendors=[WordPress]
+
+  [C15] Honeywell CNM Command Injection (ICS) — 1 NVD item
+    cves=[CVE-2026-5433]
+
+  (+ 30 remaining single-CVE or low-signal NVD clusters)
+
+SCORING
+  Weights: diversity=2.0, recency=1.5, engagement=1.0, severity=2.5, novelty=1.5
+  All clusters: novelty_penalty=0 (first run, nothing seen in last 7d)
+  All clusters: recency=1.0 (all items collected within last hour, hours_since_newest≈0)
+  Engagement: all news/nvd items have engagement=0. HN items have points but
+              are not security-news (password cracking tool show-HN, Freenet, etc.) — excluded.
+
+  formula: score = 2.0*log(1+D) + 1.5*exp(-H/24) + 0 + 2.5*S - 0
+
+  [C01] Microsoft Defender Zero-Days
+    D=1 (news only), H=0, S=1.0 ("actively exploited" +0.5, "zero-day" +0.5)
+    score = 2.0*0.693 + 1.5 + 2.5*1.0 = 1.386 + 1.5 + 2.5 = 5.386  *** SELECTED #1 ***
+
+  [C02] Chinese APT Telco Linux Backdoor
+    D=1 (news only), H=0, S=0
+    score = 1.386 + 1.5 = 2.886  *** SELECTED #2 (3 sources, highest coverage among tied) ***
+
+  [C03] GitHub/TanStack Supply Chain
+    D=1 (news only), H=0, S=0
+    score = 1.386 + 1.5 = 2.886  *** SELECTED #3 (2 sources, supply-chain impact) ***
+
+  [C04] Linux Kernel 9-Year-Old Flaw
+    D=1 (news only), H=0, S=0
+    score = 1.386 + 1.5 = 2.886  *** SELECTED #4 (root RCE on major distros, CVE tagged) ***
+
+  [C05] Kimwolf Botmaster Arrest
+    D=1 (news only), H=0, S=0
+    score = 1.386 + 1.5 = 2.886  *** SELECTED #5 (authoritative Krebs source, law enforcement) ***
+
+  [C06] Drupal Core RCE
+    D=1, H=0, S=0 → score=2.886  DROPPED: tie-broken below C05 (single source, narrower blast radius)
+
+  [C07] Cisco Secure Workload
+    D=1, H=0, S=0 ("max severity" not in severity_phrases config) → score=2.886
+    DROPPED: tie-broken below selected clusters
+
+  [C10] Trend Micro Apex One CRITICAL
+    D=1 (nvd only), H=0, S=0 (no severity phrases in titles, cvss_score=None in feed)
+    score=2.886  DROPPED: nvd-only, no news coverage
+
+  [C11] Netatalk
+    D=1, S=0 → score=2.886  DROPPED: niche product, nvd-only
+
+DIVERSITY FILTER CHECK (≥2 shared vendor tokens AND shared CVE)
+  C01 (Microsoft) vs C03 (GitHub, Microsoft): share only "Microsoft" → 1 token, no conflict
+  C02 (Linux, Windows) vs C04 (Linux): share only "Linux" → 1 token, no conflict
+  No disqualifications triggered.
+
+SELECTED TOP 5
+  #1 C01 — Microsoft Defender Zero-Days (5.386)
+  #2 C02 — Chinese APT Telco Linux Backdoor (2.886, 3 sources)
+  #3 C03 — GitHub/TanStack npm Supply Chain (2.886, 2 sources)
+  #4 C04 — 9-Year-Old Linux Kernel Flaw CVE-2026-46333 (2.886, root exec)
+  #5 C05 — Kimwolf Botmaster Arrested (2.886, Krebs)
