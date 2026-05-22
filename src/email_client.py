@@ -39,13 +39,23 @@ def render_html(markdown_text: str, subject: str) -> str:
     return _HTML_TEMPLATE.format(subject=subject, body=body)
 
 
-def send(subject: str, html: str, mp3_path: Path | None) -> dict:
+def _from_field(from_name: str | None) -> str:
+    """Build the `From:` header. EMAIL_FROM may be `Name <addr>` (used as-is) or
+    a bare address (wrapped with from_name or a default)."""
+    raw = os.environ.get("EMAIL_FROM", "onboarding@resend.dev").strip()
+    if "<" in raw and ">" in raw:
+        return raw
+    name = from_name or "Security Digest"
+    return f"{name} <{raw}>"
+
+
+def send(subject: str, html: str, mp3_path: Path | None, from_name: str | None = None) -> dict:
     """Send via Resend. Returns the API response dict."""
     import resend  # lazy import
 
     resend.api_key = os.environ["RESEND_API_KEY"]
     payload: dict = {
-        "from": os.environ.get("EMAIL_FROM", "Security Digest <onboarding@resend.dev>"),
+        "from": _from_field(from_name),
         "to": [os.environ["RECIPIENT_EMAIL"]],
         "subject": subject,
         "html": html,

@@ -1,0 +1,21 @@
+# Podcast feed metadata. Used by src/podcast_feed.py to render docs/feed.xml.
+
+title: Security Summary
+description: |
+  Daily OSINT cybersecurity digest. Top five stories surfaced from news, social,
+  and authoritative sources, narrated by a rotating cast of hosts.
+category: Technology
+language: en-us
+
+# GitHub repo that hosts both the source and the GitHub Pages site.
+# This drives:
+#   - the feed canonical URL (Pages):  https://<owner>.github.io/<repo>/feed.xml
+#   - the MP3 enclosure URLs (raw):    https://raw.githubusercontent.com/<owner>/<repo>/<branch>/state/runs/<date>/digest.mp3
+github:
+  owner: pnikolaidis
+  repo: security-summary
+  branch: main
+
+# How many of the most recent episodes appear in the feed. Older episodes stay
+# on disk in state/runs/ but drop off the feed.
+episodes_in_feed: 60
