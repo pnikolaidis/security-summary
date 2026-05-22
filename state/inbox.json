@@ -1,0 +1,1639 @@
+{
+  "stats": {
+    "total_fetched": 83,
+    "new": 83,
+    "repeats": 0,
+    "per_source_family": {
+      "news": 22,
+      "hn": 13,
+      "nvd": 48
+    }
+  },
+  "items": [
+    {
+      "source": "krebs",
+      "source_family": "news",
+      "url": "https://krebsonsecurity.com/2026/05/alleged-kimwolf-botmaster-dort-arrested-charged-in-u-s-and-canada",
+      "title": "Alleged Kimwolf Botmaster \u2018Dort\u2019 Arrested, Charged in U.S. and Canada",
+      "body": "Canadian authorities on Wednesday arrested a 23-year-old Ottawa man on suspicion of building and operating Kimwolf, a fast spreading Internet-of-Things botnet that enslaved millions of devices for use in a series of massive distributed denial-of-service (DDoS) attacks over the past six months. KrebsOnSecurity publicly named the suspect in February 2026 after the accused launched a volley of DDoS, doxing and swatting campaigns against this author and a security researcher. He now faces criminal hacking charges in both Canada and the United States.",
+      "author": "BrianKrebs",
+      "timestamp": "2026-05-21T21:50:25+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "krebs"
+      },
+      "url_hash": "6c89c3a7f50f54f1",
+      "content_hash": "58c0ce00c08b994a"
+    },
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/security/us-and-canada-arrest-and-charge-suspected-kimwolf-botnet-admin",
+      "title": "US and Canada arrest and charge suspected Kimwolf botnet admin",
+      "body": "U.S. and Canadian authorities arrested and charged a Canadian man with operating the KimWolf distributed denial-of-service (DDoS) botnet, which infected nearly two million devices worldwide. [...]",
+      "author": "Sergiu Gatlan",
+      "timestamp": "2026-05-22T09:01:20+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "7a4cdbba6070ad1f",
+      "content_hash": "d4c1fe3236994bb4"
+    },
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/security/google-accidentally-exposed-details-of-unfixed-chromium-flaw",
+      "title": "Google accidentally exposed details of unfixed Chromium flaw",
+      "body": "Google has accidentally leaked details about an unfixed issue in Chromium that keeps JavaScript running in the background even when the browser is closed, allowing remote code execution on the device. [...]",
+      "author": "Bill Toulas",
+      "timestamp": "2026-05-21T18:13:50+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Google"
+      ],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "f5d99709cde5d0db",
+      "content_hash": "2991040682bde11e"
+    },
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/apple/apple-blocked-22-billion-in-fraudulent-app-store-transactions-in-2025",
+      "title": "Apple blocked over $11 billion in App Store fraud in 6 years",
+      "body": "Apple revealed that it blocked over $11 billion in fraudulent App Store transactions over the last six years, more than $2.2 billion in potentially fraudulent App Store transactions in 2025 alone. [...]",
+      "author": "Sergiu Gatlan",
+      "timestamp": "2026-05-21T15:11:08+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Apple"
+      ],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "d9f06a064138e578",
+      "content_hash": "52fd4b505efe6edf"
+    },
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/security/inside-a-crypto-drainer-how-to-spot-it-before-it-empties-your-wallet",
+      "title": "Inside a Crypto Drainer: How to Spot it Before it Empties Your Wallet",
+      "body": "Modern crypto drainers don't hack wallets. They trick users into approving malicious transactions.  Flare explores how the Lucifer DaaS platform scales wallet theft through phishing and automation. [...]",
+      "author": "Sponsored by Flare",
+      "timestamp": "2026-05-21T14:00:10+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "0b3aa3e336441162",
+      "content_hash": "6a8e4822bf65085d"
+    },
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/security/chinese-hackers-target-telcos-with-new-linux-windows-malware",
+      "title": "Chinese hackers target telcos with new Linux, Windows malware",
+      "body": "A Chinese cyber-espionage campaign has been targeting telecommunications providers with newly discovered Linux and Windows malware dubbed Showboat and JFMBackdoor, respectively. [...]",
+      "author": "Bill Toulas",
+      "timestamp": "2026-05-21T14:00:00+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Windows",
+        "Linux"
+      ],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "2c20bac119449bd6",
+      "content_hash": "4573e765e22bf309"
+    },
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/security/cisco-max-severity-secure-workload-flaw-gives-hackers-site-admin-privileges",
+      "title": "Max severity Cisco Secure Workload flaw gives Site Admin privileges",
+      "body": "Cisco has released security updates to address a maximum-severity vulnerability in Secure Workload that allows attackers to gain Site Admin privileges. [...]",
+      "author": "Sergiu Gatlan",
+      "timestamp": "2026-05-21T13:58:33+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Cisco"
+      ],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "98b18d309df9fd9f",
+      "content_hash": "879d18d694ceb9e6"
+    },
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/security/police-seize-first-vpn-service-used-in-ransomware-data-theft-attacks",
+      "title": "Police seize \u201cFirst VPN\u201d service used in ransomware, data theft attacks",
+      "body": "A virtual private network service called 'First VPN,' used in ransomware and data theft attacks, has been taken offline in a joint international law enforcement operation. [...]",
+      "author": "Bill Toulas",
+      "timestamp": "2026-05-21T13:09:51+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "21e2fe128b5ad2dd",
+      "content_hash": "ce62ac211716ebbb"
+    },
+    {
+      "source": "thehackernews",
+      "source_family": "news",
+      "url": "https://thehackernews.com/2026/05/kimwolf-ddos-botnet-operator-arrested.html",
+      "title": "Kimwolf DDoS Botnet Operator Arrested in Canada Over DDoS-for-Hire Attacks",
+      "body": "The U.S. Department of Justice (DoJ) on Thursday announced the arrest of a Canadian man in connection with allegedly operating a distributed denial-of-service (DDoS) botnet known as Kimwolf.\n\nIn tandem, Jacob Butler (aka Dort), 23, Ottawa, Canada, has been charged with offenses related to the development and operation of the botnet. Kimwolf is assessed to be a variant of AISURU.\n\n\"Kimwolf",
+      "author": "info@thehackernews.com (The Hacker News)",
+      "timestamp": "2026-05-22T08:50:18+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "thehackernews"
+      },
+      "url_hash": "7b5ec61d3c68aeca",
+      "content_hash": "8577d643e4e1dc35"
+    },
+    {
+      "source": "thehackernews",
+      "source_family": "news",
+      "url": "https://thehackernews.com/2026/05/cisa-adds-exploited-langflow-and-trend.html",
+      "title": "CISA Adds Exploited Langflow and Trend Micro Apex One Vulnerabilities to KEV",
+      "body": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Thursday added two security flaws impacting Langflow and Trend Micro Apex One to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.\n\nThe vulnerabilities in question are listed below -\n\n\n  CVE-2025-34291 (CVSS score: 9.4) - An origin validation error vulnerability in Langflow that could",
+      "author": "info@thehackernews.com (The Hacker News)",
+      "timestamp": "2026-05-22T05:47:33+00:00",
+      "engagement": 0.0,
+      "cves": [
+        "CVE-2025-34291"
+      ],
+      "vendors": [],
+      "raw": {
+        "feed": "thehackernews"
+      },
+      "url_hash": "d5b8e7e7cebc023c",
+      "content_hash": "cc42a340cb3d8d30"
+    },
+    {
+      "source": "thehackernews",
+      "source_family": "news",
+      "url": "https://thehackernews.com/2026/05/cisco-patches-cvss-100-secure-workload.html",
+      "title": "Cisco Patches CVSS 10.0 Secure Workload REST API Flaw Enabling Data Access",
+      "body": "Cisco has rolled out updates for a maximum-severity security flaw impacting Secure Workload that could allow an unauthenticated, remote attacker to access sensitive data.\n\nTracked as CVE-2026-20223 (CVSS score: 10.0), the vulnerability arises from insufficient validation and authentication when accessing REST API endpoints.\n\n\"An attacker could exploit this vulnerability if they are able to send",
+      "author": "info@thehackernews.com (The Hacker News)",
+      "timestamp": "2026-05-22T05:36:18+00:00",
+      "engagement": 0.0,
+      "cves": [
+        "CVE-2026-20223"
+      ],
+      "vendors": [
+        "Cisco"
+      ],
+      "raw": {
+        "feed": "thehackernews"
+      },
+      "url_hash": "fc4a50d79e39df5c",
+      "content_hash": "aa7dddccaad47cfb"
+    },
+    {
+      "source": "thehackernews",
+      "source_family": "news",
+      "url": "https://thehackernews.com/2026/05/showboat-linux-malware-hits-middle-east.html",
+      "title": "Showboat Linux Malware Hits Middle East Telecom with SOCKS5 Proxy Backdoor",
+      "body": "Cybersecurity researchers have disclosed details of a new Linux malware dubbed Showboat that has been put to use in a campaign targeting a telecommunications provider in the Middle East since at least mid-2022.\n\n\"Showboat is a modular post-exploitation framework designed for Linux systems, capable of spawning a remote shell, transferring files, and functioning as a SOCKS5 proxy,\" Lumen",
+      "author": "info@thehackernews.com (The Hacker News)",
+      "timestamp": "2026-05-21T14:17:09+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Linux"
+      ],
+      "raw": {
+        "feed": "thehackernews"
+      },
+      "url_hash": "c6e0e75a63c7b3d1",
+      "content_hash": "44bb2898e94dce2a"
+    },
+    {
+      "source": "thehackernews",
+      "source_family": "news",
+      "url": "https://thehackernews.com/2026/05/threatsday-bulletin-linux-rootkits.html",
+      "title": "ThreatsDay Bulletin: Linux Rootkits, Router 0-Day, AI Intrusions, Scam Kits and 25 New Stories",
+      "body": "This week starts small.\n\nA token leaks. A bad package slips in. A login trick works. An old tool shows up again. At first, it feels like the usual mess. Then you see the pattern: attackers are not always breaking in. They are using the parts we already trust.\n\nThat is what makes it worrying. The danger is in normal things now - updates, apps, cloud buttons, support chats, trusted accounts. AI",
+      "author": "info@thehackernews.com (The Hacker News)",
+      "timestamp": "2026-05-21T11:52:14+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Linux"
+      ],
+      "raw": {
+        "feed": "thehackernews"
+      },
+      "url_hash": "90c85d6dfd1f9d2a",
+      "content_hash": "4e3b98965418d16e"
+    },
+    {
+      "source": "darkreading",
+      "source_family": "news",
+      "url": "https://www.darkreading.com/endpoint-security/chinas-webworm-discord-microsoft-graphs",
+      "title": "China's Webworm Uses Discord, Microsoft Graphs to Hack EU Govts.",
+      "body": "The advanced persistent threat group also relied on SOCKS proxies like SoftEther VPN, tunneling tools that act as a middleman between victim and attacker.",
+      "author": "Alexander Culafi",
+      "timestamp": "2026-05-22T07:01:00+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Microsoft"
+      ],
+      "raw": {
+        "feed": "darkreading"
+      },
+      "url_hash": "ba6b682773d10ecf",
+      "content_hash": "a0691035f519aecf"
+    },
+    {
+      "source": "darkreading",
+      "source_family": "news",
+      "url": "https://www.darkreading.com/cyber-risk/how-cisos-should-prep-for-agentic-ready-ai-boms",
+      "title": "How CISOs Should Prep for Agentic-Ready AI BOMs",
+      "body": "Finding ways to document both component and execution attributes for AI bill of materials (AI BOM).",
+      "author": "Ericka Chickowski, Contributing Writer",
+      "timestamp": "2026-05-21T21:11:40+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "darkreading"
+      },
+      "url_hash": "935cdf16dc0b0a0c",
+      "content_hash": "702d08f702c5e133"
+    },
+    {
+      "source": "darkreading",
+      "source_family": "news",
+      "url": "https://www.darkreading.com/identity-access-management-security/google-api-keys-active-after-deletion",
+      "title": "Google API Keys Remain Active After Deletion",
+      "body": "A security researcher discovered the API keys can still be used for up to 23 minutes after deletion, even though the cloud provider claims deletion is immediate.",
+      "author": "Rob Wright",
+      "timestamp": "2026-05-21T20:07:47+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Google"
+      ],
+      "raw": {
+        "feed": "darkreading"
+      },
+      "url_hash": "a4cdb37a0a4a1efd",
+      "content_hash": "a9745cb18aaaed9e"
+    },
+    {
+      "source": "darkreading",
+      "source_family": "news",
+      "url": "https://www.darkreading.com/identity-access-management-security/shifting-budget-dynamics-identity-security-ai-agents",
+      "title": "AI Agents Are Shifting Identity Security Budget Dynamics",
+      "body": "AI agent projects are proliferating throughout the enterprise, and those AI agent identities require management, security, and governance. New Omdia research shows the AI agent identity budget dynamics are very different than traditional IAM projects.",
+      "author": "Todd Thiemann",
+      "timestamp": "2026-05-21T15:43:37+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "darkreading"
+      },
+      "url_hash": "28191b8d11f920f7",
+      "content_hash": "352ecc81c7194165"
+    },
+    {
+      "source": "darkreading",
+      "source_family": "news",
+      "url": "https://www.darkreading.com/threat-intelligence/chinese-apts-linux-backdoor-telco-attacks",
+      "title": "Chinese APTs Share Linux Backdoor in Central Asia Telco Attacks",
+      "body": "&quot;Showboat&quot; doesn't show off, but clearly it doesn't need to, as it's long helped China spy on small market communications providers.",
+      "author": "Nate Nelson",
+      "timestamp": "2026-05-21T14:00:00+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Linux"
+      ],
+      "raw": {
+        "feed": "darkreading"
+      },
+      "url_hash": "4d74df8526c62126",
+      "content_hash": "f7ef7145461a10c8"
+    },
+    {
+      "source": "darkreading",
+      "source_family": "news",
+      "url": "https://www.darkreading.com/cyber-risk/content-delivery-exploit-websites-brand-hijacking",
+      "title": "Content Delivery Exploit Opens Websites to Brand Hijacking",
+      "body": "The Underminr domain-fronting attack allows threat actors to modify Web requests and leverage trusted websites to cloak malicious activity.",
+      "author": "Nate Nelson",
+      "timestamp": "2026-05-21T13:05:00+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "darkreading"
+      },
+      "url_hash": "de0812921d5be7b7",
+      "content_hash": "a293d3a2233cb3c7"
+    },
+    {
+      "source": "darkreading",
+      "source_family": "news",
+      "url": "https://www.darkreading.com/events/infosecurity-europe",
+      "title": "Infosecurity Europe",
+      "body": "",
+      "author": null,
+      "timestamp": "2026-06-02T13:30:00+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "darkreading"
+      },
+      "url_hash": "2d981b6027ec9492",
+      "content_hash": "a2dc24dc775668f1"
+    },
+    {
+      "source": "darkreading",
+      "source_family": "news",
+      "url": "https://www.darkreading.com/events/anatomy-of-a-data-breach-what-to-do-if-it-happens-to-you",
+      "title": "[Virtual Event] Anatomy of a Data Breach: What to Do if it Happens to You",
+      "body": "",
+      "author": null,
+      "timestamp": "2026-06-18T15:00:00+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "darkreading"
+      },
+      "url_hash": "582b9d5ded055f32",
+      "content_hash": "bf855585865244dd"
+    },
+    {
+      "source": "schneier",
+      "source_family": "news",
+      "url": "https://www.schneier.com/blog/archives/2026/05/macos-kernel-memory-corruption-exploit.html",
+      "title": "macOS Kernel Memory Corruption Exploit",
+      "body": "<p>A group used Anthropic&#8217;s Mythos AI model to <a href=\"https://blog.calif.io/p/first-public-kernel-memory-corruption\">help find</a> a kernel memory corruption vulnerability and exploit on Apple&#8217;s M5.</p>\n<p>News <a href=\"https://9to5mac.com/2026/05/14/calif-team-details-how-anthropic-mythos-helped-build-a-working-macos-exploit-in-five-days/\">article</a>.</p>",
+      "author": "Bruce Schneier",
+      "timestamp": "2026-05-21T16:03:37+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Apple",
+        "macOS"
+      ],
+      "raw": {
+        "feed": "schneier"
+      },
+      "url_hash": "b53cb4e5faf5834a",
+      "content_hash": "410bda63e5ca1106"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://news.ycombinator.com/item?id=48221896",
+      "title": "Show HN: I Dedicated 4 Years to Mastering Offline Password Cracking",
+      "body": "Hi everyone,<p>I am Bojta Lepenye, and first of all, I want to thank the core developers of Hashcat. In my experience, it is quite literally the most capable tool available for offline password cracking across a wide range of use cases.<p>I have spent the last 4 years (from age 14 to 18) extensively working with Hashcat and the tools surrounding it, and I have documented what I have learned throughout that time (since January 18, 2022) in my first book. During that period, I also had to continuously update and rewrite major sections as the field evolved. One example was the introduction of GPU support for Argon2 and other memory-hard password hashing algorithms, which significantly changed some cracking workflows.<p>My passion for this book, or its \u201cquick starter,\u201d if you will, came from an ethically conducted penetration test I performed with full authorization at my school. This is something I am both hesitant and quite proud to acknowledge.<p>At the beginning, I simply wrote down everything I had learned from YouTube videos and online blogs. However, not long after starting my project, I realized I practically knew nothing about password security, and that small 10 to 15 pages I had written would never be enough if someone was looking for a professional guide to cracking passwords.<p>The other main driving force behind the book was the fact that while researching online, browsing forums, reading academic papers and white papers, watching videos, exploring blogs, inspecting presentations, and examining infographics, I did not find a single source that comprehensively covers and explains everything one needs to understand about offline password cracking. Literally. Not one.<p>Therefore, I continued my research and learned about password hashing algorithms, the security properties of hash functions, advanced hash cracking techniques, password analysis, attack optimization, and much, much more.<p>From the very beginning, I wanted to share this knowledge with the comm",
+      "author": "bojta-lepenye",
+      "timestamp": "2026-05-21T12:56:37+00:00",
+      "engagement": 262.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 238,
+        "num_comments": 48,
+        "object_id": "48221896"
+      },
+      "url_hash": "2a6ed5118c514442",
+      "content_hash": "634e19682a01fca7"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://news.ycombinator.com/item?id=48230104",
+      "title": "Tell HN: I'm tired of AI-generated answers",
+      "body": "I found GitHub repositories that were spreading malware. I asked AI what I should do about it, but it gave me nothing useful. So I opened a discussion on GitHub. Someone replied. It was literally the exact same text the AI had given me. I called it out and the comment was deleted. Then another person replied. Same exact AI response again.<p>I worked as a developer in a company. I asked the business owner a question about a business task. He sent me a ChatGPT screenshot with the answer. I replied that it had nothing to do with the question and everything there was wrong. A minute later he sent me another ChatGPT screenshot. He didn&#x27;t even read the AI&#x27;s answer. He just screenshots and forwards it.<p>Recently someone sent me a DM on Reddit about my post. I replied. He wrote again, I replied again. After a few messages I realized I was talking to an AI agent.<p>I&#x27;m tired of talking to AI.\nI want to talk to real people.\nBut even when I talk to people, they forward my questions to AI and send me the AI&#x27;s answer.<p>More notes: orchidfiles.com&#x2F;notes",
+      "author": "theorchid",
+      "timestamp": "2026-05-21T23:37:14+00:00",
+      "engagement": 126.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 102,
+        "num_comments": 48,
+        "object_id": "48230104"
+      },
+      "url_hash": "bd3058916654ba88",
+      "content_hash": "75c86758fe947fd6"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://www.businessinsider.com/steve-wozniak-apple-ai-graduation-speech-2026-5",
+      "title": "Steve Wozniak cheered after telling students they have AI \u2013 actual intelligence",
+      "body": "",
+      "author": "signa11",
+      "timestamp": "2026-05-22T09:04:54+00:00",
+      "engagement": 136.5,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 108,
+        "num_comments": 57,
+        "object_id": "48233563"
+      },
+      "url_hash": "ef545ff45f53b891",
+      "content_hash": "cc3913d12b03cccd"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://www.axios.com/2026/05/21/spacex-ipo-musk-ai",
+      "title": "SpaceX not the behemoth everyone thought",
+      "body": "",
+      "author": "kaycebasques",
+      "timestamp": "2026-05-22T04:03:36+00:00",
+      "engagement": 66.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 54,
+        "num_comments": 24,
+        "object_id": "48231815"
+      },
+      "url_hash": "4d6e0e642c82e598",
+      "content_hash": "af3caed88a0136cc"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://www.mathworks.com/company/aboutus/founders/clevemoler.html",
+      "title": "Cleve Moler has died",
+      "body": "",
+      "author": "mychele",
+      "timestamp": "2026-05-22T02:35:54+00:00",
+      "engagement": 139.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 132,
+        "num_comments": 14,
+        "object_id": "48231319"
+      },
+      "url_hash": "57309e189b3a2b4c",
+      "content_hash": "9b213df41caabe47"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://qz.com/samsung-chip-workers-bonus-ai-profits-052126",
+      "title": "Samsung chip workers will get an average $340k bonus as AI profits soar",
+      "body": "",
+      "author": "carabiner",
+      "timestamp": "2026-05-22T01:30:45+00:00",
+      "engagement": 312.5,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 222,
+        "num_comments": 181,
+        "object_id": "48230892"
+      },
+      "url_hash": "92fcd09782093e71",
+      "content_hash": "3326b7674e127dd6"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://davidoks.blog/p/ai-is-killing-the-cheap-smartphone",
+      "title": "The memory shortage is causing a repricing of consumer electronics",
+      "body": "",
+      "author": "d0ks",
+      "timestamp": "2026-05-21T21:55:56+00:00",
+      "engagement": 383.5,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 241,
+        "num_comments": 285,
+        "object_id": "48229319"
+      },
+      "url_hash": "60968eec1af20a78",
+      "content_hash": "373acf0e872bcbb1"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://veroniiiica.com/using-kagi-search-with-low-vision",
+      "title": "Using Kagi Search with Low Vision",
+      "body": "",
+      "author": "speckx",
+      "timestamp": "2026-05-21T19:32:16+00:00",
+      "engagement": 246.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 211,
+        "num_comments": 70,
+        "object_id": "48227860"
+      },
+      "url_hash": "d542976fec64707c",
+      "content_hash": "f9547c7f1507cb0d"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://bsky.app/profile/did:plc:iu4j537hox5huj4bwnwgub4z/post/3mmeysgcjbs2j",
+      "title": "AOC displays drinking water contaminated by data center",
+      "body": "",
+      "author": "cdrnsf",
+      "timestamp": "2026-05-21T19:26:32+00:00",
+      "engagement": 99.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 77,
+        "num_comments": 44,
+        "object_id": "48227773"
+      },
+      "url_hash": "a02c11ba1a199141",
+      "content_hash": "ca14cd891b160407"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://discover.swns.com/2026/05/chewing-gum-restores-dads-taste-and-smell-years-after-covid",
+      "title": "Chewing gum restores dad's taste and smell years after Covid",
+      "body": "",
+      "author": "speckx",
+      "timestamp": "2026-05-21T17:14:56+00:00",
+      "engagement": 221.5,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 175,
+        "num_comments": 93,
+        "object_id": "48226038"
+      },
+      "url_hash": "c311de4df7db60c5",
+      "content_hash": "ad9e1f479352347f"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://news.ycombinator.com/item?id=48225596",
+      "title": "Show HN: Agent.email \u2013 sign up via curl, claim with a human OTP",
+      "body": "Hi HN! We&#x27;re Haakam, Michael, and Adi from AgentMail- a ycs25 company. We give AI agents their own email inboxes. Recently, we ran an experiment called Agent.Email. It&#x27;s a signup flow designed specifically for AI agents instead of humans.<p>The inspiration came from a few comments we received when we did our seed launch a few months back. They all came from the very apt observation that agents not being able to sign up to a product made for agents without human credentials was ironic and unideal.<p>This is basically the thesis we built AgentMail on: The internet was made for humans exclusively, designed to keep machines out by default.<p>Every signup flow assumes a browser, a person reading a page, and clicking a confirmation link. Unless agents can&#x27;t do that, they can&#x27;t be first class users of the internet.<p>Agents can now get an email inbox by themselves. (This also means a lot of email nobody wants to read gets processed by AI instead of your inbox being cluttered with spam and slop)<p>Here&#x27;s how agent.email works.<p>Agent needs an inbox and hits AgentMail via curl.\nAgent receives instructions via MD unless the request comes from a browser, in which case we use HTML.<p>Agent decides agent.email is useful and then hits the sign-up endpoint with its human email as a parameter.\nAgent receives a restricted inbox with credentials. \nAgent emails the human asking for an OTP. Human replies with the code, and the agent is claimed and restrictions are lifted. \nUntil claimed, the agent can only email its own human and nobody else. Ten emails a day, and the signup endpoint is rate-limited hard by IP.<p>Right now it&#x27;s a 1:1 mapping between agent and human. The next step is many-to-one, because one person running several agents in parallel is already very common.<p>Building agent.email also pushed us to revisit places in AgentMail where the default assumptions were built around the primary user being human. For example, the CLI outputs in a singl",
+      "author": "adisingh13",
+      "timestamp": "2026-05-21T16:42:34+00:00",
+      "engagement": 122.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 76,
+        "num_comments": 92,
+        "object_id": "48225596"
+      },
+      "url_hash": "54bacf6eefe47412",
+      "content_hash": "f57f64b07185e85d"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://www.runtm.com/",
+      "title": "Launch HN: Runtime (YC P26) \u2013 Sandboxed coding agents for everyone on a team",
+      "body": "Hey HN, We&#x27;re Gus and Carlos from Runtime (<a href=\"https:&#x2F;&#x2F;runtm.com\">https:&#x2F;&#x2F;runtm.com</a>). We&#x27;re building infra that lets your whole team (including non-engineers) ship with Claude Code, Codex, and other agents without engineering having to handhold every session.<p>After Mentum (YC S21) was acquired, I personally shipped 4 full-stack products in 3 months using coding agents. When I tried to roll the same workflow out to the rest of the team, it fell apart: Most PRs were unmergeable slop - Every repo required an engineer doing one-off local setup. - Skills and context lived in one person&#x27;s head. - There was no safe way for a PM to touch a real codebase without risking a bad deploy or a secrets leak.<p>Carlos comes from building agentic reconciliation systems at Modern Treasury and had a similar experience when letting his support team use devin.<p>We ended up building internal background agent infra but it quickly became a nightmare to mantain and develop. We built Runtime so you don&#x27;t have to do this kind of thing.<p>Runtime work like as follows. Engineering defines the context once: system instructions, skills, and scoped integrations installable via CLI, mise, npm, or any package manager. Then Runtime snapshots your full running environment including multi-service Docker Compose setups, Kafka, Redis, seeded DBs, so it comes up in milliseconds with every server already running.<p>We orchestrate across sandbox providers like E2B, Daytona, EC2 or self-hosted K8s depending on your setup. Secrets are injected through our managed proxy so they never touch the agent directly, and guardrails run at the infrastructure level: command allow&#x2F;deny lists, network egress controls, and RBAC scoped per human and per agent. Every session also gets a shareable preview URL, so internal builds go from sandbox to the rest of the team without needing production access.<p>Runtime works with whichever agent your team already uses: Claude C",
+      "author": "gustrigos",
+      "timestamp": "2026-05-21T16:07:13+00:00",
+      "engagement": 103.5,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 92,
+        "num_comments": 23,
+        "object_id": "48225040"
+      },
+      "url_hash": "de2dc94754e15807",
+      "content_hash": "2bab5eca54ffdba3"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://freenet.org/",
+      "title": "Show HN: Freenet, a peer-to-peer platform for decentralized apps",
+      "body": "For the past 5 years or so I&#x27;ve been working on a ground-up redesign of Freenet, my peer-to-peer project from the early 2000s (now renamed Hyphanet).<p>The new Freenet has been up and running since December along with some early applications like River[1], our decentralized group chat and Delta - a decentralized CMS. Users have already started to build their own apps on Freenet including games, and we have some interesting apps in development like Atlas, a search&#x2F;recommendation engine.<p>Architecturally, this new Freenet is a global, decentralized key-value store where keys are webassembly contracts which define what values (aka &quot;state&quot;) are valid for that key, how or when the values can be mutated, and how the state can be efficiently synchronized between peers.<p>We&#x27;ve developed a unique (AFAIK) solution to the consistency problem, every contract must define a &quot;merge&quot; operation for the contract&#x27;s associated state. This operation must be commutative, meaning that you can merge multiple states in any order and you&#x27;ll get the same end result.<p>This approach allows state updates to spread through the network like a virus[2], which typically achieves consistent global state in a few seconds or less.<p>Like the world wide web, Freenet applications can be downloaded from the network itself and run in a web browser - similar to single-page apps on the normal web. However, rather than connecting back to an API running in a datacenter, the webapp connects locally to the Freenet peer and interacts with Freenet contracts and delegates over a local websocket connection.<p>If you&#x27;d like to try Freenet we have convenient installers for the major desktop OSs but not yet mobile, and you can be chatting with other users on River within seconds[3]. Happy to answer any questions, you&#x27;re also welcome to read our FAQ[4], or watch a talk I gave back in March[5].<p>[1] <a href=\"https:&#x2F;&#x2F;github.com&#x2F;freenet&#x2F;river\" r",
+      "author": "sanity",
+      "timestamp": "2026-05-21T14:34:57+00:00",
+      "engagement": 386.5,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 296,
+        "num_comments": 181,
+        "object_id": "48223362"
+      },
+      "url_hash": "3e75a71c979f64af",
+      "content_hash": "7d8d02c683f2543d"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-5118",
+      "title": "CVE-2026-5118 (CRITICAL) \u2014 The Divi Form Builder plugin for WordPress is vulnerable to privilege escalation in versions up to, and including, 5.1.2. This is due to the",
+      "body": "The Divi Form Builder plugin for WordPress is vulnerable to privilege escalation in versions up to, and including, 5.1.2. This is due to the plugin accepting a user-controlled 'role' parameter from POST data during user registration without validating it against the form's configured default_user_role setting. This makes it possible for unauthenticated attackers to create administrator accounts by tampering with the role parameter during registration.",
+      "author": null,
+      "timestamp": "2026-05-21T13:16:20.013000+00:00",
+      "engagement": 9.8,
+      "cves": [
+        "CVE-2026-5118"
+      ],
+      "vendors": [
+        "WordPress"
+      ],
+      "raw": {
+        "cvss": 9.8,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "caaa62cd15a56012",
+      "content_hash": "c190862cfc089e99"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-13477",
+      "title": "CVE-2025-13477 (HIGH) \u2014 Exposure of private personal information to an unauthorized actor, Insufficiently Protected Credentials vulnerability in Digital Operations ",
+      "body": "Exposure of private personal information to an unauthorized actor, Insufficiently Protected Credentials vulnerability in Digital Operations Services Inc. WifiBurada allows Authentication Bypass.\n\nThis issue affects WifiBurada: through 21052026.\u00a0NOTE: The vendor was contacted early about this disclosure but did not respond in any way.",
+      "author": null,
+      "timestamp": "2026-05-21T14:16:43.300000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2025-13477"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "be285bcd4271f258",
+      "content_hash": "2f55f3d43350b9f1"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-13479",
+      "title": "CVE-2025-13479 (HIGH) \u2014 Authorization bypass through User-Controlled key vulnerability in PosCube Hardware Software and Consulting Ltd. QR Menu allows Exploitation ",
+      "body": "Authorization bypass through User-Controlled key vulnerability in PosCube Hardware Software and Consulting Ltd. QR Menu allows Exploitation of Trusted Identifiers.\n\nThis issue affects QR Menu: through 21052026.\u00a0NOTE: The vendor was contacted early about this disclosure but did not respond in any way.",
+      "author": null,
+      "timestamp": "2026-05-21T14:16:43.417000+00:00",
+      "engagement": 7.5,
+      "cves": [
+        "CVE-2025-13479"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.5,
+        "severity": "HIGH"
+      },
+      "url_hash": "961ce67300ba01ad",
+      "content_hash": "40ff3732d5e05e9e"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-71210",
+      "title": "CVE-2025-71210 (CRITICAL) \u2014 A vulnerability in the Trend Micro Apex One management console could allow a remote attacker to upload malicious code and execute commands o",
+      "body": "A vulnerability in the Trend Micro Apex One management console could allow a remote attacker to upload malicious code and execute commands on affected installations.\r\n\r\nPlease note: although this vulnerability carries a technical critical CVSS rating, this was reported via responsible disclosure via a researcher through the Zero Day Initiative. The SaaS versions of the product have already been mitigated and no customer action required.\r\n\r\nFor this particular vulnerability, an attacker must have access to the Trend Micro Apex One Management Console, so customers that have their console\ufffds IP address exposed externally should consider mitigating factors such as source restrictions if not already applied.",
+      "author": null,
+      "timestamp": "2026-05-21T14:16:43.540000+00:00",
+      "engagement": 9.8,
+      "cves": [
+        "CVE-2025-71210"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.8,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "17e21219c57cdff8",
+      "content_hash": "f4a59e59e723ed38"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-71211",
+      "title": "CVE-2025-71211 (CRITICAL) \u2014 A vulnerability in the Trend Micro Apex One management console could allow a remote attacker to upload malicious code and execute commands o",
+      "body": "A vulnerability in the Trend Micro Apex One management console could allow a remote attacker to upload malicious code and execute commands on affected installations. This vulnerability is similar in scope to CVE-2025-71210 but affects a different executable. \r\n\r\nPlease note: although this vulnerability carries a technical critical CVSS rating, this was reported via responsible disclosure via a researcher through the Zero Day Initiative. The SaaS versions of the product have already been mitigated and no customer action required.\r\n\r\nFor this particular vulnerability, an attacker must have access to the Trend Micro Apex One Management Console, so customers that have their console\ufffds IP address exposed externally should consider mitigating factors such as source restrictions if not already applied.",
+      "author": null,
+      "timestamp": "2026-05-21T14:16:43.663000+00:00",
+      "engagement": 9.8,
+      "cves": [
+        "CVE-2025-71211"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.8,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "746d25f31aefed1c",
+      "content_hash": "9e33f229579b60f0"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-71212",
+      "title": "CVE-2025-71212 (HIGH) \u2014 A link following vulnerability in the Trend Micro Apex One scan engine could allow a local attacker to escalate privileges on affected insta",
+      "body": "A link following vulnerability in the Trend Micro Apex One scan engine could allow a local attacker to escalate privileges on affected installations.\r\n\r\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
+      "author": null,
+      "timestamp": "2026-05-21T14:16:43.777000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2025-71212"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "c5ba96857c594efc",
+      "content_hash": "9d23a17c7dda71bd"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-71213",
+      "title": "CVE-2025-71213 (HIGH) \u2014 An origin validation error vulnerability in Trend Micro Apex One could allow a local attacker to escalate privileges on affected installatio",
+      "body": "An origin validation error vulnerability in Trend Micro Apex One could allow a local attacker to escalate privileges on affected installations.\r\n\r\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
+      "author": null,
+      "timestamp": "2026-05-21T14:16:43.897000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2025-71213"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "469eed5a9ae839ee",
+      "content_hash": "912c50dc1d544022"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-71214",
+      "title": "CVE-2025-71214 (HIGH) \u2014 An origin validation error vulnerability in the Trend Micro Apex One (mac) agent iCore service could allow a local attacker to escalate priv",
+      "body": "An origin validation error vulnerability in the Trend Micro Apex One (mac) agent iCore service could allow a local attacker to escalate privileges on affected installations.\r\n\r\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.\r\n\r\nThe following information is provided as informational only for CVE references, as these were addressed already via ActiveUpdate/SaaS updates in mid to late 2025 (SaaS 2507 & 2005 Yearly Release).",
+      "author": null,
+      "timestamp": "2026-05-21T14:16:44.017000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2025-71214"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "eb9464905aec33b7",
+      "content_hash": "e67f9ed1e7815c89"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-71215",
+      "title": "CVE-2025-71215 (HIGH) \u2014 A time-of-check time-of-use vulnerability in the Trend Micro Apex One (mac) agent iCore service signature verification could allow a local a",
+      "body": "A time-of-check time-of-use vulnerability in the Trend Micro Apex One (mac) agent iCore service signature verification could allow a local attacker to escalate privileges on affected installations.\r\n\r\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.\r\n\r\nThe following information is provided as informational only for CVE references, as these were addressed already via ActiveUpdate/SaaS updates in mid to late 2025 (SaaS 2507 & 2005 Yearly Release).",
+      "author": null,
+      "timestamp": "2026-05-21T14:16:44.130000+00:00",
+      "engagement": 7.0,
+      "cves": [
+        "CVE-2025-71215"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.0,
+        "severity": "HIGH"
+      },
+      "url_hash": "dcfa605c0b8b4e12",
+      "content_hash": "e09fd49d5df0ffce"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-71216",
+      "title": "CVE-2025-71216 (HIGH) \u2014 A time-of-check time-of-use vulnerability in the Trend Micro Apex One (mac) agent cache mechanism could allow a local attacker to escalate p",
+      "body": "A time-of-check time-of-use vulnerability in the Trend Micro Apex One (mac) agent cache mechanism could allow a local attacker to escalate privileges on affected installations.\r\n\r\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.\r\n\r\nThe following information is provided as informational only for CVE references, as these were addressed already via ActiveUpdate/SaaS updates in mid to late 2025 (SaaS 2507 & 2005 Yearly Release).",
+      "author": null,
+      "timestamp": "2026-05-21T14:16:44.240000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2025-71216"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "4b3e4c81e2009920",
+      "content_hash": "8a40e0eb0e86bb4e"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-71217",
+      "title": "CVE-2025-71217 (HIGH) \u2014 An origin validation error vulnerability in the Trend Micro Apex One (mac) agent self-protection mechanism could allow a local attacker to e",
+      "body": "An origin validation error vulnerability in the Trend Micro Apex One (mac) agent self-protection mechanism could allow a local attacker to escalate privileges on affected installations.\r\n\r\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.\r\n\r\nThe following information is provided as informational only for CVE references, as these were addressed already via ActiveUpdate/SaaS updates in mid to late 2025 (SaaS 2507 & 2005 Yearly Release).",
+      "author": null,
+      "timestamp": "2026-05-21T14:16:44.350000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2025-71217"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "167e9a492a975039",
+      "content_hash": "8c3fece017244250"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2740",
+      "title": "CVE-2026-2740 (HIGH) \u2014 Zohocorp ManageEngine ADSelfService Plus version before 6525, DataSecurity Plus before 6264 and RecoveryManager Plus before 6313 are vulnera",
+      "body": "Zohocorp ManageEngine ADSelfService Plus version before 6525, DataSecurity Plus before 6264 and RecoveryManager Plus before 6313 are vulnerable to Authenticated Remote code execution in the agent machines due to the bug in the 3rd party dependency.",
+      "author": null,
+      "timestamp": "2026-05-21T14:16:44.850000+00:00",
+      "engagement": 8.4,
+      "cves": [
+        "CVE-2026-2740"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.4,
+        "severity": "HIGH"
+      },
+      "url_hash": "cfad0e1f5b997ef8",
+      "content_hash": "0190d49109c98182"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34927",
+      "title": "CVE-2026-34927 (HIGH) \u2014 An origin validation vulnerability in the Apex One/SEP agent could allow a local attacker to escalate privileges on affected installations.\n",
+      "body": "An origin validation vulnerability in the Apex One/SEP agent could allow a local attacker to escalate privileges on affected installations.\n\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
+      "author": null,
+      "timestamp": "2026-05-21T14:16:45.333000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2026-34927"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "7eb06ca0e7ed3d4b",
+      "content_hash": "8663d51e74cb5f09"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34928",
+      "title": "CVE-2026-34928 (HIGH) \u2014 An origin validation vulnerability in the Apex One/SEP agent could allow a local attacker to escalate privileges on affected installations. ",
+      "body": "An origin validation vulnerability in the Apex One/SEP agent could allow a local attacker to escalate privileges on affected installations. This is similar to CVE-2026-34927 but exists in a different named pipe communication mechanism.\n\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
+      "author": null,
+      "timestamp": "2026-05-21T14:16:45.463000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2026-34928"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "33ef1592ba7c57bc",
+      "content_hash": "81a9f9368532e6e3"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34929",
+      "title": "CVE-2026-34929 (HIGH) \u2014 An origin validation vulnerability in the Apex One/SEP agent could allow a local attacker to escalate privileges on affected installations. ",
+      "body": "An origin validation vulnerability in the Apex One/SEP agent could allow a local attacker to escalate privileges on affected installations. This is similar to CVE-2026-34927 but exists in a different inter-process communication mechanism.\n\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
+      "author": null,
+      "timestamp": "2026-05-21T14:16:45.590000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2026-34929"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "3b37ba2fddb9db0c",
+      "content_hash": "9b9caddd2d62fb86"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34930",
+      "title": "CVE-2026-34930 (HIGH) \u2014 An origin validation vulnerability in the Apex One/SEP agent could allow a local attacker to escalate privileges on affected installations. ",
+      "body": "An origin validation vulnerability in the Apex One/SEP agent could allow a local attacker to escalate privileges on affected installations. This is similar to CVE-2026-34927 but exists in a different process protection mechanism.\n\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
+      "author": null,
+      "timestamp": "2026-05-21T14:16:45.710000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2026-34930"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "9dc93512453d556e",
+      "content_hash": "032c7e6b55d1aa84"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45206",
+      "title": "CVE-2026-45206 (HIGH) \u2014 An origin validation vulnerability in the Apex One/SEP agent could allow a local attacker to escalate privileges on affected installations. ",
+      "body": "An origin validation vulnerability in the Apex One/SEP agent could allow a local attacker to escalate privileges on affected installations. This is similar to CVE-2026-45207 but exists in a different process protection communication mechanism.\n\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
+      "author": null,
+      "timestamp": "2026-05-21T14:16:47.983000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2026-45206"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "e74e9b82804c6d5d",
+      "content_hash": "376e16ec2b15215e"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45207",
+      "title": "CVE-2026-45207 (HIGH) \u2014 An origin validation vulnerability in the Apex One/SEP agent could allow a local attacker to escalate privileges on affected installations. ",
+      "body": "An origin validation vulnerability in the Apex One/SEP agent could allow a local attacker to escalate privileges on affected installations. This is similar to CVE-2026-45206 but exists in a different process protection communication mechanism.\n\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
+      "author": null,
+      "timestamp": "2026-05-21T14:16:48.133000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2026-45207"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "fb1c3e2c0eab68b9",
+      "content_hash": "9de1f9d6a7adab01"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45208",
+      "title": "CVE-2026-45208 (HIGH) \u2014 A time-of-check time-of-use vulnerability in the Apex One/SEP agent could allow a local attacker to escalate privileges on affected installa",
+      "body": "A time-of-check time-of-use vulnerability in the Apex One/SEP agent could allow a local attacker to escalate privileges on affected installations.\n\nPlease note: an attacker must first obtain the ability to execute low-privileged code on the target system in order to exploit this vulnerability.",
+      "author": null,
+      "timestamp": "2026-05-21T14:16:48.257000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2026-45208"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "dc9ea831f5d9c140",
+      "content_hash": "eb14428116e3c8fe"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-39531",
+      "title": "CVE-2026-39531 (CRITICAL) \u2014 Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Wp Directory Kit WP Directory Kit allo",
+      "body": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Wp Directory Kit WP Directory Kit allows Blind SQL Injection.\n\nThis issue affects WP Directory Kit: from n/a through 1.5.0.",
+      "author": null,
+      "timestamp": "2026-05-21T16:16:23.030000+00:00",
+      "engagement": 9.3,
+      "cves": [
+        "CVE-2026-39531"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.3,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "ac9b76e76a1ad10e",
+      "content_hash": "becea0bfe224f5c9"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9089",
+      "title": "CVE-2026-9089 (HIGH) \u2014 The ConnectWise Automate\u2122 Agent does not fully verify the authenticity of components obtained during plugin loading and self-update operatio",
+      "body": "The ConnectWise Automate\u2122 Agent does not fully verify the authenticity of components obtained during plugin loading and self-update operations. This issue is addressed in Automate 2026.5.",
+      "author": null,
+      "timestamp": "2026-05-21T16:16:23.570000+00:00",
+      "engagement": 8.8,
+      "cves": [
+        "CVE-2026-9089"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "98e80165802580b7",
+      "content_hash": "d0d382ff9b91b8d2"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48207",
+      "title": "CVE-2026-48207 (CRITICAL) \u2014 Deserialization of untrusted data in Apache Fory PyFory. PyFory's ReduceSerializer could bypass documented DeserializationPolicy validation ",
+      "body": "Deserialization of untrusted data in Apache Fory PyFory. PyFory's ReduceSerializer could bypass documented DeserializationPolicy validation hooks during reduce-state restoration and global-name resolution. An application is vulnerable if it deserializes attacker-controlled data using PyFory Python-native mode with strict mode disabled and relies on DeserializationPolicy to restrict unsafe classes, functions, or module attributes.\n\nThis issue affects Apache Fory: from before 1.0.0.\n\nMitigation: Users of Apache Fory are recommended to upgrade to version 1.0.0 or later, which enforces DeserializationPolicy validation for the affected ReduceSerializer paths and thus fixes this issue.",
+      "author": null,
+      "timestamp": "2026-05-21T17:16:21.857000+00:00",
+      "engagement": 9.8,
+      "cves": [
+        "CVE-2026-48207"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.8,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "c3dce2ffe294a031",
+      "content_hash": "16624733eb7b240e"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48231",
+      "title": "CVE-2026-48231 (HIGH) \u2014 Open ISES Tickets before 3.44.2 contains a SQL injection vulnerability in tables.php where the multiple POST parameters (tablename, indexnam",
+      "body": "Open ISES Tickets before 3.44.2 contains a SQL injection vulnerability in tables.php where the multiple POST parameters (tablename, indexname, sortby) are concatenated into table/column identifiers in dynamically constructed SELECT/UPDATE/DELETE statements without sanitization. Authenticated attackers can craft requests that alter query semantics to read, modify, or destroy database contents.",
+      "author": null,
+      "timestamp": "2026-05-21T18:16:19.790000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-48231"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "b8573711d484c68e",
+      "content_hash": "a4640607250c42ef"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48232",
+      "title": "CVE-2026-48232 (HIGH) \u2014 Open ISES Tickets before 3.44.2 contains a SQL injection vulnerability in ajax/fullsit_incidents.php where the offset GET parameter is conca",
+      "body": "Open ISES Tickets before 3.44.2 contains a SQL injection vulnerability in ajax/fullsit_incidents.php where the offset GET parameter is concatenated into the LIMIT clause of a SELECT statement without sanitization. Authenticated attackers can craft requests that alter query semantics to read, modify, or destroy database contents.",
+      "author": null,
+      "timestamp": "2026-05-21T18:16:19.927000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-48232"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "b03986d742d89879",
+      "content_hash": "00166e812b0703a2"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48233",
+      "title": "CVE-2026-48233 (HIGH) \u2014 Open ISES Tickets before 3.44.2 contains a SQL injection vulnerability in ajax/sit_incidents.php where the offset GET parameter is concatena",
+      "body": "Open ISES Tickets before 3.44.2 contains a SQL injection vulnerability in ajax/sit_incidents.php where the offset GET parameter is concatenated into the LIMIT clause of a SELECT statement without sanitization. Authenticated attackers can craft requests that alter query semantics to read, modify, or destroy database contents.",
+      "author": null,
+      "timestamp": "2026-05-21T18:16:20.050000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-48233"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "ed720734482cd994",
+      "content_hash": "2b9fdb0c0c0f5d93"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48234",
+      "title": "CVE-2026-48234 (HIGH) \u2014 Open ISES Tickets before 3.44.2 contains a SQL injection vulnerability in portal/ajax/list_requests.php where the sort and dir GET parameter",
+      "body": "Open ISES Tickets before 3.44.2 contains a SQL injection vulnerability in portal/ajax/list_requests.php where the sort and dir GET parameters are concatenated into the ORDER BY clause of a SELECT statement without sanitization. Authenticated attackers can craft requests that alter query semantics to read, modify, or destroy database contents.",
+      "author": null,
+      "timestamp": "2026-05-21T18:16:20.180000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-48234"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "6bdfb5b273ed9f17",
+      "content_hash": "e9479e7eccac1f5d"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48235",
+      "title": "CVE-2026-48235 (HIGH) \u2014 Open ISES Tickets before 3.44.2 contains a SQL injection vulnerability in incs/remotes.inc.php where latitude, longitude, callsign, mph, alt",
+      "body": "Open ISES Tickets before 3.44.2 contains a SQL injection vulnerability in incs/remotes.inc.php where latitude, longitude, callsign, mph, altitude, and timestamp values parsed from external GPS tracking service XML/JSON responses (InstaMapper and Google Latitude integration) are concatenated into UPDATE and INSERT statements without sanitization. An attacker able to compromise or impersonate the remote GPS tracker endpoint can inject SQL to manipulate the responder location, tracks, and assignment tables.",
+      "author": null,
+      "timestamp": "2026-05-21T18:16:20.310000+00:00",
+      "engagement": 8.2,
+      "cves": [
+        "CVE-2026-48235"
+      ],
+      "vendors": [
+        "Google"
+      ],
+      "raw": {
+        "cvss": 8.2,
+        "severity": "HIGH"
+      },
+      "url_hash": "0ab3d63a70aa6459",
+      "content_hash": "bdf8a647e88267ca"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48236",
+      "title": "CVE-2026-48236 (HIGH) \u2014 Open ISES Tickets before 3.44.2 contains a SQL injection vulnerability in db_loader.php where the multiple POST parameters (ticketsdb, ticke",
+      "body": "Open ISES Tickets before 3.44.2 contains a SQL injection vulnerability in db_loader.php where the multiple POST parameters (ticketsdb, ticketshost, ticketsuser, ticketspassword) are concatenated into mysqli connection arguments and dynamic SQL operating against an attacker-controlled database without sanitization. Authenticated attackers can craft requests that alter query semantics to read, modify, or destroy database contents.",
+      "author": null,
+      "timestamp": "2026-05-21T18:16:20.440000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-48236"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "4e25772d985ceaf8",
+      "content_hash": "2254d1b403aec522"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48237",
+      "title": "CVE-2026-48237 (HIGH) \u2014 Open ISES Tickets before 3.44.2 contains a SQL injection vulnerability in message.php where the frm_ticket_id and frm_resp_id POST parameter",
+      "body": "Open ISES Tickets before 3.44.2 contains a SQL injection vulnerability in message.php where the frm_ticket_id and frm_resp_id POST parameters are concatenated into WHERE clauses of SELECT/UPDATE statements without sanitization. Authenticated attackers can craft requests that alter query semantics to read, modify, or destroy database contents.",
+      "author": null,
+      "timestamp": "2026-05-21T18:16:20.570000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-48237"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "34b8ec121d2cdc4a",
+      "content_hash": "7c7a665bd9567e99"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48238",
+      "title": "CVE-2026-48238 (HIGH) \u2014 Open ISES Tickets before 3.44.2 contains a SQL injection vulnerability in ajax/mobile_main.php where the id GET parameter is concatenated in",
+      "body": "Open ISES Tickets before 3.44.2 contains a SQL injection vulnerability in ajax/mobile_main.php where the id GET parameter is concatenated into the WHERE clause of a SELECT statement used as a ticket-existence sanity check without sanitization. Authenticated attackers can craft requests that alter query semantics to read, modify, or destroy database contents.",
+      "author": null,
+      "timestamp": "2026-05-21T18:16:20.697000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-48238"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "70952c64a4e46c5b",
+      "content_hash": "9e9d102b3eb09d97"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48239",
+      "title": "CVE-2026-48239 (HIGH) \u2014 Open ISES Tickets before 3.44.2 contains a SQL injection vulnerability in ajax/reports.php where the tick_id POST parameter is concatenated ",
+      "body": "Open ISES Tickets before 3.44.2 contains a SQL injection vulnerability in ajax/reports.php where the tick_id POST parameter is concatenated into the WHERE clause of SELECT statements in the incidents summary report without sanitization. Authenticated attackers can craft requests that alter query semantics to read, modify, or destroy database contents.",
+      "author": null,
+      "timestamp": "2026-05-21T18:16:20.820000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-48239"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "4f9343264223f7f8",
+      "content_hash": "c008ce4fe7f8a482"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48240",
+      "title": "CVE-2026-48240 (HIGH) \u2014 Open ISES Tickets before 3.44.2 contains a SQL injection vulnerability in ajax/statistics.php where the tick_id and f_tick_id POST parameter",
+      "body": "Open ISES Tickets before 3.44.2 contains a SQL injection vulnerability in ajax/statistics.php where the tick_id and f_tick_id POST parameters are concatenated into WHERE clauses of SELECT statements in the statistics rollup queries without sanitization. Authenticated attackers can craft requests that alter query semantics to read, modify, or destroy database contents.",
+      "author": null,
+      "timestamp": "2026-05-21T18:16:20.943000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-48240"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "110265d49536bbbe",
+      "content_hash": "4651136e784dcae8"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48241",
+      "title": "CVE-2026-48241 (HIGH) \u2014 Open ISES Tickets before 3.44.2 contains hardcoded MySQL database credentials in loader.php (a public-facing database utility) that are comm",
+      "body": "Open ISES Tickets before 3.44.2 contains hardcoded MySQL database credentials in loader.php (a public-facing database utility) that are committed to the source repository. Any actor with access to the public source tree (or an unauthenticated attacker with read access to the file on a deployed installation) can read the username, password, and database name and use them to connect to the database if it is reachable from their network.",
+      "author": null,
+      "timestamp": "2026-05-21T18:16:21.070000+00:00",
+      "engagement": 8.1,
+      "cves": [
+        "CVE-2026-48241"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "17cbf50fa32c3914",
+      "content_hash": "4dca1a27fb8f86b4"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48242",
+      "title": "CVE-2026-48242 (HIGH) \u2014 Open ISES Tickets before 3.44.2 contains hardcoded MySQL database connection credentials (host, username, password, database name) in import",
+      "body": "Open ISES Tickets before 3.44.2 contains hardcoded MySQL database connection credentials (host, username, password, database name) in import_mdb.php. The credentials are embedded in source code committed to the public repository, allowing any reader of the source to obtain valid configuration values that may match deployed installations.",
+      "author": null,
+      "timestamp": "2026-05-21T18:16:21.220000+00:00",
+      "engagement": 8.1,
+      "cves": [
+        "CVE-2026-48242"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "6423fb982a7981e2",
+      "content_hash": "15b2b1b800817f85"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46473",
+      "title": "CVE-2026-46473 (HIGH) \u2014 Authen::TOTP versions before 0.1.1 for Perl generate secrets using rand.\n\nSecrets were generated using Perl's built-in rand function, which ",
+      "body": "Authen::TOTP versions before 0.1.1 for Perl generate secrets using rand.\n\nSecrets were generated using Perl's built-in rand function, which is predictable and unsuitable for security usage.",
+      "author": null,
+      "timestamp": "2026-05-21T19:16:53.510000+00:00",
+      "engagement": 7.5,
+      "cves": [
+        "CVE-2026-46473"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.5,
+        "severity": "HIGH"
+      },
+      "url_hash": "34d934363a84cc0b",
+      "content_hash": "8be73d6c17c217d5"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47114",
+      "title": "CVE-2026-47114 (HIGH) \u2014 IINA before 1.4.3 contains a user-assisted command execution vulnerability that allows remote attackers to execute arbitrary commands by sup",
+      "body": "IINA before 1.4.3 contains a user-assisted command execution vulnerability that allows remote attackers to execute arbitrary commands by supplying malicious mpv_-prefixed query parameters through the iina://open custom URL scheme handler. Attackers can deliver a crafted URL via a browser that passes unvalidated mpv_options/input-commands parameters into the mpv runtime, causing arbitrary command execution as the current macOS user upon approval of the browser protocol prompt without requiring a valid media file.",
+      "author": null,
+      "timestamp": "2026-05-21T20:16:14.340000+00:00",
+      "engagement": 8.8,
+      "cves": [
+        "CVE-2026-47114"
+      ],
+      "vendors": [
+        "macOS"
+      ],
+      "raw": {
+        "cvss": 8.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "1a83a85af3551c66",
+      "content_hash": "69f95290bbca1791"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47101",
+      "title": "CVE-2026-47101 (HIGH) \u2014 LiteLLM prior to 1.83.14 allows an authenticated internal_user to create API keys with access to routes that their role does not permit. Whe",
+      "body": "LiteLLM prior to 1.83.14 allows an authenticated internal_user to create API keys with access to routes that their role does not permit. When generating a key, the allowed_routes field is stored without verifying that the specified routes fall within the user's own permissions. A key created with access to admin-only routes can then be used to reach those routes successfully, bypassing the role-based access controls that would otherwise block the request, enabling full privilege escalation from internal_user to proxy_admin.",
+      "author": null,
+      "timestamp": "2026-05-21T21:16:32.413000+00:00",
+      "engagement": 8.8,
+      "cves": [
+        "CVE-2026-47101"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "e18a47ae21a21417",
+      "content_hash": "fee26eca8841f77a"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47102",
+      "title": "CVE-2026-47102 (HIGH) \u2014 LiteLLM prior to 1.83.10 allows a user to modify their own user_role via the /user/update endpoint. While the endpoint correctly restricts u",
+      "body": "LiteLLM prior to 1.83.10 allows a user to modify their own user_role via the /user/update endpoint. While the endpoint correctly restricts users to updating only their own account, it does not restrict which fields may be changed. A user who can reach this endpoint can set their role to proxy_admin, gaining full administrative access to LiteLLM including all users, teams, keys, models, and prompt history. Users with the org_admin role have legitimate access to this endpoint and can exploit this vulnerability without chaining any additional flaw.",
+      "author": null,
+      "timestamp": "2026-05-21T21:16:32.557000+00:00",
+      "engagement": 8.8,
+      "cves": [
+        "CVE-2026-47102"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "c30ee14d117574c5",
+      "content_hash": "96bc6bf407a2dbad"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-6960",
+      "title": "CVE-2026-6960 (CRITICAL) \u2014 The BookingPress Pro plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type validation in the 'bookingpress_v",
+      "body": "The BookingPress Pro plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type validation in the 'bookingpress_validate_submitted_booking_form_func' function in all versions up to, and including, 5.6. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected site's server which may make remote code execution possible. Note: The vulnerability can only be exploited if a signature custom field is added to the booking form.",
+      "author": null,
+      "timestamp": "2026-05-21T22:16:48.643000+00:00",
+      "engagement": 9.8,
+      "cves": [
+        "CVE-2026-6960"
+      ],
+      "vendors": [
+        "WordPress"
+      ],
+      "raw": {
+        "cvss": 9.8,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "f725167f8cf7e3ab",
+      "content_hash": "70d859677f9df708"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33000",
+      "title": "CVE-2026-33000 (CRITICAL) \u2014 A malicious actor with access to the network and high privileges could exploit an Improper Input Validation vulnerability found in UniFi OS ",
+      "body": "A malicious actor with access to the network and high privileges could exploit an Improper Input Validation vulnerability found in UniFi OS devices to execute a Command Injection.",
+      "author": null,
+      "timestamp": "2026-05-22T02:16:33.933000+00:00",
+      "engagement": 9.1,
+      "cves": [
+        "CVE-2026-33000"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.1,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "520c935e59b85036",
+      "content_hash": "42f813a869cae161"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34908",
+      "title": "CVE-2026-34908 (CRITICAL) \u2014 A malicious actor with access to the network could exploit an Improper Access Control vulnerability found in UniFi OS devices to make unauth",
+      "body": "A malicious actor with access to the network could exploit an Improper Access Control vulnerability found in UniFi OS devices to make unauthorized changes to the system.",
+      "author": null,
+      "timestamp": "2026-05-22T02:16:34.240000+00:00",
+      "engagement": 10.0,
+      "cves": [
+        "CVE-2026-34908"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 10.0,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "db9404528001a6e3",
+      "content_hash": "3701c7ab9006acfe"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34909",
+      "title": "CVE-2026-34909 (CRITICAL) \u2014 A malicious actor with access to the network could exploit a Path Traversal vulnerability found in UniFi OS devices to access files on the u",
+      "body": "A malicious actor with access to the network could exploit a Path Traversal vulnerability found in UniFi OS devices to access files on the underlying system that could be manipulated to access an underlying account.",
+      "author": null,
+      "timestamp": "2026-05-22T02:16:34.390000+00:00",
+      "engagement": 10.0,
+      "cves": [
+        "CVE-2026-34909"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 10.0,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "b88d6eea765bfb80",
+      "content_hash": "1bf1b035f5dae4ea"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34910",
+      "title": "CVE-2026-34910 (CRITICAL) \u2014 A malicious actor with access to the network could exploit an Improper Input Validation vulnerability found in UniFi OS devices to execute a",
+      "body": "A malicious actor with access to the network could exploit an Improper Input Validation vulnerability found in UniFi OS devices to execute a Command Injection.",
+      "author": null,
+      "timestamp": "2026-05-22T02:16:34.527000+00:00",
+      "engagement": 10.0,
+      "cves": [
+        "CVE-2026-34910"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 10.0,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "f1ead5728a894c01",
+      "content_hash": "97a442b62742200b"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34911",
+      "title": "CVE-2026-34911 (HIGH) \u2014 A malicious actor with access to the network and low privileges could exploit a Path Traversal vulnerability found in UniFi OS devices to ac",
+      "body": "A malicious actor with access to the network and low privileges could exploit a Path Traversal vulnerability found in UniFi OS devices to access files on the underlying system that could be manipulated to obtain sensitive information.",
+      "author": null,
+      "timestamp": "2026-05-22T02:16:34.667000+00:00",
+      "engagement": 7.7,
+      "cves": [
+        "CVE-2026-34911"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.7,
+        "severity": "HIGH"
+      },
+      "url_hash": "7de083b43858e347",
+      "content_hash": "28736664e5ffbecb"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-4834",
+      "title": "CVE-2026-4834 (HIGH) \u2014 The WP ERP Pro plugin for WordPress is vulnerable to SQL Injection via the 'search_key' parameter in all versions up to, and including, 1.5.",
+      "body": "The WP ERP Pro plugin for WordPress is vulnerable to SQL Injection via the 'search_key' parameter in all versions up to, and including, 1.5.1. This is due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for unauthenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.",
+      "author": null,
+      "timestamp": "2026-05-22T04:16:26.647000+00:00",
+      "engagement": 7.5,
+      "cves": [
+        "CVE-2026-4834"
+      ],
+      "vendors": [
+        "WordPress"
+      ],
+      "raw": {
+        "cvss": 7.5,
+        "severity": "HIGH"
+      },
+      "url_hash": "284d76546dbde4e6",
+      "content_hash": "9de8a33f5a15cb67"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9018",
+      "title": "CVE-2026-9018 (HIGH) \u2014 The Easy Elements for Elementor \u2013 Addons & Website Templates plugin for WordPress is vulnerable to Privilege Escalation in all versions up t",
+      "body": "The Easy Elements for Elementor \u2013 Addons & Website Templates plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 1.4.5 via the `easyel_handle_register()` function. This is due to the `wp_ajax_nopriv_eel_register` AJAX handler iterating the attacker-controlled `custom_meta` POST array and writing every supplied key-value pair to the newly created user's meta via `update_user_meta()` without any key whitelist or blocklist, allowing the `wp_capabilities` user meta key to be overwritten after `wp_insert_user()` has already assigned a safe role. This makes it possible for unauthenticated attackers to register a new account with full administrator-level privileges by supplying `custom_meta[wp_capabilities][administrator]=1`. Exploitation requires that user registration is enabled on the site and that at least one page exposes the Login/Register widget, which publishes the required `easy_elements_nonce` into the page DOM where it can be retrieved by any unauthenticated visitor via a simple GET request.",
+      "author": null,
+      "timestamp": "2026-05-22T05:16:28.067000+00:00",
+      "engagement": 8.8,
+      "cves": [
+        "CVE-2026-9018"
+      ],
+      "vendors": [
+        "WordPress"
+      ],
+      "raw": {
+        "cvss": 8.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "8d7d2fe17feb26a3",
+      "content_hash": "fd9f077b75b7764e"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8679",
+      "title": "CVE-2026-8679 (HIGH) \u2014 The AudioIgniter plugin for WordPress is vulnerable to Insecure Direct Object Reference in versions up to, and including, 2.0.2. This is due",
+      "body": "The AudioIgniter plugin for WordPress is vulnerable to Insecure Direct Object Reference in versions up to, and including, 2.0.2. This is due to the handle_playlist_endpoint() function (hooked to template_redirect) accepting a user-controlled playlist ID via the audioigniter_playlist_id query var or the /audioigniter/playlist/{id}/ rewrite rule and returning playlist track data without performing any authentication, capability, or post_status check \u2014 only the post_type is validated. This makes it possible for unauthenticated attackers to view track metadata (titles, artists, audio URLs, buy links, download URLs, and cover images) of any playlist on the site, including those in draft, private, pending, or trash status.",
+      "author": null,
+      "timestamp": "2026-05-22T09:16:32.887000+00:00",
+      "engagement": 7.5,
+      "cves": [
+        "CVE-2026-8679"
+      ],
+      "vendors": [
+        "WordPress"
+      ],
+      "raw": {
+        "cvss": 7.5,
+        "severity": "HIGH"
+      },
+      "url_hash": "53bf7c38f3e373f0",
+      "content_hash": "4b90063d21fa4055"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9011",
+      "title": "CVE-2026-9011 (HIGH) \u2014 The Ditty \u2013 Responsive News Tickers, Sliders, and Lists plugin for WordPress is vulnerable to authorization bypass in all versions up to, an",
+      "body": "The Ditty \u2013 Responsive News Tickers, Sliders, and Lists plugin for WordPress is vulnerable to authorization bypass in all versions up to, and including, 3.1.65. This is due to the plugin not properly verifying that a user is authorized to perform an action. This makes it possible for unauthenticated attackers to retrieve the full item content of non-public Dittys \u2014 including drafts, pending, scheduled, and disabled entries \u2014 by enumerating integer post IDs against the ditty_init AJAX endpoint. Unlike the non-AJAX init() counterpart, init_ajax() does not verify that the requested Ditty has a 'publish' post status before loading and returning its items, allowing content that administrators explicitly withheld from public view to be extracted.",
+      "author": null,
+      "timestamp": "2026-05-22T09:16:33.327000+00:00",
+      "engagement": 7.5,
+      "cves": [
+        "CVE-2026-9011"
+      ],
+      "vendors": [
+        "WordPress"
+      ],
+      "raw": {
+        "cvss": 7.5,
+        "severity": "HIGH"
+      },
+      "url_hash": "e025a36071405cda",
+      "content_hash": "28aa36176bba78aa"
+    }
+  ]
+}

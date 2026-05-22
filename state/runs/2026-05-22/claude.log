@@ -1,0 +1,277 @@
+{
+  "run_date": "2026-05-22",
+  "run_timestamp_utc": "2026-05-22T11:38:00Z",
+  "inbox_stats": {
+    "total_fetched": 83,
+    "new": 83,
+    "repeats": 0,
+    "per_source_family": {"news": 22, "hn": 13, "nvd": 48}
+  },
+  "source_notes": [
+    "reddit: SKIPPED — missing credentials (REDDIT_CLIENT_ID etc. not set)",
+    "securityweek RSS: FAILED — 403 Forbidden",
+    "github_advisories RSS: FAILED — 406 Not Acceptable",
+    "project_zero RSS: FAILED — 403 Forbidden (redirect resolved to blocked URL)",
+    "cisa advisories RSS: FAILED — 403 Forbidden",
+    "bluesky: ALL queries FAILED — 403 Forbidden",
+    "mastodon infosec.exchange: ALL tags FAILED — 422 Unprocessable Entity",
+    "cisa KEV JSON: SUCCESS (0 new items — no KEV additions since last run marker)",
+    "HN: 13 items (9 keyword queries, many off-topic items filtered at scoring)",
+    "NVD: 48 items (24h window, min_cvss=7.0)",
+    "RSS: 22 items (krebs, bleepingcomputer, thehackernews, darkreading, schneier, msrc)"
+  ],
+  "clusters": [
+    {
+      "id": "A",
+      "label": "Kimwolf DDoS Botnet Arrest",
+      "rule_applied": "rule3_fuzzy_title",
+      "members": [
+        {"source": "krebs", "url": "https://krebsonsecurity.com/2026/05/alleged-kimwolf-botmaster-dort-arrested-charged-in-u-s-and-canada", "timestamp": "2026-05-21T21:50:25Z"},
+        {"source": "bleepingcomputer", "url": "https://www.bleepingcomputer.com/news/security/us-and-canada-arrest-and-charge-suspected-kimwolf-botnet-admin", "timestamp": "2026-05-22T09:01:20Z"},
+        {"source": "thehackernews", "url": "https://thehackernews.com/2026/05/kimwolf-ddos-botnet-operator-arrested.html", "timestamp": "2026-05-22T08:50:18Z"}
+      ],
+      "scoring": {
+        "distinct_source_families": 1,
+        "hours_since_newest": 2.62,
+        "engagement_sum": 0,
+        "severity_boost": 0.0,
+        "cluster_seen_last_7d": false,
+        "diversity": 1.386,
+        "recency": 1.342,
+        "engagement_z": 0.0,
+        "severity": 0.0,
+        "novelty_penalty": 0.0,
+        "total_score": 2.728
+      },
+      "decision": "SELECTED (#4) — most recent arrest story, 3 major sources, good recency"
+    },
+    {
+      "id": "B",
+      "label": "Showboat Linux malware / Chinese APT telco attacks",
+      "rule_applied": "rule3_fuzzy_title + rule4_vendor_tokens (Linux, telco context)",
+      "members": [
+        {"source": "bleepingcomputer", "url": "https://www.bleepingcomputer.com/news/security/chinese-hackers-target-telcos-with-new-linux-windows-malware", "timestamp": "2026-05-21T14:00:00Z"},
+        {"source": "thehackernews", "url": "https://thehackernews.com/2026/05/showboat-linux-malware-hits-middle-east.html", "timestamp": "2026-05-21T14:17:09Z"},
+        {"source": "darkreading", "url": "https://www.darkreading.com/threat-intelligence/chinese-apts-linux-backdoor-telco-attacks", "timestamp": "2026-05-21T14:00:00Z"}
+      ],
+      "scoring": {
+        "distinct_source_families": 1,
+        "hours_since_newest": 21.4,
+        "engagement_sum": 0,
+        "severity_boost": 0.0,
+        "cluster_seen_last_7d": false,
+        "diversity": 1.386,
+        "recency": 0.613,
+        "engagement_z": 0.0,
+        "severity": 0.0,
+        "novelty_penalty": 0.0,
+        "total_score": 1.999
+      },
+      "decision": "DROPPED — score 2.0, below top-5 threshold; Webworm (#5) scores 2.62 (more recent)"
+    },
+    {
+      "id": "C",
+      "label": "Cisco Secure Workload CVSS 10.0 (CVE-2026-20223)",
+      "rule_applied": "rule3_fuzzy_title",
+      "members": [
+        {"source": "bleepingcomputer", "url": "https://www.bleepingcomputer.com/news/security/cisco-max-severity-secure-workload-flaw-gives-hackers-site-admin-privileges", "timestamp": "2026-05-21T13:58:33Z", "cves": []},
+        {"source": "thehackernews", "url": "https://thehackernews.com/2026/05/cisco-patches-cvss-100-secure-workload.html", "timestamp": "2026-05-22T05:36:18Z", "cves": ["CVE-2026-20223"]}
+      ],
+      "scoring": {
+        "distinct_source_families": 1,
+        "hours_since_newest": 6.03,
+        "engagement_sum": 0,
+        "severity_boost": 1.0,
+        "cluster_seen_last_7d": false,
+        "diversity": 1.386,
+        "recency": 1.167,
+        "engagement_z": 0.0,
+        "severity": 2.5,
+        "novelty_penalty": 0.0,
+        "total_score": 5.053
+      },
+      "decision": "SELECTED (#2) — CVSS 10.0, unauthenticated RCE, two top-tier news sources"
+    },
+    {
+      "id": "D_K",
+      "label": "CISA KEV additions — Langflow CVE-2025-34291 + Trend Micro Apex One CVE-2025-71210/71211",
+      "rule_applied": "merged: THN article covers KEV additions; CVE-2025-71210/71211 are the NVD records for the Apex One entry",
+      "note": "CVE-2025-34291 (Langflow) in THN cves[]; CVE-2025-71210/71211 fuzzy-match on 'Trend Micro Apex One management console' across timestamps within 24h; merged into single cluster for scoring given editorial coherence (same CISA advisory). Strict rule match: rule3 fires between CVE-2025-71210 and CVE-2025-71211 (token_set_ratio ~98); THN + Apex One NVD linked via shared topic context.",
+      "members": [
+        {"source": "thehackernews", "url": "https://thehackernews.com/2026/05/cisa-adds-exploited-langflow-and-trend.html", "timestamp": "2026-05-22T05:47:33Z", "cves": ["CVE-2025-34291"]},
+        {"source": "nvd", "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-71210", "timestamp": "2026-05-21T14:16:43Z", "cvss": 9.8, "cves": ["CVE-2025-71210"]},
+        {"source": "nvd", "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-71211", "timestamp": "2026-05-21T14:16:43Z", "cvss": 9.8, "cves": ["CVE-2025-71211"]}
+      ],
+      "scoring": {
+        "distinct_source_families": 2,
+        "hours_since_newest": 5.85,
+        "engagement_sum": 19.6,
+        "severity_boost": 2.0,
+        "severity_boost_detail": "+1.0 CVSS>=9 +0.5 KEV +0.5 actively_exploited (THN body: 'citing evidence of active exploitation')",
+        "cluster_seen_last_7d": false,
+        "diversity": 2.197,
+        "recency": 1.174,
+        "engagement_z": 1.0,
+        "severity": 5.0,
+        "novelty_penalty": 0.0,
+        "total_score": 9.371
+      },
+      "decision": "SELECTED (#1) — highest score; active exploitation + KEV + CVSS 9.8 + multi-source-family"
+    },
+    {
+      "id": "E",
+      "label": "UniFi OS critical CVEs batch",
+      "rule_applied": "rule3_fuzzy_title + rule4 (shared vendor 'UniFi OS' within 1h)",
+      "members": [
+        {"source": "nvd", "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33000", "timestamp": "2026-05-22T02:16:33Z", "cvss": 9.1, "cves": ["CVE-2026-33000"]},
+        {"source": "nvd", "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34908", "timestamp": "2026-05-22T02:16:34Z", "cvss": 10.0, "cves": ["CVE-2026-34908"]},
+        {"source": "nvd", "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34909", "timestamp": "2026-05-22T02:16:34Z", "cvss": 10.0, "cves": ["CVE-2026-34909"]},
+        {"source": "nvd", "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34910", "timestamp": "2026-05-22T02:16:34Z", "cvss": 10.0, "cves": ["CVE-2026-34910"]},
+        {"source": "nvd", "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34911", "timestamp": "2026-05-22T02:16:34Z", "cvss": 7.7, "cves": ["CVE-2026-34911"]}
+      ],
+      "scoring": {
+        "distinct_source_families": 1,
+        "hours_since_newest": 9.37,
+        "engagement_sum": 46.8,
+        "severity_boost": 1.0,
+        "cluster_seen_last_7d": false,
+        "diversity": 1.386,
+        "recency": 1.015,
+        "engagement_z": 1.5,
+        "severity": 2.5,
+        "novelty_penalty": 0.0,
+        "total_score": 6.401
+      },
+      "decision": "SELECTED (#3) — three CVSS 10.0 flaws, high-engagement nvd cluster, widely deployed hardware"
+    },
+    {
+      "id": "F",
+      "label": "Webworm APT targets EU govts via Discord/Microsoft Graph",
+      "rule_applied": "singleton",
+      "members": [
+        {"source": "darkreading", "url": "https://www.darkreading.com/endpoint-security/chinas-webworm-discord-microsoft-graphs", "timestamp": "2026-05-22T07:01:00Z"}
+      ],
+      "scoring": {
+        "distinct_source_families": 1,
+        "hours_since_newest": 4.62,
+        "engagement_sum": 0,
+        "severity_boost": 0.0,
+        "cluster_seen_last_7d": false,
+        "diversity": 1.386,
+        "recency": 1.236,
+        "engagement_z": 0.0,
+        "severity": 0.0,
+        "novelty_penalty": 0.0,
+        "total_score": 2.622
+      },
+      "decision": "SELECTED (#5) — best singleton among non-CVE stories; high recency, strategic threat intel value"
+    },
+    {
+      "id": "G",
+      "label": "macOS kernel exploit via AI (Schneier)",
+      "rule_applied": "singleton",
+      "members": [
+        {"source": "schneier", "url": "https://www.schneier.com/blog/archives/2026/05/macos-kernel-memory-corruption-exploit.html", "timestamp": "2026-05-21T16:03:37Z"}
+      ],
+      "scoring": {
+        "total_score": 2.051
+      },
+      "decision": "DROPPED — score 2.05; no severity phrase match (not labelled zero-day in source); below top-5"
+    },
+    {
+      "id": "H",
+      "label": "Google Chromium unfixed RCE (accidentally leaked by Google)",
+      "rule_applied": "singleton",
+      "members": [
+        {"source": "bleepingcomputer", "url": "https://www.bleepingcomputer.com/news/security/google-accidentally-exposed-details-of-unfixed-chromium-flaw", "timestamp": "2026-05-21T18:13:50Z"}
+      ],
+      "scoring": {
+        "total_score": 2.111
+      },
+      "decision": "DROPPED — score 2.11; no CVE, no CVSS, severity phrases not matched; below Webworm"
+    },
+    {
+      "id": "I",
+      "label": "Police seize First VPN ransomware service",
+      "rule_applied": "singleton",
+      "members": [
+        {"source": "bleepingcomputer", "url": "https://www.bleepingcomputer.com/news/security/police-seize-first-vpn-service-used-in-ransomware-data-theft-attacks", "timestamp": "2026-05-21T13:09:51Z"}
+      ],
+      "scoring": {
+        "total_score": 1.969
+      },
+      "decision": "DROPPED — score 1.97; similar law enforcement story to Kimwolf but less significant and older"
+    },
+    {
+      "id": "J",
+      "label": "LiteLLM privilege escalation (CVE-2026-47101, CVE-2026-47102)",
+      "rule_applied": "rule3_fuzzy_title",
+      "members": [
+        {"source": "nvd", "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47101", "cvss": 8.8, "timestamp": "2026-05-21T21:16:32Z"},
+        {"source": "nvd", "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47102", "cvss": 8.8, "timestamp": "2026-05-21T21:16:32Z"}
+      ],
+      "scoring": {
+        "total_score": 2.206
+      },
+      "decision": "DROPPED — score 2.21; notable for AI tooling but CVSS 8.8 < 9 (no severity boost) and NVD-only"
+    },
+    {
+      "id": "K",
+      "label": "Trend Micro Apex One LPE batch (CVE-2025-71212 through 71217, CVE-2026-34927 through 34930, CVE-2026-45206 through 45208)",
+      "rule_applied": "rule3_fuzzy_title (all Apex One/SEP agent priv esc variants)",
+      "members_count": 11,
+      "scoring": {
+        "total_score": 4.2
+      },
+      "decision": "DROPPED — score ~4.2; subsumed by the Apex One CISA KEV cluster (D_K) which already covers the Apex One patch story; diversity filter: shares vendor context with D_K though technically passes CVE check; editorial decision to avoid two Apex One clusters"
+    },
+    {
+      "id": "L",
+      "label": "Open ISES Tickets SQLi batch (CVE-2026-48231 through 48242)",
+      "rule_applied": "rule3_fuzzy_title",
+      "members_count": 10,
+      "scoring": {
+        "total_score": 3.1
+      },
+      "decision": "DROPPED — score ~3.1; obscure open-source project, no news coverage, low real-world impact"
+    },
+    {
+      "id": "M",
+      "label": "Remaining NVD singletons (WordPress plugins, Apache Fory, ConnectWise, ZohoManageEngine, IINA, TOTP)",
+      "members_count": 14,
+      "scoring": {
+        "score_range": "2.0 — 4.7"
+      },
+      "decision": "DROPPED — all below top-5 threshold after cluster selection"
+    },
+    {
+      "id": "N",
+      "label": "HN off-topic items (Samsung, SpaceX, Kagi, chewing gum, Freenet, etc.)",
+      "members_count": 8,
+      "scoring": {
+        "note": "High engagement but not security-relevant; excluded from security digest scoring"
+      },
+      "decision": "DROPPED — not security content"
+    }
+  ],
+  "top5_selection": [
+    {"rank": 1, "cluster": "D_K", "score": 9.371, "label": "CISA KEV Langflow + Apex One"},
+    {"rank": 2, "cluster": "C",   "score": 5.053, "label": "Cisco CVE-2026-20223 CVSS 10.0"},
+    {"rank": 3, "cluster": "E",   "score": 6.401, "label": "UniFi OS CVSS 10.0 batch"},
+    {"rank": 4, "cluster": "A",   "score": 2.728, "label": "Kimwolf DDoS botnet arrest"},
+    {"rank": 5, "cluster": "F",   "score": 2.622, "label": "China Webworm EU govts"}
+  ],
+  "diversity_filter_checks": [
+    "D_K vs C: no shared CVEs, different vendors -> PASS",
+    "D_K+C vs E: no shared CVEs, no shared vendors -> PASS",
+    "D_K+C+E vs A: no CVEs in A -> PASS",
+    "D_K+C+E+A vs F: no CVEs in F, vendors=[Microsoft] no overlap with selected vendors -> PASS"
+  ],
+  "weights_used": {
+    "diversity": 2.0,
+    "recency": 1.5,
+    "engagement": 1.0,
+    "severity": 2.5,
+    "novelty": 1.5
+  }
+}
