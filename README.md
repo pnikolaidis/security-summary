@@ -39,6 +39,9 @@ googleprojectzero.blogspot.com
 msrc.microsoft.com
 github.com
 isc.sans.edu
+news.risky.biz
+www.zetter-zeroday.com
+srslyriskybiz.substack.com
 ```
 After the first run, check the routine logs for any other domains your RSS feeds redirect through and add them.
 
