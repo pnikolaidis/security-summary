@@ -101,17 +101,41 @@ src/
   tts.py                 # OpenAI TTS + chunking + CVE/acronym preprocessing
   email_client.py        # Resend client + HTML template + persona From-name
   collectors/{rss,reddit,hackernews,mastodon,bluesky,cisa,nvd}.py
+  podcast_feed.py        # regenerates docs/feed.xml + docs/index.html
 config/
   sources.yaml           # feeds, subreddits, hashtags, vendor list
   ranking.yaml           # weights for top-5 selection
   personas.yaml          # weekday → {voice, name, intro_hint}
+  podcast.yaml           # feed metadata + GitHub Pages owner/repo/branch
 state/                   # git-committed; persistent across runs
   seen.jsonl             # URL-level dedup
   featured.jsonl         # cross-day topic dedup (append-only log of past picks)
   inbox.json             # latest run's normalized items
   runs/YYYY-MM-DD/       # per-run summary.md, script.txt, digest.mp3, claude.log
+docs/                    # GitHub Pages site (committed)
+  feed.xml               # podcast RSS feed
+  index.html             # landing page with the feed URL
+  .nojekyll              # tells Pages not to run Jekyll
 ROUTINE_PROMPT.md        # the prompt the Routine executes (source of truth for the runbook)
 ```
+
+## Podcast feed (listen in Overcast / Apple Podcasts / etc.)
+
+Each run regenerates `docs/feed.xml` from the last 60 episodes; GitHub Pages serves it as a real podcast feed.
+
+**One-time setup (after merging the first PR with `docs/`):**
+1. GitHub repo → **Settings** → **Pages**.
+2. **Source:** Deploy from a branch.
+3. **Branch:** `main`, **folder:** `/docs`.
+4. Save. Within ~1 min the feed is live at:
+   ```
+   https://pnikolaidis.github.io/security-summary/feed.xml
+   ```
+5. In Overcast → **+** → **Add URL** → paste the URL above.
+
+The MP3 enclosures point at `raw.githubusercontent.com/pnikolaidis/security-summary/main/state/runs/<date>/digest.mp3` so the audio isn't duplicated in `docs/`.
+
+If you fork or rename the repo, update `config/podcast.yaml` (`github.owner`, `github.repo`, `github.branch`). The Pages URL and the raw URLs are derived from those values.
 
 ## Personas + voice rotation
 

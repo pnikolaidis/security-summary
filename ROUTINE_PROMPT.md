@@ -128,9 +128,15 @@ Generates `digest.mp3` from `script.txt` using today's persona's voice, then ema
 
 On a quiet day, still call deliver — short script is fine.
 
-### 8. Commit + push
+### 8. Rebuild the podcast feed
 ```bash
-git add state/
+uv run python -m src.podcast_feed
+```
+Regenerates `docs/feed.xml` from `state/runs/*/` (most recent 60 episodes). MP3 enclosure URLs point at raw.githubusercontent.com, so the audio file doesn't get duplicated on disk. Also touches `docs/index.html` and `docs/.nojekyll` so GitHub Pages serves the feed cleanly.
+
+### 9. Commit + push
+```bash
+git add state/ docs/
 git commit -m "digest: YYYY-MM-DD"
 git push -u origin HEAD
 ```
