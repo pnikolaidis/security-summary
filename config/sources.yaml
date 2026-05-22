@@ -21,6 +21,14 @@ rss:
     url: https://msrc.microsoft.com/blog/feed/
   - name: github_advisories
     url: https://github.com/advisories.atom
+  - name: sans_isc
+    url: https://isc.sans.edu/rssfeed.xml
+  - name: risky_business_news
+    url: https://news.risky.biz/feed/
+  - name: kim_zetter_zero_day
+    url: https://www.zetter-zeroday.com/feed
+  - name: seriously_risky_business
+    url: https://srslyriskybiz.substack.com/feed
 
 reddit:
   subreddits: [netsec, cybersecurity, blueteamsec, Malware, AskNetsec]

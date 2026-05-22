@@ -1,0 +1,27 @@
+# Persona/voice rotation for the daily digest.
+# Indexed by weekday: 0=Monday, 1=Tuesday, ..., 6=Sunday.
+# `voice` must be a valid OpenAI TTS voice (alloy, echo, fable, onyx, nova, shimmer).
+# `intro_hint` is a suggested first sentence for the audio script; Claude can adapt it.
+
+personas:
+  - name: Allie
+    voice: alloy
+    intro_hint: "Good morning. I'm Allie with your Monday security briefing."
+  - name: Adam Insight
+    voice: onyx
+    intro_hint: "This is Adam Insight with Tuesday's security digest."
+  - name: Ada Iverson
+    voice: nova
+    intro_hint: "Ada Iverson here. Wednesday's signal, coming up."
+  - name: Aiden Iyer
+    voice: fable
+    intro_hint: "Aiden Iyer reporting in for Thursday."
+  - name: Avery Ito
+    voice: echo
+    intro_hint: "It's Friday. Avery Ito with what mattered this week."
+  - name: Aria Inoue
+    voice: shimmer
+    intro_hint: "Saturday digest from Aria Inoue."
+  - name: Andi
+    voice: nova
+    intro_hint: "Andi here with your Sunday catch-up."
