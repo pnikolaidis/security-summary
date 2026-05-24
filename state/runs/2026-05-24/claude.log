@@ -1,0 +1,124 @@
+===== SECURITY DIGEST RUN: 2026-05-24 =====
+Run started: 2026-05-24T17:53 UTC (approx)
+Persona: Andi (voice: nova, Sunday rotation)
+
+===== COLLECTION SUMMARY =====
+Total fetched: 14
+New (post-dedup): 14 (first run, seen.jsonl empty)
+Repeats: 0
+Per source family:
+  news: 5 (bleepingcomputer x2, darkreading x2, sans_isc x1)
+  hn:   9
+
+Source failures (non-fatal):
+  - reddit: missing credentials (REDDIT_CLIENT_ID etc. not set)
+  - cisa.advisories_feed: 403 Forbidden on cybersecurity-advisories/all.xml
+  - securityweek RSS: 403 Forbidden
+  - github_advisories.atom: 406 Not Acceptable
+  - project_zero feed: 403 Forbidden
+  - bluesky: all 5 queries returned 403 (API access restricted)
+  - mastodon/infosec.exchange: all 5 tags returned 422 (API policy change)
+  - nvd: 0 CVEs published in the last 24h window
+
+===== CLUSTERING =====
+
+--- Cluster 1: Ghost CMS CVE-2026-26980 ClickFix Campaign ---
+Members:
+  - https://www.bleepingcomputer.com/news/security/ghost-cms-sql-injection-flaw-exploited-in-large-scale-clickfix-campaign
+    source: bleepingcomputer | family: news | ts: 2026-05-24T14:12:32Z | engagement: 0.0
+CVEs: CVE-2026-26980
+Vendors: (none extracted)
+Cluster rule: single-item (no cross-source clustering possible)
+
+Score breakdown:
+  w_diversity * log(1 + 1 source_family) = 2.0 * ln(2) = 2.0 * 0.6931 = 1.386
+  w_recency   * exp(-3.68h / 24)         = 1.5 * exp(-0.1533) = 1.5 * 0.8580 = 1.287
+  w_engagement * z(0.0)                  = 1.0 * 0.0 = 0.000  (all news items have 0 engagement → z=0)
+  w_severity * severity_boost            = 2.5 * 0.5 = 1.250
+    boost rationale: body contains "large-scale campaign exploiting" → active exploitation → +0.5
+  w_novelty * cluster_seen_in_last_7d    = 1.5 * 0 = 0.000  (not seen before, seen.jsonl empty)
+TOTAL SCORE: 3.923
+DECISION: SELECTED (rank #1)
+
+--- Cluster 2: Wireshark 4.6.6 Released ---
+Members:
+  - https://isc.sans.edu/diary/rss/33010
+    source: sans_isc | family: news | ts: 2026-05-24T16:38:21Z | engagement: 0.0
+CVEs: (none extracted)
+Vendors: (none extracted)
+
+Score breakdown:
+  w_diversity * log(1 + 1 source_family) = 2.0 * 0.6931 = 1.386
+  w_recency   * exp(-1.25h / 24)         = 1.5 * exp(-0.0521) = 1.5 * 0.9492 = 1.424
+  w_engagement * z(0.0)                  = 0.000
+  w_severity * 0                         = 0.000
+  w_novelty * 0                          = 0.000
+TOTAL SCORE: 2.810
+DECISION: SELECTED (rank #2)
+  Diversity check vs cluster 1: no shared CVEs, no shared vendors → passes
+
+--- Cluster 3: Laravel Lang Supply Chain Credential Theft ---
+Members:
+  - https://www.bleepingcomputer.com/news/security/laravel-lang-packages-hijacked-to-deploy-credential-stealing-malware
+    source: bleepingcomputer | family: news | ts: 2026-05-23T20:48:23Z | engagement: 0.0
+CVEs: (none)
+Vendors: GitHub
+
+Score breakdown:
+  w_diversity * log(1 + 1 source_family) = 2.0 * 0.6931 = 1.386
+  w_recency   * exp(-21.08h / 24)        = 1.5 * exp(-0.8783) = 1.5 * 0.4156 = 0.623
+  w_engagement * z(0.0)                  = 0.000
+  w_severity * 0                         = 0.000
+    note: "credential-stealing malware" in title is significant but no exact severity phrase match
+  w_novelty * 0                          = 0.000
+TOTAL SCORE: 2.010
+DECISION: SELECTED (rank #3)
+  Diversity check vs cluster 1: CVE-2026-26980 (cluster 1) vs none (cluster 3) → no CVE overlap. Vendors: cluster 1 has none, cluster 3 has "GitHub" → <2 shared vendor tokens → passes
+  Diversity check vs cluster 2: no shared CVEs, no shared vendors → passes
+
+===== DROPPED / FILTERED ITEMS =====
+
+--- Dark Reading: Infosecurity Europe ---
+URL: https://www.darkreading.com/events/infosecurity-europe
+Reason: Event calendar entry (future-dated: 2026-06-02), empty body, no security content.
+Recency note: timestamp is in the future — would produce exp(+215h/24) ≈ 7777 recency score if
+              naively applied. Capped at hours_since_newest=0 but item remains non-security content.
+DECISION: DROPPED (event announcement, not news)
+
+--- Dark Reading: Anatomy of a Data Breach Virtual Event ---
+URL: https://www.darkreading.com/events/anatomy-of-a-data-breach-what-to-do-if-it-happens-to-you
+Reason: Event calendar entry (future-dated: 2026-06-18), empty body, no security content.
+DECISION: DROPPED (event announcement, not news)
+
+--- HackerNews items (9 items) ---
+All 9 HN items retrieved are off-topic for a security digest:
+  - Supreme Court jokes/selfies (scotusblog) — not security
+  - Seed oils and cardiac health (statnews) — not security
+  - Alexander Grothendieck mathematics (quantamagazine) — not security
+  - Toxic chemical leak Orange County (bbc) — physical safety, not cybersecurity
+  - Self-powered credit-card computer (reddit/electronics) — hardware interest, not security news
+  - Air France/Airbus manslaughter verdict (bbc) — not security
+  - Data centers consume 6% US electricity (singularityhub) — tangentially infra, not security
+  - Writerdeck blog post (veronicaexplains.net) — not security
+  - Iowa Intellectual Freedom classes (kcrg) — not security
+Note: HN collector uses security-related query terms but top stories that happen to be posted by
+      security-community accounts may be off-topic. The engagement scores (53–432 pts) are high
+      but irrelevant for a security digest.
+DECISION: ALL DROPPED (off-topic)
+
+===== FINAL SELECTION =====
+Rank 1: Ghost CMS CVE-2026-26980 ClickFix (score: 3.923) ← SELECTED
+Rank 2: Wireshark 4.6.6 release (score: 2.810) ← SELECTED
+Rank 3: Laravel Lang supply chain (score: 2.010) ← SELECTED
+(Only 3 security-relevant clusters available; presenting top 3 of 3)
+
+===== NOTABLE DEDUP DECISIONS =====
+- No dedup was required: seen.jsonl was empty at start of run (first run).
+- All 14 items were new. State saved to seen.jsonl.
+
+===== OUTPUTS =====
+summary.md: written
+script.txt: written (~390 words, well under 1400-word cap)
+claude.log: this file
+
+===== END =====
