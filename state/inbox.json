@@ -1,0 +1,254 @@
+{
+  "stats": {
+    "total_fetched": 13,
+    "new": 13,
+    "repeats": 0,
+    "per_source_family": {
+      "news": 5,
+      "hn": 8
+    }
+  },
+  "items": [
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/security/ghost-cms-sql-injection-flaw-exploited-in-large-scale-clickfix-campaign",
+      "title": "Ghost CMS SQL injection flaw exploited in large-scale ClickFix campaign",
+      "body": "A large-scale campaign is exploiting a critical SQL injection vulnerability (CVE-2026-26980) in Ghost CMS to inject malicious JavaScript code that triggers ClickFix attack flows. [...]",
+      "author": "Bill Toulas",
+      "timestamp": "2026-05-24T14:12:32+00:00",
+      "engagement": 0.0,
+      "cves": [
+        "CVE-2026-26980"
+      ],
+      "vendors": [],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "3d789e4e4d8ba22b",
+      "content_hash": "e0e651e8bb052e18"
+    },
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/security/laravel-lang-packages-hijacked-to-deploy-credential-stealing-malware",
+      "title": "Laravel Lang packages hijacked to deploy credential-stealing malware",
+      "body": "A supply chain attack targeting the Laravel Lang localization packages has exposed developers to a sophisticated credential-stealing malware campaign after attackers abused GitHub version tags to distribute malicious code through Composer packages. [...]",
+      "author": "Lawrence Abrams",
+      "timestamp": "2026-05-23T20:48:23+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "GitHub"
+      ],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "2bf0512e6ea52288",
+      "content_hash": "f3068b511253f5f9"
+    },
+    {
+      "source": "darkreading",
+      "source_family": "news",
+      "url": "https://www.darkreading.com/events/infosecurity-europe",
+      "title": "Infosecurity Europe",
+      "body": "",
+      "author": null,
+      "timestamp": "2026-06-02T13:30:00+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "darkreading"
+      },
+      "url_hash": "2d981b6027ec9492",
+      "content_hash": "a2dc24dc775668f1"
+    },
+    {
+      "source": "darkreading",
+      "source_family": "news",
+      "url": "https://www.darkreading.com/events/anatomy-of-a-data-breach-what-to-do-if-it-happens-to-you",
+      "title": "[Virtual Event] Anatomy of a Data Breach: What to Do if it Happens to You",
+      "body": "",
+      "author": null,
+      "timestamp": "2026-06-18T15:00:00+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "darkreading"
+      },
+      "url_hash": "582b9d5ded055f32",
+      "content_hash": "bf855585865244dd"
+    },
+    {
+      "source": "sans_isc",
+      "source_family": "news",
+      "url": "https://isc.sans.edu/diary/rss/33010",
+      "title": "Wireshark 4.6.6 Released, (Sun, May 24th)",
+      "body": "Wireshark release 4.6.6 fixes 1 vulnerability and 11 bugs.&#xd;",
+      "author": null,
+      "timestamp": "2026-05-24T16:38:21+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "sans_isc"
+      },
+      "url_hash": "30253856bf16f2b1",
+      "content_hash": "42e451bde5f0b953"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://www.statnews.com/2026/05/22/seed-oils-healthy-fats-tallow-fact-check-cardiac-health",
+      "title": "The seed oil panic is hurting my cardiac patients",
+      "body": "",
+      "author": "randycupertino",
+      "timestamp": "2026-05-24T14:27:26+00:00",
+      "engagement": 205.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 127,
+        "num_comments": 156,
+        "object_id": "48257532"
+      },
+      "url_hash": "ee03dae4ed3099ae",
+      "content_hash": "19bb07e7025ce44d"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://www.quantamagazine.org/how-alexander-grothendieck-revolutionized-20th-century-mathematics-20260520",
+      "title": "Alexander Grothendieck Revolutionized 20th-Century Mathematics",
+      "body": "",
+      "author": "anujbans",
+      "timestamp": "2026-05-24T03:19:02+00:00",
+      "engagement": 114.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 103,
+        "num_comments": 22,
+        "object_id": "48254020"
+      },
+      "url_hash": "196abf65b138ec02",
+      "content_hash": "033fa1adb0ab6b2f"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://www.bbc.com/news/articles/c3w2l249j8go",
+      "title": "Toxic chemical leak at a manufacturing facility in Orange County",
+      "body": "",
+      "author": "borski",
+      "timestamp": "2026-05-23T22:09:05+00:00",
+      "engagement": 233.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 159,
+        "num_comments": 148,
+        "object_id": "48252060"
+      },
+      "url_hash": "a252e4828d6b3e8d",
+      "content_hash": "f5ff07b88dbdca0f"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://old.reddit.com/r/electronics/comments/1td7yxl/i_built_a_fully_selfpowered_computer_in_actual",
+      "title": "A self-powered computer in actual credit-card size (~1mm thick)",
+      "body": "",
+      "author": "gnabgib",
+      "timestamp": "2026-05-23T21:06:37+00:00",
+      "engagement": 85.5,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 82,
+        "num_comments": 7,
+        "object_id": "48251528"
+      },
+      "url_hash": "1f07b15a9c73d67c",
+      "content_hash": "747dcc486fdc08bd"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://www.bbc.com/news/articles/czd2qmdvmq6o",
+      "title": "Air France and Airbus found guilty of manslaughter over 2009 plane crash",
+      "body": "",
+      "author": "baal80spam",
+      "timestamp": "2026-05-23T20:09:13+00:00",
+      "engagement": 168.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 118,
+        "num_comments": 100,
+        "object_id": "48250980"
+      },
+      "url_hash": "f0cfb6c60088eb0c",
+      "content_hash": "6fb5f5a3277d5aed"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://singularityhub.com/2026/05/22/data-centers-now-consume-6-of-electricity-in-the-us-and-the-backlash-has-begun",
+      "title": "Data Centers Now Consume 6% of US Electricity\u2013and the Backlash Has Begun",
+      "body": "",
+      "author": "cdrnsf",
+      "timestamp": "2026-05-23T19:42:10+00:00",
+      "engagement": 73.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 56,
+        "num_comments": 34,
+        "object_id": "48250712"
+      },
+      "url_hash": "503b8a4d61206673",
+      "content_hash": "27c7e15d41937611"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://veronicaexplains.net/my-first-writerdeck",
+      "title": "Time to talk about my writerdeck",
+      "body": "",
+      "author": "hggh",
+      "timestamp": "2026-05-23T18:45:37+00:00",
+      "engagement": 555.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 428,
+        "num_comments": 254,
+        "object_id": "48250144"
+      },
+      "url_hash": "4d33523b89ac0735",
+      "content_hash": "6c05fc436dad945a"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://www.kcrg.com/2026/05/20/iowa-lawmakers-move-mandate-students-take-center-intellectual-freedom-classes-amid-low-enrollment",
+      "title": "Iowa to mandate students take Intellectual Freedom classes amid low enrollment",
+      "body": "",
+      "author": "hn_acker",
+      "timestamp": "2026-05-23T18:02:11+00:00",
+      "engagement": 77.5,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 50,
+        "num_comments": 55,
+        "object_id": "48249743"
+      },
+      "url_hash": "72eb48f111260159",
+      "content_hash": "53a2c73dc2a3bf2f"
+    }
+  ]
+}

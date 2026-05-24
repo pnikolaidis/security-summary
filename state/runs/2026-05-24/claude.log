@@ -1,0 +1,172 @@
+{
+  "run_date": "2026-05-24",
+  "persona": {"name": "Andi", "voice": "nova"},
+  "collection": {
+    "total_fetched": 13,
+    "new_post_dedup": 13,
+    "repeats": 0,
+    "per_source_family": {"news": 5, "hn": 8},
+    "source_failures": [
+      {"source": "reddit", "reason": "missing_credentials"},
+      {"source": "bluesky", "reason": "403 Forbidden on all queries"},
+      {"source": "mastodon", "reason": "422 Unprocessable Entity on all hashtags"},
+      {"source": "cisa_advisories", "reason": "403 Forbidden"},
+      {"source": "project_zero", "reason": "403 Forbidden (redirect to projectzero.google blocked)"},
+      {"source": "securityweek", "reason": "403 Forbidden"},
+      {"source": "github_advisories", "reason": "406 Not Acceptable"}
+    ],
+    "sources_ok": ["bleepingcomputer", "darkreading", "sans_isc", "hackernews", "nvd", "cisa_kev", "krebs", "thehackernews", "schneier", "risky_business_news", "kim_zetter_zero_day", "seriously_risky_business", "msrc"]
+  },
+  "pre_filter_exclusions": [
+    {
+      "url": "https://www.darkreading.com/events/infosecurity-europe",
+      "reason": "Event calendar listing (future date 2026-06-02), empty body — not news",
+      "source": "darkreading"
+    },
+    {
+      "url": "https://www.darkreading.com/events/anatomy-of-a-data-breach-what-to-do-if-it-happens-to-you",
+      "reason": "Event calendar listing (future date 2026-06-18), empty body — not news",
+      "source": "darkreading"
+    },
+    {
+      "url": "https://www.statnews.com/2026/05/22/seed-oils-healthy-fats-tallow-fact-check-cardiac-health",
+      "reason": "Off-topic HN item (health/nutrition, not cybersecurity)",
+      "source": "hackernews"
+    },
+    {
+      "url": "https://www.quantamagazine.org/how-alexander-grothendieck-revolutionized-20th-century-mathematics-20260520",
+      "reason": "Off-topic HN item (mathematics history, not cybersecurity)",
+      "source": "hackernews"
+    },
+    {
+      "url": "https://www.bbc.com/news/articles/c3w2l249j8go",
+      "reason": "Off-topic HN item (chemical plant incident, not cybersecurity)",
+      "source": "hackernews"
+    },
+    {
+      "url": "https://old.reddit.com/r/electronics/comments/1td7yxl/i_built_a_fully_selfpowered_computer_in_actual",
+      "reason": "Off-topic HN item (DIY hardware, not cybersecurity)",
+      "source": "hackernews"
+    },
+    {
+      "url": "https://www.bbc.com/news/articles/czd2qmdvmq6o",
+      "reason": "Off-topic HN item (aviation manslaughter verdict, not cybersecurity)",
+      "source": "hackernews"
+    },
+    {
+      "url": "https://singularityhub.com/2026/05/22/data-centers-now-consume-6-of-electricity-in-the-us-and-the-backlash-has-begun",
+      "reason": "Off-topic HN item (energy/environment, not cybersecurity)",
+      "source": "hackernews"
+    },
+    {
+      "url": "https://veronicaexplains.net/my-first-writerdeck",
+      "reason": "Off-topic HN item (hobby electronics/writing, not cybersecurity) — NOTE: highest engagement (555) of any item collected today; a pure engagement signal would have ranked this #1 which illustrates why security-relevance pre-filtering is necessary",
+      "source": "hackernews"
+    },
+    {
+      "url": "https://www.kcrg.com/2026/05/20/iowa-lawmakers-move-mandate-students-take-center-intellectual-freedom-classes-amid-low-enrollment",
+      "reason": "Off-topic HN item (education policy, not cybersecurity)",
+      "source": "hackernews"
+    }
+  ],
+  "clusters": [
+    {
+      "id": "cluster_1",
+      "title": "Ghost CMS SQL Injection CVE-2026-26980 Exploited in ClickFix Campaign",
+      "members": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/ghost-cms-sql-injection-flaw-exploited-in-large-scale-clickfix-campaign",
+          "source": "bleepingcomputer",
+          "timestamp": "2026-05-24T14:12:32+00:00"
+        }
+      ],
+      "cves": ["CVE-2026-26980"],
+      "vendors": [],
+      "source_families": ["news"],
+      "score_breakdown": {
+        "distinct_source_families": 1,
+        "hours_since_newest": 3.05,
+        "engagement_zsum": 0.0,
+        "severity_boost": 0.5,
+        "cluster_seen_in_last_7d": 0,
+        "diversity_term": 1.386,
+        "recency_term": 1.321,
+        "engagement_term": 0.0,
+        "severity_term": 1.25,
+        "novelty_penalty": 0.0,
+        "total_score": 3.957
+      },
+      "featured_classification": {"status": "different", "reason": "no prior featured entries"},
+      "decision": "SELECTED rank=1"
+    },
+    {
+      "id": "cluster_2",
+      "title": "Wireshark 4.6.6 Released — Patches Vulnerability",
+      "members": [
+        {
+          "url": "https://isc.sans.edu/diary/rss/33010",
+          "source": "sans_isc",
+          "timestamp": "2026-05-24T16:38:21+00:00"
+        }
+      ],
+      "cves": [],
+      "vendors": [],
+      "source_families": ["news"],
+      "score_breakdown": {
+        "distinct_source_families": 1,
+        "hours_since_newest": 0.62,
+        "engagement_zsum": 0.0,
+        "severity_boost": 0.0,
+        "cluster_seen_in_last_7d": 0,
+        "diversity_term": 1.386,
+        "recency_term": 1.461,
+        "engagement_term": 0.0,
+        "severity_term": 0.0,
+        "novelty_penalty": 0.0,
+        "total_score": 2.847
+      },
+      "featured_classification": {"status": "different", "reason": "no prior featured entries"},
+      "decision": "SELECTED rank=2 — note: editorial ranking would place Laravel #2 / Wireshark #3 on impact, but recency formula gives Wireshark the edge (0.6h vs 20.5h)"
+    },
+    {
+      "id": "cluster_3",
+      "title": "Laravel Lang Packages Hijacked — Supply Chain Credential-Stealing Malware",
+      "members": [
+        {
+          "url": "https://www.bleepingcomputer.com/news/security/laravel-lang-packages-hijacked-to-deploy-credential-stealing-malware",
+          "source": "bleepingcomputer",
+          "timestamp": "2026-05-23T20:48:23+00:00"
+        }
+      ],
+      "cves": [],
+      "vendors": ["GitHub"],
+      "source_families": ["news"],
+      "score_breakdown": {
+        "distinct_source_families": 1,
+        "hours_since_newest": 20.45,
+        "engagement_zsum": 0.0,
+        "severity_boost": 0.0,
+        "cluster_seen_in_last_7d": 0,
+        "diversity_term": 1.386,
+        "recency_term": 0.640,
+        "engagement_term": 0.0,
+        "severity_term": 0.0,
+        "novelty_penalty": 0.0,
+        "total_score": 2.026
+      },
+      "featured_classification": {"status": "different", "reason": "no prior featured entries"},
+      "decision": "SELECTED rank=3 — severity_boost=0 because 'supply chain' and 'credential-stealing' are not in severity_phrases config; supply chain attacks are inherently high-impact but the scoring config would need 'supply chain' or 'credential' added to severity_phrases to capture that"
+    }
+  ],
+  "diversity_filter_decisions": "No clusters were dropped by diversity filter — no two selected clusters share ≥2 vendor tokens or any CVE",
+  "cross_day_dedup": "featured.jsonl empty (first run); all clusters classified as 'different'",
+  "top_picks_selected": 3,
+  "top_picks_available": 3,
+  "quiet_day": false,
+  "notes": [
+    "Only 3 security-relevant items found today — well below the target top-5. Key sources offline: Reddit (no creds), Bluesky (403), Mastodon (422), CISA advisories (403). This explains the low signal count.",
+    "NVD returned 0 CVEs ≥CVSS 7.0 published in the 24h window — unusual; may be a publication lag or API filter artifact.",
+    "HN items excluded: HN keyword search returned 8 stories matching broad query terms but none were cybersecurity-relevant. The HN writerdeck story had the highest raw engagement (555) of any collected item — illustrates that security-relevance filtering must precede engagement scoring.",
+    "Recommendation: add 'supply chain' and 'credential' to severity_phrases in ranking.yaml to better score supply chain attacks."
+  ]
+}
