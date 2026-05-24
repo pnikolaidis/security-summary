@@ -42,6 +42,7 @@ isc.sans.edu
 news.risky.biz
 www.zetter-zeroday.com
 srslyriskybiz.substack.com
+www.youtube.com
 ```
 After the first run, check the routine logs for any other domains your RSS feeds redirect through and add them.
 
