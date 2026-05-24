@@ -66,6 +66,29 @@ nvd:
   min_cvss: 7.0
   results_per_page: 200
 
+# YouTube channels — transcript text is fetched for each recent video and used as body.
+# Requires www.youtube.com in the network allowlist.
+# Skips channels already covered via RSS (e.g. SANS ISC).
+youtube_channels:
+  - name: cisa
+    channel_id: UCxyq9roe-npgzrVwbpoAy0A
+    description: "CISA — official US cybersecurity advisories and guidance"
+  - name: mandiant
+    channel_id: UCexu0DP7VKdDByusuTA53FQ
+    description: "Mandiant (Google Cloud) — APT research and threat intelligence"
+  - name: crowdstrike
+    channel_id: UCsRdY9CtEVWTNO4ulwfzqVA
+    description: "CrowdStrike — adversary intelligence and incident response"
+  - name: unit42_paloalto
+    channel_id: UCvJQO11qoCHYwZ4Ah4Jf-Tw
+    description: "Unit 42 by Palo Alto Networks — threat research"
+  - name: the_record_news
+    channel_id: UCuBJQyzTWDP3C-BQTPG4DaQ
+    description: "The Record from Recorded Future News — cybersecurity journalism"
+  - name: cisco_talos
+    channel_id: UCPZ1DtzQkStYBSG3GTNoyfg
+    description: "Cisco Talos Intelligence Group — threat research"
+
 # Curated vendor/product list for entity matching during clustering.
 vendors:
   - Microsoft
