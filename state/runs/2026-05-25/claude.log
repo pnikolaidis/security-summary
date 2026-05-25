@@ -1,0 +1,166 @@
+=== claude.log — 2026-05-25 ===
+
+INBOX SUMMARY
+  Total collected : 10 items (news=7, hn=3)
+  New after dedup : 10  [first run; seen.jsonl was empty before this run]
+  Repeats skipped : 0
+
+PRE-FILTER: NON-SECURITY AND EVENT ITEMS DROPPED
+  DROPPED — hn | "A fundamental principle of aeronautical engineering has been overturned"
+    url: https://www.wired.com/story/a-fundamental-principle-of-aeronautical-engineering-has-been-overturned
+    reason: off-topic for security digest (no CVEs, no vendors, title unrelated to cybersecurity)
+    engagement: 213.5 (would have scored high, but not a security story)
+
+  DROPPED — hn | "When (if ever) it's appropriate to make jokes before the US Supreme Court"
+    url: https://www.scotusblog.com/2026/05/when-if-ever-its-appropriate-to-make-jokes-take-selfies-or-curse-before-the-court
+    reason: off-topic (legal/humor, no security relevance)
+    engagement: 90.5
+
+  DROPPED — hn | "The seed oil panic is hurting my cardiac patients"
+    url: https://www.statnews.com/2026/05/22/seed-oils-healthy-fats-tallow-fact-check-cardiac-health
+    reason: off-topic (health/nutrition, no security relevance)
+    engagement: 267.5  [highest engagement of any item — still dropped]
+
+  DROPPED — news | "Infosecurity Europe"
+    url: https://www.darkreading.com/events/infosecurity-europe
+    reason: future conference listing (timestamp 2026-06-02), not a news item
+
+  DROPPED — news | "[Virtual Event] Anatomy of a Data Breach: What to Do if it Happens to You"
+    url: https://www.darkreading.com/events/anatomy-of-a-data-breach-what-to-do-if-it-happens-to-you
+    reason: future webinar listing (timestamp 2026-06-18), not a news item
+
+  Security-relevant items remaining: 5
+
+CLUSTERING
+  No shared CVE IDs between any pair of items.
+  No canonical URL overlaps.
+  Fuzzy title similarity (token_set_ratio): all pairs scored < 50 — no fuzzy clusters.
+  Shared vendor tokens within 24h: no pair shares ≥2 vendor tokens.
+  Result: 5 singleton clusters (A through E).
+
+  Cluster A: Ghost CMS SQL injection
+    member : https://www.bleepingcomputer.com/news/security/ghost-cms-sql-injection-flaw-exploited-in-large-scale-clickfix-campaign
+    CVEs   : [CVE-2026-26980]
+    vendors: []
+    family : news  |  source: bleepingcomputer
+    ts     : 2026-05-24T14:12:32+00:00
+
+  Cluster B: Lazarus RemotePE RAT
+    member : https://thehackernews.com/2026/05/lazarus-deploys-remotepe-memory-only.html
+    CVEs   : []
+    vendors: []
+    family : news  |  source: thehackernews
+    ts     : 2026-05-25T09:32:54+00:00
+
+  Cluster C: TrapDoor supply chain
+    member : https://thehackernews.com/2026/05/trapdoor-supply-chain-attack-spreads.html
+    CVEs   : []
+    vendors: []
+    family : news  |  source: thehackernews
+    ts     : 2026-05-25T05:59:13+00:00
+
+  Cluster D: Risky Bulletin (Mythos + GitHub npm + Dutch raids)
+    member : https://news.risky.biz/risky-bulletin-mythos-found-thousands-of-critical-bugs
+    CVEs   : []
+    vendors: [GitHub]
+    family : news  |  source: risky_business_news
+    ts     : 2026-05-25T04:36:33+00:00
+
+  Cluster E: Wireshark 4.6.6
+    member : https://isc.sans.edu/diary/rss/33010
+    CVEs   : []
+    vendors: []
+    family : news  |  source: sans_isc
+    ts     : 2026-05-24T16:38:21+00:00
+
+SCORING
+  Reference time : 2026-05-25T11:07:02 UTC
+  Weights        : diversity=2.0, recency=1.5, engagement=1.0, severity=2.5, novelty=1.5
+  Engagement     : all 5 news items have engagement=0.0 → z-score=0 for all
+  Featured.jsonl : absent (first run) → cluster_seen_in_last_7d=0 for all → no novelty penalty
+
+  Cluster A (Ghost CMS CVE-2026-26980):
+    hours_since_newest : 20.9h
+    distinct_families  : 1
+    diversity  = 2.0 * log(1+1)         = 1.386
+    recency    = 1.5 * exp(-20.9/24)    = 0.627
+    engagement = 1.0 * 0                = 0.000
+    severity   = 2.5 * 0.5              = 1.250
+      [+0.5 "actively exploited": body describes large-scale active exploitation campaign]
+    novelty    = 1.5 * 0                = 0.000
+    TOTAL SCORE = 3.263  ← RANK 1 ✓ SELECTED
+
+  Cluster B (Lazarus RemotePE):
+    hours_since_newest : 1.57h
+    distinct_families  : 1
+    diversity  = 2.0 * log(1+1)         = 1.386
+    recency    = 1.5 * exp(-1.57/24)    = 1.406
+    engagement = 0.000
+    severity   = 2.5 * 0                = 0.000
+      [no exact phrase match; nation-state actor/financial target noted but not in phrase list]
+    novelty    = 0.000
+    TOTAL SCORE = 2.792  ← RANK 2 ✓ SELECTED
+
+  Cluster C (TrapDoor supply chain):
+    hours_since_newest : 5.13h
+    distinct_families  : 1
+    diversity  = 1.386
+    recency    = 1.5 * exp(-5.13/24)    = 1.212
+    engagement = 0.000
+    severity   = 0.000
+      [active credential-stealing campaign; "in the wild" not exact in available body text]
+    novelty    = 0.000
+    TOTAL SCORE = 2.598  ← RANK 3 ✓ SELECTED
+
+  Cluster D (Risky Bulletin):
+    hours_since_newest : 6.51h
+    distinct_families  : 1
+    diversity  = 1.386
+    recency    = 1.5 * exp(-6.51/24)    = 1.143
+    engagement = 0.000
+    severity   = 0.000
+    novelty    = 0.000
+    TOTAL SCORE = 2.529  ← RANK 4 ✓ SELECTED
+
+  Cluster E (Wireshark 4.6.6):
+    hours_since_newest : 18.48h
+    distinct_families  : 1
+    diversity  = 1.386
+    recency    = 1.5 * exp(-18.48/24)   = 0.697
+    engagement = 0.000
+    severity   = 0.000
+      [patch release; no exploit mentioned; no phrase match]
+    novelty    = 0.000
+    TOTAL SCORE = 2.083  ← RANK 5 ✓ SELECTED
+
+DIVERSITY FILTER (greedy selection pass)
+  Pick 1 → Cluster A (Ghost CMS): selected. No prior picks.
+  Pick 2 → Cluster B (Lazarus):   no shared CVEs with A; no shared ≥2 vendors. Selected.
+  Pick 3 → Cluster C (TrapDoor):  no CVE overlap; no vendor overlap. Selected.
+  Pick 4 → Cluster D (Risky):     vendor=[GitHub]; no CVE overlap; only 1 shared vendor → passes. Selected.
+  Pick 5 → Cluster E (Wireshark): no CVE or vendor overlap. Selected.
+  All 5 candidate clusters selected.
+
+DEDUP NOTES
+  First run: seen.jsonl was empty before src.collect ran.
+  All 10 items freshly written to seen.jsonl by collector.
+  No URL-level repeats possible on first run.
+  featured.jsonl will be written by src.deliver (or should be written after selection).
+
+COLLECTOR FAILURES (non-fatal)
+  reddit          : skip — missing credentials (REDDIT_CLIENT_ID etc. not set)
+  securityweek    : 403 Forbidden from www.securityweek.com/feed/
+  github_advisories: 406 Not Acceptable from github.com/advisories.atom
+  bluesky (all)   : 403 Forbidden from public.api.bsky.app (5 queries)
+  project_zero    : 403 Forbidden from projectzero.google/feed.xml
+  cisa advisories : 403 Forbidden from www.cisa.gov/cybersecurity-advisories/all.xml
+  mastodon (all)  : 422 Unprocessable Entity from infosec.exchange (5 tags)
+  nvd             : returned 0 results (no new CVEs in 24h window without API key rate-limit lift)
+  cisa kev        : returned 0 results
+  msrc            : redirected to microsoft.com HTML page (no feed items in window)
+
+OUTPUT FILES
+  state/runs/2026-05-25/summary.md  — email body with 5 stories + signal stats
+  state/runs/2026-05-25/script.txt  — TTS script (~820 words; 5 stories + open/close)
+  state/runs/2026-05-25/claude.log  — this file
+  state/runs/2026-05-25/digest.mp3  — to be written by src.deliver
