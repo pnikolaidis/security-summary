@@ -45,7 +45,7 @@ def _from_field(from_name: str | None) -> str:
     raw = os.environ.get("EMAIL_FROM", "onboarding@resend.dev").strip()
     if "<" in raw and ">" in raw:
         return raw
-    name = from_name or "Security Digest"
+    name = f"{from_name} - Security Summary" if from_name else "Security Summary"
     return f"{name} <{raw}>"
 
 
