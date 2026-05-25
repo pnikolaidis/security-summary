@@ -13,7 +13,7 @@ from pathlib import Path
 import yaml
 
 from src.collectors import run_collector
-from src.collectors import bluesky, cisa, hackernews, mastodon, nvd, reddit, rss
+from src.collectors import bluesky, cisa, hackernews, mastodon, nvd, reddit, rss, youtube
 from src.dedup import filter_new, load_seen, save_seen
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -29,7 +29,12 @@ COLLECTORS = {
     "reddit": reddit.collect,
     "mastodon": mastodon.collect,
     "bluesky": bluesky.collect,
+    "youtube": youtube.collect,
 }
+
+# Per-collector timeouts (seconds). YouTube fetches transcripts via blocking HTTP,
+# needs more headroom than the default 20s.
+_TIMEOUTS: dict[str, float] = {"youtube": 90.0}
 
 
 async def main() -> int:
@@ -40,7 +45,10 @@ async def main() -> int:
     )
     config = yaml.safe_load(CONFIG_PATH.read_text())
 
-    tasks = [run_collector(name, fn, config) for name, fn in COLLECTORS.items()]
+    tasks = [
+        run_collector(name, fn, config, timeout=_TIMEOUTS.get(name, 20.0))
+        for name, fn in COLLECTORS.items()
+    ]
     results = await asyncio.gather(*tasks)
     all_items = [it for batch in results for it in batch]
 

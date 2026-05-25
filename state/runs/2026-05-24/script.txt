@@ -1,0 +1,17 @@
+Andi here with your Sunday catch-up. Three stories surfaced today — one active exploit, one tool patch, and one supply chain compromise. Let's get into it.
+
+Story one: Ghost CMS is under active attack right now.
+
+A critical SQL injection vulnerability — CVE-2026-26980 — in Ghost CMS, the open-source publishing platform, is being exploited at scale. Attackers are injecting malicious JavaScript into Ghost-powered websites. When visitors load an infected page, that JavaScript triggers what's called a ClickFix attack — a social engineering trick that convinces users to run malware on their own machines. The campaign is described as large-scale and automated, not targeted. That means if you're running an unpatched Ghost instance, your readers are the ones at risk, not just your server. Ghost administrators should patch immediately or take the site offline until they can.
+
+Story two: Wireshark shipped version 4.6.6 today with a security fix.
+
+Wireshark is the packet analysis tool used by security teams, network engineers, and developers around the world. Version 4.6.6 patches one vulnerability and fixes eleven bugs. The CVE details for the patched flaw weren't fully disclosed yet when this digest was collected, but here's the thing about Wireshark: it's a tool that routinely processes raw network traffic from potentially hostile sources. An exploitable bug in the analyzer itself inverts the whole security equation — your defensive tool becomes a liability. Check your package manager or grab the update directly from the Wireshark website.
+
+Story three: A supply chain attack hit the Laravel PHP ecosystem.
+
+Attackers compromised the Laravel Lang localization packages — a widely used set of libraries that help PHP developers build multilingual applications. The method was clever: they abused GitHub's version tagging system to push malicious releases into the Composer package manager, which PHP developers use to pull in dependencies. The tampered packages contained credential-stealing malware that ran silently during installation or application startup, harvesting API keys, database credentials, and other secrets from developer machines and CI pipelines.
+
+If you're a PHP developer who uses Laravel, here's what to do: check your Composer lockfile for unexpected version numbers on any Laravel Lang packages, rotate any credentials that were accessible in your development environment, and update to verified clean versions of the packages. Supply chain attacks are particularly dangerous because they exploit the trust that developers have built into their daily tooling. You're not clicking a phishing link — you're running a command you run every day.
+
+That's your digest for May 24th. One active exploit to patch, one tool update to apply, and one credential audit to run if you're in the PHP world. Stay safe out there.

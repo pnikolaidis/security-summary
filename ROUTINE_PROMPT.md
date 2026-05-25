@@ -134,13 +134,24 @@ uv run python -m src.podcast_feed
 ```
 Regenerates `docs/feed.xml` from `state/runs/*/` (most recent 60 episodes). MP3 enclosure URLs point at raw.githubusercontent.com, so the audio file doesn't get duplicated on disk. Also touches `docs/index.html` and `docs/.nojekyll` so GitHub Pages serves the feed cleanly.
 
-### 9. Commit + push
+### 9. Commit + push **to `main`** (not a feature branch)
+By default Claude Code on the web creates a `claude/`-prefixed feature branch for each session. **This routine does not want that** — the digest pipeline needs every run's artifacts to land on `main` so the podcast feed (`docs/feed.xml`, served via GitHub Pages from `main`) and the cross-day dedup state (`state/featured.jsonl`) persist across runs. If runs go to feature branches, the feed stays empty forever.
+
+Do this exactly:
 ```bash
+git fetch origin main
+git checkout main
+git pull --rebase origin main
 git add state/ docs/
 git commit -m "digest: YYYY-MM-DD"
-git push -u origin HEAD
+git push origin main
 ```
-If a push race occurs (previous run hasn't landed), `git pull --rebase` then retry once.
+If the push is rejected with `host_not_allowed` or a permission error, the routine doesn't have **Allow unrestricted branch pushes** enabled. Stop and surface the error — do not silently fall back to a feature branch (that defeats the whole pipeline).
+
+If a push race occurs (previous run hasn't landed yet), the `pull --rebase` brings it in; rerun the push. If rebase conflicts on `state/seen.jsonl` or `state/featured.jsonl`, resolve by taking the union of both files' JSON-lines and dedup-by-key (`url_hash` and `date+representative_url` respectively).
+
+## Scope discipline
+This routine has exactly one job: produce and deliver the day's digest, then commit the artifacts. **Do not** add features, refactor code, add new collectors, change `config/`, modify `pyproject.toml`, or commit anything outside `state/` and `docs/`. If a step in this prompt seems broken or missing, log the gap to `state/runs/<date>/claude.log` and proceed with the deliverable — don't fix it in this session. The user reviews `claude.log` and decides what to change.
 
 ## Failure handling
 - Per-collector failures are non-fatal (handled by `src/collectors/__init__.py`).
