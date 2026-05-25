@@ -17,12 +17,12 @@ def _restore_env():
 
 def test_from_field_wraps_bare_email_with_persona_name():
     os.environ["EMAIL_FROM"] = "onboarding@resend.dev"
-    assert _from_field("Allie") == "Allie <onboarding@resend.dev>"
+    assert _from_field("Allie") == "Allie - Security Summary <onboarding@resend.dev>"
 
 
 def test_from_field_falls_back_to_default_when_no_persona():
     os.environ["EMAIL_FROM"] = "onboarding@resend.dev"
-    assert _from_field(None) == "Security Digest <onboarding@resend.dev>"
+    assert _from_field(None) == "Security Summary <onboarding@resend.dev>"
 
 
 def test_from_field_respects_explicit_name_email_override():
