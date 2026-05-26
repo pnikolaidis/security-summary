@@ -1,0 +1,330 @@
+{
+  "run_date": "2026-05-26",
+  "collection_stats": {
+    "total_fetched": 28,
+    "new_post_dedup": 27,
+    "repeats": 1,
+    "per_source_family": {"news": 18, "hn": 9, "youtube": 1}
+  },
+  "source_failures": [
+    {"source": "reddit", "reason": "missing_credentials", "fatal": false},
+    {"source": "securityweek_rss", "reason": "HTTP 403", "fatal": false},
+    {"source": "darkreading_rss", "reason": "HTTP 404", "fatal": false},
+    {"source": "cisa_advisories_xml", "reason": "HTTP 403", "fatal": false},
+    {"source": "github_advisories_atom", "reason": "HTTP 406", "fatal": false},
+    {"source": "bluesky_all_queries", "reason": "HTTP 403 (all 5 queries)", "fatal": false},
+    {"source": "mastodon_all_tags", "reason": "HTTP 422 (all 5 tags)", "fatal": false},
+    {"source": "project_zero_feed", "reason": "HTTP 403", "fatal": false},
+    {"source": "nvd", "reason": "error (empty message, likely rate limit or timeout)", "fatal": false}
+  ],
+  "cross_day_dedup": {
+    "featured_jsonl_entries": 3,
+    "classifications": [
+      {
+        "today_url": "https://thehackernews.com/2026/05/ghost-cms-cve-2026-26980-exploited-to.html",
+        "today_title": "Ghost CMS CVE-2026-26980 Exploited to Hijack 700+ Sites for ClickFix Attacks",
+        "matched_featured_date": "2026-05-24",
+        "matched_featured_title": "Ghost CMS SQL Injection CVE-2026-26980 Exploited in ClickFix Campaign",
+        "shared_cves": ["CVE-2026-26980"],
+        "new_source_families": [],
+        "classification": "same",
+        "action": "dropped_before_scoring"
+      },
+      {
+        "cluster": "TeamPCP Supply Chain",
+        "compared_to": "Laravel Lang Packages Hijacked — Supply Chain Credential-Stealing Malware (2026-05-24)",
+        "shared_cves": [],
+        "shared_vendors": ["GitHub"],
+        "note": "Only 1 shared vendor token, different threat actor and ecosystem; no CVE overlap",
+        "classification": "different",
+        "action": "scored_normally"
+      }
+    ]
+  },
+  "clustering": {
+    "near_duplicate_merge": {
+      "cluster": "TeamPCP Supply Chain",
+      "merged_urls": [
+        "https://isc.sans.edu/diary/rss/33016",
+        "https://isc.sans.edu/diary/rss/33014"
+      ],
+      "reason": "token_set_ratio=100 on identical title within 48h; same content_hash"
+    },
+    "non_security_hn_items_excluded_from_top5_consideration": [
+      "Taking a walk may lead to more creativity (2014) — no security relevance",
+      "Show HN: OpenBrief local video summarizer — no security relevance",
+      "Launch HN: Chert iMessage API — no security relevance",
+      "Microsoft pulls plug on 244-acre data center (2025) — not a security event"
+    ],
+    "note": "Non-security HN items were scored per algorithm; their low/negative z-scores and absence of severity boosts kept them outside top 5. The creativity walk story scored 2.407 (z=0.269, 16.6h ago) — above some security stories but excluded editorially as clearly off-topic."
+  },
+  "hn_engagement_normalization": {
+    "n": 8,
+    "values": [144.5, 182.5, 392.0, 71.5, 179.0, 1092.0, 148.0, 261.0],
+    "mean": 308.8125,
+    "std": 309.1,
+    "z_scores": {
+      "144.5 (HIPAA)": -0.531,
+      "182.5 (Apple CVE)": -0.409,
+      "392.0 (creativity walk)": 0.269,
+      "71.5 (OpenBrief)": -0.768,
+      "179.0 (Yoti)": -0.420,
+      "1092.0 (California Linux)": 2.534,
+      "148.0 (Chert)": -0.520,
+      "261.0 (MS datacenter)": -0.155
+    }
+  },
+  "clusters_scored": [
+    {
+      "id": "B",
+      "title": "KnowledgeDeliver LMS CVE-2026-5426 Zero-Day -> Godzilla + Cobalt Strike",
+      "source_families": ["news"],
+      "cves": ["CVE-2026-5426"],
+      "vendors": [],
+      "newest_timestamp": "2026-05-26T05:19:38Z",
+      "hours_since_newest": 5.77,
+      "score_breakdown": {
+        "diversity": 1.386,
+        "recency": 1.179,
+        "engagement": 0.0,
+        "severity": 1.250,
+        "novelty_penalty": 0.0
+      },
+      "total_score": 3.815,
+      "severity_triggers": ["zero-day"],
+      "selected": true,
+      "rank": 2
+    },
+    {
+      "id": "C",
+      "title": "Netherlands Seizes 800 Servers, Arrests 2 for Aiding Russian Cyberattacks",
+      "source_families": ["news"],
+      "cves": [],
+      "vendors": [],
+      "newest_timestamp": "2026-05-25T13:21:49Z",
+      "hours_since_newest": 21.73,
+      "score_breakdown": {
+        "diversity": 1.386,
+        "recency": 0.607,
+        "engagement": 0.0,
+        "severity": 0.0,
+        "novelty_penalty": 0.0
+      },
+      "total_score": 1.993,
+      "selected": false,
+      "drop_reason": "Outscored by 10 other clusters; age (~22h) and single news source drag score down"
+    },
+    {
+      "id": "D",
+      "title": "CISA Orders Feds to Patch Actively Exploited Drupal Vulnerability",
+      "source_families": ["news"],
+      "cves": [],
+      "vendors": ["Drupal"],
+      "newest_timestamp": "2026-05-26T08:46:45Z",
+      "hours_since_newest": 2.31,
+      "score_breakdown": {
+        "diversity": 1.386,
+        "recency": 1.362,
+        "engagement": 0.0,
+        "severity": 1.250,
+        "novelty_penalty": 0.0
+      },
+      "total_score": 3.998,
+      "severity_triggers": ["actively exploited"],
+      "selected": true,
+      "rank": 1
+    },
+    {
+      "id": "E",
+      "title": "7-Eleven Data Breach Exposes 185,000 People (ShinyHunters)",
+      "source_families": ["news"],
+      "cves": [],
+      "vendors": [],
+      "newest_timestamp": "2026-05-26T07:01:12Z",
+      "hours_since_newest": 4.07,
+      "score_breakdown": {
+        "diversity": 1.386,
+        "recency": 1.266,
+        "engagement": 0.0,
+        "severity": 0.0,
+        "novelty_penalty": 0.0
+      },
+      "total_score": 2.652,
+      "selected": false,
+      "drop_reason": "Outscored by clusters D, B, J, O; no severity boost; breach story with no active exploitation signal"
+    },
+    {
+      "id": "F",
+      "title": "FBI Warns of Kali365 Phishing Service Targeting Microsoft 365 Accounts",
+      "source_families": ["news"],
+      "cves": [],
+      "vendors": ["Microsoft"],
+      "newest_timestamp": "2026-05-25T12:45:54Z",
+      "hours_since_newest": 22.32,
+      "score_breakdown": {
+        "diversity": 1.386,
+        "recency": 0.592,
+        "engagement": 0.0,
+        "severity": 0.0,
+        "novelty_penalty": 0.0
+      },
+      "total_score": 1.978,
+      "selected": false,
+      "drop_reason": "Age ~22h reduces recency significantly; no severity keywords; outscored by 9 clusters"
+    },
+    {
+      "id": "G",
+      "title": "CVE-2026-28952: Apple macOS 26.5 Kernel Vulnerability Found by Claude",
+      "source_families": ["hn"],
+      "cves": ["CVE-2026-28952"],
+      "vendors": ["Apple", "macOS"],
+      "newest_timestamp": "2026-05-25T23:40:40Z",
+      "hours_since_newest": 11.41,
+      "score_breakdown": {
+        "diversity": 1.386,
+        "recency": 0.933,
+        "engagement": -0.409,
+        "severity": 0.0,
+        "novelty_penalty": 0.0
+      },
+      "total_score": 1.910,
+      "notes": "No CVSS score in item; no severity keywords present; negative engagement z-score (below HN mean). Interesting story (AI-found kernel CVE) but scored too low for top 5.",
+      "selected": false,
+      "drop_reason": "Negative engagement z-score, no severity boost, missing CVSS context"
+    },
+    {
+      "id": "H",
+      "title": "Iranian Hackers Deploy MiniFast and MiniJunk V2 via Phishing and SEO Poisoning",
+      "source_families": ["news"],
+      "cves": [],
+      "vendors": [],
+      "newest_timestamp": "2026-05-26T07:13:05Z",
+      "hours_since_newest": 3.87,
+      "score_breakdown": {
+        "diversity": 1.386,
+        "recency": 1.277,
+        "engagement": 0.0,
+        "severity": 0.0,
+        "novelty_penalty": 0.0
+      },
+      "total_score": 2.663,
+      "selected": false,
+      "drop_reason": "Outscored by O (2.688); no severity keywords; narrowly missed 5th slot"
+    },
+    {
+      "id": "I",
+      "title": "TeamPCP Supply Chain Campaign: Activity Through 2026-05-24",
+      "source_families": ["news"],
+      "cves": [],
+      "vendors": ["Microsoft", "GitHub"],
+      "newest_timestamp": "2026-05-25T13:26:06Z",
+      "hours_since_newest": 21.65,
+      "score_breakdown": {
+        "diversity": 1.386,
+        "recency": 0.609,
+        "engagement": 0.0,
+        "severity": 0.0,
+        "novelty_penalty": 0.0
+      },
+      "total_score": 1.995,
+      "notes": "Two near-duplicate sans_isc entries (different diary IDs, identical content hash) merged into one cluster. Cross-day dedup against yesterday's Laravel supply chain: different threat actor, different ecosystem, only 1 shared vendor (GitHub) — classified 'different'.",
+      "selected": false,
+      "drop_reason": "Age ~22h; outscored by 8 clusters"
+    },
+    {
+      "id": "J",
+      "title": "CERT-In Mandates 12-Hour Patching for Internet-Facing Flaws Amid AI-Assisted Attacks",
+      "source_families": ["news"],
+      "cves": [],
+      "vendors": [],
+      "newest_timestamp": "2026-05-26T09:13:02Z",
+      "hours_since_newest": 1.87,
+      "score_breakdown": {
+        "diversity": 1.386,
+        "recency": 1.387,
+        "engagement": 0.0,
+        "severity": 0.0,
+        "novelty_penalty": 0.0
+      },
+      "total_score": 2.773,
+      "selected": true,
+      "rank": 3
+    },
+    {
+      "id": "K",
+      "title": "Possible ACR Stealer From Page Impersonating Claude",
+      "source_families": ["news"],
+      "cves": [],
+      "vendors": [],
+      "newest_timestamp": "2026-05-26T00:01:48Z",
+      "hours_since_newest": 11.06,
+      "score_breakdown": {
+        "diversity": 1.386,
+        "recency": 0.947,
+        "engagement": 0.0,
+        "severity": 0.0,
+        "novelty_penalty": 0.0
+      },
+      "total_score": 2.333,
+      "selected": false,
+      "drop_reason": "Outscored by 5 clusters; short sans_isc body with no CVE or severity keyword"
+    },
+    {
+      "id": "N",
+      "title": "California Moves to Exempt Linux from Age-Verification Law After Backlash",
+      "source_families": ["hn"],
+      "cves": [],
+      "vendors": ["Linux"],
+      "newest_timestamp": "2026-05-25T18:19:58Z",
+      "hours_since_newest": 16.75,
+      "score_breakdown": {
+        "diversity": 1.386,
+        "recency": 0.747,
+        "engagement": 2.534,
+        "severity": 0.0,
+        "novelty_penalty": 0.0
+      },
+      "total_score": 4.667,
+      "notes": "Ranked #1 by algorithm due to very high HN engagement (897 pts, 390 comments, z=2.534). Policy/privacy story; included with framing around OS-level security architecture implications.",
+      "selected": true,
+      "rank": 5
+    },
+    {
+      "id": "O",
+      "title": "Microsoft: Domain Controller Lookup May Fail on Windows Server 2016 After KB5087537",
+      "source_families": ["news"],
+      "cves": [],
+      "vendors": ["Microsoft", "Windows"],
+      "newest_timestamp": "2026-05-26T07:41:25Z",
+      "hours_since_newest": 3.39,
+      "score_breakdown": {
+        "diversity": 1.386,
+        "recency": 1.302,
+        "engagement": 0.0,
+        "severity": 0.0,
+        "novelty_penalty": 0.0
+      },
+      "total_score": 2.688,
+      "selected": true,
+      "rank": 4
+    }
+  ],
+  "top5_selection_order": [
+    {"rank": 1, "cluster": "N (California Linux)", "score": 4.667, "diversity_check": "pass — vendors:[Linux], cves:[]"},
+    {"rank": 2, "cluster": "D (CISA Drupal)", "score": 3.998, "diversity_check": "pass — vendors:[Drupal], cves:[], no overlap with N"},
+    {"rank": 3, "cluster": "B (KnowledgeDeliver zero-day)", "score": 3.815, "diversity_check": "pass — vendors:[], cves:[CVE-2026-5426], no CVE overlap with picked"},
+    {"rank": 4, "cluster": "J (CERT-In patching)", "score": 2.773, "diversity_check": "pass — vendors:[], cves:[]"},
+    {"rank": 5, "cluster": "O (Windows Server 2016)", "score": 2.688, "diversity_check": "pass — vendors:[Microsoft,Windows], cves:[], no CVE overlap required for filter"}
+  ],
+  "diversity_filter_note": "Filter triggers only when cluster shares >=2 vendor tokens AND >=1 CVE with an already-picked cluster. No pair among the top 5 satisfies both conditions simultaneously.",
+  "notable_drops": [
+    "Ghost CMS CVE-2026-26980 (THN, today): dropped as cross-day 'same' — shared CVE with yesterday's rank-1 pick, same source family (news), no new development type",
+    "Netherlands 800 servers (krebs, ~22h ago): scored 1.993 — editorially noteworthy but algorithm penalized age and single-source",
+    "Iranian APT MiniFast/MiniJunk (THN, 3.87h): scored 2.663, narrowly lost 5th slot to Windows Server story (2.688)"
+  ],
+  "deliver_persona": {
+    "weekday": 1,
+    "name": "Adam Insight",
+    "voice": "onyx"
+  }
+}

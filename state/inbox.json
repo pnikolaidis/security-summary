@@ -1,254 +1,519 @@
 {
   "stats": {
-    "total_fetched": 13,
-    "new": 13,
-    "repeats": 0,
+    "total_fetched": 28,
+    "new": 27,
+    "repeats": 1,
     "per_source_family": {
-      "news": 5,
-      "hn": 8
+      "news": 18,
+      "hn": 9,
+      "youtube": 1
     }
   },
   "items": [
     {
+      "source": "krebs",
+      "source_family": "news",
+      "url": "https://krebsonsecurity.com/2026/05/netherlands-seizes-800-servers-arrests-2-for-aiding-cyberattacks",
+      "title": "Netherlands Seizes 800 Servers, Arrests 2 for Aiding Cyberattacks",
+      "body": "Authorities in the Netherlands have arrested the co-owners of two related Internet hosting companies for operating IT infrastructure used by Russia to carry out cyberattacks, influence operations and disinformation campaigns inside the European Union. The two men were the focus of a 2025 KrebsOnSecurity story about how their hosting companies had assumed control over the technical infrastructure of Stark Industries Solutions, an Internet service provider sanctioned last year by the EU as a frequent staging ground for cyber mischief from Russia's intelligence agencies.",
+      "author": "BrianKrebs",
+      "timestamp": "2026-05-25T13:21:49+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "krebs"
+      },
+      "url_hash": "cc35a78e34aef13e",
+      "content_hash": "1d35faf76dfc551b"
+    },
+    {
       "source": "bleepingcomputer",
       "source_family": "news",
-      "url": "https://www.bleepingcomputer.com/news/security/ghost-cms-sql-injection-flaw-exploited-in-large-scale-clickfix-campaign",
-      "title": "Ghost CMS SQL injection flaw exploited in large-scale ClickFix campaign",
-      "body": "A large-scale campaign is exploiting a critical SQL injection vulnerability (CVE-2026-26980) in Ghost CMS to inject malicious JavaScript code that triggers ClickFix attack flows. [...]",
-      "author": "Bill Toulas",
-      "timestamp": "2026-05-24T14:12:32+00:00",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-drupal-vulnerability",
+      "title": "CISA orders feds to patch actively exploited Drupal vulnerability",
+      "body": "CISA has given U.S. government agencies until Wednesday evening to secure their servers against an SQL injection vulnerability in the Drupal content management system (CMS) that it flagged as actively exploited. [...]",
+      "author": "Sergiu Gatlan",
+      "timestamp": "2026-05-26T08:46:45+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Drupal"
+      ],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "9b55e235594851ac",
+      "content_hash": "b2363ef1603ef33d"
+    },
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-domain-controller-lookup-may-fail-on-windows-server-2016",
+      "title": "Microsoft: Domain Controller lookup may fail on Windows Server 2016",
+      "body": "Microsoft has confirmed a new known issue affecting Windows Server 2016 systems that causes domain controller lookups to fail after installing the KB5087537 May 2026 security update. [...]",
+      "author": "Sergiu Gatlan",
+      "timestamp": "2026-05-26T07:41:25+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Microsoft",
+        "Windows"
+      ],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "0f56d6989aa25daf",
+      "content_hash": "0239e6b583cdd0fb"
+    },
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/security/7-eleven-data-breach-exposes-personal-information-of-185-000-people",
+      "title": "7-Eleven data breach exposes personal information of 185,000 people",
+      "body": "The ShinyHunters extortion gang stole the personal information of over 183,000 people after hacking the systems of convenience store chain giant 7-Eleven in April, according to data breach notification service Have I Been Pwned. [...]",
+      "author": "Sergiu Gatlan",
+      "timestamp": "2026-05-26T07:01:12+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "58815938a73b6b08",
+      "content_hash": "d79e35fac87540ca"
+    },
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropics-restricted-claude-mythos-model-may-be-coming-to-claude-code",
+      "title": "Anthropic\u2019s restricted Claude Mythos model may be coming to Claude Code",
+      "body": "Anthropic appears to be preparing for the public rollout of the Mythos model, which was announced in April as a restricted model that poses major security risks to private and public software. [...]",
+      "author": "Mayank Parmar",
+      "timestamp": "2026-05-25T17:07:33+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "e4812137904b6105",
+      "content_hash": "2e65fc6e5bd143ca"
+    },
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/security/fbi-warns-of-kali365-phishing-service-targeting-microsoft-365-accounts",
+      "title": "FBI warns of Kali365 phishing service targeting Microsoft 365 accounts",
+      "body": "The FBI is warning about the Kali365 phishing-as-a-service platform (PhaaS) that is used to hijack Microsoft 365 accounts by abusing OAuth device code authentication to steal session tokens and bypass multi-factor authentication (MFA). [...]",
+      "author": "Lawrence Abrams",
+      "timestamp": "2026-05-25T12:45:54+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Microsoft"
+      ],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "383d45b5ba72f377",
+      "content_hash": "0c4ae563913bbadf"
+    },
+    {
+      "source": "thehackernews",
+      "source_family": "news",
+      "url": "https://thehackernews.com/2026/05/mfa-prompt-bombing-why-your-second.html",
+      "title": "MFA Prompt Bombing: Why Your Second Factor Isn't Saving You",
+      "body": "Multi-factor authentication (MFA) was supposed to close a critical gap in identity security. It meant that, even if an attacker possessed the account credentials, they couldn't log in without the second factor. While that logic was sound, attackers have now figured out that they don't need to steal the second factor: they just need the user to hand it over.\n\nIf your workforce authenticates with",
+      "author": "info@thehackernews.com (The Hacker News)",
+      "timestamp": "2026-05-26T10:30:00+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "thehackernews"
+      },
+      "url_hash": "a21e14a08de10f17",
+      "content_hash": "32e0ad3016c6499e"
+    },
+    {
+      "source": "thehackernews",
+      "source_family": "news",
+      "url": "https://thehackernews.com/2026/05/cert-in-mandates-12-hour-patching-for.html",
+      "title": "CERT-In Mandates 12-Hour Patching for Internet-Facing Flaws Amid AI-Assisted Attacks",
+      "body": "The Indian Computer Emergency Response Team (CERT-In) has issued new guidelines requiring organizations to patch critical security vulnerabilities in internet-exposed systems within 12 hours of being flagged where \"feasible\" to safeguard against potential threats stemming from threat actors' abuse of artificial intelligence (AI) tools and large language models (LLMs) to automate vulnerability",
+      "author": "info@thehackernews.com (The Hacker News)",
+      "timestamp": "2026-05-26T09:13:02+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "thehackernews"
+      },
+      "url_hash": "97b44aaa392db065",
+      "content_hash": "9270beff20811be3"
+    },
+    {
+      "source": "thehackernews",
+      "source_family": "news",
+      "url": "https://thehackernews.com/2026/05/iranian-hackers-deploy-minifast-and.html",
+      "title": "Iranian Hackers Deploy MiniFast and MiniJunk V2 via Phishing and SEO Poisoning",
+      "body": "The Iranian state-sponsored threat actor known as Nimbus Manticore (aka Screening Serpens and UNC1549) has been attributed to a fresh campaign using lures impersonating organizations in the aviation and software sectors across the U.S., Europe, and the Middle East following the joint U.S.-Israeli military campaign against the country in late February 2026.\n\nThe activity, besides embracing",
+      "author": "info@thehackernews.com (The Hacker News)",
+      "timestamp": "2026-05-26T07:13:05+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "thehackernews"
+      },
+      "url_hash": "c93bc112ac49e56f",
+      "content_hash": "f3b8185d0dda2749"
+    },
+    {
+      "source": "thehackernews",
+      "source_family": "news",
+      "url": "https://thehackernews.com/2026/05/knowledgedeliver-lms-flaw-exploited-to.html",
+      "title": "KnowledgeDeliver LMS Flaw Exploited to Deploy Godzilla and Cobalt Strike",
+      "body": "A now-patched high-severity security flaw affecting Digital Knowledge KnowledgeDeliver, a Learning Management System (LMS) popular in Japan, was exploited as a zero-day to deliver the Godzilla web shell and ultimately facilitate the deployment of Cobalt Strike Beacon.\n\nThe vulnerability, tracked as CVE-2026-5426 (CVSS score: 7.5), stems from the use of hard-coded ASP.NET machine keys, leading to",
+      "author": "info@thehackernews.com (The Hacker News)",
+      "timestamp": "2026-05-26T05:19:38+00:00",
+      "engagement": 0.0,
+      "cves": [
+        "CVE-2026-5426"
+      ],
+      "vendors": [],
+      "raw": {
+        "feed": "thehackernews"
+      },
+      "url_hash": "8c19f57b3ebd5d46",
+      "content_hash": "fa22c23d6cdc8939"
+    },
+    {
+      "source": "thehackernews",
+      "source_family": "news",
+      "url": "https://thehackernews.com/2026/05/weekly-recap-linux-flaws-defender-0.html",
+      "title": "\u26a1 Weekly Recap: Linux Flaws, Defender 0-Days, Router Botnets, and Supply Chain Chaos",
+      "body": "Monday recap. Same mess, new week.\n\nA sketchy dev tool got people pwned, old bugs came back from the dead, and security products somehow needed protecting from themselves. A bunch of companies spent the week checking old boxes and forgotten servers they should've patched years ago. Good times.\n\nPhishing crews are getting smarter too - less obvious scam junk, more targeted stuff that actually",
+      "author": "info@thehackernews.com (The Hacker News)",
+      "timestamp": "2026-05-25T14:13:27+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Linux"
+      ],
+      "raw": {
+        "feed": "thehackernews"
+      },
+      "url_hash": "acf06438141dbe6f",
+      "content_hash": "393c8e9204961d07"
+    },
+    {
+      "source": "thehackernews",
+      "source_family": "news",
+      "url": "https://thehackernews.com/2026/05/ghost-cms-cve-2026-26980-exploited-to.html",
+      "title": "Ghost CMS CVE-2026-26980 Exploited to Hijack 700+ Sites for ClickFix Attacks",
+      "body": "Threat actors are exploiting a recently disclosed critical security flaw in Ghost CMS to inject malicious JavaScript code with an aim to fuel ClickFix attacks.\n\nAccording to QiAnXin XLab, the activity involves the exploitation of CVE-2026-26980 (CVSS score: 9.4), an SQL injection vulnerability in Ghost's Content API that could allow an unauthenticated attacker to read arbitrary data from the",
+      "author": "info@thehackernews.com (The Hacker News)",
+      "timestamp": "2026-05-25T12:02:46+00:00",
       "engagement": 0.0,
       "cves": [
         "CVE-2026-26980"
       ],
       "vendors": [],
       "raw": {
-        "feed": "bleepingcomputer"
+        "feed": "thehackernews"
       },
-      "url_hash": "3d789e4e4d8ba22b",
-      "content_hash": "e0e651e8bb052e18"
+      "url_hash": "3742b85f5b6e6da5",
+      "content_hash": "100c946eda499004"
     },
     {
-      "source": "bleepingcomputer",
+      "source": "thehackernews",
       "source_family": "news",
-      "url": "https://www.bleepingcomputer.com/news/security/laravel-lang-packages-hijacked-to-deploy-credential-stealing-malware",
-      "title": "Laravel Lang packages hijacked to deploy credential-stealing malware",
-      "body": "A supply chain attack targeting the Laravel Lang localization packages has exposed developers to a sophisticated credential-stealing malware campaign after attackers abused GitHub version tags to distribute malicious code through Composer packages. [...]",
-      "author": "Lawrence Abrams",
-      "timestamp": "2026-05-23T20:48:23+00:00",
-      "engagement": 0.0,
-      "cves": [],
-      "vendors": [
-        "GitHub"
-      ],
-      "raw": {
-        "feed": "bleepingcomputer"
-      },
-      "url_hash": "2bf0512e6ea52288",
-      "content_hash": "f3068b511253f5f9"
-    },
-    {
-      "source": "darkreading",
-      "source_family": "news",
-      "url": "https://www.darkreading.com/events/infosecurity-europe",
-      "title": "Infosecurity Europe",
-      "body": "",
-      "author": null,
-      "timestamp": "2026-06-02T13:30:00+00:00",
+      "url": "https://thehackernews.com/2026/05/the-alert-firehose-finally-meets-its.html",
+      "title": "The Alert Firehose Finally Meets Its Match",
+      "body": "Ask a cybersecurity pro about Network Detection and Response (NDR) and you might still hear \"Noisy,\" \"Too much data.\" But ask the teams running NDR that includes agentic AI capabilities and you'll hear they're actually using it to catch threats earlier, triage faster, and chase fewer false positives. The old complaint lingers in part because reputations are sticky, and because NDR has evolved",
+      "author": "info@thehackernews.com (The Hacker News)",
+      "timestamp": "2026-05-25T11:30:00+00:00",
       "engagement": 0.0,
       "cves": [],
       "vendors": [],
       "raw": {
-        "feed": "darkreading"
+        "feed": "thehackernews"
       },
-      "url_hash": "2d981b6027ec9492",
-      "content_hash": "a2dc24dc775668f1"
-    },
-    {
-      "source": "darkreading",
-      "source_family": "news",
-      "url": "https://www.darkreading.com/events/anatomy-of-a-data-breach-what-to-do-if-it-happens-to-you",
-      "title": "[Virtual Event] Anatomy of a Data Breach: What to Do if it Happens to You",
-      "body": "",
-      "author": null,
-      "timestamp": "2026-06-18T15:00:00+00:00",
-      "engagement": 0.0,
-      "cves": [],
-      "vendors": [],
-      "raw": {
-        "feed": "darkreading"
-      },
-      "url_hash": "582b9d5ded055f32",
-      "content_hash": "bf855585865244dd"
+      "url_hash": "db7bd994b8eae8e6",
+      "content_hash": "ae8346b6517a8352"
     },
     {
       "source": "sans_isc",
       "source_family": "news",
-      "url": "https://isc.sans.edu/diary/rss/33010",
-      "title": "Wireshark 4.6.6 Released, (Sun, May 24th)",
-      "body": "Wireshark release 4.6.6 fixes 1 vulnerability and 11 bugs.&#xd;",
+      "url": "https://isc.sans.edu/diary/rss/33020",
+      "title": "ISC Stormcast For Tuesday, May 26th, 2026 https://isc.sans.edu/podcastdetail/9944, (Tue, May 26th)",
+      "body": "",
       "author": null,
-      "timestamp": "2026-05-24T16:38:21+00:00",
+      "timestamp": "2026-05-26T02:00:02+00:00",
       "engagement": 0.0,
       "cves": [],
       "vendors": [],
       "raw": {
         "feed": "sans_isc"
       },
-      "url_hash": "30253856bf16f2b1",
-      "content_hash": "42e451bde5f0b953"
+      "url_hash": "e8793349742ae7b9",
+      "content_hash": "5f3e9c50ce5b189d"
     },
     {
-      "source": "hackernews",
-      "source_family": "hn",
-      "url": "https://www.statnews.com/2026/05/22/seed-oils-healthy-fats-tallow-fact-check-cardiac-health",
-      "title": "The seed oil panic is hurting my cardiac patients",
-      "body": "",
-      "author": "randycupertino",
-      "timestamp": "2026-05-24T14:27:26+00:00",
-      "engagement": 205.0,
+      "source": "sans_isc",
+      "source_family": "news",
+      "url": "https://isc.sans.edu/diary/rss/33018",
+      "title": "Possible ACR Stealer From Page Impersonating Claude, (Tue, May 26th)",
+      "body": "Introduction&#xd;",
+      "author": null,
+      "timestamp": "2026-05-26T00:01:48+00:00",
+      "engagement": 0.0,
       "cves": [],
       "vendors": [],
       "raw": {
-        "points": 127,
-        "num_comments": 156,
-        "object_id": "48257532"
+        "feed": "sans_isc"
       },
-      "url_hash": "ee03dae4ed3099ae",
-      "content_hash": "19bb07e7025ce44d"
+      "url_hash": "f781c8779ea7be93",
+      "content_hash": "28723f0beea1435b"
+    },
+    {
+      "source": "sans_isc",
+      "source_family": "news",
+      "url": "https://isc.sans.edu/diary/rss/33012",
+      "title": "Microsoft Access VBA, (Mon, May 25th)",
+      "body": "Microsoft Access files (Microsoft Office&&#x23&#x3b;x26&#x3b;&#x23&#x3b;39&#x3b;s Database) can contain VBA code.&#xd;",
+      "author": null,
+      "timestamp": "2026-05-25T14:14:58+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Microsoft"
+      ],
+      "raw": {
+        "feed": "sans_isc"
+      },
+      "url_hash": "823d7487612d4178",
+      "content_hash": "679d95ea253beb05"
+    },
+    {
+      "source": "sans_isc",
+      "source_family": "news",
+      "url": "https://isc.sans.edu/diary/rss/33016",
+      "title": "TeamPCP Supply Chain Campaign: Activity Through 2026-05-24, (Mon, May 25th)",
+      "body": "TeamPCP now operates across three package ecosystems in parallel, it reached GitHub&&#x23&#x3b;x26&#x3b;&#x23&#x3b;39&#x3b;s own internal codebase, it trojanized an officially Microsoft-published Python SDK, and it appears to have open-sourced its own framework on GitHub.&#xd;",
+      "author": null,
+      "timestamp": "2026-05-25T13:26:06+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Microsoft",
+        "GitHub"
+      ],
+      "raw": {
+        "feed": "sans_isc"
+      },
+      "url_hash": "9703c7dae26a9a6f",
+      "content_hash": "1c25ec8c798566f6"
+    },
+    {
+      "source": "sans_isc",
+      "source_family": "news",
+      "url": "https://isc.sans.edu/diary/rss/33014",
+      "title": "TeamPCP Supply Chain Campaign: Activity Through 2026-05-24, (Mon, May 25th)",
+      "body": "TeamPCP now operates across three package ecosystems in parallel, it reached GitHub&&#x23&#x3b;x26&#x3b;&#x23&#x3b;39&#x3b;s own internal codebase, it trojanized an officially Microsoft-published Python SDK, and it appears to have open-sourced its own framework on GitHub.&#xd;",
+      "author": null,
+      "timestamp": "2026-05-25T13:25:47+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Microsoft",
+        "GitHub"
+      ],
+      "raw": {
+        "feed": "sans_isc"
+      },
+      "url_hash": "c52c5af4c524b5ec",
+      "content_hash": "1c25ec8c798566f6"
     },
     {
       "source": "hackernews",
       "source_family": "hn",
-      "url": "https://www.quantamagazine.org/how-alexander-grothendieck-revolutionized-20th-century-mathematics-20260520",
-      "title": "Alexander Grothendieck Revolutionized 20th-Century Mathematics",
+      "url": "https://medcurity.com/hipaa-security-rule-2026-update",
+      "title": "2026 HIPAA Security Rule Update",
       "body": "",
-      "author": "anujbans",
-      "timestamp": "2026-05-24T03:19:02+00:00",
-      "engagement": 114.0,
+      "author": "mooreds",
+      "timestamp": "2026-05-25T13:55:28+00:00",
+      "engagement": 144.5,
       "cves": [],
       "vendors": [],
       "raw": {
-        "points": 103,
-        "num_comments": 22,
-        "object_id": "48254020"
+        "points": 96,
+        "num_comments": 97,
+        "object_id": "48266895"
       },
-      "url_hash": "196abf65b138ec02",
-      "content_hash": "033fa1adb0ab6b2f"
+      "url_hash": "e5bdfcb26b11d7bb",
+      "content_hash": "1dfa07546764eb47"
     },
     {
       "source": "hackernews",
       "source_family": "hn",
-      "url": "https://www.bbc.com/news/articles/c3w2l249j8go",
-      "title": "Toxic chemical leak at a manufacturing facility in Orange County",
+      "url": "https://support.apple.com/en-us/127115",
+      "title": "CVE-2026-28952: Apple macOS 26.5 Kernel Vuln found by Claude",
       "body": "",
-      "author": "borski",
-      "timestamp": "2026-05-23T22:09:05+00:00",
-      "engagement": 233.0,
+      "author": "dragonsenseiguy",
+      "timestamp": "2026-05-25T23:40:40+00:00",
+      "engagement": 182.5,
+      "cves": [
+        "CVE-2026-28952"
+      ],
+      "vendors": [
+        "Apple",
+        "macOS"
+      ],
+      "raw": {
+        "points": 144,
+        "num_comments": 77,
+        "object_id": "48273169"
+      },
+      "url_hash": "468d46f343a8e252",
+      "content_hash": "2850ebd5461f2373"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://www.apa.org/news/press/releases/2014/04/creativity-walk",
+      "title": "Taking a walk may lead to more creativity than sitting, study finds (2014)",
+      "body": "",
+      "author": "bilsbie",
+      "timestamp": "2026-05-25T22:30:27+00:00",
+      "engagement": 392.0,
       "cves": [],
       "vendors": [],
       "raw": {
-        "points": 159,
-        "num_comments": 148,
-        "object_id": "48252060"
+        "points": 329,
+        "num_comments": 126,
+        "object_id": "48272670"
       },
-      "url_hash": "a252e4828d6b3e8d",
-      "content_hash": "f5ff07b88dbdca0f"
+      "url_hash": "9131b39480f096b8",
+      "content_hash": "ea687daa21f802cb"
     },
     {
       "source": "hackernews",
       "source_family": "hn",
-      "url": "https://old.reddit.com/r/electronics/comments/1td7yxl/i_built_a_fully_selfpowered_computer_in_actual",
-      "title": "A self-powered computer in actual credit-card size (~1mm thick)",
-      "body": "",
-      "author": "gnabgib",
-      "timestamp": "2026-05-23T21:06:37+00:00",
-      "engagement": 85.5,
+      "url": "https://github.com/tantara/openbrief",
+      "title": "Show HN: OpenBrief \u2013 Local-first video downloader/summarizer",
+      "body": "OpenBrief is basically a GUI for yt-dlp with some AI on top \u2014 paste a link, it downloads locally, and transcription and voice generation run with local AI on your machine. Summaries and chat over the transcript use an LLM, which is bring-your-own-key for now. It&#x27;s open source and free.",
+      "author": "tantara",
+      "timestamp": "2026-05-25T21:50:03+00:00",
+      "engagement": 71.5,
       "cves": [],
       "vendors": [],
       "raw": {
-        "points": 82,
-        "num_comments": 7,
-        "object_id": "48251528"
+        "points": 66,
+        "num_comments": 11,
+        "object_id": "48272393"
       },
-      "url_hash": "1f07b15a9c73d67c",
-      "content_hash": "747dcc486fdc08bd"
+      "url_hash": "655fd80fbaafa1f1",
+      "content_hash": "2fc6ae643dc859aa"
     },
     {
       "source": "hackernews",
       "source_family": "hn",
-      "url": "https://www.bbc.com/news/articles/czd2qmdvmq6o",
-      "title": "Air France and Airbus found guilty of manslaughter over 2009 plane crash",
+      "url": "https://techxplore.com/news/2026-05-online-age-pointless-privacy.html",
+      "title": "Yoti age checks share facial photos and device fingerprints with third parties",
       "body": "",
-      "author": "baal80spam",
-      "timestamp": "2026-05-23T20:09:13+00:00",
-      "engagement": 168.0,
+      "author": "Lihh27",
+      "timestamp": "2026-05-25T20:30:25+00:00",
+      "engagement": 179.0,
       "cves": [],
       "vendors": [],
       "raw": {
-        "points": 118,
-        "num_comments": 100,
-        "object_id": "48250980"
+        "points": 163,
+        "num_comments": 32,
+        "object_id": "48271327"
       },
-      "url_hash": "f0cfb6c60088eb0c",
-      "content_hash": "6fb5f5a3277d5aed"
+      "url_hash": "4884f3533c215932",
+      "content_hash": "926fd30f0d63d179"
     },
     {
       "source": "hackernews",
       "source_family": "hn",
-      "url": "https://singularityhub.com/2026/05/22/data-centers-now-consume-6-of-electricity-in-the-us-and-the-backlash-has-begun",
-      "title": "Data Centers Now Consume 6% of US Electricity\u2013and the Backlash Has Begun",
+      "url": "https://www.tomshardware.com/software/linux/california-moves-to-exempt-linux-from-its-upcoming-age-verification-law-after-backlash-over-forcing-operating-systems-to-collect-users-ages-amendment-proposed-by-the-same-lawmaker-who-wrote-the-original-law",
+      "title": "California moves to exempt Linux from its age-verification law after backlash",
+      "body": "",
+      "author": "rbanffy",
+      "timestamp": "2026-05-25T18:19:58+00:00",
+      "engagement": 1092.0,
+      "cves": [],
+      "vendors": [
+        "Linux"
+      ],
+      "raw": {
+        "points": 897,
+        "num_comments": 390,
+        "object_id": "48269961"
+      },
+      "url_hash": "f9e44b8c68f95d64",
+      "content_hash": "e9e38ac1ac98bfdd"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://www.trychert.com/",
+      "title": "Launch HN: Chert (YC P26) \u2013 Twilio for iMessage",
+      "body": "Hey HN! We\u2019re Gary and Ian, and we\u2019re building Chert (<a href=\"https:&#x2F;&#x2F;www.trychert.com&#x2F;\">https:&#x2F;&#x2F;www.trychert.com&#x2F;</a>), an API for businesses to send, receive, and automate iMessage conversations at scale. Check out our demo: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=SRdwvVxMMoI\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=SRdwvVxMMoI</a>.<p>We originally started by building products on top of iMessage because the blue bubble interface, typing indicators, and reactions made agentic conversations feel more human than ones on SMS&#x2F;RCS. These included a one-shot iMessage agent builder that reached 2,000 users in one week and an automated iMessage outbound sequencer that sent thousands of outbound messages per day.<p>The hard part is that iMessage does not have a native API like SMS&#x2F;RCS. Sending and receiving iMessages requires a separate infrastructure that is difficult to set up and maintain, especially at scale.<p>As we talked to more companies, we realized that the highest-volume use cases for iMessage were not B2C agents or even sales. They were things like customer service, missed-call text-back, cart abandonment, and inbound lead capture in verticals like home services, DTC brands, and property management that drive the highest volume.<p>Furthermore, these companies often need additional support, such as custom infrastructure setup (e.g. contact card, area code, or local worker sessions), integration support with their existing SMS&#x2F;RCS or voice agent systems, and a reliable way to scale their volume over time.<p>We built Chert to be an infrastructure layer for businesses to handle iMessage conversations at scale. Businesses can use our API to send and receive iMessages programmatically, route replies to humans or agents, and integrate conversations into the systems they already use.<p>To maintain stability across both outbound and inbound use cases, we built phone line health checks and",
+      "author": "garygao",
+      "timestamp": "2026-05-25T15:12:33+00:00",
+      "engagement": 148.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 57,
+        "num_comments": 182,
+        "object_id": "48267829"
+      },
+      "url_hash": "526d5bace41e4255",
+      "content_hash": "953676e4388846dc"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://www.tmj4.com/news/racine-county/microsoft-pulls-plug-on-plans-for-244-acre-data-center-in-caledonia-after-community-pushback",
+      "title": "Microsoft pulls plug on plans for 244-acre data center in Caledonia (2025)",
       "body": "",
       "author": "cdrnsf",
-      "timestamp": "2026-05-23T19:42:10+00:00",
-      "engagement": 73.0,
+      "timestamp": "2026-05-25T13:09:53+00:00",
+      "engagement": 261.0,
       "cves": [],
-      "vendors": [],
+      "vendors": [
+        "Microsoft"
+      ],
       "raw": {
-        "points": 56,
-        "num_comments": 34,
-        "object_id": "48250712"
+        "points": 176,
+        "num_comments": 170,
+        "object_id": "48266422"
       },
-      "url_hash": "503b8a4d61206673",
-      "content_hash": "27c7e15d41937611"
+      "url_hash": "2aeeb7a22bdac950",
+      "content_hash": "9eb6cadac7715feb"
     },
     {
-      "source": "hackernews",
-      "source_family": "hn",
-      "url": "https://veronicaexplains.net/my-first-writerdeck",
-      "title": "Time to talk about my writerdeck",
+      "source": "the_record_news",
+      "source_family": "youtube",
+      "url": "https://www.youtube.com/watch?v=sXW-5F5qGmk",
+      "title": "Shaping the record",
       "body": "",
-      "author": "hggh",
-      "timestamp": "2026-05-23T18:45:37+00:00",
-      "engagement": 555.0,
+      "author": "the_record_news",
+      "timestamp": "2026-05-26T07:15:44+00:00",
+      "engagement": 0.0,
       "cves": [],
       "vendors": [],
       "raw": {
-        "points": 428,
-        "num_comments": 254,
-        "object_id": "48250144"
+        "channel_id": "UCuBJQyzTWDP3C-BQTPG4DaQ"
       },
-      "url_hash": "4d33523b89ac0735",
-      "content_hash": "6c05fc436dad945a"
-    },
-    {
-      "source": "hackernews",
-      "source_family": "hn",
-      "url": "https://www.kcrg.com/2026/05/20/iowa-lawmakers-move-mandate-students-take-center-intellectual-freedom-classes-amid-low-enrollment",
-      "title": "Iowa to mandate students take Intellectual Freedom classes amid low enrollment",
-      "body": "",
-      "author": "hn_acker",
-      "timestamp": "2026-05-23T18:02:11+00:00",
-      "engagement": 77.5,
-      "cves": [],
-      "vendors": [],
-      "raw": {
-        "points": 50,
-        "num_comments": 55,
-        "object_id": "48249743"
-      },
-      "url_hash": "72eb48f111260159",
-      "content_hash": "53a2c73dc2a3bf2f"
+      "url_hash": "e501df7be1d82721",
+      "content_hash": "a654b6485c5819f3"
     }
   ]
 }
