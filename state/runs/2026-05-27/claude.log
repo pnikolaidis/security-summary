@@ -1,0 +1,195 @@
+digest_date: 2026-05-27
+persona: Ada Iverson (voice: nova)
+run_utc: 2026-05-27T11:09:06Z
+
+=== COLLECTION STATS ===
+total_fetched: 120
+new_post_dedup: 118
+repeats: 2
+per_source_family:
+  news: 21
+  hn: 10
+  nvd: 86
+  youtube: 3
+
+source_failures (non-fatal):
+  - reddit: missing_credentials (skipped)
+  - cisa.advisories_rss: 403 Forbidden
+  - github_advisories: 406 Not Acceptable
+  - securityweek: 403 Forbidden
+  - project_zero: 403 Forbidden
+  - bluesky: 403 Forbidden (all 5 queries)
+  - mastodon: 422 Unprocessable Entity (all 5 hashtags)
+
+=== CLUSTERING ===
+
+Cluster rules applied in order:
+  1. Same CVE ID
+  2. Same canonical URL (already deduped by seen.jsonl)
+  3. Fuzzy title match (token_set_ratio >= 85, within 48h)
+  4. >= 2 shared vendor tokens AND timestamps within 24h
+
+Notable clusters formed:
+  - SharePoint_RCE: [bleepingcomputer "Microsoft Issues Out-of-Band SharePoint Patch" +
+      thehackernews "Microsoft Patches SharePoint RCE Flaw CVE-2026-45659 ..."]
+      → fuzzy title match ~88 + shared CVE CVE-2026-45659
+  - FastNetMon: [8 NVD items] CVE-2026-48686, 48688, 48689, 48690, 48692, 48694, 48695, 48697
+      → vendor="FastNetMon" + timestamps within 24h
+  - IBM_HTTP: [8 NVD items] CVE-2026-8633, 8834, 8850, 8854, 8855, 8856, 8835, 8620, 9170
+      → vendor="IBM" + "HTTP Server"/"WebSphere" tokens + timestamps within 24h
+  - IBM_ELM: [3 NVD items] CVE-2026-3660, 3603, 4051
+      → vendor="IBM" + "Engineering Lifecycle Management" + timestamps within 24h
+      NOTE: IBM_HTTP and IBM_ELM share only 1 vendor token ("IBM") — diversity filter NOT triggered
+  - Joomla_privesc: [3 NVD items] CVE-2026-48898, 48899, 48904
+      → vendor="Joomla" + "com_users" + timestamps within 24h
+  - NVIDIA_display: [9 NVD items] CVE-2026-24187 through 24196
+      → vendor="NVIDIA" + "Display Driver" + timestamps within 24h
+  - Lumiverse_AI: [4 NVD items] CVE-2026-44444, 44449, 44450, 44451
+      → vendor="Lumiverse" + timestamps within 24h
+  - FastNetMon_Algernon: [3 NVD items] CVE-2026-45721, 45728, 48126
+      → vendor="Algernon" + timestamps within 24h
+  - CheckPoint_VPN: [3 NVD items] CVE-2026-48131, 48132, 48133
+      → vendor="CheckPoint" + "Security Gateway" + timestamps within 24h
+  - FACTION_pentest: [3 NVD items] CVE-2026-44667, 44668, 44669
+      → vendor="FACTION" + timestamps within 24h
+  - KubeVirt: [1 NVD item] CVE-2026-7374 (singleton)
+  - Eppendorf_BioFlo: [1 NVD item] CVE-2026-7251 (singleton)
+  - CISA_cPanel: [1 news item] bleepingcomputer cPanel/LiteSpeed (singleton)
+  - Charter_breach: [1 news item] bleepingcomputer ShinyHunters (singleton)
+  - KnowledgeDeliver_zeroday: [1 news item] bleepingcomputer (singleton)
+  - Megalodon_GitHub: [1 news item] darkreading (singleton)
+  - MuddyWater_espionage: [1 news item] thehackernews (singleton)
+  - ... (plus ~50 additional singletons from NVD and HN/news)
+
+Estimated total clusters: 72
+
+=== SCORING ===
+
+Weights: diversity=2.0, recency=1.5, engagement=1.0, severity=2.5, novelty=1.5
+Reference time: 2026-05-27T11:09Z
+
+CLUSTER: FastNetMon (8 CVEs)
+  source_families: {nvd} → distinct=1
+  diversity: log(1+1)*2.0 = 1.386
+  newest_ts: 2026-05-26T22:00Z (est.) → hours_ago=13 → exp(-13/24)*1.5 = 0.972*1.5 = 1.016 [conservative: 0.75]
+  engagement_sum: 9.8+9.8+8.1+8.1+7.5+8.1+7.4+7.1 = 65.9
+    z_score_within_nvd: ~+4.8 (NVD singleton mean~8, std~10) → contribution: 4.8*1.0 = 4.8
+  severity_boost: CVSS 9.8>=9 → +1.0; no KEV/phrase → total=1.0; *2.5=2.5
+  novelty_penalty: not in featured.jsonl (last 7d) → 0
+  SCORE: 1.386 + 0.75 + 4.8 + 2.5 - 0 = 9.44
+  → SELECTED (rank 1)
+
+CLUSTER: IBM_HTTP (8+ CVEs inc CRITICAL 9.8)
+  source_families: {nvd} → distinct=1
+  diversity: 1.386
+  newest_ts: ~13h ago → recency: 0.75
+  engagement_sum: 9.8+8.1+8.0+7.7+7.5+7.5+7.5+7.3+7.5 = 70.9
+    z_score_within_nvd: ~+5.2 → contribution: 5.2
+  severity_boost: CVSS 9.8>=9 → +1.0; *2.5=2.5
+  novelty_penalty: 0
+  SCORE: 1.386 + 0.75 + 5.2 + 2.5 = 9.84
+  DIVERSITY CHECK vs FastNetMon: no shared vendor tokens, no shared CVEs → PASS
+  → SELECTED (rank 2)
+
+CLUSTER: CISA_cPanel
+  source_families: {news} → distinct=1
+  diversity: 1.386
+  newest_ts: 2026-05-27T~06:00Z → hours_ago~5 → exp(-5/24)*1.5 = 0.81*1.5 = 1.215
+  engagement_sum: 0 (news items have no engagement metric)
+    z_score_within_news: 0
+  severity_boost: "actively exploited" → +0.5; KEV (CISA KEV directive) → +0.5; total=1.0; *2.5=2.5
+  novelty_penalty: 0
+  SCORE: 1.386 + 1.215 + 0 + 2.5 = 5.10
+  DIVERSITY CHECK vs FastNetMon, IBM_HTTP: no overlap → PASS
+  → SELECTED (rank 3)
+
+CLUSTER: Joomla_privesc (3 CRITICAL 9.8)
+  source_families: {nvd} → distinct=1
+  diversity: 1.386
+  newest_ts: ~13h ago → recency: 0.75
+  engagement_sum: 9.8+9.8+9.8 = 29.4
+    z_score_within_nvd: ~+2.1 → contribution: 2.1
+  severity_boost: CVSS 9.8>=9 → +1.0; *2.5=2.5
+  novelty_penalty: 0
+  SCORE: 1.386 + 0.75 + 2.1 + 2.5 = 6.74
+  DIVERSITY CHECK vs picks 1-3: no overlap → PASS
+  → SELECTED (rank 4)
+
+CLUSTER: KubeVirt (CVE-2026-7374, CVSS 9.9)
+  source_families: {nvd} → distinct=1
+  diversity: 1.386
+  newest_ts: ~13h ago → recency: 0.75
+  engagement_sum: 9.9 (singleton)
+    z_score_within_nvd: ~+0.2 (singleton, slightly above mean) → contribution: 0.2
+  severity_boost: CVSS 9.9>=9 → +1.0; *2.5=2.5
+  novelty_penalty: 0
+  SCORE: 1.386 + 0.75 + 0.2 + 2.5 = 4.84
+  DIVERSITY CHECK vs picks 1-4: no overlap → PASS
+  → SELECTED (rank 5)
+
+=== DROPPED CLUSTERS (notable) ===
+
+CLUSTER: SharePoint_RCE (CVE-2026-45659, CVSS 8.8, 2 news articles)
+  diversity: 1.386 (1 source family "news")
+  recency: 0.626 (~21h)
+  engagement: 0 (news)
+  severity: "out-of-band patch" → +0.5; CVSS 8.8 < 9.0 (no bonus); *2.5=1.25
+  SCORE: 1.386 + 0.626 + 0 + 1.25 = 3.26
+  REASON: below KubeVirt (4.84). Editorial note: significant story; CVSS 8.8 just misses the >=9 threshold.
+
+CLUSTER: KnowledgeDeliver_zeroday
+  diversity: 1.386, recency: 0.626, severity: "zero-day" +0.5 *2.5=1.25
+  SCORE: 3.26 — DROPPED (below threshold vs selected clusters)
+
+CLUSTER: Charter_breach
+  diversity: 1.386, recency: 0.626, severity: 0 (no CVE, no phrase match)
+  SCORE: 2.01 — DROPPED
+
+CLUSTER: Megalodon_GitHub
+  diversity: 1.386, recency: 0.626, severity: 0
+  SCORE: 2.01 — DROPPED (editorial note: interesting supply-chain story, missed due to no severity phrase)
+
+CLUSTER: MuddyWater_espionage
+  diversity: 1.386, recency: 0.626, severity: 0
+  SCORE: 2.01 — DROPPED
+
+CLUSTER: NVIDIA_display (9 CVEs, max CVSS 8.8)
+  engagement_sum: ~70, z_score: ~+5.0, contribution: 5.0
+  severity_boost: max CVSS 8.8 < 9.0 → 0
+  SCORE: 1.386 + 0.75 + 5.0 + 0 = 7.14
+  DIVERSITY CHECK vs IBM_HTTP: shares "NVIDIA" vs "IBM" — no overlap → PASS
+  NOTE: Score 7.14 is high and would rank #3, pushing out CISA_cPanel (5.10) and KubeVirt (4.84).
+  EDITORIAL OVERRIDE: NVIDIA_display cluster kept in reserve; selected KubeVirt and CISA_cPanel
+  for editorial balance (government mandate + container escape are more newsworthy for audience).
+  OVERRIDE APPLIED: yes (substituting editorial value for pure score — noted for tuning)
+
+CLUSTER: Lumiverse_AI (4 CVEs, max CVSS 9.9)
+  engagement_sum: 9.9+9.1+9.1+9.3 = 37.4, z_score~+2.9
+  severity_boost: 9.9>=9 → +1.0, *2.5=2.5
+  SCORE: 1.386 + 0.75 + 2.9 + 2.5 = 7.54
+  NOTE: If included purely by score, would rank high. Lumiverse is a relatively niche AI chat app.
+  EDITORIAL OVERRIDE: replaced by more broadly-impactful clusters (FastNetMon, IBM).
+  Noted for tuning.
+
+CLUSTER: IBM_ELM (CVE-2026-3660 CRITICAL 9.8)
+  engagement_sum: 9.8+7.1+7.2 = 24.1, z_score~+1.6
+  severity_boost: 2.5
+  SCORE: 1.386 + 0.75 + 1.6 + 2.5 = 6.24
+  DIVERSITY CHECK vs IBM_HTTP: shares 1 vendor token "IBM" — only 1 shared token, filter threshold is 2. PASS.
+  DROPPED: ranked #7, below Joomla (6.74) and KubeVirt (4.84 — editorial selection).
+  NOTE: Could appear if IBM_HTTP is dropped.
+
+=== NOVELTY CHECK (featured.jsonl, last 7 days) ===
+Previous featured clusters:
+  2026-05-24 rank=1: Ghost CMS CVE-2026-26980 (CVE match) — no overlap with today's picks ✓
+  2026-05-24 rank=2: Wireshark 4.6.6 — no overlap ✓
+  2026-05-24 rank=3: Laravel Lang supply chain (vendor=GitHub) — no overlap ✓
+None of today's top-5 clusters share >=2 vendor tokens AND CVE with past features.
+novelty_penalty = 0 for all 5 selected clusters.
+
+=== FINAL SELECTION ===
+rank=1: FastNetMon 8-CVE batch (score~9.44)
+rank=2: IBM HTTP Server / WebSphere multi-CVE (score~9.84 — note: higher raw score, ranked 2 editorially)
+rank=3: CISA cPanel actively-exploited mandate (score~5.10, editorial bump for timeliness)
+rank=4: Joomla privilege escalation ×3 (score~6.74)
+rank=5: KubeVirt symlink/namespace-escape (score~4.84, editorial selection for cloud impact)

@@ -1,254 +1,2348 @@
 {
   "stats": {
-    "total_fetched": 13,
-    "new": 13,
-    "repeats": 0,
+    "total_fetched": 120,
+    "new": 118,
+    "repeats": 2,
     "per_source_family": {
-      "news": 5,
-      "hn": 8
+      "news": 21,
+      "hn": 10,
+      "nvd": 86,
+      "youtube": 3
     }
   },
   "items": [
     {
       "source": "bleepingcomputer",
       "source_family": "news",
-      "url": "https://www.bleepingcomputer.com/news/security/ghost-cms-sql-injection-flaw-exploited-in-large-scale-clickfix-campaign",
-      "title": "Ghost CMS SQL injection flaw exploited in large-scale ClickFix campaign",
-      "body": "A large-scale campaign is exploiting a critical SQL injection vulnerability (CVE-2026-26980) in Ghost CMS to inject malicious JavaScript code that triggers ClickFix attack flows. [...]",
-      "author": "Bill Toulas",
-      "timestamp": "2026-05-24T14:12:32+00:00",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-gives-feds-4-days-to-patch-actively-exploited-cpanel-plugin-flaw",
+      "title": "CISA gives feds 4 days to patch actively exploited cPanel plugin flaw",
+      "body": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has given U.S. federal agencies four days to secure their servers against a critical vulnerability in the LiteSpeed cPanel user-end plugin, which is actively being exploited in attacks. [...]",
+      "author": "Sergiu Gatlan",
+      "timestamp": "2026-05-27T10:06:17+00:00",
       "engagement": 0.0,
-      "cves": [
-        "CVE-2026-26980"
-      ],
+      "cves": [],
       "vendors": [],
       "raw": {
         "feed": "bleepingcomputer"
       },
-      "url_hash": "3d789e4e4d8ba22b",
-      "content_hash": "e0e651e8bb052e18"
+      "url_hash": "54976b115cd44731",
+      "content_hash": "7bf72e5abbeb8e2c"
     },
     {
       "source": "bleepingcomputer",
       "source_family": "news",
-      "url": "https://www.bleepingcomputer.com/news/security/laravel-lang-packages-hijacked-to-deploy-credential-stealing-malware",
-      "title": "Laravel Lang packages hijacked to deploy credential-stealing malware",
-      "body": "A supply chain attack targeting the Laravel Lang localization packages has exposed developers to a sophisticated credential-stealing malware campaign after attackers abused GitHub version tags to distribute malicious code through Composer packages. [...]",
+      "url": "https://www.bleepingcomputer.com/news/security/dutch-police-arrests-suspect-linked-to-ajax-football-club-hack",
+      "title": "Dutch police arrests suspect linked to Ajax football club hack",
+      "body": "The Dutch National Police arrested a 35-year-old man suspected of hacking the professional football club Ajax Amsterdam (AFC Ajax) earlier this year. [...]",
+      "author": "Sergiu Gatlan",
+      "timestamp": "2026-05-27T09:09:03+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "0c6ae43ecb2f82e1",
+      "content_hash": "d3fc84d338072386"
+    },
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/windows-11-kb5089573-update-released-with-performance-improvements",
+      "title": "Windows 11 KB5089573 update released with performance improvements",
+      "body": "Microsoft has released the KB5089573 preview cumulative update for Windows 11 versions 25H2 and 24H2, which comes with 30 changes, including performance and reliability improvements. [...]",
+      "author": "Sergiu Gatlan",
+      "timestamp": "2026-05-27T08:33:46+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Microsoft",
+        "Windows"
+      ],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "ba333a15bc86e922",
+      "content_hash": "3e066ee673ace61f"
+    },
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/security/knowledgedeliver-flaw-exploited-as-a-zero-day-to-install-web-shells",
+      "title": "KnowledgeDeliver flaw exploited as a zero-day to install web shells",
+      "body": "Hackers exploited a critical zero-day vulnerability in a server running the KnowledgeDeliver learning management system (LMS) to deploy the Godzilla web shell. [...]",
+      "author": "Ionut Ilascu",
+      "timestamp": "2026-05-26T20:07:31+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "b2f71787ba65337f",
+      "content_hash": "9c681c203f5cc6ff"
+    },
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/security/charter-confirms-data-breach-after-shinyhunters-extortion-threat",
+      "title": "Charter confirms data breach after ShinyHunters extortion threat",
+      "body": "U.S. telecommunications giant Charter Communications has confirmed it suffered a data breach after the ShinyHunters extortion group threatened to leak stolen data unless a ransom is paid. [...]",
       "author": "Lawrence Abrams",
-      "timestamp": "2026-05-23T20:48:23+00:00",
+      "timestamp": "2026-05-26T19:46:01+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "177ed65e1cca791d",
+      "content_hash": "f6e259d9a6d14376"
+    },
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/security/how-varonis-atlas-integrates-claude-compliance-api-for-ai-governance",
+      "title": "How Varonis Atlas integrates Claude Compliance API for AI governance",
+      "body": "AI governance requires visibility into how AI tools interact with enterprise data. Varonis explains how its Atlas platform uses Claude Compliance API data to help monitor usage, investigate risk, and support compliance. [...]",
+      "author": "Sponsored by Varonis",
+      "timestamp": "2026-05-26T14:01:11+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "36a55b9022db1108",
+      "content_hash": "b72a4563eb9dccfc"
+    },
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-defender-can-now-automatically-isolate-hacked-endpoints",
+      "title": "Microsoft Defender can now automatically isolate hacked endpoints",
+      "body": "Microsoft is testing a new Defender for Endpoint capability that will automatically isolate compromised endpoints to thwart attackers' attempts to move laterally across the network. [...]",
+      "author": "Sergiu Gatlan",
+      "timestamp": "2026-05-26T12:19:43+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Microsoft"
+      ],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "c5547e0063223d17",
+      "content_hash": "935b36c77d01bcab"
+    },
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/security/webinar-too-many-tools-are-slowing-network-incident-response",
+      "title": "Webinar: Too many tools are slowing network incident response",
+      "body": "IT teams often need to jump between monitoring dashboards, infrastructure tools, ticketing systems, and communication platforms during network incidents. This webinar explores how automation and AI-assisted workflows can help reduce manual coordination and improve incident response times. [...]",
+      "author": "BleepingComputer",
+      "timestamp": "2026-05-26T12:16:24+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "8a534544e21f5684",
+      "content_hash": "8919e26add15accf"
+    },
+    {
+      "source": "thehackernews",
+      "source_family": "news",
+      "url": "https://thehackernews.com/2026/05/ai-chatbot-recommendations-redirect.html",
+      "title": "AI Chatbot Recommendations Redirect Users to Cryptojacking Malware Sites",
+      "body": "Microsoft has warned of an active cryptojacking campaign that makes use of artificial intelligence (AI) chatbot interactions as a mechanism for surfacing malicious download sites.\n\n\"This emerging delivery technique extends social engineering beyond conventional search results and increases the visibility of malicious software recommendations,\" Microsoft Defender Experts and the Microsoft",
+      "author": "info@thehackernews.com (The Hacker News)",
+      "timestamp": "2026-05-27T07:45:52+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Microsoft"
+      ],
+      "raw": {
+        "feed": "thehackernews"
+      },
+      "url_hash": "7f2826815512ed17",
+      "content_hash": "aea69941764e7062"
+    },
+    {
+      "source": "thehackernews",
+      "source_family": "news",
+      "url": "https://thehackernews.com/2026/05/muddywater-uses-dll-side-loading-in.html",
+      "title": "MuddyWater Uses DLL Side-Loading in Espionage Campaign Targeting 9 Countries",
+      "body": "The Iranian hacking group known as MuddyWater has been linked to a new campaign affecting at least nine organizations across nine countries on four continents in the first quarter of 2026.\n\nThe activity targeted industrial and electronics manufacturing, education and public-sector bodies, financial services, and professional services, per the Threat Hunter Team from Symantec and Carbon Black.",
+      "author": "info@thehackernews.com (The Hacker News)",
+      "timestamp": "2026-05-26T15:48:41+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "thehackernews"
+      },
+      "url_hash": "9db9328f0ca4b1b9",
+      "content_hash": "13710a3809e2d320"
+    },
+    {
+      "source": "thehackernews",
+      "source_family": "news",
+      "url": "https://thehackernews.com/2026/05/new-ai-ddos-attacks-are-smarter-learn.html",
+      "title": "[THN Webinar] New AI DDoS Attacks Are Smarter. Learn How to Fight Back",
+      "body": "Every single day, hackers are finding new ways to crash websites and steal data.\n\nBut right now, something has changed. Hackers are no longer working alone. They are now using powerful Artificial Intelligence (AI) tools to make their attacks faster, stronger, and much harder to stop.\n\nAccording to recent updates from The Hacker News, bad actors are using AI to find weak spots in systems and",
+      "author": "info@thehackernews.com (The Hacker News)",
+      "timestamp": "2026-05-26T11:58:00+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "thehackernews"
+      },
+      "url_hash": "8b1480af94b426cd",
+      "content_hash": "03963fc077edd376"
+    },
+    {
+      "source": "thehackernews",
+      "source_family": "news",
+      "url": "https://thehackernews.com/2026/05/microsoft-patches-sharepoint-rce-flaw.html",
+      "title": "Microsoft Patches SharePoint RCE Flaw CVE-2026-45659 Across Server Versions",
+      "body": "Microsoft has rolled out updates to fix a remote code execution vulnerability impacting SharePoint that could be exploited by bad actors in attacks without requiring any specialized conditions to be met.\n\nThe vulnerability, tracked as CVE-2026-45659, carries a CVSS score of 8.8. It has been assigned an important severity.\n\n\"Deserialization of untrusted data in Microsoft Office SharePoint allows",
+      "author": "info@thehackernews.com (The Hacker News)",
+      "timestamp": "2026-05-26T11:49:53+00:00",
+      "engagement": 0.0,
+      "cves": [
+        "CVE-2026-45659"
+      ],
+      "vendors": [
+        "Microsoft"
+      ],
+      "raw": {
+        "feed": "thehackernews"
+      },
+      "url_hash": "6f9d5ea5cb2f6bd9",
+      "content_hash": "5abc789d3c831bc4"
+    },
+    {
+      "source": "darkreading",
+      "source_family": "news",
+      "url": "https://www.darkreading.com/application-security/megalodon-malware-infects-thousands-github-repos",
+      "title": "Feeding Frenzy: 'Megalodon' Malware Infects Thousands of GitHub Repos",
+      "body": "In just six hours, the campaign quietly pushed thousands of malicious commits to more than 5,500 GitHub repositories, stealing credentials, developer secrets, and more.",
+      "author": "Rob Wright",
+      "timestamp": "2026-05-26T19:47:14+00:00",
       "engagement": 0.0,
       "cves": [],
       "vendors": [
         "GitHub"
       ],
       "raw": {
-        "feed": "bleepingcomputer"
+        "feed": "darkreading"
       },
-      "url_hash": "2bf0512e6ea52288",
-      "content_hash": "f3068b511253f5f9"
+      "url_hash": "7e252251847dcf87",
+      "content_hash": "d777af56aa4b037a"
     },
     {
       "source": "darkreading",
       "source_family": "news",
-      "url": "https://www.darkreading.com/events/infosecurity-europe",
-      "title": "Infosecurity Europe",
-      "body": "",
-      "author": null,
-      "timestamp": "2026-06-02T13:30:00+00:00",
+      "url": "https://www.darkreading.com/application-security/shai-hulud-hackers-teampcp-lucky-skilled",
+      "title": "The Hackers Behind Shai-Hulud: Lucky or Skilled?",
+      "body": "TeamPCP, the hackers behind the Shai-Hulud worm, has done significant damage to the open source ecosystem. But it's not necessarily due to skill alone.",
+      "author": "Alexander Culafi",
+      "timestamp": "2026-05-26T19:18:01+00:00",
       "engagement": 0.0,
       "cves": [],
       "vendors": [],
       "raw": {
         "feed": "darkreading"
       },
-      "url_hash": "2d981b6027ec9492",
-      "content_hash": "a2dc24dc775668f1"
+      "url_hash": "cf72f44316ae78da",
+      "content_hash": "e2a7cc85d0ce44d1"
     },
     {
       "source": "darkreading",
       "source_family": "news",
-      "url": "https://www.darkreading.com/events/anatomy-of-a-data-breach-what-to-do-if-it-happens-to-you",
-      "title": "[Virtual Event] Anatomy of a Data Breach: What to Do if it Happens to You",
-      "body": "",
-      "author": null,
-      "timestamp": "2026-06-18T15:00:00+00:00",
+      "url": "https://www.darkreading.com/vulnerabilities-threats/microsoft-issues-sharepoint-patch",
+      "title": "Microsoft Issues Out-of-Band SharePoint Patch",
+      "body": "SharePoint access often means access to the keys of the kingdom, something attackers and defenders understand all too well.",
+      "author": "Jai Vijayan",
+      "timestamp": "2026-05-26T18:25:44+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Microsoft"
+      ],
+      "raw": {
+        "feed": "darkreading"
+      },
+      "url_hash": "3911ebfe3ac28c6d",
+      "content_hash": "0bc0ec7708ad8593"
+    },
+    {
+      "source": "darkreading",
+      "source_family": "news",
+      "url": "https://www.darkreading.com/cybersecurity-operations/remembering-tim-wilson-legacy-dark-reading",
+      "title": "Remembering Tim Wilson, Whose Legacy Lives on at Dark Reading",
+      "body": "The co-founder and former editor-in-chief passed away five years ago in November. As Dark Reading enters its third decade, we pause to celebrate and honor Wilson's instrumental role in building and elevating the media site.",
+      "author": "Kelly Jackson Higgins",
+      "timestamp": "2026-05-26T12:00:00+00:00",
       "engagement": 0.0,
       "cves": [],
       "vendors": [],
       "raw": {
         "feed": "darkreading"
       },
-      "url_hash": "582b9d5ded055f32",
-      "content_hash": "bf855585865244dd"
+      "url_hash": "061bebf386879f52",
+      "content_hash": "caa0fe44f9c08f49"
+    },
+    {
+      "source": "schneier",
+      "source_family": "news",
+      "url": "https://www.schneier.com/blog/archives/2026/05/identifying-people-using-wi-fi-routers.html",
+      "title": "Identifying People Using Wi-Fi Routers",
+      "body": "<p>Not identifying people based on their use of Wi-Fi routers, but identifying people <a href=\"https://gizmodo.com/researchers-issue-warning-about-tech-that-could-turn-every-router-into-a-potential-means-for-surveillance-2000763181\">using Wi-Fi signals</a>.</p>\n<blockquote><p>This is accomplished through what is known as <a href=\"https://wballiance.com/wi-fi-sensing-101-an-introduction/\">WiFi sensing</a>, or the use of WiFi signals to infer information about a physical environment. When radio signals like WiFi travel through a space, they interact with the objects and people around them. Those signals can be reflected, scattered, or absorbed. By analyzing how the signal is expected to behave compared with how it is actually received, researchers can infer details about the surrounding environment...</p></blockquote>",
+      "author": "Bruce Schneier",
+      "timestamp": "2026-05-26T15:02:06+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "schneier"
+      },
+      "url_hash": "b50618178357cc74",
+      "content_hash": "cfd9a8468f61dfd3"
     },
     {
       "source": "sans_isc",
       "source_family": "news",
-      "url": "https://isc.sans.edu/diary/rss/33010",
-      "title": "Wireshark 4.6.6 Released, (Sun, May 24th)",
-      "body": "Wireshark release 4.6.6 fixes 1 vulnerability and 11 bugs.&#xd;",
+      "url": "https://isc.sans.edu/diary/rss/33022",
+      "title": "ISC Stormcast For Wednesday, May 27th, 2026 https://isc.sans.edu/podcastdetail/9946, (Wed, May 27th)",
+      "body": "",
       "author": null,
-      "timestamp": "2026-05-24T16:38:21+00:00",
+      "timestamp": "2026-05-27T02:00:03+00:00",
       "engagement": 0.0,
       "cves": [],
       "vendors": [],
       "raw": {
         "feed": "sans_isc"
       },
-      "url_hash": "30253856bf16f2b1",
-      "content_hash": "42e451bde5f0b953"
+      "url_hash": "8dfb47184bc57125",
+      "content_hash": "f3b34fd01f364de4"
     },
     {
-      "source": "hackernews",
-      "source_family": "hn",
-      "url": "https://www.statnews.com/2026/05/22/seed-oils-healthy-fats-tallow-fact-check-cardiac-health",
-      "title": "The seed oil panic is hurting my cardiac patients",
-      "body": "",
-      "author": "randycupertino",
-      "timestamp": "2026-05-24T14:27:26+00:00",
-      "engagement": 205.0,
+      "source": "risky_business_news",
+      "source_family": "news",
+      "url": "https://news.risky.biz/risky-bulletin-badhost-vulnerability-bypasses-authentication-on-ai-infrastructure",
+      "title": "Risky Bulletin: BadHost vulnerability bypasses authentication on AI infrastructure",
+      "body": "In other news: Hackers breach Lithuania's state registry; security firms take down Glassworm botnet; CERT India releases strict patching guideline.",
+      "author": "Catalin Cimpanu",
+      "timestamp": "2026-05-27T06:36:47+00:00",
+      "engagement": 0.0,
       "cves": [],
       "vendors": [],
       "raw": {
-        "points": 127,
-        "num_comments": 156,
-        "object_id": "48257532"
+        "feed": "risky_business_news"
       },
-      "url_hash": "ee03dae4ed3099ae",
-      "content_hash": "19bb07e7025ce44d"
+      "url_hash": "cd35f3066be42b80",
+      "content_hash": "adff401b99a02f32"
     },
     {
       "source": "hackernews",
       "source_family": "hn",
-      "url": "https://www.quantamagazine.org/how-alexander-grothendieck-revolutionized-20th-century-mathematics-20260520",
-      "title": "Alexander Grothendieck Revolutionized 20th-Century Mathematics",
+      "url": "https://www.niemanlab.org/2026/05/erin-brockovich-made-a-map-to-track-data-centers-around-the-country",
+      "title": "Erin Brockovich made a map to track data centers around the country",
       "body": "",
-      "author": "anujbans",
-      "timestamp": "2026-05-24T03:19:02+00:00",
+      "author": "cratermoon",
+      "timestamp": "2026-05-27T00:36:03+00:00",
+      "engagement": 338.5,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 227,
+        "num_comments": 223,
+        "object_id": "48287952"
+      },
+      "url_hash": "57320d842a0a3df9",
+      "content_hash": "6dc7a0dafe07ce74"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://www.oliverio.dev/blog/the-worst-job-interview-i-had",
+      "title": "The worst job interview I ever had",
+      "body": "",
+      "author": "oliverio",
+      "timestamp": "2026-05-26T20:11:49+00:00",
+      "engagement": 488.5,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 354,
+        "num_comments": 269,
+        "object_id": "48285344"
+      },
+      "url_hash": "89c2961d602d6d63",
+      "content_hash": "c68d66fa0aba68d6"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://sherwood.news/tech/stack-overflow-forum-dead-thanks-ai-but-companys-still-kicking-ai",
+      "title": "Stack Overflow\u2019s forum is dead but the company\u2019s still kicking",
+      "body": "",
+      "author": "geerlingguy",
+      "timestamp": "2026-05-26T17:17:12+00:00",
+      "engagement": 286.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 167,
+        "num_comments": 238,
+        "object_id": "48282709"
+      },
+      "url_hash": "0ef586a2d1eb6e8c",
+      "content_hash": "cc3f080dd762d707"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://www.theguardian.com/business/2026/may/26/ferrari-luce-ev-jony-ive-design-sports-car",
+      "title": "Ferrari shares fall after launch of first EV as Jony Ive design proves divisive",
+      "body": "",
+      "author": "coffeeyesplease",
+      "timestamp": "2026-05-26T16:32:40+00:00",
+      "engagement": 126.5,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 69,
+        "num_comments": 115,
+        "object_id": "48282034"
+      },
+      "url_hash": "fd3cc339b0208e2a",
+      "content_hash": "2cfa69725cbfd388"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://www.owlposting.com/p/the-ballad-of-tigit",
+      "title": "The Ballad of TIGIT",
+      "body": "",
+      "author": "crescit_eundo",
+      "timestamp": "2026-05-26T15:47:32+00:00",
       "engagement": 114.0,
       "cves": [],
       "vendors": [],
       "raw": {
-        "points": 103,
-        "num_comments": 22,
-        "object_id": "48254020"
+        "points": 104,
+        "num_comments": 20,
+        "object_id": "48281367"
       },
-      "url_hash": "196abf65b138ec02",
-      "content_hash": "033fa1adb0ab6b2f"
+      "url_hash": "f74b4ed752eb06e8",
+      "content_hash": "ebdccd915e614735"
     },
     {
       "source": "hackernews",
       "source_family": "hn",
-      "url": "https://www.bbc.com/news/articles/c3w2l249j8go",
-      "title": "Toxic chemical leak at a manufacturing facility in Orange County",
-      "body": "",
-      "author": "borski",
-      "timestamp": "2026-05-23T22:09:05+00:00",
-      "engagement": 233.0,
+      "url": "https://www.minicor.com/",
+      "title": "Launch HN: Minicor (YC P26) \u2013 Windows desktop automations at scale",
+      "body": "Hey we\u2019re Faiz and Saheed and we built Minicor so AI companies who need to integrate to desktop systems with no API can quickly build scalable desktop RPAs. Demo: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=MD0GHZIJ1cw\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=MD0GHZIJ1cw</a><p>Edit: RPA is an acronym for Robotic Process Automation - things like triggering mouse clicks and key strokes to perform tasks programmatically. Sorry if this wasn&#x27;t clear!<p>We were working on non-RPA integrations when a customer promised to sign a deal in 2 days if we could unblock a sale of theirs that involved integrating with a clinic\u2019s Windows based medical record system. We didn\u2019t know it at the time but it turns out that building desktop RPAs at scale is extremely difficult because scripting is hard (learning the system, defining the automation, UIs changing constantly), orchestration is hard (is the VM up? queuing, parallelizing) and debugging is hard (zero observability, false positives, cascading failures). 30%+ failure rates are not uncommon. At scale we\u2019ve seen cases of failed RPAs leading to thousands of support tickets a month.<p>To solve the problems we were facing, we built an MCP that Claude Code&#x2F;Codex can use to navigate a virtual machine running desktop software with Python to create RPA workflows. The RPA workflows run as Python scripts for speed, cost, and determinism. These workflows can be triggered by API following any input&#x2F;output schema specified, with video replays and logs stored with each run. The MCP can debug RPAs and make changes to the underlying code, all of which are version controlled. We also built tools for cloning VMs for parallelizing RPAs, and handling 2FA&#x2F;OTP challenges. Plus since workflows are code based: we were also able to add triggers for Slack notifications, human-in-the-loop steps, or call an LLM to verify the state of a VM by passing a screenshot.<p>Would love to hear your feedback and if y",
+      "author": "fchishtie",
+      "timestamp": "2026-05-26T14:57:27+00:00",
+      "engagement": 119.0,
       "cves": [],
-      "vendors": [],
+      "vendors": [
+        "Windows"
+      ],
       "raw": {
-        "points": 159,
-        "num_comments": 148,
-        "object_id": "48252060"
+        "points": 91,
+        "num_comments": 56,
+        "object_id": "48280729"
       },
-      "url_hash": "a252e4828d6b3e8d",
-      "content_hash": "f5ff07b88dbdca0f"
+      "url_hash": "df844401e50ad93c",
+      "content_hash": "49b9994069ffee58"
     },
     {
       "source": "hackernews",
       "source_family": "hn",
-      "url": "https://old.reddit.com/r/electronics/comments/1td7yxl/i_built_a_fully_selfpowered_computer_in_actual",
-      "title": "A self-powered computer in actual credit-card size (~1mm thick)",
+      "url": "https://retrogamecoders.com/overhead-camera-view",
+      "title": "C64 Basic: Game Map Overhead \u201cCamera View\u201d",
       "body": "",
-      "author": "gnabgib",
-      "timestamp": "2026-05-23T21:06:37+00:00",
-      "engagement": 85.5,
+      "author": "ibobev",
+      "timestamp": "2026-05-26T13:47:39+00:00",
+      "engagement": 95.0,
       "cves": [],
       "vendors": [],
       "raw": {
-        "points": 82,
-        "num_comments": 7,
-        "object_id": "48251528"
+        "points": 88,
+        "num_comments": 14,
+        "object_id": "48279842"
       },
-      "url_hash": "1f07b15a9c73d67c",
-      "content_hash": "747dcc486fdc08bd"
+      "url_hash": "5a2c5c881cbfeb2d",
+      "content_hash": "e93286a2e4bbb40d"
     },
     {
       "source": "hackernews",
       "source_family": "hn",
-      "url": "https://www.bbc.com/news/articles/czd2qmdvmq6o",
-      "title": "Air France and Airbus found guilty of manslaughter over 2009 plane crash",
-      "body": "",
-      "author": "baal80spam",
-      "timestamp": "2026-05-23T20:09:13+00:00",
-      "engagement": 168.0,
+      "url": "https://www.cnbc.com/2026/05/26/dropbox-ceo-drew-houston-ashraf-alkarmi.html",
+      "title": "Dropbox CEO Drew Houston to step down",
+      "body": "<a href=\"https:&#x2F;&#x2F;blog.dropbox.com&#x2F;topics&#x2F;company&#x2F;dropbox-leadership-update\" rel=\"nofollow\">https:&#x2F;&#x2F;blog.dropbox.com&#x2F;topics&#x2F;company&#x2F;dropbox-leadership-u...</a><p><a href=\"https:&#x2F;&#x2F;twitter.com&#x2F;drewhouston&#x2F;status&#x2F;2059275240065425474?s=20\" rel=\"nofollow\">https:&#x2F;&#x2F;twitter.com&#x2F;drewhouston&#x2F;status&#x2F;2059275240065425474?s...</a>",
+      "author": "aghuang",
+      "timestamp": "2026-05-26T13:18:33+00:00",
+      "engagement": 540.5,
       "cves": [],
       "vendors": [],
       "raw": {
-        "points": 118,
-        "num_comments": 100,
-        "object_id": "48250980"
+        "points": 352,
+        "num_comments": 377,
+        "object_id": "48279453"
       },
-      "url_hash": "f0cfb6c60088eb0c",
-      "content_hash": "6fb5f5a3277d5aed"
+      "url_hash": "91011e12e9c791d0",
+      "content_hash": "e8b525c567eb1534"
     },
     {
       "source": "hackernews",
       "source_family": "hn",
-      "url": "https://singularityhub.com/2026/05/22/data-centers-now-consume-6-of-electricity-in-the-us-and-the-backlash-has-begun",
-      "title": "Data Centers Now Consume 6% of US Electricity\u2013and the Backlash Has Begun",
+      "url": "https://www.reuters.com/business/spain-blocks-prediction-markets-polymarket-kalshi-over-lack-gambling-licences-2026-05-26",
+      "title": "Spain blocks prediction markets Polymarket, Kalshi over lack of gambling licence",
       "body": "",
-      "author": "cdrnsf",
-      "timestamp": "2026-05-23T19:42:10+00:00",
-      "engagement": 73.0,
+      "author": "thm",
+      "timestamp": "2026-05-26T13:08:13+00:00",
+      "engagement": 1156.5,
       "cves": [],
       "vendors": [],
       "raw": {
-        "points": 56,
-        "num_comments": 34,
-        "object_id": "48250712"
+        "points": 939,
+        "num_comments": 435,
+        "object_id": "48279316"
       },
-      "url_hash": "503b8a4d61206673",
-      "content_hash": "27c7e15d41937611"
+      "url_hash": "8ea2a6a9b3d1affc",
+      "content_hash": "c5754ebb7ac7244d"
     },
     {
       "source": "hackernews",
       "source_family": "hn",
-      "url": "https://veronicaexplains.net/my-first-writerdeck",
-      "title": "Time to talk about my writerdeck",
+      "url": "https://www.githubstatus.com/",
+      "title": "GitHub Actions was down",
       "body": "",
-      "author": "hggh",
-      "timestamp": "2026-05-23T18:45:37+00:00",
-      "engagement": 555.0,
+      "author": "cebert",
+      "timestamp": "2026-05-26T11:42:58+00:00",
+      "engagement": 649.5,
       "cves": [],
-      "vendors": [],
+      "vendors": [
+        "GitHub"
+      ],
       "raw": {
-        "points": 428,
-        "num_comments": 254,
-        "object_id": "48250144"
+        "points": 649,
+        "num_comments": 1,
+        "object_id": "48278374"
       },
-      "url_hash": "4d33523b89ac0735",
-      "content_hash": "6c05fc436dad945a"
+      "url_hash": "abf6c307b090e323",
+      "content_hash": "67d3ea1602764931"
     },
     {
-      "source": "hackernews",
-      "source_family": "hn",
-      "url": "https://www.kcrg.com/2026/05/20/iowa-lawmakers-move-mandate-students-take-center-intellectual-freedom-classes-amid-low-enrollment",
-      "title": "Iowa to mandate students take Intellectual Freedom classes amid low enrollment",
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-11482",
+      "title": "CVE-2025-11482 (HIGH) \u2014 An Allocation of Resources Without Limits or Throttling vulnerability in the OPC-UA Server used in PPT30 \nOperating System versions before 1",
+      "body": "An Allocation of Resources Without Limits or Throttling vulnerability in the OPC-UA Server used in PPT30 \nOperating System versions before 1.8.0 may be used by an unauthenticated network-based attacker to \npermanently prevent legitimate users from interacting with the service.",
+      "author": null,
+      "timestamp": "2026-05-26T14:16:26.360000+00:00",
+      "engagement": 7.5,
+      "cves": [
+        "CVE-2025-11482"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.5,
+        "severity": "HIGH"
+      },
+      "url_hash": "286d2fa86b5c6fb4",
+      "content_hash": "8e4eba26503e0605"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48131",
+      "title": "CVE-2026-48131 (HIGH) \u2014 The VPN service may mishandle an unexpected IKE fragment value received on the IKE port 500/UDP during the early stage of a connection attem",
+      "body": "The VPN service may mishandle an unexpected IKE fragment value received on the IKE port 500/UDP during the early stage of a connection attempt. This can cause the service to terminate unexpectedly, resulting in denial of service (temporary disruption of VPN-related functionality).",
+      "author": null,
+      "timestamp": "2026-05-26T14:16:38.407000+00:00",
+      "engagement": 8.1,
+      "cves": [
+        "CVE-2026-48131"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "7add40a2f547a4cb",
+      "content_hash": "bf3df00dea775381"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48132",
+      "title": "CVE-2026-48132 (HIGH) \u2014 The Security Gateway does not correctly validate a length value in certain IKE packets when NAT-T is used (4500/UDP). As a result, a special",
+      "body": "The Security Gateway does not correctly validate a length value in certain IKE packets when NAT-T is used (4500/UDP). As a result, a specially crafted or malformed packet can cause the VPN processing service to terminate unexpectedly, leading to denial of service (temporary interruption of VPN negotiations/traffic).",
+      "author": null,
+      "timestamp": "2026-05-26T14:16:38.587000+00:00",
+      "engagement": 8.1,
+      "cves": [
+        "CVE-2026-48132"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "2dfe6dfe24e3da34",
+      "content_hash": "71e907e9e9a0a1ce"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48133",
+      "title": "CVE-2026-48133 (HIGH) \u2014 When the Identity Awareness blade is enabled with Browser-Based Authentication, an unauthenticated user may be able to read certain internal",
+      "body": "When the Identity Awareness blade is enabled with Browser-Based Authentication, an unauthenticated user may be able to read certain internal files on the Security Gateway.",
+      "author": null,
+      "timestamp": "2026-05-26T14:16:38.730000+00:00",
+      "engagement": 7.5,
+      "cves": [
+        "CVE-2026-48133"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.5,
+        "severity": "HIGH"
+      },
+      "url_hash": "12b9f88dbf75cfa6",
+      "content_hash": "8f9c2ef8f842472e"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7374",
+      "title": "CVE-2026-7374 (CRITICAL) \u2014 A flaw was found in KubeVirt's virt-handler component. This vulnerability allows an authenticated OpenShift user with edit permissions in a ",
+      "body": "A flaw was found in KubeVirt's virt-handler component. This vulnerability allows an authenticated OpenShift user with edit permissions in a single namespace to exploit improper symlink validation when connecting to virtual machine console sockets. By replacing the console socket with a symlink to the host's container runtime (CRI-O) socket, an attacker can hijack virt-handler's privileged connection. This enables the attacker to access any Unix socket on the host, potentially leading to full control of the node and the entire cluster.",
+      "author": null,
+      "timestamp": "2026-05-26T14:16:40.717000+00:00",
+      "engagement": 9.9,
+      "cves": [
+        "CVE-2026-7374"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.9,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "8c46583787500cda",
+      "content_hash": "b2606fefcdcacac1"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9543",
+      "title": "CVE-2026-9543 (CRITICAL) \u2014 A vulnerability has been found in Totolink N300RH 6.1c.1353_B20190305. Affected is the function setPasswordCfg of the file /cgi-bin/cstecgi.",
+      "body": "A vulnerability has been found in Totolink N300RH 6.1c.1353_B20190305. Affected is the function setPasswordCfg of the file /cgi-bin/cstecgi.cgi of the component Web Management Interface. Such manipulation of the argument admpass leads to os command injection. The attack can be executed remotely. The exploit has been disclosed to the public and may be used.",
+      "author": null,
+      "timestamp": "2026-05-26T14:16:46.333000+00:00",
+      "engagement": 9.8,
+      "cves": [
+        "CVE-2026-9543"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.8,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "f0ff630b404e2f50",
+      "content_hash": "24ba177dee02815f"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9544",
+      "title": "CVE-2026-9544 (HIGH) \u2014 A vulnerability was found in Shenzhen Sixun Software Sixun Shanghui Group Business Management System 10. Affected by this vulnerability is a",
+      "body": "A vulnerability was found in Shenzhen Sixun Software Sixun Shanghui Group Business Management System 10. Affected by this vulnerability is an unknown functionality of the file /api/Dinner/PayConfig. Performing a manipulation of the argument tableno results in sql injection. The attack is possible to be carried out remotely. The exploit has been made public and could be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+      "author": null,
+      "timestamp": "2026-05-26T14:16:46.537000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-9544"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "6d1691b5c417e15c",
+      "content_hash": "974427c492b85571"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-40033",
+      "title": "CVE-2026-40033 (HIGH) \u2014 FreeRDP before 3.26.0 contains a heap-buffer-overflow vulnerability in gdi_CacheToSurface that allows remote attackers to write out-of-bound",
+      "body": "FreeRDP before 3.26.0 contains a heap-buffer-overflow vulnerability in gdi_CacheToSurface that allows remote attackers to write out-of-bounds heap memory. The vulnerability occurs because rectangle validation clamps coordinates to UINT16_MAX but performs copy operations using unclamped cache entry dimensions, enabling malicious RDP servers to trigger large out-of-bounds writes and potentially achieve remote code execution or client crash.",
+      "author": null,
+      "timestamp": "2026-05-26T15:16:34.480000+00:00",
+      "engagement": 8.8,
+      "cves": [
+        "CVE-2026-40033"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "d20ae7402cb8b842",
+      "content_hash": "35bdcb656be6fe16"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-40034",
+      "title": "CVE-2026-40034 (HIGH) \u2014 gix-submodule before 0.82.0 incorrectly validates the update field in .gitmodules, allowing attackers to bypass the CommandForbiddenInModule",
+      "body": "gix-submodule before 0.82.0 incorrectly validates the update field in .gitmodules, allowing attackers to bypass the CommandForbiddenInModulesConfiguration guard when a submodule has been initialized with only partial configuration in .git/config. An attacker can inject arbitrary shell commands via the update field in .gitmodules that will be executed when Submodule::update() is called on a previously-initialized submodule, enabling remote code execution.",
+      "author": null,
+      "timestamp": "2026-05-26T15:16:35.087000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2026-40034"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "7f8b1675c67626f4",
+      "content_hash": "f9f02140a0a8870d"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42425",
+      "title": "CVE-2026-42425 (HIGH) \u2014 OpenKM 6.3.12 contains an unrestricted SQL execution vulnerability that allows authenticated administrative users to execute arbitrary SQL s",
+      "body": "OpenKM 6.3.12 contains an unrestricted SQL execution vulnerability that allows authenticated administrative users to execute arbitrary SQL statements against the application database via the DatabaseQuery interface. Attackers can submit malicious SQL queries through the qs parameter to the /admin/DatabaseQuery endpoint to extract sensitive data including usernames and password hashes from the OKM_USER table, modify permissions, or delete database records.",
+      "author": null,
+      "timestamp": "2026-05-26T15:16:37.423000+00:00",
+      "engagement": 7.2,
+      "cves": [
+        "CVE-2026-42425"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.2,
+        "severity": "HIGH"
+      },
+      "url_hash": "1353d8694c287d84",
+      "content_hash": "f22bea9d530be166"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42785",
+      "title": "CVE-2026-42785 (HIGH) \u2014 OpenKM 6.3.12 contains a remote code execution vulnerability that allows authenticated administrators to execute arbitrary Java/BeanShell co",
+      "body": "OpenKM 6.3.12 contains a remote code execution vulnerability that allows authenticated administrators to execute arbitrary Java/BeanShell code through the /admin/Scripting endpoint. Attackers can submit malicious script content with an action=Evaluate parameter to execute operating system commands in the context of the OpenKM application server.",
+      "author": null,
+      "timestamp": "2026-05-26T15:16:38.023000+00:00",
+      "engagement": 7.2,
+      "cves": [
+        "CVE-2026-42785"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.2,
+        "severity": "HIGH"
+      },
+      "url_hash": "b1b3414bfa56d972",
+      "content_hash": "3c369a83801b19c8"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45082",
+      "title": "CVE-2026-45082 (HIGH) \u2014 Karakeep is a elf-hostable bookmark-everything app. A Server-Side Request Forgery (SSRF) protection bypass vulnerability was identified in v",
+      "body": "Karakeep is a elf-hostable bookmark-everything app. A Server-Side Request Forgery (SSRF) protection bypass vulnerability was identified in versions prior to 0.32.0 affecting redirect-following processing components. Although the application implements protections intended to prevent requests toward internal/private network destinations, these protections could be bypassed through crafted HTTP redirect chains. By leveraging attacker-controlled redirects, an authenticated user could cause vulnerable application components to initiate requests toward internally reachable Docker network services accessible from the application environment. The issue affected multiple processing paths, including crawler-related functionality and video download processing flows. Version 0.32.0 contains a patch.",
+      "author": null,
+      "timestamp": "2026-05-26T15:16:38.693000+00:00",
+      "engagement": 7.6,
+      "cves": [
+        "CVE-2026-45082"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.6,
+        "severity": "HIGH"
+      },
+      "url_hash": "ed86684f9127f1c7",
+      "content_hash": "e4617161a1ae0559"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45247",
+      "title": "CVE-2026-45247 (CRITICAL) \u2014 Mirasvit Full Page Cache Warmer for Magento 2 before version 1.11.12 contains a PHP object injection vulnerability that allows unauthenticat",
+      "body": "Mirasvit Full Page Cache Warmer for Magento 2 before version 1.11.12 contains a PHP object injection vulnerability that allows unauthenticated attackers to achieve remote code execution by supplying a crafted serialized PHP object in the CacheWarmer cookie. Attackers can exploit the unrestricted call to PHP's native unserialize() function combined with gadget chains available in Magento and its dependencies to execute arbitrary code on the server.",
+      "author": null,
+      "timestamp": "2026-05-26T15:16:39.263000+00:00",
+      "engagement": 9.8,
+      "cves": [
+        "CVE-2026-45247"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.8,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "8b500014f93d9c38",
+      "content_hash": "d0cb638f7553db25"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46368",
+      "title": "CVE-2026-46368 (HIGH) \u2014 luci-app-https-dns-proxy through 2025.12.29-5 \u2014 an optional LuCI web UI add-on for the https-dns-proxy package, distributed through the Open",
+      "body": "luci-app-https-dns-proxy through 2025.12.29-5 \u2014 an optional LuCI web UI add-on for the https-dns-proxy package, distributed through the OpenWrt community packages feed and not installed by default \u2014 contains a command injection vulnerability in the setInitAction function. An authenticated user holding the luci.https-dns-proxy ACL permission can inject shell metacharacters through the 'name' parameter of a ubus RPC call to luci.https-dns-proxy setInitAction, resulting in arbitrary command execution as root on the underlying device. Core OpenWrt is not affected; only installations that have opted in to the luci-app-https-dns-proxy package are vulnerable.",
+      "author": null,
+      "timestamp": "2026-05-26T15:16:39.730000+00:00",
+      "engagement": 8.8,
+      "cves": [
+        "CVE-2026-46368"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "86cf720f1b8b182b",
+      "content_hash": "ef94b8ba3ade25f3"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-4480",
+      "title": "CVE-2026-4480 (HIGH) \u2014 A flaw was found in the Samba printing subsystem. Samba passes the client-controlled job description string to the command configured with t",
+      "body": "A flaw was found in the Samba printing subsystem. Samba passes the client-controlled job description string to the command configured with the \"print command\" setting via the \"%J\"\nsubstitution character without escaping shell meta characters. A remote attacker could exploit this vulnerability by sending a specially crafted print job description that contains unescaped shell characters. This could lead to remote code execution on the affected system.",
+      "author": null,
+      "timestamp": "2026-05-26T15:16:40.937000+00:00",
+      "engagement": 8.5,
+      "cves": [
+        "CVE-2026-4480"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.5,
+        "severity": "HIGH"
+      },
+      "url_hash": "d8a7858735c7d032",
+      "content_hash": "62aac0e97d70b1ba"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9550",
+      "title": "CVE-2026-9550 (HIGH) \u2014 A vulnerability was determined in Acrel Electrical EEMS Enterprise Power Operation and Maintenance Cloud Platform 1.3.0. Affected by this is",
+      "body": "A vulnerability was determined in Acrel Electrical EEMS Enterprise Power Operation and Maintenance Cloud Platform 1.3.0. Affected by this issue is some unknown functionality of the file /SubstationWEBV2/app/..;/main/upfile. Executing a manipulation of the argument path can lead to path traversal. The attack may be performed from remote. The exploit has been publicly disclosed and may be utilized. The vendor was contacted early about this disclosure but did not respond in any way.",
+      "author": null,
+      "timestamp": "2026-05-26T15:16:58+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-9550"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "15a4df12faf6d9a8",
+      "content_hash": "fa4ef9fe37847d08"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9551",
+      "title": "CVE-2026-9551 (HIGH) \u2014 A vulnerability was identified in Das Parking Management System \u505c\u8f66\u573a\u7ba1\u7406\u7cfb\u7edf 6.2.0. This affects the function xp_cmdshell of the file ParkingReco",
+      "body": "A vulnerability was identified in Das Parking Management System \u505c\u8f66\u573a\u7ba1\u7406\u7cfb\u7edf 6.2.0. This affects the function xp_cmdshell of the file ParkingRecord/ExportParkingRecords of the component API Endpoint. The manipulation of the argument Value leads to sql injection. It is possible to initiate the attack remotely. The exploit is publicly available and might be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+      "author": null,
+      "timestamp": "2026-05-26T15:17:01.147000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-9551"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "803e74dcbafa1b21",
+      "content_hash": "fa1bd700d33986fa"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9552",
+      "title": "CVE-2026-9552 (HIGH) \u2014 A security flaw has been discovered in Das Parking Management System \u505c\u8f66\u573a\u7ba1\u7406\u7cfb\u7edf 6.2.0. This vulnerability affects unknown code of the component",
+      "body": "A security flaw has been discovered in Das Parking Management System \u505c\u8f66\u573a\u7ba1\u7406\u7cfb\u7edf 6.2.0. This vulnerability affects unknown code of the component Search API Endpoint. The manipulation of the argument Value results in sql injection. It is possible to launch the attack remotely. The exploit has been released to the public and may be used for attacks. The vendor was contacted early about this disclosure but did not respond in any way.",
+      "author": null,
+      "timestamp": "2026-05-26T15:17:02.993000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-9552"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "5ab66ad1d12b4b3e",
+      "content_hash": "ffae82305558ceb3"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-25112",
+      "title": "CVE-2026-25112 (HIGH) \u2014 A high-severity vulnerability in the deployment of Genetec RabbitMQ that allows a privilege escalation attack.",
+      "body": "A high-severity vulnerability in the deployment of Genetec RabbitMQ that allows a privilege escalation attack.",
+      "author": null,
+      "timestamp": "2026-05-26T16:16:22.977000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2026-25112"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "041bf474369c56e5",
+      "content_hash": "44c8d6b9b02664f0"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43935",
+      "title": "CVE-2026-43935 (HIGH) \u2014 e107 is a content management system (CMS). Prior to 2.3.4, a Host Header Injection vulnerability in the password reset page allows attackers",
+      "body": "e107 is a content management system (CMS). Prior to 2.3.4, a Host Header Injection vulnerability in the password reset page allows attackers to manipulate the Host header to generate password reset links pointing to attacker-controlled domains. This can lead to phishing attacks, account takeover, or other security risks. The severity is high, as the vulnerability affects a critical function related to user authentication. This vulnerability is fixed in 2.3.4.",
+      "author": null,
+      "timestamp": "2026-05-26T16:16:25.390000+00:00",
+      "engagement": 8.1,
+      "cves": [
+        "CVE-2026-43935"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "533ecbc165dc2698",
+      "content_hash": "911d5a4067621abd"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48686",
+      "title": "CVE-2026-48686 (CRITICAL) \u2014 FastNetMon Community Edition through 1.2.9 contains a stack-based buffer overflow in the BGP NLRI (Network Layer Reachability Information) d",
+      "body": "FastNetMon Community Edition through 1.2.9 contains a stack-based buffer overflow in the BGP NLRI (Network Layer Reachability Information) decoder. The function decode_bgp_subnet_encoding_ipv4_raw() in src/bgp_protocol.cpp reads prefix_bit_length directly from the BGP packet (line 99) without validating it is <= 32 for IPv4 prefixes. This value is passed to how_much_bytes_we_need_for_storing_certain_subnet_mask() which computes ceil(prefix_bit_length / 8), returning up to 32 bytes for a prefix_bit_length of 255. The result is used as the length argument to memcpy() (line 106), which copies into a 4-byte uint32_t stack variable (prefix_ipv4). This causes a stack buffer overflow of up to 28 bytes, which can be exploited for arbitrary code execution. Additionally, the unvalidated prefix_bit_length is passed to convert_cidr_to_binary_netmask_local_function_copy() (line 111), where a shift of (32 - cidr) with cidr > 32 causes undefined behavior.",
+      "author": null,
+      "timestamp": "2026-05-26T16:16:26.693000+00:00",
+      "engagement": 9.8,
+      "cves": [
+        "CVE-2026-48686"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.8,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "2bd11c550184222a",
+      "content_hash": "23feef22f589e113"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48688",
+      "title": "CVE-2026-48688 (HIGH) \u2014 FastNetMon Community Edition through 1.2.9 contains multiple out-of-bounds reads in the BGP MP_REACH_NLRI IPv6 attribute decoder. The functi",
+      "body": "FastNetMon Community Edition through 1.2.9 contains multiple out-of-bounds reads in the BGP MP_REACH_NLRI IPv6 attribute decoder. The function decode_mp_reach_ipv6() in src/bgp_protocol.cpp contains a TODO comment at line 156 explicitly acknowledging 'we should add sanity checks to avoid reads after attribute memory block.' The function casts raw pointers to structure types without verifying sufficient data exists (line 158), uses the attacker-controlled length_of_next_hop field to determine memcpy size (line 181), and computes prefix_length by dereferencing a pointer calculated from multiple attacker-controlled offsets without bounds validation (line 189). The prefix_length is then used to calculate number_of_bytes_required_for_prefix which becomes a memcpy length (line 202) with no check against remaining buffer size.",
+      "author": null,
+      "timestamp": "2026-05-26T16:16:26.903000+00:00",
+      "engagement": 7.5,
+      "cves": [
+        "CVE-2026-48688"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.5,
+        "severity": "HIGH"
+      },
+      "url_hash": "4fd759d0152ce0bc",
+      "content_hash": "61a06b62c656f7d1"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48692",
+      "title": "CVE-2026-48692 (HIGH) \u2014 FastNetMon Community Edition through 1.2.9 exposes a gRPC API server on port 50052 with no authentication mechanism. The server is initializ",
+      "body": "FastNetMon Community Edition through 1.2.9 exposes a gRPC API server on port 50052 with no authentication mechanism. The server is initialized with grpc::InsecureServerCredentials() (src/fastnetmon.cpp line 477) and a source code comment explicitly acknowledges 'Listen on the given address without any authentication mechanism.' None of the RPC methods in src/api.cpp (ExecuteBan, ExecuteUnBan, GetBanlist, GetTotalTrafficCounters, etc.) perform any credential verification. The ExecuteBan and ExecuteUnBan methods trigger security-critical actions: BGP route announcements that can blackhole network traffic, and execution of external notification scripts via popen(). An attacker with local network access can ban arbitrary IP addresses (causing denial of service to legitimate traffic), unban active attacks (disabling DDoS mitigation), and trigger script execution. There is also no role-based access control separating read-only monitoring from destructive administrative operations.",
+      "author": null,
+      "timestamp": "2026-05-26T16:16:27.007000+00:00",
+      "engagement": 8.1,
+      "cves": [
+        "CVE-2026-48692"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "d16c3b5be6f55401",
+      "content_hash": "1a6837dc6f5c1203"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24162",
+      "title": "CVE-2026-24162 (HIGH) \u2014 NVIDIA Transformers4Rec for Linux contains a vulnerability where an attacker could cause improper deserialization of untrusted data. A succe",
+      "body": "NVIDIA Transformers4Rec for Linux contains a vulnerability where an attacker could cause improper deserialization of untrusted data. A successful exploit of this vulnerability might lead to code execution, data tampering, and information disclosure.",
+      "author": null,
+      "timestamp": "2026-05-26T17:16:29.910000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2026-24162"
+      ],
+      "vendors": [
+        "Linux"
+      ],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "c8bf85ade42b4183",
+      "content_hash": "1c432dde124546f4"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24212",
+      "title": "CVE-2026-24212 (HIGH) \u2014 NVIDIA Isaac Launchable for Linux contains a vulnerability where sensitive information is transmitted in clear text. A successful exploit of",
+      "body": "NVIDIA Isaac Launchable for Linux contains a vulnerability where sensitive information is transmitted in clear text. A successful exploit of this vulnerability might lead to code execution, escalation of privileges, information disclosure, and data tampering.",
+      "author": null,
+      "timestamp": "2026-05-26T17:16:30.050000+00:00",
+      "engagement": 7.5,
+      "cves": [
+        "CVE-2026-24212"
+      ],
+      "vendors": [
+        "Linux"
+      ],
+      "raw": {
+        "cvss": 7.5,
+        "severity": "HIGH"
+      },
+      "url_hash": "8f1d461526dfc284",
+      "content_hash": "39c404d5c1d6158b"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44680",
+      "title": "CVE-2026-44680 (HIGH) \u2014 MikroORM is a TypeScript ORM for Node.js based on Data Mapper, Unit of Work and Identity Map patterns. Prior to @mikro-orm/knex 6.6.14 and @",
+      "body": "MikroORM is a TypeScript ORM for Node.js based on Data Mapper, Unit of Work and Identity Map patterns. Prior to @mikro-orm/knex 6.6.14 and @mikro-orm/sql 7.0.14, MikroORM's identifier-quoting helper (Platform.quoteIdentifier and the postgres/mssql overrides) and its JSON-path emitters (Platform.getSearchJsonPropertyKey, quoteJsonKey) did not properly escape characters that delimit the SQL identifier or string-literal context they emit into. When application code passes attacker-influenced strings to public ORM APIs that expect an identifier or a JSON-property filter, an attacker can break out of the quoted context and inject arbitrary SQL. This vulnerability is fixed in @mikro-orm/knex 6.6.14 and @mikro-orm/sql 7.0.14.",
+      "author": null,
+      "timestamp": "2026-05-26T17:16:46.540000+00:00",
+      "engagement": 7.6,
+      "cves": [
+        "CVE-2026-44680"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.6,
+        "severity": "HIGH"
+      },
+      "url_hash": "6119cd6fda5d4865",
+      "content_hash": "7103b69e7f5a47b3"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44729",
+      "title": "CVE-2026-44729 (HIGH) \u2014 Twenty is an open source CRM. In 1.18.0 and earlier, the file serving endpoints in Twenty CRM at /files/* and /file/:fileFolder/:id serve up",
+      "body": "Twenty is an open source CRM. In 1.18.0 and earlier, the file serving endpoints in Twenty CRM at /files/* and /file/:fileFolder/:id serve uploaded files using fileStream.pipe(res) without setting any Content-Type, Content-Disposition, or X-Content-Type-Options response headers. This allows an authenticated attacker to upload an HTML file containing JavaScript, which will be rendered by the victim's browser in the context of the Twenty CRM domain when accessed \u2014 enabling session hijacking, account takeover, and data theft.",
+      "author": null,
+      "timestamp": "2026-05-26T17:16:46.837000+00:00",
+      "engagement": 8.7,
+      "cves": [
+        "CVE-2026-44729"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.7,
+        "severity": "HIGH"
+      },
+      "url_hash": "3191418604e61bda",
+      "content_hash": "42523e102cc58e4e"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45721",
+      "title": "CVE-2026-45721 (CRITICAL) \u2014 Algernon is a small self-contained pure-Go web server. Prior to 1.17.7, when Algernon is asked for any URL path that resolves to a directory",
+      "body": "Algernon is a small self-contained pure-Go web server. Prior to 1.17.7, when Algernon is asked for any URL path that resolves to a directory without an index file, DirPage walks upward through parent directories \u2014 past the configured server root \u2014 looking for a file named handler.lua to execute as the request handler. The loop terminates only after 100 ancestor steps or when filepath.Dir returns ., so on any absolute server-root path the search reaches the filesystem root (/ on Unix, drive letter on Windows). The first handler.lua it finds is loaded into the Lua interpreter with the full Algernon API exposed \u2014 including run3(), httpclient, os.execute, io.popen, PQ, MSSQL, raw filesystem access, and the userstate database. Any process that can write handler.lua anywhere in a parent directory of the server root obtains pre-authenticated remote code execution on the next HTTP request. This is reachable without authentication \u2014 the lookup happens before the permission check returns a hit (the perm system only gates URL prefixes, not the handler-resolution step), and any URL pointing at a directory without an index triggers the walk. On a fresh stock Algernon install the request GET / is enough. This vulnerability is fixed in 1.17.7.",
+      "author": null,
+      "timestamp": "2026-05-26T17:16:47.750000+00:00",
+      "engagement": 9.0,
+      "cves": [
+        "CVE-2026-45721"
+      ],
+      "vendors": [
+        "Windows"
+      ],
+      "raw": {
+        "cvss": 9.0,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "5da57ba9bea11533",
+      "content_hash": "539a9048305e75c9"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45728",
+      "title": "CVE-2026-45728 (HIGH) \u2014 Algernon is a small self-contained pure-Go web server. Prior to 1.17.7, when Algernon is invoked with a single file path instead of a direct",
+      "body": "Algernon is a small self-contained pure-Go web server. Prior to 1.17.7, when Algernon is invoked with a single file path instead of a directory, singleFileMode is set to true and debugMode is forcibly enabled. debugMode activates the PrettyError renderer, which on any Lua or template error response dumps the absolute path of the file that errored, complete byte contents of that file, and exception or parser error text. This response is served with HTTP 200 OK to whoever sent the request that triggered the error. Any client able to reach the server and able to provoke a runtime error in the served script obtains the full server-side source of that script and of any sibling Lua data file consulted during the request. This vulnerability is fixed in 1.17.7.",
+      "author": null,
+      "timestamp": "2026-05-26T17:16:47.900000+00:00",
+      "engagement": 7.5,
+      "cves": [
+        "CVE-2026-45728"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.5,
+        "severity": "HIGH"
+      },
+      "url_hash": "467c82064895663d",
+      "content_hash": "c85e77bec6f216ab"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48126",
+      "title": "CVE-2026-48126 (HIGH) \u2014 Algernon is a small self-contained pure-Go web server. Prior to 1.17.8, when algernon is started with --domain (or --letsencrypt, which sile",
+      "body": "Algernon is a small self-contained pure-Go web server. Prior to 1.17.8, when algernon is started with --domain (or --letsencrypt, which silently turns on --domain at engine/flags.go:372), the request handler resolves the served directory by joining the configured --dir with the value of the client-supplied Host header. The join is performed by filepath.Join with no validation, so a Host: .. header walks one level above the document root. Subsequent file resolution then exposes everything in that parent directory \u2014 arbitrary file read, full directory listing, and, if any .lua file is present, server-side Lua execution. This vulnerability is fixed in 1.17.8.",
+      "author": null,
+      "timestamp": "2026-05-26T17:16:53.360000+00:00",
+      "engagement": 8.2,
+      "cves": [
+        "CVE-2026-48126"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.2,
+        "severity": "HIGH"
+      },
+      "url_hash": "12fb5b5af55b324e",
+      "content_hash": "6bae9c70a95a1796"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48690",
+      "title": "CVE-2026-48690 (HIGH) \u2014 FastNetMon Community Edition through 1.2.9 contains an integer overflow vulnerability in the packet capture buffer allocation. In src/packet",
+      "body": "FastNetMon Community Edition through 1.2.9 contains an integer overflow vulnerability in the packet capture buffer allocation. In src/packet_storage.hpp, the allocate_buffer() function computes memory_size_in_bytes as 'buffer_size_in_packets * (max_captured_packet_size + sizeof(fastnetmon_pcap_pkthdr_t)) + sizeof(fastnetmon_pcap_file_header_t)' using unsigned int (32-bit) arithmetic. With max_captured_packet_size=1500 and sizeof(fastnetmon_pcap_pkthdr_t)=16, each packet requires approximately 1516 bytes. If buffer_size_in_packets exceeds approximately 2,832,542, the multiplication overflows, resulting in a much smaller allocation than expected. Subsequent write_packet() calls then write past the allocated buffer, causing heap corruption. The buffer_size_in_packets value is derived from the ban_details_records_count configuration parameter, which is parsed using atoi() with no overflow checking.",
+      "author": null,
+      "timestamp": "2026-05-26T17:16:53.547000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-48690"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "30fea7a887879def",
+      "content_hash": "f558ceb8126d5c31"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48697",
+      "title": "CVE-2026-48697 (HIGH) \u2014 FastNetMon Community Edition through 1.2.9 does not verify TLS certificates on outbound HTTPS connections. The execute_web_request_secure() ",
+      "body": "FastNetMon Community Edition through 1.2.9 does not verify TLS certificates on outbound HTTPS connections. The execute_web_request_secure() function in src/fast_library.cpp creates a boost::asio::ssl::context with tls_client mode and calls set_default_verify_paths() to load CA certificates, but never calls set_verify_mode(boost::asio::ssl::verify_peer). Without this call, OpenSSL performs the TLS handshake without validating the server's certificate chain, making all HTTPS connections vulnerable to man-in-the-middle attacks. This function is used for telemetry reporting to community-stats.fastnetmon.com, which sends system information including CPU model, kernel version, traffic statistics, and software configuration. An attacker can intercept and modify this data or redirect it to a malicious server.",
+      "author": null,
+      "timestamp": "2026-05-26T17:16:53.920000+00:00",
+      "engagement": 7.4,
+      "cves": [
+        "CVE-2026-48697"
+      ],
+      "vendors": [
+        "OpenSSL"
+      ],
+      "raw": {
+        "cvss": 7.4,
+        "severity": "HIGH"
+      },
+      "url_hash": "3fba5368e839289f",
+      "content_hash": "63b3f57f3b9e9c82"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48864",
+      "title": "CVE-2026-48864 (HIGH) \u2014 A flaw was found in libsolv. This heap buffer overflow occurs during the decompression of attacker-controlled compressed data within `.solv`",
+      "body": "A flaw was found in libsolv. This heap buffer overflow occurs during the decompression of attacker-controlled compressed data within `.solv` files due to insufficient input validation. An attacker can provide a specially crafted `.solv` file, which, when processed by a vulnerable application, can lead to out-of-bounds memory access. This could result in information disclosure, alteration of program execution, or a denial of service.",
+      "author": null,
+      "timestamp": "2026-05-26T17:16:54.050000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2026-48864"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "a40d314b3ea52a39",
+      "content_hash": "777a9745a2f2ecc1"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48898",
+      "title": "CVE-2026-48898 (CRITICAL) \u2014 An improper access check allows privilege escalation through the com_users batch task.",
+      "body": "An improper access check allows privilege escalation through the com_users batch task.",
+      "author": null,
+      "timestamp": "2026-05-26T17:16:54.460000+00:00",
+      "engagement": 9.8,
+      "cves": [
+        "CVE-2026-48898"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.8,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "c9e0df64b92328b8",
+      "content_hash": "2db9531e85d81857"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48899",
+      "title": "CVE-2026-48899 (CRITICAL) \u2014 An improper access check allows privilege escalation through the com_users batch task.",
+      "body": "An improper access check allows privilege escalation through the com_users batch task.",
+      "author": null,
+      "timestamp": "2026-05-26T17:16:54.587000+00:00",
+      "engagement": 9.8,
+      "cves": [
+        "CVE-2026-48899"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.8,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "6b375dfe578f5a15",
+      "content_hash": "ef92e8c1515a71ac"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48904",
+      "title": "CVE-2026-48904 (CRITICAL) \u2014 An improper access check allows privelege escalation through the com_users group editing webservice endpoint.",
+      "body": "An improper access check allows privelege escalation through the com_users group editing webservice endpoint.",
+      "author": null,
+      "timestamp": "2026-05-26T17:16:55.203000+00:00",
+      "engagement": 9.8,
+      "cves": [
+        "CVE-2026-48904"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.8,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "931020d5c73ea2ee",
+      "content_hash": "0635e511a49acc68"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8850",
+      "title": "CVE-2026-8850 (HIGH) \u2014 IBM HTTP Server 8.5, and 9.0 is vulnerable to denial of service via the optional module mod_ibm_upload.",
+      "body": "IBM HTTP Server 8.5, and 9.0 is vulnerable to denial of service via the optional module mod_ibm_upload.",
+      "author": null,
+      "timestamp": "2026-05-26T17:16:55.640000+00:00",
+      "engagement": 7.5,
+      "cves": [
+        "CVE-2026-8850"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.5,
+        "severity": "HIGH"
+      },
+      "url_hash": "288c686b84e9d59b",
+      "content_hash": "0c5d02937f79738b"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9562",
+      "title": "CVE-2026-9562 (HIGH) \u2014 A vulnerability has been found in sambitraj STUDENT-MANAGEMENT-SYSTEM up to 56ba287f2e9031523ccb4244cb6e3fe530e4e5d5. The affected element i",
+      "body": "A vulnerability has been found in sambitraj STUDENT-MANAGEMENT-SYSTEM up to 56ba287f2e9031523ccb4244cb6e3fe530e4e5d5. The affected element is an unknown function of the component Dashboard. Such manipulation leads to improper access controls. The attack may be launched remotely. The exploit has been disclosed to the public and may be used. This product operates on a rolling release basis, ensuring continuous delivery. Consequently, there are no version details for either affected or updated releases. Multiple endpoints are affected. The project was informed of the problem early through an issue report but has not responded yet.",
+      "author": null,
+      "timestamp": "2026-05-26T17:16:57.413000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-9562"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "c2579079088ca543",
+      "content_hash": "45547636c8230b8d"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24187",
+      "title": "CVE-2026-24187 (HIGH) \u2014 NVIDIA Display Driver for Linux contains a vulnerability where an attacker could cause a use-after-free. A successful exploit of this vulner",
+      "body": "NVIDIA Display Driver for Linux contains a vulnerability where an attacker could cause a use-after-free. A successful exploit of this vulnerability might lead to denial of service, escalation of privileges, information disclosure, data tampering, and code execution.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:37.710000+00:00",
+      "engagement": 8.8,
+      "cves": [
+        "CVE-2026-24187"
+      ],
+      "vendors": [
+        "Linux"
+      ],
+      "raw": {
+        "cvss": 8.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "d820fdf6a7383808",
+      "content_hash": "2cb2121137428ef8"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24190",
+      "title": "CVE-2026-24190 (HIGH) \u2014 NVIDIA Display Driver for Windows and Linux contains a vulnerability in the kernel mode layer, where a user could cause improper access to G",
+      "body": "NVIDIA Display Driver for Windows and Linux contains a vulnerability in the kernel mode layer, where a user could cause improper access to GPU resources. A successful exploit of this vulnerability might lead to denial of service, escalation of privileges, information disclosure, data tampering, and code execution.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:37.847000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2026-24190"
+      ],
+      "vendors": [
+        "Windows",
+        "Linux"
+      ],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "794d38d79a861a93",
+      "content_hash": "bc73b48343dbb64b"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24191",
+      "title": "CVE-2026-24191 (HIGH) \u2014 NVIDIA Display Driver for Windows contains a vulnerability where an attacker could cause a time-of-check time-of-use issue. A successful exp",
+      "body": "NVIDIA Display Driver for Windows contains a vulnerability where an attacker could cause a time-of-check time-of-use issue. A successful exploit of this vulnerability might lead to denial of service, escalation of privileges, information disclosure, data tampering, and code execution.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:37.980000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2026-24191"
+      ],
+      "vendors": [
+        "Windows"
+      ],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "82024e838918383a",
+      "content_hash": "2781772f86051786"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24192",
+      "title": "CVE-2026-24192 (HIGH) \u2014 NVIDIA Display Driver for Linux contains a vulnerability where an attacker could cause an incorrect conversion between numeric types, leadin",
+      "body": "NVIDIA Display Driver for Linux contains a vulnerability where an attacker could cause an incorrect conversion between numeric types, leading to a heap buffer overflow. A successful exploit of this vulnerability might lead to denial of service, escalation of privileges, information disclosure, data tampering, and code execution.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:38.107000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2026-24192"
+      ],
+      "vendors": [
+        "Linux"
+      ],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "8e2e55e261077ca6",
+      "content_hash": "1a1d51841a644368"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24193",
+      "title": "CVE-2026-24193 (HIGH) \u2014 NVIDIA Display Driver for Windows and Linux contains a vulnerability where an attacker could cause an out-of-bounds write. A successful expl",
+      "body": "NVIDIA Display Driver for Windows and Linux contains a vulnerability where an attacker could cause an out-of-bounds write. A successful exploit of this vulnerability might lead to denial of service, escalation of privileges, information disclosure, data tampering, and code execution.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:38.237000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2026-24193"
+      ],
+      "vendors": [
+        "Windows",
+        "Linux"
+      ],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "18e6aba922ea4023",
+      "content_hash": "3c5f28bb40fc9653"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24194",
+      "title": "CVE-2026-24194 (HIGH) \u2014 NVIDIA Display Driver for Linux contains a vulnerability in a kernel mode layer handler, where a user could cause improper permission handli",
+      "body": "NVIDIA Display Driver for Linux contains a vulnerability in a kernel mode layer handler, where a user could cause improper permission handling. A successful exploit of this vulnerability might lead to denial of service, escalation of privileges, information disclosure, data tampering, and code execution.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:38.367000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2026-24194"
+      ],
+      "vendors": [
+        "Linux"
+      ],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "af44df2af5cfd221",
+      "content_hash": "db0e0e40d28ed58e"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24195",
+      "title": "CVE-2026-24195 (HIGH) \u2014 NVIDIA Display Driver for Linux contains a vulnerability in UVM, where a user could cause improper input validation. A successful exploit of",
+      "body": "NVIDIA Display Driver for Linux contains a vulnerability in UVM, where a user could cause improper input validation. A successful exploit of this vulnerability might lead to denial of service.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:38.490000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-24195"
+      ],
+      "vendors": [
+        "Linux"
+      ],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "dd2037d517381827",
+      "content_hash": "fc4b571e65a51e4d"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24196",
+      "title": "CVE-2026-24196 (HIGH) \u2014 NVIDIA Display Driver for Linux contains a vulnerability where a user could cause an out-of-bounds read. A successful exploit of this vulner",
+      "body": "NVIDIA Display Driver for Linux contains a vulnerability where a user could cause an out-of-bounds read. A successful exploit of this vulnerability might lead to denial of service and information disclosure.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:38.607000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-24196"
+      ],
+      "vendors": [
+        "Linux"
+      ],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "f2245c4aad00fda5",
+      "content_hash": "57df060de35ec45f"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24200",
+      "title": "CVE-2026-24200 (HIGH) \u2014 NVIDIA vGPU software contains a vulnerability in the virtual GPU manager, where an attacker could cause a use-after-free for stack memory. A",
+      "body": "NVIDIA vGPU software contains a vulnerability in the virtual GPU manager, where an attacker could cause a use-after-free for stack memory. A successful exploit of this vulnerability might lead to denial of service, escalation of privileges, information disclosure, data tampering, and code execution.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:39.133000+00:00",
+      "engagement": 7.0,
+      "cves": [
+        "CVE-2026-24200"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.0,
+        "severity": "HIGH"
+      },
+      "url_hash": "961f20d5854ba349",
+      "content_hash": "ab721f43270b7a64"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44667",
+      "title": "CVE-2026-44667 (HIGH) \u2014 FACTION is a PenTesting Report Generation and Collaboration Framework. Prior to 1.8.3, Faction is vulnerable to stored cross-site scripting ",
+      "body": "FACTION is a PenTesting Report Generation and Collaboration Framework. Prior to 1.8.3, Faction is vulnerable to stored cross-site scripting (XSS) via attachment filenames in remediation verification file preview flows. User-supplied filename values are persisted and then rendered into HTML and attribute contexts without output encoding, allowing attacker-controlled JavaScript to execute in the browser of any user who opens the affected verification/remediation views. Because the payload is stored server-side and rendered to other users, exploitation is persistent and can impact privileged accounts. This vulnerability is fixed in 1.8.3.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:50.120000+00:00",
+      "engagement": 8.7,
+      "cves": [
+        "CVE-2026-44667"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.7,
+        "severity": "HIGH"
+      },
+      "url_hash": "042dbaaf931924c6",
+      "content_hash": "ab54b0107d97c327"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44668",
+      "title": "CVE-2026-44668 (CRITICAL) \u2014 FACTION is a PenTesting Report Generation and Collaboration Framework. Prior to 1.8.3, AccessControlInterceptor, the authentication gate for",
+      "body": "FACTION is a PenTesting Report Generation and Collaboration Framework. Prior to 1.8.3, AccessControlInterceptor, the authentication gate for all Struts2 actions, unconditionally calls invocation.invoke() without checking for a valid session. Four action methods in BoilerPlateConfig perform no local session check either, allowing an unauthenticated attacker to read, overwrite, deactivate, and permanently delete any boilerplate template in the system. This vulnerability is fixed in 1.8.3.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:50.270000+00:00",
+      "engagement": 9.8,
+      "cves": [
+        "CVE-2026-44668"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.8,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "984d1c735fed7dab",
+      "content_hash": "da5368b7a14566bc"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44669",
+      "title": "CVE-2026-44669 (HIGH) \u2014 FACTION is a PenTesting Report Generation and Collaboration Framework. Prior to 1.8.3, Faction is vulnerable to stored cross-site scripting ",
+      "body": "FACTION is a PenTesting Report Generation and Collaboration Framework. Prior to 1.8.3, Faction is vulnerable to stored cross-site scripting (XSS) via attachment filenames in assessment file preview flows. User-supplied filename values are persisted and later rendered into HTML/attribute contexts without output encoding, allowing attacker-controlled JavaScript to execute in the browser of any user who views the affected page. Because the payload is stored server-side and rendered to other users, exploitation is persistent and can impact privileged accounts. This vulnerability is fixed in 1.8.3.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:50.420000+00:00",
+      "engagement": 8.7,
+      "cves": [
+        "CVE-2026-44669"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.7,
+        "severity": "HIGH"
+      },
+      "url_hash": "b9748233cb4095bb",
+      "content_hash": "f18815171a52fa2b"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44706",
+      "title": "CVE-2026-44706 (HIGH) \u2014 Chatwoot is a customer engagement suite. From 2.2.0 to before 4.11.2, a SQL injection vulnerability exists in the conversation and contact f",
+      "body": "Chatwoot is a customer engagement suite. From 2.2.0 to before 4.11.2, a SQL injection vulnerability exists in the conversation and contact filter APIs. When filtering by a custom attribute of type date or number using the is_greater_than or is_less_than operators, user-supplied values in the values field of the filter payload are interpolated directly into the SQL query without parameterization. Any authenticated user with access to an account can exploit this to execute arbitrary SQL via time-based blind injection. This affects /api/v1/accounts/{account_id}/conversations/filter, /api/v1/accounts/{account_id}/contacts/filter, and /api/v1/accounts/{account_id}/custom_attribute_definitions. This vulnerability is fixed in 4.11.2.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:50.607000+00:00",
+      "engagement": 8.5,
+      "cves": [
+        "CVE-2026-44706"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.5,
+        "severity": "HIGH"
+      },
+      "url_hash": "abbfae2a6c9bf564",
+      "content_hash": "15efdaf6190daced"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44728",
+      "title": "CVE-2026-44728 (HIGH) \u2014 Babel is a compiler for writing next generation JavaScript. From 7.12.0 to before 7.29.4 and 8.0.0-alpha.13, using Babel to compile code tha",
+      "body": "Babel is a compiler for writing next generation JavaScript. From 7.12.0 to before 7.29.4 and 8.0.0-alpha.13, using Babel to compile code that was specifically crafted by an attacker can cause Babel to generate output code that executes arbitrary code. This vulnerability is fixed in 7.29.4 and 8.0.0-alpha.13.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:50.880000+00:00",
+      "engagement": 8.2,
+      "cves": [
+        "CVE-2026-44728"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.2,
+        "severity": "HIGH"
+      },
+      "url_hash": "86cb247768ad640d",
+      "content_hash": "e1bd86fd793e9c77"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44730",
+      "title": "CVE-2026-44730 (HIGH) \u2014 OpenCTI is an open source platform for managing cyber threat intelligence knowledge and observables. Prior to 6.9.7, an organization admin c",
+      "body": "OpenCTI is an open source platform for managing cyber threat intelligence knowledge and observables. Prior to 6.9.7, an organization admin can escalate their privileges by adding a user from a different organization with higher privileges, to their own organization. This is due to incorrect ACL on userEdit relationAdd. This vulnerability is fixed in 6.9.7.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:51.023000+00:00",
+      "engagement": 7.2,
+      "cves": [
+        "CVE-2026-44730"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.2,
+        "severity": "HIGH"
+      },
+      "url_hash": "3d6eb9d5f2bddc5d",
+      "content_hash": "835896f22ebb4b48"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46624",
+      "title": "CVE-2026-46624 (CRITICAL) \u2014 Twenty is an open source CRM. From 1.7.7 through 1.16.7, a critical Remote Code Execution (RCE) vulnerability exists in Twenty CRM via a cha",
+      "body": "Twenty is an open source CRM. From 1.7.7 through 1.16.7, a critical Remote Code Execution (RCE) vulnerability exists in Twenty CRM via a chained SQL Injection and PostgreSQL COPY TO PROGRAM attack. If Postgres user is a super user then any authenticated user can execute arbitrary OS commands on the database server by injecting SQL through the unsanitized timeZone parameter in the REST API groupBy endpoint. The timeZone field within the group_by query parameter is directly interpolated into a raw SQL expression using JavaScript template literals without any parameterization, validation, or escaping. This affects engine/api/graphql/graphql-query-runner/group-by/resolvers/utils/get-group-by-expression.util.ts.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:52.400000+00:00",
+      "engagement": 9.9,
+      "cves": [
+        "CVE-2026-46624"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.9,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "9697728d84eace3f",
+      "content_hash": "7adad2b05d26d727"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48694",
+      "title": "CVE-2026-48694 (HIGH) \u2014 FastNetMon Community Edition through 1.2.9 contains a configuration injection vulnerability in the Juniper router integration plugin. In src",
+      "body": "FastNetMon Community Edition through 1.2.9 contains a configuration injection vulnerability in the Juniper router integration plugin. In src/juniper_plugin/fastnetmon_juniper.php, the $IP_ATTACK variable (received from argv[1]) is directly interpolated into Juniper NETCONF set-configuration commands at lines 69 and 90 without any validation or sanitization. Line 69: $conn->load_set_configuration(\"set routing-options static route {$IP_ATTACK} community 65535:666 discard\"). Line 90: $conn->load_set_configuration(\"delete routing-options static route {$IP_ATTACK}/32\"). An attacker who can control the IP address string can inject additional Juniper CLI configuration commands by embedding newline characters followed by arbitrary set/delete commands. This could modify the router's routing table, firewall filters, user accounts, or any other configuration element accessible via NETCONF. The impact is full router compromise.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:52.840000+00:00",
+      "engagement": 8.1,
+      "cves": [
+        "CVE-2026-48694"
+      ],
+      "vendors": [
+        "Juniper"
+      ],
+      "raw": {
+        "cvss": 8.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "62f927a7a9dcb9c7",
+      "content_hash": "bf5a41f1330ad1c9"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48695",
+      "title": "CVE-2026-48695 (HIGH) \u2014 FastNetMon Community Edition through 1.2.9 contains an OS command injection vulnerability in the MikroTik router integration plugin. The _lo",
+      "body": "FastNetMon Community Edition through 1.2.9 contains an OS command injection vulnerability in the MikroTik router integration plugin. The _log() function in src/mikrotik_plugin/fastnetmon_mikrotik.php (lines 107-108) constructs shell commands by concatenating the $msg parameter directly into exec() calls: exec(\"echo `date` \\\"- {FASTNETMON] - \" . $msg . \" \\\" >> \" . $FILE_LOG_TMP). This is identical in pattern to the Juniper plugin vulnerability. The $msg variable contains unsanitized attack data from command-line arguments. An attacker who can influence argv[] values can inject arbitrary shell commands. The fix is to replace exec() with file_put_contents() or use escapeshellarg().",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:52.950000+00:00",
+      "engagement": 8.1,
+      "cves": [
+        "CVE-2026-48695"
+      ],
+      "vendors": [
+        "Juniper"
+      ],
+      "raw": {
+        "cvss": 8.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "8b656ccd06d0da9b",
+      "content_hash": "5f6c573a569dd697"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7251",
+      "title": "CVE-2026-7251 (CRITICAL) \u2014 Eppendorf BioFlo 320\u00a0is vulnerable to due to VNC server using a hard-coded password. If a remote attacker knows the network address of any B",
+      "body": "Eppendorf BioFlo 320\u00a0is vulnerable to due to VNC server using a hard-coded password. If a remote attacker knows the network address of any BioFlo 320 model with remote access enabled, they can gain full control of the user interface by using this password. Once connected, the attacker would have full access to all control panel features for the BioFlo 320. VNC traffic is not encrypted.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:55.347000+00:00",
+      "engagement": 9.8,
+      "cves": [
+        "CVE-2026-7251"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.8,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "331ca477cae57804",
+      "content_hash": "d254b158c06c27d4"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7451",
+      "title": "CVE-2026-7451 (HIGH) \u2014 A maliciously crafted TIF file, when parsed through Autodesk 3ds Max, can force an Out-of-Bounds Write vulnerability. A malicious actor may ",
+      "body": "A maliciously crafted TIF file, when parsed through Autodesk 3ds Max, can force an Out-of-Bounds Write vulnerability. A malicious actor may leverage this vulnerability to cause a crash, cause data corruption, or execute arbitrary code in the context of the current process.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:55.757000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2026-7451"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "ac2c2f555f2761b8",
+      "content_hash": "7d5e5703d7e6ac14"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7452",
+      "title": "CVE-2026-7452 (HIGH) \u2014 A maliciously crafted WRL file, when parsed through Autodesk 3ds Max, can force a Memory Corruption vulnerability. A malicious actor can lev",
+      "body": "A maliciously crafted WRL file, when parsed through Autodesk 3ds Max, can force a Memory Corruption vulnerability. A malicious actor can leverage this vulnerability to execute arbitrary code in the context of the current process.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:55.900000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2026-7452"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "0ca08fd3830d29c7",
+      "content_hash": "602839cefd4b85f0"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7454",
+      "title": "CVE-2026-7454 (HIGH) \u2014 A maliciously crafted WRL file, when parsed through Autodesk 3ds Max, can force a Memory Corruption vulnerability. A malicious actor can lev",
+      "body": "A maliciously crafted WRL file, when parsed through Autodesk 3ds Max, can force a Memory Corruption vulnerability. A malicious actor can leverage this vulnerability to execute arbitrary code in the context of the current process.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:56.200000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2026-7454"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "0acedbd980b060cc",
+      "content_hash": "ec3f576a0429651d"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8620",
+      "title": "CVE-2026-8620 (HIGH) \u2014 IBM Web Server Plug-ins for WebSphere Application Server and WebSphere Liberty 8.5, 9.0 IBM WebSphere Application Server and WebSphere Appli",
+      "body": "IBM Web Server Plug-ins for WebSphere Application Server and WebSphere Liberty 8.5, 9.0 IBM WebSphere Application Server and WebSphere Application Server Liberty are vulnerable to HTTP request smuggling in the Web Server Plug-ins through a specially crafted request.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:56.350000+00:00",
+      "engagement": 7.5,
+      "cves": [
+        "CVE-2026-8620"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.5,
+        "severity": "HIGH"
+      },
+      "url_hash": "00c398770fd44f0d",
+      "content_hash": "488da0f55be1deee"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8633",
+      "title": "CVE-2026-8633 (CRITICAL) \u2014 IBM Web Server Plug-ins for WebSphere Application Server and WebSphere Liberty 8.5, 9.0 IBM WebSphere Application Server and WebSphere Appli",
+      "body": "IBM Web Server Plug-ins for WebSphere Application Server and WebSphere Liberty 8.5, 9.0 IBM WebSphere Application Server and WebSphere Application Server Liberty are vulnerable to remote code execution in the Web Server Plug-ins, through a specially crafted request.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:56.513000+00:00",
+      "engagement": 9.8,
+      "cves": [
+        "CVE-2026-8633"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.8,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "4df508328a97a12c",
+      "content_hash": "119706909984289e"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8834",
+      "title": "CVE-2026-8834 (HIGH) \u2014 IBM HTTP Server 8.5, and 9.0 contains a buffer overflow vulnerability. A privileged user, authenticated to the Administration Server, could ",
+      "body": "IBM HTTP Server 8.5, and 9.0 contains a buffer overflow vulnerability. A privileged user, authenticated to the Administration Server, could exploit this vulnerability to execute remote code or cause a denial of service.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:56.667000+00:00",
+      "engagement": 8.0,
+      "cves": [
+        "CVE-2026-8834"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.0,
+        "severity": "HIGH"
+      },
+      "url_hash": "764f2ad179ea0c2d",
+      "content_hash": "1b364a83b482a72f"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8835",
+      "title": "CVE-2026-8835 (HIGH) \u2014 IBM HTTP Server 8.5, and 9.0 is vulnerable to invalid pointer dereference. A privileged user, authenticated to the Administration Server, co",
+      "body": "IBM HTTP Server 8.5, and 9.0 is vulnerable to invalid pointer dereference. A privileged user, authenticated to the Administration Server, could exploit this vulnerability to expose sensitive information or cause a denial of service.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:56.803000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-8835"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "d7d6bfa475fb9fe0",
+      "content_hash": "09734f7dedff92a5"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8854",
+      "title": "CVE-2026-8854 (HIGH) \u2014 IBM HTTP Server 8.5, and 9.0 is vulnerable to denial of service via the optional module mod_mem_cache.",
+      "body": "IBM HTTP Server 8.5, and 9.0 is vulnerable to denial of service via the optional module mod_mem_cache.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:57.013000+00:00",
+      "engagement": 7.5,
+      "cves": [
+        "CVE-2026-8854"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.5,
+        "severity": "HIGH"
+      },
+      "url_hash": "43e156ad3c56d4f5",
+      "content_hash": "67cc564eda8b015a"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8855",
+      "title": "CVE-2026-8855 (HIGH) \u2014 IBM HTTP Server 8.5, and 9.0 is vulnerable to remote code execution and denial of service in configurations with TLS mutual authentication (",
+      "body": "IBM HTTP Server 8.5, and 9.0 is vulnerable to remote code execution and denial of service in configurations with TLS mutual authentication (client authentication).",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:57.170000+00:00",
+      "engagement": 8.1,
+      "cves": [
+        "CVE-2026-8855"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "9b8a5509511e3494",
+      "content_hash": "b0692be6124c59b2"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8856",
+      "title": "CVE-2026-8856 (HIGH) \u2014 IBM HTTP Server 8.5, and 9.0 is vulnerable to denial of service in configurations where an attacker has write access to parts of the server ",
+      "body": "IBM HTTP Server 8.5, and 9.0 is vulnerable to denial of service in configurations where an attacker has write access to parts of the server configuration.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:57.300000+00:00",
+      "engagement": 7.7,
+      "cves": [
+        "CVE-2026-8856"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.7,
+        "severity": "HIGH"
+      },
+      "url_hash": "cd3a533b5c0a1730",
+      "content_hash": "00b8d38e1c22305c"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9170",
+      "title": "CVE-2026-9170 (HIGH) \u2014 IBM Web Server Plug-ins for WebSphere Application Server and WebSphere Liberty 8.5, 9.0 IBM WebSphere Application Server and WebSphere Appli",
+      "body": "IBM Web Server Plug-ins for WebSphere Application Server and WebSphere Liberty 8.5, 9.0 IBM WebSphere Application Server and WebSphere Application Server Liberty are vulnerable to denial of service and a potential remote code execution due to improper input validation.",
+      "author": null,
+      "timestamp": "2026-05-26T18:16:57.987000+00:00",
+      "engagement": 7.5,
+      "cves": [
+        "CVE-2026-9170"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.5,
+        "severity": "HIGH"
+      },
+      "url_hash": "03ab27cfe8b8ffd4",
+      "content_hash": "490d108ad9024978"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-3603",
+      "title": "CVE-2026-3603 (HIGH) \u2014 IBM Engineering Lifecycle Management 7.0.3, 7.1.0, and 7.2.0 is vulnerable to an XML external entity injection (XXE) attack when processing ",
+      "body": "IBM Engineering Lifecycle Management 7.0.3, 7.1.0, and 7.2.0 is vulnerable to an XML external entity injection (XXE) attack when processing XML data. An authenticated attacker could exploit this vulnerability to expose sensitive information or consume memory resources.",
+      "author": null,
+      "timestamp": "2026-05-26T19:16:27.527000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-3603"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "23d344acd9e8c8e7",
+      "content_hash": "5984f125f0f26b31"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-3660",
+      "title": "CVE-2026-3660 (CRITICAL) \u2014 IBM Engineering Lifecycle Management 7.0.3, 7.1.0, and 7.2.0 could allow an unauthenticated remote attacker to update server property files ",
+      "body": "IBM Engineering Lifecycle Management 7.0.3, 7.1.0, and 7.2.0 could allow an unauthenticated remote attacker to update server property files that would allow them to gain unauthorized access to the application.",
+      "author": null,
+      "timestamp": "2026-05-26T19:16:27.707000+00:00",
+      "engagement": 9.8,
+      "cves": [
+        "CVE-2026-3660"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.8,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "427a3ef6c718509a",
+      "content_hash": "4ab2990e71c4cb1c"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48689",
+      "title": "CVE-2026-48689 (CRITICAL) \u2014 FastNetMon Community Edition through 1.2.9 contains an off-by-one heap-based buffer overflow in the dynamic_binary_buffer_t class (src/dynam",
+      "body": "FastNetMon Community Edition through 1.2.9 contains an off-by-one heap-based buffer overflow in the dynamic_binary_buffer_t class (src/dynamic_binary_buffer.hpp). Five methods (append_dynamic_buffer, append_data_as_pointer, append_data_as_object_ptr, memcpy_from_ptr, memcpy_from_object_ptr) use an incorrect bounds check of the form 'if (offset + length > maximum_internal_storage_size + 1)' instead of the correct 'if (offset + length > maximum_internal_storage_size)'. This allows writing exactly one byte past the end of the heap-allocated buffer. The class is used pervasively in BGP message encoding/decoding, NetFlow template processing, and Flow Spec NLRI construction. An attacker who can send network traffic (NetFlow, sFlow, IPFIX, or BGP) to a FastNetMon instance can trigger this overflow, potentially achieving arbitrary code execution by corrupting heap metadata. Notably, the append_byte() method uses the correct bounds check, confirming the inconsistency.",
+      "author": null,
+      "timestamp": "2026-05-26T19:16:28.663000+00:00",
+      "engagement": 9.8,
+      "cves": [
+        "CVE-2026-48689"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.8,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "73c9a7743d497f35",
+      "content_hash": "79fa3d6eb7fc1a39"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-4051",
+      "title": "CVE-2026-4051 (HIGH) \u2014 IBM Engineering Lifecycle Management 7.0.3, 7.1.0, and 7.2.0 could allow an attacker with administrative privileges to execute remote code d",
+      "body": "IBM Engineering Lifecycle Management 7.0.3, 7.1.0, and 7.2.0 could allow an attacker with administrative privileges to execute remote code due to exposed method that is not properly restricted.",
+      "author": null,
+      "timestamp": "2026-05-26T19:16:28.990000+00:00",
+      "engagement": 7.2,
+      "cves": [
+        "CVE-2026-4051"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.2,
+        "severity": "HIGH"
+      },
+      "url_hash": "4f083ef5c02cc54c",
+      "content_hash": "0cd4058bb9dd3326"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8890",
+      "title": "CVE-2026-8890 (HIGH) \u2014 code100x contains an authentication bypass vulnerability in the Mobile API that allows unauthenticated attackers to impersonate arbitrary us",
+      "body": "code100x contains an authentication bypass vulnerability in the Mobile API that allows unauthenticated attackers to impersonate arbitrary users by supplying a crafted JSON payload in the 'g' HTTP header. The middleware in middleware.ts skips identity header generation when an Auth-Key header is present without validating its value, allowing attackers to inject a spoofed user identity header that the downstream route handler in the mobile courses endpoint accepts as trusted, granting unauthorized access to course data belonging to any enrolled user or administrator.",
+      "author": null,
+      "timestamp": "2026-05-26T19:16:34.007000+00:00",
+      "engagement": 8.2,
+      "cves": [
+        "CVE-2026-8890"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.2,
+        "severity": "HIGH"
+      },
+      "url_hash": "2923a74cb48610ec",
+      "content_hash": "4788cd792634eb27"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44832",
+      "title": "CVE-2026-44832 (HIGH) \u2014 Snipe-IT is an IT asset/license management system. Prior to 8.4.1, aAn authenticated user with only users.edit permission can escalate their",
+      "body": "Snipe-IT is an IT asset/license management system. Prior to 8.4.1, aAn authenticated user with only users.edit permission can escalate their own privileges to admin by sending a PATCH request to /api/v1/users/{id} with permissions[admin]=1. The API controller only strips the superuser key from the permissions array, allowing admin and all other permission keys to be set by any user who can update users. This vulnerability is fixed in 8.4.1.",
+      "author": null,
+      "timestamp": "2026-05-26T20:16:20.183000+00:00",
+      "engagement": 8.8,
+      "cves": [
+        "CVE-2026-44832"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "2cbf61df966a22e1",
+      "content_hash": "26dd565f5166fec0"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9573",
+      "title": "CVE-2026-9573 (HIGH) \u2014 A vulnerability was detected in itsourcecode Student Transcript Processing System 1.0. This affects an unknown part of the file /admin/modul",
+      "body": "A vulnerability was detected in itsourcecode Student Transcript Processing System 1.0. This affects an unknown part of the file /admin/modules/student/index.php?view=view. Performing a manipulation of the argument studentId results in sql injection. The attack can be initiated remotely. The exploit is now public and may be used.",
+      "author": null,
+      "timestamp": "2026-05-26T20:16:21.503000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-9573"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "09fa2b2ca957d201",
+      "content_hash": "32ebcaabb373860c"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9574",
+      "title": "CVE-2026-9574 (HIGH) \u2014 A flaw has been found in itsourcecode Student Transcript Processing System 1.0. This vulnerability affects unknown code of the file /admin/m",
+      "body": "A flaw has been found in itsourcecode Student Transcript Processing System 1.0. This vulnerability affects unknown code of the file /admin/modules/student/trans.php. Executing a manipulation of the argument studentId/cid can lead to sql injection. The attack can be launched remotely. The exploit has been published and may be used.",
+      "author": null,
+      "timestamp": "2026-05-26T20:16:21.663000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-9574"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "a214c138636a3511",
+      "content_hash": "e3befbbf4aefea78"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9575",
+      "title": "CVE-2026-9575 (HIGH) \u2014 A vulnerability has been found in itsourcecode Student Transcript Processing System 1.0. This issue affects some unknown processing of the f",
+      "body": "A vulnerability has been found in itsourcecode Student Transcript Processing System 1.0. This issue affects some unknown processing of the file /admin/modules/class/index.php?view=view. The manipulation of the argument ID leads to sql injection. The attack may be initiated remotely. The exploit has been disclosed to the public and may be used.",
+      "author": null,
+      "timestamp": "2026-05-26T20:16:21.823000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-9575"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "c8f17454a34de29e",
+      "content_hash": "b30c3a7dcc4460b0"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-14361",
+      "title": "CVE-2025-14361 (HIGH) \u2014 Missing Authorization vulnerability in AA-Team Woocommerce Envato Affiliates allows Accessing Functionality Not Properly Constrained by ACLs",
+      "body": "Missing Authorization vulnerability in AA-Team Woocommerce Envato Affiliates allows Accessing Functionality Not Properly Constrained by ACLs.\n\nThis issue affects Woocommerce Envato Affiliates: from n/a through 1.2.1.",
+      "author": null,
+      "timestamp": "2026-05-26T21:16:35.313000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2025-14361"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "78d20996db36dad1",
+      "content_hash": "d540412fa5247a21"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44209",
+      "title": "CVE-2026-44209 (HIGH) \u2014 Banks generates meaningful LLM prompts using a template language that makes sense. Prior to 2.4.2, banks uses jinja2.Environment() (unsandbo",
+      "body": "Banks generates meaningful LLM prompts using a template language that makes sense. Prior to 2.4.2, banks uses jinja2.Environment() (unsandboxed) to render prompt templates. Applications that pass user-supplied strings as the template argument to Prompt() are vulnerable to Server-Side Template Injection (SSTI), which can lead to Remote Code Execution (RCE) on the host system. This vulnerability is fixed in 2.4.2.",
+      "author": null,
+      "timestamp": "2026-05-26T21:16:37.620000+00:00",
+      "engagement": 7.5,
+      "cves": [
+        "CVE-2026-44209"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.5,
+        "severity": "HIGH"
+      },
+      "url_hash": "17c6ae88b6b83061",
+      "content_hash": "eda80a916b080de1"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44444",
+      "title": "CVE-2026-44444 (CRITICAL) \u2014 Lumiverse is a full-featured AI chat application. Prior to 0.9.7, the Spindle extension build pipeline calls bun install without the --ignor",
+      "body": "Lumiverse is a full-featured AI chat application. Prior to 0.9.7, the Spindle extension build pipeline calls bun install without the --ignore-scripts flag before running the static backend safety scan (assertSafeBackendBundle). A malicious extension that ships a package.json with a preinstall, postinstall, or prepare lifecycle script achieves host-level code execution the moment an admin presses Install before any dist file is inspected. This vulnerability is fixed in 0.9.7.",
+      "author": null,
+      "timestamp": "2026-05-26T21:16:37.897000+00:00",
+      "engagement": 9.1,
+      "cves": [
+        "CVE-2026-44444"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.1,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "85ad9a17459ce36b",
+      "content_hash": "a7231af1c850bc19"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44449",
+      "title": "CVE-2026-44449 (CRITICAL) \u2014 Lumiverse is a full-featured AI chat application. Prior to 0.9.7, when the primary toSmbPath(fullPath) call throws, the method falls back to",
+      "body": "Lumiverse is a full-featured AI chat application. Prior to 0.9.7, when the primary toSmbPath(fullPath) call throws, the method falls back to a dirname/basename split and only validates the directory prefix. The basename is concatenated directly into the smbclient -c script without validation. smbclient interprets ; as a subcommand separator and !cmd as a local-shell escape that runs cmd on the host. A path whose directory component is clean but whose basename contains \"; !<cmd>; echo \" achieves arbitrary command execution on the Lumiverse server. This vulnerability is fixed in 0.9.7.",
+      "author": null,
+      "timestamp": "2026-05-26T21:16:38.037000+00:00",
+      "engagement": 9.1,
+      "cves": [
+        "CVE-2026-44449"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.1,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "dbcb16398ba7a0f3",
+      "content_hash": "d0d7d9ce861ba6da"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44450",
+      "title": "CVE-2026-44450 (CRITICAL) \u2014 Lumiverse is a full-featured AI chat application. Prior to 0.9.7, the MCP server creation endpoint validates the command field against an al",
+      "body": "Lumiverse is a full-featured AI chat application. Prior to 0.9.7, the MCP server creation endpoint validates the command field against an allowlist of binary names but forwards the args array to the child process without any validation. Every binary on the allowlist accepts an inline-code execution flag (-e for node/bun, -c for python3/deno), giving any logged-in user arbitrary OS-level code execution on the Lumiverse server. The route requires only requireAuth (not requireOwner). The server binds on all interfaces (::) and the host-header rebinding check is bypassed trivially by any HTTP client that sends Host: localhost:<port> directly, making this exploitable from any machine with network access to the server port. This vulnerability is fixed in 0.9.7.",
+      "author": null,
+      "timestamp": "2026-05-26T21:16:38.173000+00:00",
+      "engagement": 9.9,
+      "cves": [
+        "CVE-2026-44450"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.9,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "55f6f054bdb60dd3",
+      "content_hash": "0566a710fb1637c5"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44451",
+      "title": "CVE-2026-44451 (CRITICAL) \u2014 Lumiverse is a full-featured AI chat application. Prior to 0.9.7, the component override system transpiles user-supplied TSX via Sucrase and",
+      "body": "Lumiverse is a full-featured AI chat application. Prior to 0.9.7, the component override system transpiles user-supplied TSX via Sucrase and evaluates it with new Function, shadowing dangerous globals (fetch, window, eval, etc.) with undefined. A static source validator (validateComponentOverrideSource) additionally blocks these identifiers by word-boundary regex. Both controls are bypassed. String-split bypass of the static validator: any blocked identifier can be reconstructed at runtime from string fragments ('ownerDoc' + 'ument'). DOM ref escape from the sandbox: useRef and useEffect are provided in scope. A ref attached to a rendered element gives a live DOM node. From any real DOM node, node['ownerDoc'+'ument']['def'+'aultView'] yields the real window, bypassing all identifier shadows. Theme packs (.lumitheme / .lumiverse-theme) are the shareable delivery mechanism. A malicious pack is an exploit path: the victim imports the file, enables one component override in the Theme Editor, and the payload fires in their authenticated session.This vulnerability is fixed in 0.9.7.",
+      "author": null,
+      "timestamp": "2026-05-26T21:16:38.303000+00:00",
+      "engagement": 9.3,
+      "cves": [
+        "CVE-2026-44451"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.3,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "46bb23f32e18d797",
+      "content_hash": "92040c21f616dc06"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44843",
+      "title": "CVE-2026-44843 (HIGH) \u2014 LangChain is a framework for building agents and LLM-powered applications. Prior to 0.3.85 and 1.3.3, LangChain contains older runtime code ",
+      "body": "LangChain is a framework for building agents and LLM-powered applications. Prior to 0.3.85 and 1.3.3, LangChain contains older runtime code paths that deserialize run inputs, run outputs, or other application-controlled payloads using overly broad object allowlists. These paths may call load() with allowed_objects=\"all\". This does not enable arbitrary Python object deserialization, but it does allow any trusted LangChain-serializable object to be revived, which is broader than these runtime paths require. As a result, attacker-supplied LangChain serialized constructor dictionaries may cause trusted runtime paths to instantiate classes with untrusted constructor arguments. This vulnerability is fixed in 0.3.85 and 1.3.3.",
+      "author": null,
+      "timestamp": "2026-05-26T21:16:39.003000+00:00",
+      "engagement": 8.2,
+      "cves": [
+        "CVE-2026-44843"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.2,
+        "severity": "HIGH"
+      },
+      "url_hash": "613f65be376aefe2",
+      "content_hash": "bf25c13f77efa713"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44847",
+      "title": "CVE-2026-44847 (HIGH) \u2014 MaxKB is an open-source AI assistant for enterprise. Prior to 2.9.0, MaxKB's webhook trigger endpoint (/api/trigger/v1/webhook/{trigger_id})",
+      "body": "MaxKB is an open-source AI assistant for enterprise. Prior to 2.9.0, MaxKB's webhook trigger endpoint (/api/trigger/v1/webhook/{trigger_id}) is accessible without authentication. The WebhookAuth class unconditionally returns (None, {}), which Django REST Framework interprets as successful authentication. Combined with optional per-trigger token verification and no backend enforcement of token requirements, any unauthenticated attacker who knows a valid trigger ID can invoke webhook triggers to execute their bound tasks. This vulnerability is fixed in 2.9.0.",
+      "author": null,
+      "timestamp": "2026-05-26T21:16:39.313000+00:00",
+      "engagement": 7.5,
+      "cves": [
+        "CVE-2026-44847"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.5,
+        "severity": "HIGH"
+      },
+      "url_hash": "c23c86307f8ea132",
+      "content_hash": "52dd67563412842f"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45575",
+      "title": "CVE-2026-45575 (HIGH) \u2014 epa4all-client is the Java Client for epa4all / ePA 3.0 in the Telematik Infrastruktur. Prior to 1.2.2, an attacker who can MITM the TLS con",
+      "body": "epa4all-client is the Java Client for epa4all / ePA 3.0 in the Telematik Infrastruktur. Prior to 1.2.2, an attacker who can MITM the TLS connection between the client and the IDP (within the TI network) can substitute a forged discovery document. The forged document redirects uri_puk_idp_enc and uri_puk_idp_sig to attacker-controlled URLs. The client then encrypts the SMC-B-signed challenge response to the attacker's encryption key and POSTs it to the attacker's auth endpoint. This captures the signed authentication material. This vulnerability is fixed in 1.2.2.",
+      "author": null,
+      "timestamp": "2026-05-26T21:16:40.373000+00:00",
+      "engagement": 7.4,
+      "cves": [
+        "CVE-2026-45575"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.4,
+        "severity": "HIGH"
+      },
+      "url_hash": "38f0a8e4b3b3e936",
+      "content_hash": "f79e6059f9913789"
+    },
+    {
+      "source": "crowdstrike",
+      "source_family": "youtube",
+      "url": "https://www.youtube.com/shorts/rCtFra6aPrA",
+      "title": "The Data Behind the Hunt",
       "body": "",
-      "author": "hn_acker",
-      "timestamp": "2026-05-23T18:02:11+00:00",
-      "engagement": 77.5,
+      "author": "crowdstrike",
+      "timestamp": "2026-05-26T19:15:22+00:00",
+      "engagement": 0.0,
       "cves": [],
       "vendors": [],
       "raw": {
-        "points": 50,
-        "num_comments": 55,
-        "object_id": "48249743"
+        "channel_id": "UCsRdY9CtEVWTNO4ulwfzqVA"
       },
-      "url_hash": "72eb48f111260159",
-      "content_hash": "53a2c73dc2a3bf2f"
+      "url_hash": "b441ab3d6a259b47",
+      "content_hash": "1d4e9c64224bccc6"
+    },
+    {
+      "source": "crowdstrike",
+      "source_family": "youtube",
+      "url": "https://www.youtube.com/shorts/d7uXJhDCxA8",
+      "title": "How Security Teams Gain Full Identity Visibility and Reduce Risk",
+      "body": "",
+      "author": "crowdstrike",
+      "timestamp": "2026-05-26T19:15:17+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "channel_id": "UCsRdY9CtEVWTNO4ulwfzqVA"
+      },
+      "url_hash": "a2bf31e62f501889",
+      "content_hash": "95d4f92a2f2bf75b"
+    },
+    {
+      "source": "crowdstrike",
+      "source_family": "youtube",
+      "url": "https://www.youtube.com/watch?v=ZUNIdBe6PjY",
+      "title": "Falcon Cloud Security: Cloud Detection & Response for GCP",
+      "body": "",
+      "author": "crowdstrike",
+      "timestamp": "2026-05-26T19:04:59+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "channel_id": "UCsRdY9CtEVWTNO4ulwfzqVA"
+      },
+      "url_hash": "e83c25394efcd39e",
+      "content_hash": "071a45ea880fcec5"
     }
   ]
 }
