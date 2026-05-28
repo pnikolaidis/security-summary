@@ -10,12 +10,247 @@
     <description>Daily OSINT cybersecurity digest. Top five stories surfaced from news, social,
 and authoritative sources, narrated by a rotating cast of hosts.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 May 2026 17:37:12 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 28 May 2026 16:48:40 +0000</lastBuildDate>
     <itunes:author>pnikolaidis</itunes:author>
     <itunes:category text="Technology"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:summary>Daily OSINT cybersecurity digest. Top five stories surfaced from news, social,
 and authoritative sources, narrated by a rotating cast of hosts.</itunes:summary>
+    <item>
+      <title>Security Digest — 2026-05-28</title>
+      <description>A wave of ten critical WordPress plugin vulnerabilities disclosed today includes a CVSS 9.9 unrestricted file-upload flaw enabling web shell deployment. Carnival Cruise Corporation confirmed a ShinyHunters breach affecting nearly 6 million guests. The GlassWorm developer supply-chain botnet was dismantled by CrowdStrike, Google, and Shadowserver — its C2 ran over Solana and BitTorrent DHT to resist takedown. A newly documented threat actor, JINX-0164, is hitting cryptocurrency firms with fake recruiter lures and custom macOS malware targeting CI/CD pipelines. And a cryptojacking campaign is now exploiting both SEO poisoning and AI chatbot recommendations to deliver GPU mining malware.</description>
+      <content:encoded><![CDATA[<h2>TL;DR</h2>
+<p>A wave of ten critical WordPress plugin vulnerabilities disclosed today includes a CVSS 9.9 unrestricted file-upload flaw enabling web shell deployment. Carnival Cruise Corporation confirmed a ShinyHunters breach affecting nearly 6 million guests. The GlassWorm developer supply-chain botnet was dismantled by CrowdStrike, Google, and Shadowserver — its C2 ran over Solana and BitTorrent DHT to resist takedown. A newly documented threat actor, JINX-0164, is hitting cryptocurrency firms with fake recruiter lures and custom macOS malware targeting CI/CD pipelines. And a cryptojacking campaign is now exploiting both SEO poisoning and AI chatbot recommendations to deliver GPU mining malware.</p>
+<h2>1. WordPress Plugin Critical Vulnerability Wave — CVSS 9.9 Peaks</h2>
+<p><strong>Why it matters:</strong> WordPress sites running any of ten newly patched plugins are exposed to web shell uploads, privilege escalation, path traversal, and blind SQL injection — at least three vulnerabilities reach CVSS 9.9.</p>
+<p>NVD disclosed ten critical-to-high WordPress plugin vulnerabilities in a single batch on May 27. The most severe, CVE-2026-42748 (WPify Woo Czech, CVSS 9.9), allows unrestricted upload of dangerous file types — in practice granting attackers web shell deployment on vulnerable WooCommerce stores. CVE-2026-42756 (QuickWebP image optimizer, CVSS 9.9) and CVE-2026-42757 (WebinarIgnition, CVSS 9.9) both carry path traversal flaws; CVE-2026-42758 adds a separate privilege escalation in the same WebinarIgnition plugin. CVE-2026-42731 (miniOrange OTP Verification, CVSS 9.8) enables full privilege escalation. Five additional plugins — WooCommerce Active Products Tables, Tainacan, Easy Form Builder, TableOn, and MasterStudy LMS — carry blind SQL injection flaws at CVSS 9.3. WordPress admins should open the plugin dashboard, verify installed versions against these CVEs, and apply pending updates immediately; unpatched web-shell-capable plugins require urgent attention.</p>
+<p><em>Covered in: NVD — 10 CVEs</em></p>
+<ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-42748">CVE-2026-42748 — WPify Woo Czech unrestricted file upload (CVSS 9.9)</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-42756">CVE-2026-42756 — QuickWebP path traversal (CVSS 9.9)</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-42757">CVE-2026-42757 — WebinarIgnition path traversal (CVSS 9.9)</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-42758">CVE-2026-42758 — WebinarIgnition privilege escalation (CVSS 9.8)</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-42731">CVE-2026-42731 — miniOrange OTP Verification privilege escalation (CVSS 9.8)</a></li>
+</ul>
+<h2>2. Carnival Cruise Confirms ShinyHunters Breach — Nearly 6 Million Affected</h2>
+<p><strong>Why it matters:</strong> The world's largest cruise operator has confirmed that a breach claimed by ShinyHunters in April 2026 is real, exposing personal data of approximately 6 million customers.</p>
+<p>Carnival Corporation disclosed today that data belonging to nearly 6 million people was compromised in an incident the ShinyHunters extortion gang claimed in April. Carnival operates nine cruise brands — including Carnival Cruise Line, Princess Cruises, Holland America, and Cunard — with a combined customer base in the tens of millions. ShinyHunters has a long track record of targeting major consumer brands and leveraging stolen datasets for extortion and downstream fraud. Affected individuals should be alert for phishing attempts that reference specific booking or travel details, and consider monitoring personal information through identity-protection services.</p>
+<p><em>Covered in: BleepingComputer — 1 post</em></p>
+<ul>
+<li><a href="https://www.bleepingcomputer.com/news/security/carnival-cruise-confirms-data-breach-affecting-nearly-6-million-people">Carnival Cruise confirms data breach affecting nearly 6 million people</a></li>
+</ul>
+<h2>3. GlassWorm Developer Supply-Chain Botnet Dismantled — C2 Used Solana and BitTorrent DHT</h2>
+<p><strong>Why it matters:</strong> A persistent software supply-chain campaign targeting developers has been shut down by an industry coalition, removing a threat that used decentralized blockchain and peer-to-peer networks as command-and-control channels to resist conventional takedowns.</p>
+<p>CrowdStrike, Google, and the Shadowserver Foundation jointly dismantled GlassWorm, a supply-chain botnet active since at least early 2025. Operators distributed malicious packages and IDE extensions targeting software developers, then routed C2 instructions through Solana blockchain transactions and the BitTorrent DHT network — architectures specifically chosen because they cannot be taken down by seizing a handful of servers. The simultaneous disruption of all C2 channels required coordinated multi-party action. Developers should audit installed packages and IDE extensions for GlassWorm indicators of compromise, paying particular attention to packages added in 2025 from lesser-known repositories.</p>
+<p><em>Covered in: BleepingComputer, The Hacker News, CrowdStrike YouTube — 3 posts across 2 source families</em></p>
+<ul>
+<li><a href="https://www.bleepingcomputer.com/news/security/glassworm-botnet-disrupted-after-resilient-c2-infrastructure-takedown">Glassworm botnet disrupted after resilient C2 infrastructure takedown</a></li>
+<li><a href="https://thehackernews.com/2026/05/glassworm-malware-takedown-disrupts.html">GlassWorm Malware Takedown Disrupts Developer Supply Chain Attack Infrastructure</a></li>
+<li><a href="https://www.youtube.com/shorts/wlR0-0V9ibc">Threat Snapshot: Defending Against Global Supply Chain Threats</a></li>
+</ul>
+<h2>4. JINX-0164: New Threat Actor Targets Cryptocurrency Firms with macOS Malware and CI/CD Infiltration</h2>
+<p><strong>Why it matters:</strong> A previously undocumented threat actor is targeting cryptocurrency organizations to steal digital assets using sophisticated social engineering and bespoke macOS malware that digs into CI/CD infrastructure.</p>
+<p>Wiz researchers disclosed JINX-0164, a new threat actor conducting recruitment-themed social engineering attacks against cryptocurrency firms. Fake recruiter personas are used to lure technical staff into executing custom macOS malware, with a distinctive focus on compromising CI/CD pipeline infrastructure rather than just the endpoint. Gaining access to build pipelines means access to code-signing keys, deployment credentials, and the ability to inject malicious code into software releases — a much deeper and more persistent foothold than typical credential theft. Cryptocurrency firms and any organization with high-value digital assets should scrutinize unsolicited recruiter outreach and audit CI/CD access controls and build-pipeline integrity.</p>
+<p><em>Covered in: The Hacker News — 1 post</em></p>
+<ul>
+<li><a href="https://thehackernews.com/2026/05/jinx-0164-targets-cryptocurrency-firms.html">JINX-0164 Targets Cryptocurrency Firms with Fake Recruiter Lures and macOS Malware</a></li>
+</ul>
+<h2>5. GPU Cryptojacking Campaign Spreads via SEO Poisoning and Hijacked AI Chatbot Recommendations</h2>
+<p><strong>Why it matters:</strong> Attackers are poisoning both search engine results and AI assistant responses to steer users toward GPU mining malware — a new delivery vector that exploits growing reliance on AI tools for software discovery.</p>
+<p>An ongoing cryptojacking campaign targets systems with high-performance GPUs via a dual delivery mechanism: SEO poisoning of search results and manipulation of AI chatbot recommendations. Victims who search for legitimate GPU-intensive software — or ask an AI assistant for tool suggestions — are directed to malicious downloads that silently install mining malware. The exploitation of AI assistants as a distribution vector extends the attack surface beyond traditional phishing and web injection. Organizations running high-performance compute workstations should monitor for anomalous GPU utilization and introduce a verification step before installing software suggested by AI assistants.</p>
+<p><em>Covered in: BleepingComputer — 1 post</em></p>
+<ul>
+<li><a href="https://www.bleepingcomputer.com/news/security/gpu-mining-malware-spreads-via-seo-poisoning-ai-chatbots">GPU mining malware spreads via SEO poisoning, AI chatbots</a></li>
+</ul>
+<h2>Signal stats</h2>
+<ul>
+<li>Total items processed: 69</li>
+<li>New (post-dedup): 67</li>
+<li>Clusters formed: 19</li>
+<li>Top 5 selected from: 15 candidate clusters (above min_score threshold)</li>
+</ul>
+]]></content:encoded>
+      <pubDate>Thu, 28 May 2026 12:00:00 +0000</pubDate>
+      <guid isPermaLink="false">security-summary-2026-05-28</guid>
+      <enclosure url="https://raw.githubusercontent.com/pnikolaidis/security-summary/main/state/runs/2026-05-28/digest.mp3" length="5822880" type="audio/mpeg"/>
+      <itunes:duration>00:04:51</itunes:duration>
+      <itunes:author>Aiden Iyer</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>Security Digest — 2026-05-27</title>
+      <description>Today's digest is dominated by a wave of high-severity vulnerability disclosures. FastNetMon's open-source DDoS detection platform ships with eight new CVEs — including an unauthenticated management API and two critical memory-corruption flaws in its BGP parser. IBM WebSphere and HTTP Server receive patches for a CVSS 9.8 unauthenticated RCE alongside several other critical and high-severity bugs. CISA has issued a binding four-day patch mandate for an actively-exploited flaw in the LiteSpeed cPanel plugin. Joomla CMS patches three critical privilege-escalation bugs in the same component. And KubeVirt's container virtualization layer harbors a CVSS 9.9 symlink attack that lets a developer-level user escape their Kubernetes namespace to the host.</description>
+      <content:encoded><![CDATA[<h2>TL;DR</h2>
+<p>Today's digest is dominated by a wave of high-severity vulnerability disclosures. FastNetMon's open-source DDoS detection platform ships with eight new CVEs — including an unauthenticated management API and two critical memory-corruption flaws in its BGP parser. IBM WebSphere and HTTP Server receive patches for a CVSS 9.8 unauthenticated RCE alongside several other critical and high-severity bugs. CISA has issued a binding four-day patch mandate for an actively-exploited flaw in the LiteSpeed cPanel plugin. Joomla CMS patches three critical privilege-escalation bugs in the same component. And KubeVirt's container virtualization layer harbors a CVSS 9.9 symlink attack that lets a developer-level user escape their Kubernetes namespace to the host.</p>
+<h2>1. FastNetMon Community Edition — Eight CVEs Including Unauthenticated Remote Control and Critical Memory Corruption</h2>
+<p><strong>Why it matters:</strong> FastNetMon is deployed by ISPs and network operators worldwide to detect and automatically mitigate DDoS attacks; these bugs allow an unauthenticated network-adjacent attacker to execute arbitrary code, hijack router integrations, and fully control the host.</p>
+<p>Eight CVEs affecting FastNetMon Community Edition ≤1.2.9 were published Tuesday. The two most critical (CVSS 9.8) are memory-corruption bugs in the BGP packet decoder: CVE-2026-48686 is a stack-based buffer overflow triggered by a malformed BGP NLRI message, and CVE-2026-48689 is an off-by-one heap overflow in the dynamic buffer class. Both can be triggered remotely by anyone who can send BGP traffic to the monitor. Compounding the risk, CVE-2026-48692 exposes the gRPC management API on port 50052 with <em>no authentication mechanism</em> — the source code even contains a comment explicitly acknowledging the open listener. Additional flaws include an integer overflow in packet-capture buffer allocation (CVE-2026-48690), OS command injection in the MikroTik router plugin (CVE-2026-48695), configuration injection in the Juniper plugin (CVE-2026-48694), disabled TLS certificate validation on outbound connections (CVE-2026-48697), and multiple out-of-bounds reads in the IPv6 BGP decoder (CVE-2026-48688). FastNetMon has not yet released a patched release; operators should firewall port 50052 and restrict BGP peering immediately.</p>
+<p><em>Covered in: nvd — 8 posts across 1 source</em></p>
+<ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-48686">CVE-2026-48686 — Stack-based buffer overflow in BGP NLRI decoder (CVSS 9.8)</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-48689">CVE-2026-48689 — Off-by-one heap overflow in dynamic buffer class (CVSS 9.8)</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-48692">CVE-2026-48692 — Unauthenticated gRPC management API on port 50052 (CVSS 8.1)</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-48695">CVE-2026-48695 — OS command injection in MikroTik router integration plugin (CVSS 8.1)</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-48694">CVE-2026-48694 — Configuration injection in Juniper router plugin (CVSS 8.1)</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-48688">CVE-2026-48688 — Out-of-bounds reads in BGP MP_REACH_NLRI IPv6 decoder (CVSS 7.5)</a></li>
+</ul>
+<h2>2. IBM WebSphere &amp; HTTP Server — CVSS 9.8 Unauthenticated RCE and Eight Additional Vulnerabilities</h2>
+<p><strong>Why it matters:</strong> IBM HTTP Server and WebSphere Liberty underpin vast enterprise Java infrastructure; the unauthenticated critical RCE (CVE-2026-8633) requires no credentials and is remotely reachable on any exposed instance.</p>
+<p>IBM released patches for nine CVEs across HTTP Server 8.5/9.0 and the WebSphere Liberty web server plug-ins. CVE-2026-8633 (CVSS 9.8) is an unauthenticated remote code execution flaw in the WebSphere Liberty plug-in — no authentication required, no special preconditions. CVE-2026-8855 (CVSS 8.1) enables both remote code execution and denial of service in IBM HTTP Server 8.5 and 9.0. A further cluster of five CVEs (CVE-2026-8834, 8850, 8854, 8856, 8835) covers buffer overflows, invalid pointer dereferences, and denial-of-service conditions. IBM also patched CVE-2026-8620 (CVSS 7.5) in the WebSphere Liberty plug-ins. In a parallel advisory, IBM Engineering Lifecycle Management received a CVSS 9.8 authentication bypass (CVE-2026-3660) that allows unauthenticated access to 7.0.3, 7.1.0, and 7.2.0. Customers running on-premises IBM middleware should apply this patch set as a priority.</p>
+<p><em>Covered in: nvd — 9 posts across 1 source</em></p>
+<ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-8633">CVE-2026-8633 — Unauthenticated RCE in WebSphere Liberty plug-in (CVSS 9.8)</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-8855">CVE-2026-8855 — RCE + DoS in IBM HTTP Server 8.5/9.0 (CVSS 8.1)</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-3660">CVE-2026-3660 — Authentication bypass in IBM Engineering Lifecycle Management (CVSS 9.8)</a></li>
+</ul>
+<h2>3. CISA Mandates Federal Patch of Actively-Exploited cPanel LiteSpeed Plugin — Four-Day Deadline</h2>
+<p><strong>Why it matters:</strong> The LiteSpeed plugin for cPanel is being actively exploited against internet-facing web hosting servers right now; the CISA KEV directive and four-day window signal that attacks are widespread enough for the government to force federal remediation.</p>
+<p>CISA added a critical vulnerability in the LiteSpeed user-end plugin for cPanel to its Known Exploited Vulnerabilities catalog and issued a binding directive requiring all U.S. federal civilian agencies to patch by May 31, 2026 — just four days from today. The vulnerability allows attackers to compromise cPanel servers running the LiteSpeed plugin, potentially exposing all hosted websites, databases, and credentials on the affected system. While the binding directive applies specifically to federal agencies, the active exploitation status means any organization hosting web infrastructure via cPanel with LiteSpeed enabled should treat this as critical. Apply the vendor's fix immediately or disable the LiteSpeed plugin until patching is possible.</p>
+<p><em>Covered in: news — 1 post across 1 source</em></p>
+<ul>
+<li><a href="https://www.bleepingcomputer.com/news/security/cisa-gives-feds-4-days-to-patch-actively-exploited-cpanel-plugin-flaw">CISA gives feds 4 days to patch actively exploited cPanel plugin flaw</a></li>
+</ul>
+<h2>4. Joomla — Three Critical Privilege-Escalation CVEs (CVSS 9.8 Each) in com_users Component</h2>
+<p><strong>Why it matters:</strong> Joomla powers millions of websites worldwide; three separate bugs in the same batch-processing endpoint each allow any authenticated user — regardless of their assigned role — to escalate directly to administrator, enabling complete site takeover.</p>
+<p>Three critical privilege-escalation vulnerabilities were published for Joomla CMS: CVE-2026-48898, CVE-2026-48899, and CVE-2026-48904 (all CVSS 9.8). All three exploit improper access checks in the com_users component's batch processing and group management endpoints. An attacker who can log in with any user account — even a basic subscriber — can call these endpoints to promote themselves to a Joomla Super Administrator. From that position, they can install malicious extensions, access all site data, or use the server-side code execution capabilities to move laterally. Joomla has released a patched version; all site operators should update immediately.</p>
+<p><em>Covered in: nvd — 3 posts across 1 source</em></p>
+<ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-48898">CVE-2026-48898 — Privilege escalation via com_users batch (CVSS 9.8)</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-48899">CVE-2026-48899 — Privilege escalation via com_users batch (CVSS 9.8)</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-48904">CVE-2026-48904 — Privilege escalation via com_users group management (CVSS 9.8)</a></li>
+</ul>
+<h2>5. KubeVirt — Symlink Attack Escapes Kubernetes Namespace to Host Filesystem (CVE-2026-7374, CVSS 9.9)</h2>
+<p><strong>Why it matters:</strong> An authenticated OpenShift or KubeVirt user with only namespace-level edit permissions — the typical access a developer has in a shared cluster — can exploit this to escape their tenant boundary and read or write arbitrary files on the Kubernetes node host, including certificates, service account tokens, and secrets.</p>
+<p>CVE-2026-7374 scores CVSS 9.9, reflecting both the severity of impact and the low privilege required. The vulnerability is in KubeVirt's virt-handler component, which manages the connection between Kubernetes and virtual machine console sockets. When attaching to a VM console, virt-handler performs insufficient symlink validation: an attacker can swap the expected console socket with a symlink pointing to any arbitrary file on the underlying node. Once connected, they gain read/write access to that target path — including node-level credentials that could compromise the entire cluster's control plane. A patch has been released. OpenShift and self-hosted KubeVirt operators should update the virt-handler component immediately and audit recent console session activity for any anomalous symlink usage.</p>
+<p><em>Covered in: nvd — 1 post across 1 source</em></p>
+<ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-7374">CVE-2026-7374 — KubeVirt virt-handler symlink attack / namespace escape (CVSS 9.9)</a></li>
+</ul>
+<h2>Signal stats</h2>
+<ul>
+<li>Total items processed: 120</li>
+<li>New (post-dedup): 118</li>
+<li>Clusters formed: ~72</li>
+<li>Top 5 selected from: 72 candidate clusters</li>
+</ul>
+]]></content:encoded>
+      <pubDate>Wed, 27 May 2026 12:00:00 +0000</pubDate>
+      <guid isPermaLink="false">security-summary-2026-05-27</guid>
+      <enclosure url="https://raw.githubusercontent.com/pnikolaidis/security-summary/main/state/runs/2026-05-27/digest.mp3" length="8916000" type="audio/mpeg"/>
+      <itunes:duration>00:07:25</itunes:duration>
+      <itunes:author>Ada Iverson</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>Security Digest — 2026-05-26</title>
+      <description>CISA is ordering federal agencies to patch an actively exploited Drupal SQL injection vulnerability by Wednesday — if you run Drupal, the same urgency applies. A zero-day in the KnowledgeDeliver LMS was used to plant Godzilla web shells and Cobalt Strike implants, a reminder that hard-coded ASP.NET machine keys are still a live attack vector. India's CERT-In is now mandating 12-hour patching windows for internet-facing critical flaws, a timeline shift driven by AI-accelerated exploitation. A May 2026 Windows security update is breaking domain controller lookups on Server 2016, so check your AD environments before rolling out KB5087537. And California is set to exempt Linux from its age-verification law after significant community pushback — the first major test of OS-level privacy legislation.</description>
+      <content:encoded><![CDATA[<h2>TL;DR</h2>
+<p>CISA is ordering federal agencies to patch an actively exploited Drupal SQL injection vulnerability by Wednesday — if you run Drupal, the same urgency applies. A zero-day in the KnowledgeDeliver LMS was used to plant Godzilla web shells and Cobalt Strike implants, a reminder that hard-coded ASP.NET machine keys are still a live attack vector. India's CERT-In is now mandating 12-hour patching windows for internet-facing critical flaws, a timeline shift driven by AI-accelerated exploitation. A May 2026 Windows security update is breaking domain controller lookups on Server 2016, so check your AD environments before rolling out KB5087537. And California is set to exempt Linux from its age-verification law after significant community pushback — the first major test of OS-level privacy legislation.</p>
+<h2>1. CISA Orders Feds to Patch Actively Exploited Drupal Vulnerability by Wednesday</h2>
+<p><strong>Why it matters:</strong> An SQL injection flaw in Drupal is under active exploitation — federal agencies have until Wednesday, and any organization running Drupal should treat this with the same urgency.</p>
+<p>CISA has added a Drupal SQL injection vulnerability to its Known Exploited Vulnerabilities catalog and issued a binding operational directive requiring U.S. government agencies to remediate by Wednesday evening. The flaw allows unauthenticated attackers to read arbitrary data from the database, giving threat actors a foothold into the underlying content store without any credentials. Drupal is widely deployed in government portals, higher education, and enterprise environments. With confirmed active exploitation now on record, unpatched public-facing instances should be considered actively targeted.</p>
+<p><em>Covered in: BleepingComputer — 1 post across 1 source</em></p>
+<ul>
+<li><a href="https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-drupal-vulnerability">CISA orders feds to patch actively exploited Drupal vulnerability</a></li>
+</ul>
+<h2>2. KnowledgeDeliver LMS CVE-2026-5426 Zero-Day Exploited to Deploy Godzilla Web Shell and Cobalt Strike</h2>
+<p><strong>Why it matters:</strong> Hard-coded ASP.NET machine keys let attackers forge viewstate payloads and achieve remote code execution — any ASP.NET application using default or leaked machine keys shares this same exposure.</p>
+<p>Attackers exploited CVE-2026-5426, a zero-day in the KnowledgeDeliver Learning Management System popular in Japan, before a patch was available. The vulnerability stems from hard-coded ASP.NET machine keys embedded in the application — a configuration flaw that lets an attacker craft a malicious viewstate payload, triggering deserialization and remote code execution on the server. From there, attackers deployed the Godzilla web shell for persistent access, then used it as a staging point to drop Cobalt Strike Beacon for command-and-control. A patch is now available (CVSS 7.5). Organizations running any ASP.NET application should audit their machine key configuration and ensure they are not using default, shared, or publicly documented key values.</p>
+<p><em>Covered in: The Hacker News — 1 post across 1 source</em></p>
+<ul>
+<li><a href="https://thehackernews.com/2026/05/knowledgedeliver-lms-flaw-exploited-to.html">KnowledgeDeliver LMS Flaw Exploited to Deploy Godzilla and Cobalt Strike</a></li>
+</ul>
+<h2>3. CERT-In Mandates 12-Hour Patching for Internet-Facing Critical Flaws Amid AI-Assisted Attacks</h2>
+<p><strong>Why it matters:</strong> India's CERT-In is pushing the industry toward a 12-hour remediation window for critical internet-exposed vulnerabilities — a timeline driven by the recognition that AI tools are collapsing the gap between disclosure and exploitation.</p>
+<p>India's Computer Emergency Response Team issued new guidelines requiring organizations to patch critical vulnerabilities in internet-exposed systems within 12 hours of being flagged, where feasible. The guidance explicitly calls out AI and large language models as tools being used by threat actors to automate vulnerability scanning and exploitation at a speed that traditional patching cycles cannot match. While &quot;where feasible&quot; softens the mandate, the directional signal is significant: regulators are beginning to encode AI-accelerated threat timelines into policy. Security teams should review their patch prioritization processes against this emerging standard, particularly for systems with internet exposure.</p>
+<p><em>Covered in: The Hacker News — 1 post across 1 source</em></p>
+<ul>
+<li><a href="https://thehackernews.com/2026/05/cert-in-mandates-12-hour-patching-for.html">CERT-In Mandates 12-Hour Patching for Internet-Facing Flaws Amid AI-Assisted Attacks</a></li>
+</ul>
+<h2>4. Microsoft: May 2026 Security Update KB5087537 May Break Domain Controller Lookups on Windows Server 2016</h2>
+<p><strong>Why it matters:</strong> A May 2026 security patch is causing domain controller lookup failures on Windows Server 2016, which can break authentication across any AD environment relying on those DCs — test before deploying widely.</p>
+<p>Microsoft has confirmed a known issue in the May 2026 security update KB5087537 affecting Windows Server 2016: after installation, domain controller lookups may fail intermittently. For organizations that have not yet deployed the update, this is a critical hold signal for Server 2016 systems in production Active Directory environments. For those who have already applied it and are seeing authentication or login failures, Microsoft acknowledges the issue and workarounds should be checked via the Windows release health dashboard. The practical impact extends to any service relying on Kerberos or NTLM authentication through affected DCs.</p>
+<p><em>Covered in: BleepingComputer — 1 post across 1 source</em></p>
+<ul>
+<li><a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-domain-controller-lookup-may-fail-on-windows-server-2016">Microsoft: Domain Controller lookup may fail on Windows Server 2016</a></li>
+</ul>
+<h2>5. California Moves to Exempt Linux from Age-Verification Law After Backlash Over OS-Level Age Collection</h2>
+<p><strong>Why it matters:</strong> A California bill that would have required operating systems to collect user ages — with no carve-out for open-source software — is being amended after broad pushback, marking the first major test of OS-level privacy mandates and signaling that legislators are beginning to feel community pressure on privacy-by-design architecture.</p>
+<p>California's age-verification legislation, as originally drafted, created a requirement for OS-level age collection that would have been architecturally impossible for open-source distributions like Linux to implement without introducing significant privacy risks. The Linux community organized and pushed back forcefully, and the bill's original author has now proposed an amendment that would exempt Linux. The story is notable beyond the Linux angle: it represents the first significant attempt in the U.S. to push age-verification enforcement down to the operating system layer rather than the application layer, and the amendment debate is shaping how that boundary gets drawn. Security and privacy professionals following digital identity policy should track this.</p>
+<p><em>Covered in: Hacker News (Tom's Hardware) — 1 post across 1 source</em></p>
+<ul>
+<li><a href="https://www.tomshardware.com/software/linux/california-moves-to-exempt-linux-from-its-upcoming-age-verification-law-after-backlash-over-forcing-operating-systems-to-collect-users-ages-amendment-proposed-by-the-same-lawmaker-who-wrote-the-original-law">California moves to exempt Linux from its age-verification law after backlash</a></li>
+</ul>
+<h2>Signal stats</h2>
+<ul>
+<li>Total items processed: 28</li>
+<li>New (post-dedup): 27</li>
+<li>Clusters formed: 16 (including 1 dropped as cross-day &quot;same&quot;, 2 merged as near-duplicate titles, several non-security HN items scored but ranked out)</li>
+<li>Top 5 selected from: 15 candidate clusters</li>
+</ul>
+]]></content:encoded>
+      <pubDate>Tue, 26 May 2026 12:00:00 +0000</pubDate>
+      <guid isPermaLink="false">security-summary-2026-05-26</guid>
+      <enclosure url="https://raw.githubusercontent.com/pnikolaidis/security-summary/main/state/runs/2026-05-26/digest.mp3" length="7185600" type="audio/mpeg"/>
+      <itunes:duration>00:05:59</itunes:duration>
+      <itunes:author>Adam Insight</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>Security Digest — 2026-05-25</title>
+      <description>A critical SQL injection in Ghost CMS (CVE-2026-26980) is being actively exploited in a large-scale ClickFix social-engineering campaign, demanding immediate patching for site operators. North Korea's Lazarus Group has debuted a memory-only RAT called RemotePE targeting financial and crypto firms, leaving no disk artifacts for defenders to find. A coordinated supply-chain attack named TrapDoor has seeded over 34 credential-stealing packages across npm, PyPI, and Crates.io simultaneously. Risky Business News reports that automated tool Mythos has uncovered thousands of critical bugs across major codebases while Dutch police raided bulletproof hosting operators. Rounding out the day, Wireshark 4.6.6 ships a security fix that analysts should apply before opening untrusted capture files.</description>
+      <content:encoded><![CDATA[<h2>TL;DR</h2>
+<p>A critical SQL injection in Ghost CMS (CVE-2026-26980) is being actively exploited in a large-scale ClickFix social-engineering campaign, demanding immediate patching for site operators. North Korea's Lazarus Group has debuted a memory-only RAT called RemotePE targeting financial and crypto firms, leaving no disk artifacts for defenders to find. A coordinated supply-chain attack named TrapDoor has seeded over 34 credential-stealing packages across npm, PyPI, and Crates.io simultaneously. Risky Business News reports that automated tool Mythos has uncovered thousands of critical bugs across major codebases while Dutch police raided bulletproof hosting operators. Rounding out the day, Wireshark 4.6.6 ships a security fix that analysts should apply before opening untrusted capture files.</p>
+<h2>1. Ghost CMS SQL Injection (CVE-2026-26980) Exploited in Large-Scale ClickFix Campaign</h2>
+<p><strong>Why it matters:</strong> Any Ghost-powered site that hasn't patched is an active vector for injecting malicious JavaScript at visitors, turning a CMS vulnerability into a user-targeting social-engineering platform.</p>
+<p>A critical SQL injection flaw—CVE-2026-26980—in the Ghost content management system is being exploited at scale. Attackers inject malicious JavaScript into Ghost-powered sites via the vulnerability; visiting users are then presented with ClickFix-style fake error prompts that convince them to paste attacker-controlled commands into their own terminal. The campaign is described as large-scale, suggesting broad opportunistic exploitation across the Ghost install base rather than targeted attacks.</p>
+<p><em>Covered in: bleepingcomputer — 1 post across 1 source</em></p>
+<ul>
+<li><a href="https://www.bleepingcomputer.com/news/security/ghost-cms-sql-injection-flaw-exploited-in-large-scale-clickfix-campaign">Ghost CMS SQL injection flaw exploited in large-scale ClickFix campaign</a></li>
+</ul>
+<h2>2. Lazarus Group Deploys RemotePE Memory-Only RAT Against Financial and Crypto Firms</h2>
+<p><strong>Why it matters:</strong> A disk-less implant from a state-sponsored North Korean group defeats most file-based detection and forensics, raising the bar significantly for defenders in targeted sectors.</p>
+<p>North Korea's Lazarus Group has added a cross-platform, memory-only remote access tool called RemotePE to its arsenal. Fox-IT (NCC Group) documented an attack chain that uses two loaders—DPAPILoader and RemotePELoader—to decrypt and stage the final payload entirely in RAM, leaving no files on disk. Targeted organizations include financial institutions and cryptocurrency firms, consistent with Lazarus's long-running mandate to fund North Korean operations through digital-asset theft.</p>
+<p><em>Covered in: thehackernews — 1 post across 1 source</em></p>
+<ul>
+<li><a href="https://thehackernews.com/2026/05/lazarus-deploys-remotepe-memory-only.html">Lazarus Deploys RemotePE Memory-Only RAT Against Financial and Crypto Firms</a></li>
+</ul>
+<h2>3. TrapDoor: Coordinated Supply-Chain Attack Hits npm, PyPI, and Crates.io Simultaneously</h2>
+<p><strong>Why it matters:</strong> Developers and CI/CD pipelines across all three major package ecosystems are at risk of silently installing credential-stealing malware in any dependency installed since May 22nd.</p>
+<p>A coordinated campaign called TrapDoor has published more than 34 malicious packages spanning over 384 versions across npm, PyPI, and Crates.io. Activity began May 22, 2026, with waves of packages published from a cluster of actor-controlled accounts. The payloads target credentials, meaning build systems that automatically resolve and install packages are a primary infection vector alongside individual developers.</p>
+<p><em>Covered in: thehackernews — 1 post across 1 source</em></p>
+<ul>
+<li><a href="https://thehackernews.com/2026/05/trapdoor-supply-chain-attack-spreads.html">TrapDoor Supply Chain Attack Spreads Credential-Stealing Malware via npm, PyPI, and CratesIO</a></li>
+</ul>
+<h2>4. Mythos Discovers Thousands of Critical Bugs; Dutch Police Raid Bulletproof Hosters</h2>
+<p><strong>Why it matters:</strong> AI-scale automated vulnerability research signals an accelerating pace of CVE production, while Dutch law-enforcement raids against bulletproof hosting degrade the infrastructure criminal groups depend on for resilience.</p>
+<p>Risky Business News reports that Mythos, an automated vulnerability research tool, has surfaced thousands of critical bugs across major codebases—a milestone in AI-assisted bug discovery that presages a wave of disclosures and patches in coming weeks. Separately, GitHub is rolling out new npm security features aimed at combating supply-chain attacks like TrapDoor. And Dutch authorities have raided bulletproof hosting providers in the Netherlands; such operators rent no-questions-asked infrastructure to ransomware groups, phishing platforms, and botnet operators.</p>
+<p><em>Covered in: risky_business_news — 1 post across 1 source</em></p>
+<ul>
+<li><a href="https://news.risky.biz/risky-bulletin-mythos-found-thousands-of-critical-bugs">Risky Bulletin: Mythos found thousands of critical bugs</a></li>
+</ul>
+<h2>5. Wireshark 4.6.6 Released with Security Fix</h2>
+<p><strong>Why it matters:</strong> Security analysts who open untrusted packet capture files should update before doing so—Wireshark vulnerabilities are typically triggered by crafted capture files.</p>
+<p>Wireshark 4.6.6 fixes one security vulnerability alongside eleven other bugs. Details on the specific vulnerability's severity are sparse in initial reporting, but Wireshark is ubiquitous among security and network operations teams and is commonly used to analyze capture files received from external parties during incident response and threat-intelligence sharing.</p>
+<p><em>Covered in: sans_isc — 1 post across 1 source</em></p>
+<ul>
+<li><a href="https://isc.sans.edu/diary/rss/33010">Wireshark 4.6.6 Released, (Sun, May 24th)</a></li>
+</ul>
+<h2>Signal stats</h2>
+<ul>
+<li>Total items processed: 10</li>
+<li>New (post-dedup): 10</li>
+<li>Clusters formed: 5 (5 items filtered: 3 off-topic HN, 2 Dark Reading event listings)</li>
+<li>Top 5 selected from: 5 candidate clusters</li>
+</ul>
+]]></content:encoded>
+      <pubDate>Mon, 25 May 2026 12:00:00 +0000</pubDate>
+      <guid isPermaLink="false">security-summary-2026-05-25</guid>
+      <enclosure url="https://raw.githubusercontent.com/pnikolaidis/security-summary/main/state/runs/2026-05-25/digest.mp3" length="6666240" type="audio/mpeg"/>
+      <itunes:duration>00:05:33</itunes:duration>
+      <itunes:author>Allie</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Security Digest — 2026-05-24</title>
       <description>Three stories surfaced today. Ghost CMS (CVE-2026-26980) is under active large-scale exploitation via a SQL injection flaw being used to inject ClickFix malware payloads into visitor browsers — Ghost site operators should patch immediately. Wireshark 4.6.6 shipped hours ago, patching a vulnerability in a tool that routinely handles untrusted network traffic. And a supply chain attack against Laravel Lang localization packages abused GitHub version tagging to deliver credential-stealing malware through Composer — PHP/Laravel developers should audit and rotate.</description>
