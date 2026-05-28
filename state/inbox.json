@@ -1,254 +1,1293 @@
 {
   "stats": {
-    "total_fetched": 13,
-    "new": 13,
-    "repeats": 0,
+    "total_fetched": 69,
+    "new": 67,
+    "repeats": 2,
     "per_source_family": {
-      "news": 5,
-      "hn": 8
+      "news": 22,
+      "hn": 7,
+      "nvd": 37,
+      "youtube": 3
     }
   },
   "items": [
     {
       "source": "bleepingcomputer",
       "source_family": "news",
-      "url": "https://www.bleepingcomputer.com/news/security/ghost-cms-sql-injection-flaw-exploited-in-large-scale-clickfix-campaign",
-      "title": "Ghost CMS SQL injection flaw exploited in large-scale ClickFix campaign",
-      "body": "A large-scale campaign is exploiting a critical SQL injection vulnerability (CVE-2026-26980) in Ghost CMS to inject malicious JavaScript code that triggers ClickFix attack flows. [...]",
-      "author": "Bill Toulas",
-      "timestamp": "2026-05-24T14:12:32+00:00",
+      "url": "https://www.bleepingcomputer.com/news/security/carnival-cruise-confirms-data-breach-affecting-nearly-6-million-people",
+      "title": "Carnival Cruise confirms data breach affecting nearly 6 million people",
+      "body": "Carnival Corporation, the world's largest cruise line operator, has confirmed a data breach affecting nearly 6 million people claimed by the ShinyHunters extortion gang in April 2026. [...]",
+      "author": "Sergiu Gatlan",
+      "timestamp": "2026-05-28T10:49:27+00:00",
       "engagement": 0.0,
-      "cves": [
-        "CVE-2026-26980"
-      ],
+      "cves": [],
       "vendors": [],
       "raw": {
         "feed": "bleepingcomputer"
       },
-      "url_hash": "3d789e4e4d8ba22b",
-      "content_hash": "e0e651e8bb052e18"
+      "url_hash": "73e652b33b2c1bee",
+      "content_hash": "e5532dfd55d42555"
     },
     {
       "source": "bleepingcomputer",
       "source_family": "news",
-      "url": "https://www.bleepingcomputer.com/news/security/laravel-lang-packages-hijacked-to-deploy-credential-stealing-malware",
-      "title": "Laravel Lang packages hijacked to deploy credential-stealing malware",
-      "body": "A supply chain attack targeting the Laravel Lang localization packages has exposed developers to a sophisticated credential-stealing malware campaign after attackers abused GitHub version tags to distribute malicious code through Composer packages. [...]",
-      "author": "Lawrence Abrams",
-      "timestamp": "2026-05-23T20:48:23+00:00",
+      "url": "https://www.bleepingcomputer.com/news/security/sextortionist-sentenced-to-33-years-for-targeting-145-children",
+      "title": "Sextortionist sentenced to 33 years for targeting 145 children",
+      "body": "A Canadian man was sentenced to 33 years in prison after pleading guilty to targeting more than 145 children across the United States, some as young as 6 years old, in an eight-year-long sextortion scheme. [...]",
+      "author": "Sergiu Gatlan",
+      "timestamp": "2026-05-28T09:25:59+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "34570082387274b6",
+      "content_hash": "914cbe60e81f840b"
+    },
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/security/gpu-mining-malware-spreads-via-seo-poisoning-ai-chatbots",
+      "title": "GPU mining malware spreads via SEO poisoning, AI chatbots",
+      "body": "Threat actors are targeting systems with high-performance computers in an ongoing cryptojacking campaign spread through a coordinated SEO poisoning operation that also manipulated AI chatbot recommendations. [...]",
+      "author": "Ionut Ilascu",
+      "timestamp": "2026-05-27T21:31:25+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "a06c6f4c94cb27e7",
+      "content_hash": "2d90102babc2936a"
+    },
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/security/can-you-enforce-strong-active-directory-password-rules-without-frustrating-users",
+      "title": "Can you enforce strong Active Directory password rules without frustrating users?",
+      "body": "Strong Active Directory passwords don't have to come at the expense of usability. Specops Software explains how passphrases, breached password protection, and self-service resets can improve security without frustrating users. [...]",
+      "author": "Sponsored by Specops Software",
+      "timestamp": "2026-05-27T14:00:10+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "8aea3ef3699dfc31",
+      "content_hash": "42da9e6cf5bf66a4"
+    },
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/security/glassworm-botnet-disrupted-after-resilient-c2-infrastructure-takedown",
+      "title": "Glassworm botnet disrupted after resilient C2 infrastructure takedown",
+      "body": "The Glassworm botnet targeting developers in software supply-chain attacks has been disrupted after researchers took down its resilient command-and-control infrastructure relying on Solana blockchain transactions and the BitTorrent DHT network. [...]",
+      "author": "Ionut Ilascu",
+      "timestamp": "2026-05-27T13:28:42+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "50bb9d551ef2b6bb",
+      "content_hash": "1cc97df71d984c07"
+    },
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/security/fbi-warns-of-silent-ransom-group-in-person-data-theft-attacks",
+      "title": "FBI warns of in-person data theft attacks from extortion gang",
+      "body": "The FBI warned on Tuesday that the Silent Ransom Group (SRG) extortion gang is now targeting U.S.-based law firms in in-person data theft attacks. [...]",
+      "author": "Sergiu Gatlan",
+      "timestamp": "2026-05-27T11:51:12+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "51aae7ffbec5b383",
+      "content_hash": "180cc4057db5dff4"
+    },
+    {
+      "source": "thehackernews",
+      "source_family": "news",
+      "url": "https://thehackernews.com/2026/05/jinx-0164-targets-cryptocurrency-firms.html",
+      "title": "JINX-0164 Targets Cryptocurrency Firms with Fake Recruiter Lures and macOS Malware",
+      "body": "A new campaign orchestrated by a previously undocumented threat actor has targeted cryptocurrency organizations with an aim to facilitate digital asset theft using recruitment-themed social engineering and bespoke macOS malware.\n\n\"These campaigns leveraged sophisticated social engineering techniques, custom macOS malware, and deep targeting of CI/CD infrastructure,\" Wiz researchers Shira Ayal,",
+      "author": "info@thehackernews.com (The Hacker News)",
+      "timestamp": "2026-05-28T07:54:48+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "macOS"
+      ],
+      "raw": {
+        "feed": "thehackernews"
+      },
+      "url_hash": "188cc814747dfa1a",
+      "content_hash": "b45ce33171389356"
+    },
+    {
+      "source": "thehackernews",
+      "source_family": "news",
+      "url": "https://thehackernews.com/2026/05/grandoreiro-malware-and-btmob-rat.html",
+      "title": "Grandoreiro Malware and BTMOB RAT Campaigns Target Windows and Android Users",
+      "body": "Latin America and Europe become the target of two banking trojan campaigns that are designed to infect Windows and Android devices with Grandoreiro and BTMOB malware, respectively.\n\nThat's according to new findings from WatchGuard and ESET, which have observed the two malware families being used to single out companies in Spain, Portugal, and Mexico, as well as mobile users in Brazil.\n\nThe",
+      "author": "info@thehackernews.com (The Hacker News)",
+      "timestamp": "2026-05-27T16:10:21+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Windows",
+        "Android"
+      ],
+      "raw": {
+        "feed": "thehackernews"
+      },
+      "url_hash": "d4c1566adb33ca10",
+      "content_hash": "cabddbe5d1975d72"
+    },
+    {
+      "source": "thehackernews",
+      "source_family": "news",
+      "url": "https://thehackernews.com/2026/05/malicious-npm-package-stole-files-from.html",
+      "title": "Malicious npm Package Stole Files From Claude AI User Directory via GitHub",
+      "body": "Cybersecurity researchers have discovered a new malicious package on the npm registry that comes with information stealing capabilities.\n\nAccording to OX Security, the package, named \"mouse5212-super-formatter,\" is designed to upload files from \"/mnt/user-data,\" a dedicated directory used by Anthropic's Claude artificial intelligence (AI) tool to handle uploads and outputs in the background. The",
+      "author": "info@thehackernews.com (The Hacker News)",
+      "timestamp": "2026-05-27T15:44:29+00:00",
       "engagement": 0.0,
       "cves": [],
       "vendors": [
         "GitHub"
       ],
       "raw": {
-        "feed": "bleepingcomputer"
+        "feed": "thehackernews"
       },
-      "url_hash": "2bf0512e6ea52288",
-      "content_hash": "f3068b511253f5f9"
+      "url_hash": "715bedbcfc42f741",
+      "content_hash": "b9208bc6c8da4a62"
+    },
+    {
+      "source": "thehackernews",
+      "source_family": "news",
+      "url": "https://thehackernews.com/2026/05/5-steps-to-managing-shadow-ai-tools.html",
+      "title": "5 Steps to Managing Shadow AI Tools Without Slowing Down Employees",
+      "body": "When an employee installs an AI writing assistant, connects a coding copilot to their IDE, or starts summarizing meetings with a new browser tool, they are doing exactly what a productive employee should do: finding faster ways to work.\n\nAcross most organizations today, employees are running three to five AI tools on any given day. Most were never reviewed by IT. A significant portion connects",
+      "author": "info@thehackernews.com (The Hacker News)",
+      "timestamp": "2026-05-27T13:28:48+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "thehackernews"
+      },
+      "url_hash": "b34f34b27d313240",
+      "content_hash": "1cb86d7f6cb63d4f"
+    },
+    {
+      "source": "thehackernews",
+      "source_family": "news",
+      "url": "https://thehackernews.com/2026/05/glassworm-malware-takedown-disrupts.html",
+      "title": "GlassWorm Malware Takedown Disrupts Developer Supply Chain Attack Infrastructure",
+      "body": "CrowdStrike, in partnership with Google and the Shadowserver Foundation, has announced the simultaneous disruption of all command-and-control (C2) channels associated with GlassWorm, a persistent software chain campaign targeting software developers through malicious packages and extensions.\n\n\"Since at least early 2025, GlassWorm operators have systematically targeted software developers, a",
+      "author": "info@thehackernews.com (The Hacker News)",
+      "timestamp": "2026-05-27T11:48:37+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Google",
+        "CrowdStrike"
+      ],
+      "raw": {
+        "feed": "thehackernews"
+      },
+      "url_hash": "6c3dd8f254d63f80",
+      "content_hash": "9f509ed060ec4277"
+    },
+    {
+      "source": "thehackernews",
+      "source_family": "news",
+      "url": "https://thehackernews.com/2026/05/3-soc-steps-that-shut-down-incident.html",
+      "title": "3 SOC Steps that Shut Down Incident Risks Early",
+      "body": "Most organizations still picture cyber defense as a fortress problem: build stronger walls, add more guards, buy another detection engine. But modern incidents rarely crash through the front gate. They drift in disguised as routine activity, hide inside legitimate processes, and quietly accumulate risk long before anyone labels them an \"incident.\"\n\nThat changes the role of the SOC entirely.\n\nThe",
+      "author": "info@thehackernews.com (The Hacker News)",
+      "timestamp": "2026-05-27T11:45:00+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "thehackernews"
+      },
+      "url_hash": "402e3f6eb0f9c35b",
+      "content_hash": "736b06508f7635f6"
     },
     {
       "source": "darkreading",
       "source_family": "news",
-      "url": "https://www.darkreading.com/events/infosecurity-europe",
-      "title": "Infosecurity Europe",
-      "body": "",
-      "author": null,
-      "timestamp": "2026-06-02T13:30:00+00:00",
+      "url": "https://www.darkreading.com/cybersecurity-analytics/nordic-cisos-rising-cyber-threats",
+      "title": "Nordic CISOs Handle Rising Cyber Threats Remarkably Well",
+      "body": "Artificial intelligence notwithstanding, the vast majority of CISOs in northern Europe say they're facing no more serious cyberattacks than they did two years ago.",
+      "author": "Nate Nelson",
+      "timestamp": "2026-05-28T07:01:00+00:00",
       "engagement": 0.0,
       "cves": [],
       "vendors": [],
       "raw": {
         "feed": "darkreading"
       },
-      "url_hash": "2d981b6027ec9492",
-      "content_hash": "a2dc24dc775668f1"
+      "url_hash": "593f8e974014e2d6",
+      "content_hash": "dd977b2cd9bf1b9f"
     },
     {
       "source": "darkreading",
       "source_family": "news",
-      "url": "https://www.darkreading.com/events/anatomy-of-a-data-breach-what-to-do-if-it-happens-to-you",
-      "title": "[Virtual Event] Anatomy of a Data Breach: What to Do if it Happens to You",
-      "body": "",
-      "author": null,
-      "timestamp": "2026-06-18T15:00:00+00:00",
+      "url": "https://www.darkreading.com/cyberattacks-data-breaches/ransomware-actors-steal-law-firm-data",
+      "title": "Ransomware Actors Show Up In Person to Steal Law Firm Data",
+      "body": "The FBI warned that the extortion gang Silent Ransom Group is targeting law firms and socially engineering its way into servers and databases.",
+      "author": "Alexander Culafi",
+      "timestamp": "2026-05-27T20:38:01+00:00",
       "engagement": 0.0,
       "cves": [],
       "vendors": [],
       "raw": {
         "feed": "darkreading"
       },
-      "url_hash": "582b9d5ded055f32",
-      "content_hash": "bf855585865244dd"
+      "url_hash": "349034d491d82e96",
+      "content_hash": "f6b77ae393f261ad"
+    },
+    {
+      "source": "darkreading",
+      "source_family": "news",
+      "url": "https://www.darkreading.com/cyberattacks-data-breaches/latin-american-cybercriminals-government-data",
+      "title": "Latin American Cybercriminals Hoover Up Government Data",
+      "body": "A  purported leak exposing 5.8 million records of Uruguayan citizens is the latest incident where cybercriminals targeted government agencies to monetize citizen data.",
+      "author": "Robert Lemos",
+      "timestamp": "2026-05-27T16:19:03+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "darkreading"
+      },
+      "url_hash": "b5032b7bdc670b45",
+      "content_hash": "c94b1536ab2c85a7"
+    },
+    {
+      "source": "darkreading",
+      "source_family": "news",
+      "url": "https://www.darkreading.com/threat-intelligence/ai-assisted-exploit-development-scanner-detection",
+      "title": "AI-Assisted Exploit Development Outpaces Scanner Detection",
+      "body": "Attackers are using AI to dramatically reduce the time they need to develop a working exploit for a CVE, according to new research.",
+      "author": "Elizabeth Montalbano",
+      "timestamp": "2026-05-27T16:11:19+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "darkreading"
+      },
+      "url_hash": "0bdd1318bc032535",
+      "content_hash": "70a47b4b7fd6fb83"
+    },
+    {
+      "source": "darkreading",
+      "source_family": "news",
+      "url": "https://www.darkreading.com/cybersecurity-operations/cybersecurity-evolution-perimeter-defense-to-ai-native-security",
+      "title": "Cybersecurity Evolution: How We Went From Perimeter Defense to AI-Native Security",
+      "body": "The cybersecurity industry of 2006 barely resembled today's billion-dollar behemoth. As part of Dark Reading's 20th anniversary celebration, we trace the industry's evolution through a technology lens.",
+      "author": "Fahmida Y. Rashid",
+      "timestamp": "2026-05-27T12:11:30+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "darkreading"
+      },
+      "url_hash": "1a313192fca9c590",
+      "content_hash": "2dba673913c0e4bc"
+    },
+    {
+      "source": "schneier",
+      "source_family": "news",
+      "url": "https://www.schneier.com/blog/archives/2026/05/fbis-2025-internet-crime-report.html",
+      "title": "FBI\u2019s 2025 Internet Crime Report",
+      "body": "<p>The 2025 <a href=\"https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf\">Internet Crime Report</a> was published a few weeks ago, but I only just saw it.<br />\nLots of interesting statistics.</p>\n<p><a href=\"https://www.fbi.gov/news/press-releases/cryptocurrency-and-ai-scams-bilk-americans-of-billions\">Press release</a>. <a href=\"https://www.wsj.com/tech/cybersecurity/internet-crime-fbi-report-fd7c16e8\">News</a> <a href=\"https://www.governing.com/key-findings/report-how-cyber-crime-affected-the-u-s-in-2025\">articles</a>.</p>",
+      "author": "Bruce Schneier",
+      "timestamp": "2026-05-27T14:02:44+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "schneier"
+      },
+      "url_hash": "263953e602a3015f",
+      "content_hash": "f7820b6bbb8e8ff3"
     },
     {
       "source": "sans_isc",
       "source_family": "news",
-      "url": "https://isc.sans.edu/diary/rss/33010",
-      "title": "Wireshark 4.6.6 Released, (Sun, May 24th)",
-      "body": "Wireshark release 4.6.6 fixes 1 vulnerability and 11 bugs.&#xd;",
+      "url": "https://isc.sans.edu/diary/rss/33028",
+      "title": "ISC Stormcast For Thursday, May 28th, 2026 https://isc.sans.edu/podcastdetail/9948, (Thu, May 28th)",
+      "body": "",
       "author": null,
-      "timestamp": "2026-05-24T16:38:21+00:00",
+      "timestamp": "2026-05-28T02:00:02+00:00",
       "engagement": 0.0,
       "cves": [],
       "vendors": [],
       "raw": {
         "feed": "sans_isc"
       },
-      "url_hash": "30253856bf16f2b1",
-      "content_hash": "42e451bde5f0b953"
+      "url_hash": "da714d5b94838fee",
+      "content_hash": "23b17c557ef062d2"
     },
     {
-      "source": "hackernews",
-      "source_family": "hn",
-      "url": "https://www.statnews.com/2026/05/22/seed-oils-healthy-fats-tallow-fact-check-cardiac-health",
-      "title": "The seed oil panic is hurting my cardiac patients",
-      "body": "",
-      "author": "randycupertino",
-      "timestamp": "2026-05-24T14:27:26+00:00",
-      "engagement": 205.0,
+      "source": "sans_isc",
+      "source_family": "news",
+      "url": "https://isc.sans.edu/diary/rss/33024",
+      "title": "Reconstructing an Akira Ransomware Kill Chain from Perimeter and Endpoint Logs, (Wed, May 27th)",
+      "body": "Most Akira write-ups focus on the ransom note or the encryption routine. By the time those show up the interesting forensic work is over. The questions that matter to defenders sit earlier. How did they get in. When did they get domain admin. What did they touch before the binary fired. Those answers live in the days before impact. They sit in two log sources that almost never get joined. The perimeter firewall and the Windows event channel.&#xd;",
+      "author": null,
+      "timestamp": "2026-05-27T21:14:03+00:00",
+      "engagement": 0.0,
       "cves": [],
-      "vendors": [],
+      "vendors": [
+        "Windows"
+      ],
       "raw": {
-        "points": 127,
-        "num_comments": 156,
-        "object_id": "48257532"
+        "feed": "sans_isc"
       },
-      "url_hash": "ee03dae4ed3099ae",
-      "content_hash": "19bb07e7025ce44d"
+      "url_hash": "9a3bcdf0d12010ef",
+      "content_hash": "b04abcbd7f641860"
     },
     {
       "source": "hackernews",
       "source_family": "hn",
-      "url": "https://www.quantamagazine.org/how-alexander-grothendieck-revolutionized-20th-century-mathematics-20260520",
-      "title": "Alexander Grothendieck Revolutionized 20th-Century Mathematics",
+      "url": "https://iisc.ac.in/a-eureka-machine-that-thinks-like-nature-and-explores-what-ai-cannot",
+      "title": "A Eureka machine that thinks like nature and explores what AI cannot",
       "body": "",
-      "author": "anujbans",
-      "timestamp": "2026-05-24T03:19:02+00:00",
-      "engagement": 114.0,
+      "author": "kunalsin9h",
+      "timestamp": "2026-05-28T06:40:31+00:00",
+      "engagement": 91.5,
       "cves": [],
       "vendors": [],
       "raw": {
-        "points": 103,
+        "points": 78,
+        "num_comments": 27,
+        "object_id": "48305446"
+      },
+      "url_hash": "5bcb5a77cd8c5a76",
+      "content_hash": "0ea58068156b34e1"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://blog.youtube/news-and-events/improving-ai-labels-viewers-creators",
+      "title": "YouTube to automatically label AI-generated videos",
+      "body": "<a href=\"https:&#x2F;&#x2F;variety.com&#x2F;2026&#x2F;digital&#x2F;news&#x2F;youtube-ai-video-labels-automatic-detection-1236758865&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;variety.com&#x2F;2026&#x2F;digital&#x2F;news&#x2F;youtube-ai-video-label...</a>",
+      "author": "nopg",
+      "timestamp": "2026-05-27T20:00:51+00:00",
+      "engagement": 1204.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 922,
+        "num_comments": 564,
+        "object_id": "48299753"
+      },
+      "url_hash": "4b9a903d672d6743",
+      "content_hash": "5abbe06e66b29a61"
+    },
+    {
+      "source": "hackernews",
+      "source_family": "hn",
+      "url": "https://sverre.me/blog/rust-on-kindle",
+      "title": "Rust (and Slint) on a Jailbroken Kindle",
+      "body": "",
+      "author": "homarp",
+      "timestamp": "2026-05-27T19:51:47+00:00",
+      "engagement": 181.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "points": 170,
         "num_comments": 22,
-        "object_id": "48254020"
+        "object_id": "48299623"
       },
-      "url_hash": "196abf65b138ec02",
-      "content_hash": "033fa1adb0ab6b2f"
+      "url_hash": "4a1c2b415db31459",
+      "content_hash": "3e10de7531159935"
     },
     {
       "source": "hackernews",
       "source_family": "hn",
-      "url": "https://www.bbc.com/news/articles/c3w2l249j8go",
-      "title": "Toxic chemical leak at a manufacturing facility in Orange County",
+      "url": "https://www.science.org/doi/10.1126/sciadv.aea5496?user_id=66c4bf745d78644b3aa57b08",
+      "title": "Stress disrupts hippocampal integration of overlapping events, memory inference",
       "body": "",
-      "author": "borski",
-      "timestamp": "2026-05-23T22:09:05+00:00",
-      "engagement": 233.0,
+      "author": "gmays",
+      "timestamp": "2026-05-27T16:26:31+00:00",
+      "engagement": 139.0,
       "cves": [],
       "vendors": [],
       "raw": {
-        "points": 159,
-        "num_comments": 148,
-        "object_id": "48252060"
+        "points": 129,
+        "num_comments": 20,
+        "object_id": "48296622"
       },
-      "url_hash": "a252e4828d6b3e8d",
-      "content_hash": "f5ff07b88dbdca0f"
+      "url_hash": "8436c86d6cf62e0a",
+      "content_hash": "a7744fe1b9a0a3a0"
     },
     {
       "source": "hackernews",
       "source_family": "hn",
-      "url": "https://old.reddit.com/r/electronics/comments/1td7yxl/i_built_a_fully_selfpowered_computer_in_actual",
-      "title": "A self-powered computer in actual credit-card size (~1mm thick)",
+      "url": "https://techcrunch.com/2026/05/27/tech-ceos-are-apparently-suffering-from-ai-psychosis",
+      "title": "Tech CEOs are apparently suffering from AI psychosis",
       "body": "",
-      "author": "gnabgib",
-      "timestamp": "2026-05-23T21:06:37+00:00",
-      "engagement": 85.5,
+      "author": "IAmGraydon",
+      "timestamp": "2026-05-27T15:20:47+00:00",
+      "engagement": 814.5,
       "cves": [],
       "vendors": [],
       "raw": {
-        "points": 82,
-        "num_comments": 7,
-        "object_id": "48251528"
+        "points": 652,
+        "num_comments": 325,
+        "object_id": "48295679"
       },
-      "url_hash": "1f07b15a9c73d67c",
-      "content_hash": "747dcc486fdc08bd"
+      "url_hash": "0d0bbb7ad78895ca",
+      "content_hash": "67aac8c29e6f26a2"
     },
     {
       "source": "hackernews",
       "source_family": "hn",
-      "url": "https://www.bbc.com/news/articles/czd2qmdvmq6o",
-      "title": "Air France and Airbus found guilty of manslaughter over 2009 plane crash",
-      "body": "",
-      "author": "baal80spam",
-      "timestamp": "2026-05-23T20:09:13+00:00",
-      "engagement": 168.0,
+      "url": "https://help.delduca.org/",
+      "title": "Show HN: I made an emergency page for my family",
+      "body": "I have a bad memory and can&#x27;t memorize some important numbers, so I created this project.<p>I&#x27;ve always been concerned about being without my phone (getting robbed - which is common in Brazil - running out of battery, having it break, etc.), so I decided to create a page that sends SMS messages (LLM-summarized) and emails with more detailed information such as geolocation, IP address, and the full message.<p>It\u2019s a simple page that allows sending one or more messages, with recipients being myself and other people - for example, in case I or they need help or need to communicate something important.<p>The source code is available at <a href=\"https:&#x2F;&#x2F;github.com&#x2F;skhaz&#x2F;dokku&#x2F;tree&#x2F;main&#x2F;apps&#x2F;help\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;skhaz&#x2F;dokku&#x2F;tree&#x2F;main&#x2F;apps&#x2F;help</a>",
+      "author": "delduca",
+      "timestamp": "2026-05-27T14:18:03+00:00",
+      "engagement": 118.0,
       "cves": [],
       "vendors": [],
       "raw": {
-        "points": 118,
-        "num_comments": 100,
-        "object_id": "48250980"
+        "points": 71,
+        "num_comments": 94,
+        "object_id": "48294791"
       },
-      "url_hash": "f0cfb6c60088eb0c",
-      "content_hash": "6fb5f5a3277d5aed"
+      "url_hash": "faa98317ffce3e5a",
+      "content_hash": "4bce47a5a5ac543a"
     },
     {
       "source": "hackernews",
       "source_family": "hn",
-      "url": "https://singularityhub.com/2026/05/22/data-centers-now-consume-6-of-electricity-in-the-us-and-the-backlash-has-begun",
-      "title": "Data Centers Now Consume 6% of US Electricity\u2013and the Backlash Has Begun",
+      "url": "https://en.ilsole24ore.com/art/lombardy-introduces-increased-charges-of-up-to-200-per-cent-for-data-centre-construction-in-green-and-agricultural-areas-AI6Jp4ID",
+      "title": "Lombardy increases charges for the construction of data centres in green areas",
       "body": "",
-      "author": "cdrnsf",
-      "timestamp": "2026-05-23T19:42:10+00:00",
-      "engagement": 73.0,
+      "author": "napolux",
+      "timestamp": "2026-05-27T13:52:48+00:00",
+      "engagement": 236.0,
       "cves": [],
       "vendors": [],
       "raw": {
-        "points": 56,
-        "num_comments": 34,
-        "object_id": "48250712"
+        "points": 139,
+        "num_comments": 194,
+        "object_id": "48294401"
       },
-      "url_hash": "503b8a4d61206673",
-      "content_hash": "27c7e15d41937611"
+      "url_hash": "6981d0ec2ae16cb8",
+      "content_hash": "5ec138fe088533a9"
     },
     {
-      "source": "hackernews",
-      "source_family": "hn",
-      "url": "https://veronicaexplains.net/my-first-writerdeck",
-      "title": "Time to talk about my writerdeck",
-      "body": "",
-      "author": "hggh",
-      "timestamp": "2026-05-23T18:45:37+00:00",
-      "engagement": 555.0,
-      "cves": [],
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-3012",
+      "title": "CVE-2026-3012 (HIGH) \u2014 A flaw was found in Samba\u2019s certificate auto-enrollment Group Policy handling. When certificate auto-enrollment is enabled, Samba may retrie",
+      "body": "A flaw was found in Samba\u2019s certificate auto-enrollment Group Policy handling. When certificate auto-enrollment is enabled, Samba may retrieve a CA certificate over an unencrypted HTTP connection and install it into the local trust store without proper verification. An attacker with the ability to intercept or redirect network traffic could exploit this behavior to supply a malicious certificate authority certificate, potentially allowing interception or spoofing of trusted communications.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:18.357000+00:00",
+      "engagement": 8.0,
+      "cves": [
+        "CVE-2026-3012"
+      ],
       "vendors": [],
       "raw": {
-        "points": 428,
-        "num_comments": 254,
-        "object_id": "48250144"
+        "cvss": 8.0,
+        "severity": "HIGH"
       },
-      "url_hash": "4d33523b89ac0735",
-      "content_hash": "6c05fc436dad945a"
+      "url_hash": "eb756d8ce895af76",
+      "content_hash": "268c5ab35508e7db"
     },
     {
-      "source": "hackernews",
-      "source_family": "hn",
-      "url": "https://www.kcrg.com/2026/05/20/iowa-lawmakers-move-mandate-students-take-center-intellectual-freedom-classes-amid-low-enrollment",
-      "title": "Iowa to mandate students take Intellectual Freedom classes amid low enrollment",
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42727",
+      "title": "CVE-2026-42727 (CRITICAL) \u2014 Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in RealMag777 Active Products Tables for ",
+      "body": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in RealMag777 Active Products Tables for WooCommerce profit-products-tables-for-woocommerce allows Blind SQL Injection.This issue affects Active Products Tables for WooCommerce: from n/a through <= 1.0.8.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:19.060000+00:00",
+      "engagement": 9.3,
+      "cves": [
+        "CVE-2026-42727"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.3,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "20c47c50cef61ad4",
+      "content_hash": "077f3c18f9125d0f"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42728",
+      "title": "CVE-2026-42728 (HIGH) \u2014 Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in HT Plugins HT Contact Form 7 ht-contac",
+      "body": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in HT Plugins HT Contact Form 7 ht-contactform allows Stored XSS.This issue affects HT Contact Form 7: from n/a through <= 2.8.2.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:19.180000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-42728"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "9caddf788c26ce8c",
+      "content_hash": "746bf14f74c32bf3"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42729",
+      "title": "CVE-2026-42729 (HIGH) \u2014 Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Property Hive PropertyHive propertyhiv",
+      "body": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Property Hive PropertyHive propertyhive allows DOM-Based XSS.This issue affects PropertyHive: from n/a through <= 2.2.2.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:19.297000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-42729"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "4e60a038122d0010",
+      "content_hash": "99d57d195874a2c6"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42730",
+      "title": "CVE-2026-42730 (HIGH) \u2014 Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Stylemix MasterStudy LMS masterstudy-l",
+      "body": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Stylemix MasterStudy LMS masterstudy-lms-learning-management-system allows Blind SQL Injection.This issue affects MasterStudy LMS: from n/a through <= 3.7.29.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:19.413000+00:00",
+      "engagement": 8.5,
+      "cves": [
+        "CVE-2026-42730"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.5,
+        "severity": "HIGH"
+      },
+      "url_hash": "7672896c12bff87b",
+      "content_hash": "f9fe857e2d5df82c"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42731",
+      "title": "CVE-2026-42731 (CRITICAL) \u2014 Incorrect Privilege Assignment vulnerability in miniOrange miniorange otp verification miniorange-otp-verification allows Privilege Escalati",
+      "body": "Incorrect Privilege Assignment vulnerability in miniOrange miniorange otp verification miniorange-otp-verification allows Privilege Escalation.This issue affects miniorange otp verification: from n/a through <= 5.4.9.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:19.600000+00:00",
+      "engagement": 9.8,
+      "cves": [
+        "CVE-2026-42731"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.8,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "e508dac7ea053d6b",
+      "content_hash": "a5ff2a03a3fb3754"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42733",
+      "title": "CVE-2026-42733 (HIGH) \u2014 Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in RealMag777 WPCS currency-switcher allo",
+      "body": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in RealMag777 WPCS currency-switcher allows DOM-Based XSS.This issue affects WPCS: from n/a through <= 1.3.1.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:19.877000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-42733"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "fc624fb7f7b1fb51",
+      "content_hash": "f2f76fec6d56c24f"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42734",
+      "title": "CVE-2026-42734 (HIGH) \u2014 Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Dylan Kuhn  Geo Mashup geo-mashup allo",
+      "body": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Dylan Kuhn  Geo Mashup geo-mashup allows Reflected XSS.This issue affects  Geo Mashup: from n/a through <= 1.13.19.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:19.997000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-42734"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "80f998eb15c5c940",
+      "content_hash": "5fdfe1498e1dbca6"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42735",
+      "title": "CVE-2026-42735 (HIGH) \u2014 Authentication Bypass Using an Alternate Path or Channel vulnerability in Iqonic Design KiviCare kivicare-clinic-management-system allows Pa",
+      "body": "Authentication Bypass Using an Alternate Path or Channel vulnerability in Iqonic Design KiviCare kivicare-clinic-management-system allows Password Recovery Exploitation.This issue affects KiviCare: from n/a through <= 4.3.0.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:20.117000+00:00",
+      "engagement": 8.2,
+      "cves": [
+        "CVE-2026-42735"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.2,
+        "severity": "HIGH"
+      },
+      "url_hash": "1942f239fd1d9d86",
+      "content_hash": "ec646635cd90300e"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42736",
+      "title": "CVE-2026-42736 (HIGH) \u2014 Authorization Bypass Through User-Controlled Key vulnerability in wordplus BP Better Messages bp-better-messages allows Exploiting Incorrect",
+      "body": "Authorization Bypass Through User-Controlled Key vulnerability in wordplus BP Better Messages bp-better-messages allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects BP Better Messages: from n/a through <= 2.14.16.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:20.233000+00:00",
+      "engagement": 7.5,
+      "cves": [
+        "CVE-2026-42736"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.5,
+        "severity": "HIGH"
+      },
+      "url_hash": "a012bfaa38201ed3",
+      "content_hash": "b312ed0ed57ff680"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42737",
+      "title": "CVE-2026-42737 (HIGH) \u2014 Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in e4jvikwp VikBooking Hotel Booking Engine & P",
+      "body": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in e4jvikwp VikBooking Hotel Booking Engine & PMS vikbooking allows Path Traversal.This issue affects VikBooking Hotel Booking Engine & PMS: from n/a through <= 1.8.9.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:20.350000+00:00",
+      "engagement": 8.6,
+      "cves": [
+        "CVE-2026-42737"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.6,
+        "severity": "HIGH"
+      },
+      "url_hash": "2ca1d54484b0ba48",
+      "content_hash": "653b455147caf24b"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42738",
+      "title": "CVE-2026-42738 (HIGH) \u2014 Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in ZAYTECH Smart Online Order for Clover ",
+      "body": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in ZAYTECH Smart Online Order for Clover clover-online-orders allows Stored XSS.This issue affects Smart Online Order for Clover: from n/a through <= 1.6.0.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:20.470000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-42738"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "74911c06940bac43",
+      "content_hash": "b0b131296fe4e468"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42739",
+      "title": "CVE-2026-42739 (HIGH) \u2014 Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in IniLerm Advanced IP Blocker advanced-i",
+      "body": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in IniLerm Advanced IP Blocker advanced-ip-blocker allows DOM-Based XSS.This issue affects Advanced IP Blocker: from n/a through <= 8.10.7.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:20.583000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-42739"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "59680862669b719f",
+      "content_hash": "f3846c8676410487"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42740",
+      "title": "CVE-2026-42740 (CRITICAL) \u2014 Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in tainacan Tainacan tainacan allows Blin",
+      "body": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in tainacan Tainacan tainacan allows Blind SQL Injection.This issue affects Tainacan: from n/a through <= 1.0.3.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:20.700000+00:00",
+      "engagement": 9.3,
+      "cves": [
+        "CVE-2026-42740"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.3,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "e06179f3629cc844",
+      "content_hash": "6133f2635202c65e"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42745",
+      "title": "CVE-2026-42745 (HIGH) \u2014 Authentication Bypass Using an Alternate Path or Channel vulnerability in ZAYTECH Smart Online Order for Clover clover-online-orders allows ",
+      "body": "Authentication Bypass Using an Alternate Path or Channel vulnerability in ZAYTECH Smart Online Order for Clover clover-online-orders allows Authentication Bypass.This issue affects Smart Online Order for Clover: from n/a through <= 1.6.0.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:20.940000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-42745"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "c67c20edfb3161bf",
+      "content_hash": "6135f66552683425"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42746",
+      "title": "CVE-2026-42746 (HIGH) \u2014 Insertion of Sensitive Information Into Sent Data vulnerability in ZAYTECH Smart Online Order for Clover clover-online-orders allows Retriev",
+      "body": "Insertion of Sensitive Information Into Sent Data vulnerability in ZAYTECH Smart Online Order for Clover clover-online-orders allows Retrieve Embedded Sensitive Data.This issue affects Smart Online Order for Clover: from n/a through <= 1.6.0.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:21.057000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-42746"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "e6cb2a5e65983ffa",
+      "content_hash": "0b0131fab7e0ef15"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42747",
+      "title": "CVE-2026-42747 (CRITICAL) \u2014 Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in hassantafreshi Easy Form Builder easy-",
+      "body": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in hassantafreshi Easy Form Builder easy-form-builder allows Blind SQL Injection.This issue affects Easy Form Builder: from n/a through <= 4.0.6.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:21.173000+00:00",
+      "engagement": 9.3,
+      "cves": [
+        "CVE-2026-42747"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.3,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "ab90c715d19ddb0b",
+      "content_hash": "e8dba3e398eeebc6"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42748",
+      "title": "CVE-2026-42748 (CRITICAL) \u2014 Unrestricted Upload of File with Dangerous Type vulnerability in WPify WPify Woo Czech wpify-woo allows Upload a Web Shell to a Web Server.T",
+      "body": "Unrestricted Upload of File with Dangerous Type vulnerability in WPify WPify Woo Czech wpify-woo allows Upload a Web Shell to a Web Server.This issue affects WPify Woo Czech: from n/a through <= 5.4.1.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:21.290000+00:00",
+      "engagement": 9.9,
+      "cves": [
+        "CVE-2026-42748"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.9,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "7715feb7f7b574a4",
+      "content_hash": "cc5e920e55bb21ed"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42749",
+      "title": "CVE-2026-42749 (HIGH) \u2014 Authentication Bypass Using an Alternate Path or Channel vulnerability in Themeisle Disable Comments for Any Post Types (Remove comments) co",
+      "body": "Authentication Bypass Using an Alternate Path or Channel vulnerability in Themeisle Disable Comments for Any Post Types (Remove comments) comments-plus allows Password Recovery Exploitation.This issue affects Disable Comments for Any Post Types (Remove comments): from n/a through <= 1.3.0.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:21.413000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-42749"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "b46004142d1bc2d5",
+      "content_hash": "3fdcc203fdad2b59"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42753",
+      "title": "CVE-2026-42753 (HIGH) \u2014 Missing Authorization vulnerability in WC Lovers WCFM Membership wc-multivendor-membership allows Exploiting Incorrectly Configured Access C",
+      "body": "Missing Authorization vulnerability in WC Lovers WCFM Membership wc-multivendor-membership allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects WCFM Membership: from n/a through <= 2.11.10.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:21.760000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-42753"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "173390105b0b7256",
+      "content_hash": "9e5075d11f08cb0e"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42754",
+      "title": "CVE-2026-42754 (HIGH) \u2014 Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in phbernard Favicon favicon-by-realfavic",
+      "body": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in phbernard Favicon favicon-by-realfavicongenerator allows Reflected XSS.This issue affects Favicon: from n/a through <= 1.3.46.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:21.873000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-42754"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "573779c73b33f224",
+      "content_hash": "430585e3fd638e4c"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42755",
+      "title": "CVE-2026-42755 (CRITICAL) \u2014 Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in RealMag777 TableOn posts-table-filtera",
+      "body": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in RealMag777 TableOn posts-table-filterable allows Blind SQL Injection.This issue affects TableOn: from n/a through <= 1.0.5.1.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:21.990000+00:00",
+      "engagement": 9.3,
+      "cves": [
+        "CVE-2026-42755"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.3,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "b3b1ecb97e5c0968",
+      "content_hash": "6ae1d062ad8ff749"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42756",
+      "title": "CVE-2026-42756 (CRITICAL) \u2014 Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Ludwig You QuickWebP &#8211; Compress / Opti",
+      "body": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Ludwig You QuickWebP &#8211; Compress / Optimize Images &amp; Convert WebP | SEO Friendly quickwebp allows Path Traversal.This issue affects QuickWebP &#8211; Compress / Optimize Images &amp; Convert WebP | SEO Friendly: from n/a through <= 3.2.7.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:22.100000+00:00",
+      "engagement": 9.9,
+      "cves": [
+        "CVE-2026-42756"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.9,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "6b98ee611d866f3a",
+      "content_hash": "ea686686ca9e3910"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42757",
+      "title": "CVE-2026-42757 (CRITICAL) \u2014 Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Saleswonder Team: Tobias WebinarIgnition web",
+      "body": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Saleswonder Team: Tobias WebinarIgnition webinar-ignition allows Path Traversal.This issue affects WebinarIgnition: from n/a through < 4.08.253.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:22.217000+00:00",
+      "engagement": 9.9,
+      "cves": [
+        "CVE-2026-42757"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.9,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "8611a1f33653ed78",
+      "content_hash": "40f33f68a33b5cdf"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42758",
+      "title": "CVE-2026-42758 (CRITICAL) \u2014 Incorrect Privilege Assignment vulnerability in Saleswonder Team: Tobias WebinarIgnition webinar-ignition allows Privilege Escalation.This i",
+      "body": "Incorrect Privilege Assignment vulnerability in Saleswonder Team: Tobias WebinarIgnition webinar-ignition allows Privilege Escalation.This issue affects WebinarIgnition: from n/a through < 4.08.253.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:22.330000+00:00",
+      "engagement": 9.8,
+      "cves": [
+        "CVE-2026-42758"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.8,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "d90e3bad12818298",
+      "content_hash": "610ad059bbbe8586"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42759",
+      "title": "CVE-2026-42759 (HIGH) \u2014 Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Timo Affiliate Super Assistent amazons",
+      "body": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Timo Affiliate Super Assistent amazonsimpleadmin allows Stored XSS.This issue affects Affiliate Super Assistent: from n/a through <= 1.10.1.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:22.500000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-42759"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "86b86790924ef3ad",
+      "content_hash": "0311dc1fde48d5b2"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42760",
+      "title": "CVE-2026-42760 (HIGH) \u2014 Authentication Bypass Using an Alternate Path or Channel vulnerability in revmakx Backup and Staging by WP Time Capsule wp-time-capsule allo",
+      "body": "Authentication Bypass Using an Alternate Path or Channel vulnerability in revmakx Backup and Staging by WP Time Capsule wp-time-capsule allows Password Recovery Exploitation.This issue affects Backup and Staging by WP Time Capsule: from n/a through <= 1.22.25.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:22.650000+00:00",
+      "engagement": 7.5,
+      "cves": [
+        "CVE-2026-42760"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.5,
+        "severity": "HIGH"
+      },
+      "url_hash": "c2ebcd48ca05bdc1",
+      "content_hash": "f4c09b53e76f193f"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42761",
+      "title": "CVE-2026-42761 (CRITICAL) \u2014 Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in RealMag777 Active Products Tables for ",
+      "body": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in RealMag777 Active Products Tables for WooCommerce profit-products-tables-for-woocommerce allows Blind SQL Injection.This issue affects Active Products Tables for WooCommerce: from n/a through <= 1.0.9.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:22.763000+00:00",
+      "engagement": 9.3,
+      "cves": [
+        "CVE-2026-42761"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.3,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "61f78eb7c846cea5",
+      "content_hash": "60cd0b492ac67e66"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42762",
+      "title": "CVE-2026-42762 (HIGH) \u2014 Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in e4jvikwp VikBooking Hotel Booking Engi",
+      "body": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in e4jvikwp VikBooking Hotel Booking Engine & PMS vikbooking allows DOM-Based XSS.This issue affects VikBooking Hotel Booking Engine & PMS: from n/a through <= 1.8.9.",
+      "author": null,
+      "timestamp": "2026-05-27T11:16:22.897000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-42762"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "c838dea7c709ddef",
+      "content_hash": "ed9f10c5fa107d5a"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-56462",
+      "title": "CVE-2024-56462 (HIGH) \u2014 IBM QRadar 7.5.0 through 7.5.0 UP15 Interim Fix 002 could allow a privileged user to upload a malicious backup archive that could be restore",
+      "body": "IBM QRadar 7.5.0 through 7.5.0 UP15 Interim Fix 002 could allow a privileged user to upload a malicious backup archive that could be restored and used to gain access to the underlying operating system.",
+      "author": null,
+      "timestamp": "2026-05-27T14:16:41.417000+00:00",
+      "engagement": 7.2,
+      "cves": [
+        "CVE-2024-56462"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.2,
+        "severity": "HIGH"
+      },
+      "url_hash": "3fa497f2107b60bd",
+      "content_hash": "3c854471807f0c80"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-1718",
+      "title": "CVE-2026-1718 (HIGH) \u2014 IBM Db2 11.5.0 through 11.5.9, and 12.1.0 through 12.1.4 is vulnerable to a denial of service with a specially crafted query when autonomous",
+      "body": "IBM Db2 11.5.0 through 11.5.9, and 12.1.0 through 12.1.4 is vulnerable to a denial of service with a specially crafted query when autonomous transactions are enabled.",
+      "author": null,
+      "timestamp": "2026-05-27T14:16:43.883000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-1718"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "106cbd78417a440a",
+      "content_hash": "8231cf6c27158473"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-1933",
+      "title": "CVE-2026-1933 (HIGH) \u2014 A flaw was found in Samba\u2019s handling of NTFS-style reparse points on shares configured with read only = yes. Due to missing SMB-layer access",
+      "body": "A flaw was found in Samba\u2019s handling of NTFS-style reparse points on shares configured with read only = yes. Due to missing SMB-layer access checks, authenticated users with underlying filesystem write permissions may create or delete reparse point metadata through SMB operations even on read-only exports. This could allow modification of SMB-visible file behavior, including converting files into symbolic links or other reparse point types.",
+      "author": null,
+      "timestamp": "2026-05-27T14:16:44.023000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-1933"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "20be3161f10adead",
+      "content_hash": "8c1bd72f629fa77d"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-36044",
+      "title": "CVE-2026-36044 (HIGH) \u2014 @pensar/apex <= 0.0.58 is vulnerable to OS command injection via the smart_enumerate tool. The createSmartEnumerateTool() function in src/co",
+      "body": "@pensar/apex <= 0.0.58 is vulnerable to OS command injection via the smart_enumerate tool. The createSmartEnumerateTool() function in src/core/agent/tools.ts constructs a shell command by concatenating unsanitized values from the extensions array and url parameter into a string passed to Node.js child_process.exec(). Because exec() spawns a shell, shell metacharacters in those values are interpreted by the host shell, resulting in arbitrary OS command execution with the privileges of the running process.",
+      "author": null,
+      "timestamp": "2026-05-27T14:16:45.143000+00:00",
+      "engagement": 8.8,
+      "cves": [
+        "CVE-2026-36044"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "05d32f6cf9a1f505",
+      "content_hash": "6aaf0e3fd2f73592"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-38426",
+      "title": "CVE-2026-38426 (HIGH) \u2014 Buffer Overflow vulnerability in arendst Tasmota v.15.3.0.3 and before allows a remote attacker to execute arbitrary code via the xdrv_10_sc",
+      "body": "Buffer Overflow vulnerability in arendst Tasmota v.15.3.0.3 and before allows a remote attacker to execute arbitrary code via the xdrv_10_scripter.ino, fetch_jpg(), jpg_task.boundary[40], strcpy() function.",
+      "author": null,
+      "timestamp": "2026-05-27T14:16:45.880000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-38426"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "13ab2521ee478925",
+      "content_hash": "dba2116ffaa67c7f"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-38427",
+      "title": "CVE-2026-38427 (HIGH) \u2014 An issue in fetch_jpg() in xdrv_10_scripter.ino in Tasmota through 15.3.0.3 allows a remote attacker to cause heap buffer overflow. The Cont",
+      "body": "An issue in fetch_jpg() in xdrv_10_scripter.ino in Tasmota through 15.3.0.3 allows a remote attacker to cause heap buffer overflow. The Content-Length from a JPEG stream is stored in a uint16_t variable; values above 65535 wrap around, causing allocation of a smaller buffer than the data actually read.",
+      "author": null,
+      "timestamp": "2026-05-27T14:16:46.023000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-38427"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "81e5812dd8b130ca",
+      "content_hash": "361fe12391791ae8"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-3366",
+      "title": "CVE-2026-3366 (HIGH) \u2014 IBM InfoSphere Optim Test Data Fabrication 1.0.0, 1.0.0.1, 1.0.0.2, 1.0.2, 1.0.2.2, 1.0.2.3, 1.0.2.4, 1.0.2.5, 1.0.2.6, 1.0.2.7 could allow ",
+      "body": "IBM InfoSphere Optim Test Data Fabrication 1.0.0, 1.0.0.1, 1.0.0.2, 1.0.2, 1.0.2.2, 1.0.2.3, 1.0.2.4, 1.0.2.5, 1.0.2.6, 1.0.2.7 could allow a remote attacker to traverse directories on the system. An attacker could send a specially crafted URL request containing \"dot dot\" sequences (/../) to view arbitrary files on the system",
+      "author": null,
+      "timestamp": "2026-05-27T14:16:46.737000+00:00",
+      "engagement": 7.5,
+      "cves": [
+        "CVE-2026-3366"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.5,
+        "severity": "HIGH"
+      },
+      "url_hash": "72c4c4cf8f727671",
+      "content_hash": "627b54586851c748"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-3623",
+      "title": "CVE-2026-3623 (HIGH) \u2014 IBM Netezza Performance Server Replication Services 3.0.2.0 through 3.0.5.0 allows an attacker with low\u2011privileged access to escalate their ",
+      "body": "IBM Netezza Performance Server Replication Services 3.0.2.0 through 3.0.5.0 allows an attacker with low\u2011privileged access to escalate their privileges to root. By exploiting this flaw, the attacker can execute root\u2011level commands, obtain a root shell, and change the root user\u2019s password. Successful exploitation also enables modification or removal of system\u2011wide files and the installation of persistent backdoors. This results in full system compromise with complete loss of confidentiality, integrity, and availability.",
+      "author": null,
+      "timestamp": "2026-05-27T14:16:47+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2026-3623"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "fac1d355dbb49b30",
+      "content_hash": "c28aa04fd5b972cf"
+    },
+    {
+      "source": "mandiant",
+      "source_family": "youtube",
+      "url": "https://www.youtube.com/watch?v=C1wEjzOHh7Y",
+      "title": "CodeMender Identifies and Proposes Effective Code Fixes to Secure Your Applications",
       "body": "",
-      "author": "hn_acker",
-      "timestamp": "2026-05-23T18:02:11+00:00",
-      "engagement": 77.5,
+      "author": "mandiant",
+      "timestamp": "2026-05-27T11:40:07+00:00",
+      "engagement": 0.0,
       "cves": [],
       "vendors": [],
       "raw": {
-        "points": 50,
-        "num_comments": 55,
-        "object_id": "48249743"
+        "channel_id": "UCexu0DP7VKdDByusuTA53FQ"
       },
-      "url_hash": "72eb48f111260159",
-      "content_hash": "53a2c73dc2a3bf2f"
+      "url_hash": "4362f9d1a9104be6",
+      "content_hash": "5aae7e79b3f9b9b4"
+    },
+    {
+      "source": "mandiant",
+      "source_family": "youtube",
+      "url": "https://www.youtube.com/watch?v=blh0hhHJ4pI",
+      "title": "Introducing Google AI Threat Defense",
+      "body": "",
+      "author": "mandiant",
+      "timestamp": "2026-05-27T11:40:03+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Google"
+      ],
+      "raw": {
+        "channel_id": "UCexu0DP7VKdDByusuTA53FQ"
+      },
+      "url_hash": "bf9867000d08ab9c",
+      "content_hash": "2d29bf692aec08fb"
+    },
+    {
+      "source": "crowdstrike",
+      "source_family": "youtube",
+      "url": "https://www.youtube.com/shorts/wlR0-0V9ibc",
+      "title": "Threat Snapshot: Defending Against Global Supply Chain Threats",
+      "body": "",
+      "author": "crowdstrike",
+      "timestamp": "2026-05-27T15:30:27+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "channel_id": "UCsRdY9CtEVWTNO4ulwfzqVA"
+      },
+      "url_hash": "a8f13cb6f4fb4d3e",
+      "content_hash": "8b750f0110c79b77"
     }
   ]
 }
