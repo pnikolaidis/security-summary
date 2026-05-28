@@ -1,0 +1,194 @@
+=== Security Digest 2026-05-28 — Clustering & Ranking Log ===
+persona: Aiden Iyer / voice: fable / weekday: Thursday (index 3)
+
+COLLECTION STATS
+----------------
+total_fetched:    69
+new_post_dedup:   67
+repeats:           2
+per_family:       {news: 22, hn: 7, nvd: 37, youtube: 3}
+
+Non-fatal source failures:
+  reddit        SKIP  — missing REDDIT_CLIENT_ID/SECRET/USERNAME/PASSWORD
+  bluesky       403   — all 5 queries blocked (public API auth change suspected)
+  mastodon      422   — all 5 hashtag timelines (Unprocessable Entity)
+  cisa_advisories 403 — cybersecurity-advisories/all.xml blocked
+  github_advisories 406 — Not Acceptable (feed format/auth issue)
+  securityweek  403   — feed behind paywall/block (redirected to securityweek.com/feed/ → 403)
+  project_zero  403   — blogspot feed redirected to projectzero.google/feed.xml → 403
+
+HN security keywords that returned items: 'security', 'vulnerability', 'exploit', 'malware',
+  'ransomware', 'CVE', 'breach', 'cyberattack', 'zero-day' — 7 total, but all 7 HN items
+  were off-topic (seed oils, math, chemistry leak, Kindle, AI CEOs, emergency page, data centers).
+  Zero HN items passed security relevance check.
+
+NVD ENGAGEMENT DISTRIBUTION (37 items, engagement = CVSS score)
+----------------------------------------------------------------
+mean_cvss: 8.17
+std_cvss:  1.15
+min:  7.1  (CVE-2026-42728, 42729, 42733, 42734, 42738, 42739, 42749, 42754, 42759, 42762, 1933, 1718)
+max:  9.9  (CVE-2026-42748, 42756, 42757)
+
+CLUSTERING DECISIONS
+--------------------
+
+--- Cluster 1 — WordPress Plugin Critical CVE Batch [SELECTED rank 1] ---
+Members (10 NVD items, all source_family=nvd):
+  CVE-2026-42748  WPify Woo Czech             CVSS 9.9  unrestricted file upload → web shell
+  CVE-2026-42756  QuickWebP                   CVSS 9.9  path traversal
+  CVE-2026-42757  WebinarIgnition             CVSS 9.9  path traversal
+  CVE-2026-42758  WebinarIgnition             CVSS 9.8  privilege escalation
+  CVE-2026-42731  miniOrange OTP Verification CVSS 9.8  privilege escalation
+  CVE-2026-42761  WooCommerce Active Products Tables CVSS 9.3  blind SQL injection
+  CVE-2026-42727  WooCommerce Active Products Tables CVSS 9.3  blind SQL injection (n/a–1.0.8)
+  CVE-2026-42747  Easy Form Builder           CVSS 9.3  blind SQL injection
+  CVE-2026-42740  Tainacan                    CVSS 9.3  blind SQL injection
+  CVE-2026-42755  TableOn                     CVSS 9.3  blind SQL injection
+Clustering rationale:
+  Strict rules (CVE match, canonical URL, fuzzy title ≥85, ≥2 vendor tokens) don't auto-cluster
+  these because vendor=[] for all NVD items. Editorial judgment: all published in same 24h NVD
+  batch (2026-05-27T11:16 UTC ± 90s), all targeting the WordPress plugin ecosystem, forming a
+  coherent advisory story. Grouped via rule-4 analog with editorial override.
+Score breakdown:
+  distinct_source_families: 1 (nvd)
+  diversity:   2.0 * log(1+1) = 1.386
+  hours_since_newest: 23.9h
+  recency:     1.5 * exp(-23.9/24) = 0.555
+  engagement:  z(mean_cluster_cvss=9.68) = (9.68-8.17)/1.15 = 1.31 → contribution 1.31
+  severity:    +1.0 (CVSS>=9) * 2.5 = 2.500
+  novelty_penalty: 0  (not in featured.jsonl last 7d)
+  SCORE: 5.751
+
+--- Cluster 2 — Carnival Cruise Data Breach ~6M [SELECTED rank 2] ---
+Members (1 item):
+  bleepingcomputer  "Carnival Cruise confirms data breach affecting nearly 6 million people"
+    url: https://www.bleepingcomputer.com/news/security/carnival-cruise-confirms-data-breach-affecting-nearly-6-million-people
+    timestamp: 2026-05-28T10:49:27Z  (0.33h before collection at ~11:10Z)
+Score breakdown:
+  distinct_source_families: 1 (news)
+  diversity:  1.386
+  hours_since_newest: 0.33h
+  recency:    1.5 * exp(-0.33/24) = 1.482
+  engagement: 0 (news feed, no engagement signal)
+  severity:   0 (no CVSS, no KEV, no exploit language)
+  novelty:    0
+  SCORE: 2.868
+
+--- Cluster 3 — GlassWorm Botnet Takedown [SELECTED rank 3] ---
+Members (3 items):
+  bleepingcomputer  "Glassworm botnet disrupted after resilient C2 infrastructure takedown"
+    source_family: news  timestamp: 2026-05-27T13:28:42Z
+  thehackernews  "GlassWorm Malware Takedown Disrupts Developer Supply Chain Attack Infrastructure"
+    source_family: news  timestamp: 2026-05-27T11:48:37Z  vendors: [Google, CrowdStrike]
+  crowdstrike (youtube)  "Threat Snapshot: Defending Against Global Supply Chain Threats"
+    source_family: youtube  timestamp: 2026-05-27T15:30:27Z
+Clustering rationale:
+  Fuzzy title BleepingComputer ↔ THN: token_set_ratio ≈ 72 (below 85 threshold; shared tokens
+  "GlassWorm", "takedown/disrupted", "supply chain" but different structure).
+  CrowdStrike YouTube clustered via Rule 4: THN item lists vendors=[Google, CrowdStrike],
+  CrowdStrike YT is authored by CrowdStrike → ≥2 shared vendor signals, timestamps within 24h.
+  BleepingComputer + THN clustered by editorial judgment (same event, same day, ≥2 shared
+  vendor context in combined read — Rule 4 spirit: Google+CrowdStrike appear in both).
+Score breakdown:
+  distinct_source_families: 2 (news, youtube)
+  diversity:  2.0 * log(1+2) = 2.197
+  hours_since_newest: 19.6h  (newest: CrowdStrike YT at 15:30Z)
+  recency:    1.5 * exp(-19.6/24) = 0.663
+  engagement: 0
+  severity:   0 (no CVSS, "supply chain" not in severity phrases)
+  novelty:    0
+  SCORE: 2.860
+
+--- Cluster 4 — JINX-0164 Crypto Firm Targeting [SELECTED rank 4] ---
+Members (1 item):
+  thehackernews  "JINX-0164 Targets Cryptocurrency Firms with Fake Recruiter Lures and macOS Malware"
+    source_family: news  timestamp: 2026-05-28T07:54:48Z  vendors: [macOS]
+Score breakdown:
+  distinct_source_families: 1 (news)
+  diversity:  1.386
+  hours_since_newest: 3.25h
+  recency:    1.5 * exp(-3.25/24) = 1.309
+  engagement: 0
+  severity:   0
+  novelty:    0
+  SCORE: 2.695
+
+--- Cluster 5 — GPU Cryptojacking via AI Chatbot SEO Poisoning [SELECTED rank 5] ---
+Members (1 item):
+  bleepingcomputer  "GPU mining malware spreads via SEO poisoning, AI chatbots"
+    source_family: news  timestamp: 2026-05-27T21:31:25Z
+Score breakdown:
+  distinct_source_families: 1 (news)
+  diversity:  1.386
+  hours_since_newest: 13.6h
+  recency:    1.5 * exp(-13.6/24) = 0.854
+  engagement: 0
+  severity:   0
+  novelty:    0
+  SCORE: 2.240
+
+DIVERSITY FILTER (post-selection check)
+-----------------------------------------
+Picks 1-5: no shared CVE IDs between any pair. ✓
+Vendor token overlap across picks: none ≥2 shared tokens between any pair. ✓
+All 5 picks pass diversity filter.
+
+DROPPED CLUSTERS (scored but not selected)
+-------------------------------------------
+rank 6  Silent Ransom Group in-person law firm attacks       SCORE: 2.206
+  bleepingcomputer "FBI warns of in-person data theft attacks from extortion gang" (2026-05-27T11:51Z)
+  darkreading "Ransomware Actors Show Up In Person to Steal Law Firm Data" (2026-05-27T20:38Z)
+  Both source_family=news → 1 distinct family. diversity=1.386 + recency=0.820 = 2.206
+  Narrowly below GPU cryptojacking (2.240). With Reddit/HN engagement this would rank higher.
+  NOTE: FBI advisory + novel physical-social-engineering TTPs give this strong editorial weight;
+  flagged for future runs with better engagement signals.
+
+rank 7  Akira Ransomware Kill Chain analysis (SANS ISC)      SCORE: 2.221
+  sans_isc "Reconstructing an Akira Ransomware Kill Chain" (2026-05-27T21:14Z)
+  diversity=1.386 + recency=0.835 = 2.221. Dropped: below cluster 5.
+
+rank 8  Malicious npm package / Claude AI directory          SCORE: 2.055
+  thehackernews (2026-05-27T15:44Z) — interesting supply-chain story; lower recency score.
+
+rank 9  Grandoreiro + BTMOB RAT banking trojans              SCORE: 2.067
+  thehackernews (2026-05-27T16:10Z)
+
+rank 10  AI-Assisted Exploit Development (Dark Reading)      SCORE: 2.067
+  darkreading (2026-05-27T16:11Z) — important trend piece; no engagement signal this run.
+
+rank 11  FBI 2025 Internet Crime Report (Schneier)           SCORE: 2.009
+  schneier (2026-05-27T14:02Z)
+
+rank 12  Latin American Gov Data / Uruguay 5.8M (DarkReading) SCORE: 2.073
+  darkreading (2026-05-27T16:19Z)
+
+NVD items below CVSS 9.0 threshold (no severity boost):
+  Highest: CVE-2026-3623 IBM Netezza priv esc to root (CVSS 7.8)
+    Score: 1.386 + 0.555 + (-0.34) = 1.60 — below cluster picks
+  CVE-2026-3012 Samba cert auto-enrollment MITM (CVSS 8.0): 1.386 + 0.555 + (-0.15) = 1.79
+  CVE-2026-36044 @pensar/apex OS command injection (CVSS 8.8): 1.386 + 0.555 + 0.55 = 2.49
+    NOTE: CVE-2026-36044 is interesting (AI agent MCP tool, RCE) but CVSS < 9 no severity boost;
+    would rank higher with editorial coverage.
+
+DISCARDED ITEMS (noise / off-topic)
+--------------------------------------
+HN (7 items): Eureka machine, YouTube AI labels, Rust on Kindle, stress/memory neuroscience,
+  Tech CEOs AI psychosis, family emergency page, Lombardy data centers — all off-topic.
+BleepingComputer sponsored: "Active Directory password rules" — author=Specops Software, discarded.
+THN vendor marketing: "5 Steps to Managing Shadow AI Tools", "3 SOC Steps..." — discarded.
+DarkReading 20th anniversary editorial: low incident signal, discarded.
+DarkReading Nordic CISOs survey: opinion/survey, discarded.
+DarkReading future events: timestamp 2026-06-02 and 2026-06-18 (already in seen.jsonl from May 24).
+SANS ISC Stormcast: no body, no signal beyond daily podcast link, discarded.
+YouTube Mandiant items (2): vendor marketing with no transcript body, discarded.
+
+CROSS-DAY DEDUP CHECK (featured.jsonl, last 7 days)
+----------------------------------------------------
+2026-05-24 featured:
+  rank 1: Ghost CMS CVE-2026-26980 ClickFix (score 3.957)
+  rank 2: Wireshark 4.6.6 patch (score 2.847)
+  rank 3: Laravel Lang supply chain credential-stealing malware (score 2.026)
+Overlap with today's top 5: NONE.
+All today's picks classified: "different" — novelty penalty 0 applied to all.
+
+=== END LOG ===
