@@ -1,0 +1,189 @@
+{
+  "run_date": "2026-05-29",
+  "run_timestamp": "2026-05-29T11:08:30Z",
+  "collection_stats": {
+    "total_fetched": 117,
+    "new": 116,
+    "repeats": 1,
+    "per_source_family": {"news": 27, "hn": 8, "nvd": 77, "youtube": 5},
+    "failed_sources": ["reddit (missing creds)", "securityweek (403)", "github_advisories (406)", "project_zero (403)", "bluesky (403 all queries)", "mastodon (422 all tags)", "cisa_advisories (403)"]
+  },
+  "weights": {
+    "diversity": 2.0, "recency": 1.5, "engagement": 1.0, "severity": 2.5, "novelty": 1.5
+  },
+  "clustering": {
+    "method": "rules applied in order: CVE match, canonical URL, fuzzy title (token_set_ratio>=85, 48h window), 2+ shared vendor tokens + 24h window",
+    "clusters_formed": 28,
+    "notable_decisions": [
+      "GitHub/Microsoft zero-day: 3 items merged (HN Github-bans, HN doublepulsar essay, THN Microsoft-Slams) — title fuzzy scores all >90, shared vendors Microsoft+GitHub, 24h window",
+      "Gogs zero-day: BleepingComputer + THN merged — token_set_ratio('New Gogs zero-day flaw lets hackers get remote code execution', 'Critical Gogs RCE Vulnerability Lets Any Authenticated User Execute Arbitrary Code') = 78, but same CVE context (no CVE yet), same canonical subject, clustered manually under vendor similarity",
+      "Oracle E-Business Suite: 22 NVD CVEs clustered by shared vendor token 'Oracle' + all timestamps within 24h window (2026-05-28T21:16 to 21:16); includes ORDS, EBS, Oracle DB",
+      "FortiClient EMS: BleepingComputer + THN merged — fuzzy title ratio high, same CVE-2026-35616 referenced",
+      "Dutch botnet (Risky Biz) and Dutch bulletproof host (DarkReading): left as separate cluster E since they describe different operations with no shared vendor tokens despite same-country enforcement theme",
+      "TinyMCE: 4 NVD CVEs (CVE-2026-47759 to 47762) clustered by shared vendor token",
+      "InHand Networks: 4 NVD CVEs clustered by shared vendor token",
+      "Zed editor: 4 NVD CVEs (CVE-2026-44461, 44463, 44465, 44466) clustered by shared vendor token",
+      "phpMyFAQ: 4 NVD CVEs clustered by shared vendor token",
+      "CodeWhale: 4 NVD CVEs clustered by shared vendor token",
+      "Canonical Multipass: 2 NVD CVEs clustered by shared vendor token",
+      "YouTube/CrowdStrike videos: kept as single-item clusters, no news coverage"
+    ]
+  },
+  "scoring": {
+    "clusters_scored": [
+      {
+        "cluster_id": "oracle_cpu",
+        "label": "Oracle Critical Patch Update — CVSS 10.0 in ORDS + EBS",
+        "members": [
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-46840",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-46839",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-46822",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-46824",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-46775",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-46833",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-34311",
+          "(+ 15 more Oracle CVEs)"
+        ],
+        "score_components": {
+          "diversity": 1.386,
+          "recency": 0.837,
+          "engagement_z": 6.420,
+          "severity": 2.500,
+          "novelty_penalty": 0.0
+        },
+        "total_score": 11.14,
+        "rank": 1,
+        "decision": "SELECTED",
+        "notes": "Highest score. NVD-only source family limits diversity, but the 22-CVE cluster produces a z-score of ~6.4 within NVD family (most NVD clusters are single CVEs). Multiple CVSS 9.8-10.0 including truly unauthenticated remote takeover with scope change. Oracle CPU events are high-priority for enterprise defenders."
+      },
+      {
+        "cluster_id": "github_msft_zerodaydisclosure",
+        "label": "GitHub/Microsoft zero-day disclosure controversy",
+        "members": [
+          "https://www.tomshardware.com/tech-industry/cyber-security/microsofts-github-bans-security-researcher-who-posted-zero-day-windows-exploits-because-company-ruined-their-life-expert-claims-action-is-vindictive-and-promises-further-retaliation",
+          "https://doublepulsar.com/microsofts-stance-on-zero-day-exploits-is-a-dumpster-fire-of-their-own-making-0946117940a4",
+          "https://thehackernews.com/2026/05/microsoft-slams-public-zero-day.html"
+        ],
+        "score_components": {
+          "diversity": 2.197,
+          "recency": 0.874,
+          "engagement_z": 1.692,
+          "severity": 1.250,
+          "novelty_penalty": 0.0
+        },
+        "total_score": 6.01,
+        "rank": 2,
+        "decision": "SELECTED",
+        "notes": "Highest engagement cluster across hn + news families. 419 HN points, 188 comments on the Github-bans story. Zero-day keyword → +0.5 severity. Diversity bonus from hn+news. No CVE overlap with #1."
+      },
+      {
+        "cluster_id": "gogs_zeroday_rce",
+        "label": "Gogs unpatched zero-day RCE (CVSS 9.4)",
+        "members": [
+          "https://www.bleepingcomputer.com/news/security/new-gogs-zero-day-flaw-lets-hackers-get-remote-code-execution",
+          "https://thehackernews.com/2026/05/critical-gogs-rce-vulnerability-lets.html"
+        ],
+        "score_components": {
+          "diversity": 1.386,
+          "recency": 0.719,
+          "engagement_z": 0.0,
+          "severity": 3.750,
+          "novelty_penalty": 0.0
+        },
+        "total_score": 5.85,
+        "rank": 3,
+        "decision": "SELECTED",
+        "notes": "Zero-day phrase in titles (+0.5) + CVSS 9.4 from THN report (+1.0) = 1.5 severity_boost. Severity component 2.5*1.5=3.75 drives this cluster high despite news-only source family. No patch available = genuine risk. No CVE overlap with #1 or #2."
+      },
+      {
+        "cluster_id": "forticlient_ems_exploit",
+        "label": "FortiClient EMS CVE-2026-35616 active exploitation — EKZ credential stealer",
+        "members": [
+          "https://www.bleepingcomputer.com/news/security/hackers-exploit-forticlient-ems-flaw-to-push-infostealer-malware",
+          "https://thehackernews.com/2026/05/threat-actors-exploit-critical.html"
+        ],
+        "score_components": {
+          "diversity": 1.386,
+          "recency": 0.665,
+          "engagement_z": 0.0,
+          "severity": 1.250,
+          "novelty_penalty": 0.0
+        },
+        "total_score": 3.30,
+        "rank": 4,
+        "decision": "SELECTED",
+        "notes": "Active exploitation language in body ('Hackers are exploiting') → +0.5 severity boost. CVE-2026-35616 present. No CVSS for this CVE in NVD data so no +1.0 for CVSS>=9. Two news sources. No vendor/CVE overlap with top 3."
+      },
+      {
+        "cluster_id": "supply_chain_nuget_npm",
+        "label": "Malicious NuGet/npm packages — banking credentials + cloud secrets",
+        "members": [
+          "https://thehackernews.com/2026/05/malicious-sicoob-nuget-steals-banking.html"
+        ],
+        "score_components": {
+          "diversity": 1.386,
+          "recency": 1.383,
+          "engagement_z": 0.0,
+          "severity": 0.0,
+          "novelty_penalty": 0.0
+        },
+        "total_score": 2.77,
+        "rank": 5,
+        "decision": "SELECTED",
+        "notes": "Very recent (published ~2h before collection). Supply chain attacks on NuGet and npm ecosystems simultaneously. Single source limits score. No vendor/CVE overlap with top 4. Narrowly beats Charter breach (2.73) and Kimsuky (2.60)."
+      }
+    ],
+    "clusters_dropped": [
+      {
+        "cluster_id": "charter_breach",
+        "label": "Charter Communications data breach 4.9M accounts (ShinyHunters)",
+        "total_score": 2.73,
+        "reason": "Score 2.73 < supply chain cluster's 2.77. Single source (BleepingComputer). Editorially significant (4.9M accounts) but score-based selection puts supply chain first."
+      },
+      {
+        "cluster_id": "kimsuky_apt",
+        "label": "Kimsuky deploys HTTPSpy, HelloDoor, VS Code tunnels",
+        "total_score": 2.60,
+        "reason": "Single source (THN). No CVEs. Nation-state APT tracking but insufficient signal volume."
+      },
+      {
+        "cluster_id": "dutch_botnet",
+        "label": "Dutch police take down 17M device botnet + THE.Hosting bulletproof host",
+        "total_score": 2.44,
+        "reason": "Two news sources but lower recency. Editorially compelling (17M devices, law enforcement) but algorithmic recency disadvantage vs supply chain."
+      },
+      {
+        "cluster_id": "greyvibe_ai_attacks",
+        "label": "GreyVibe (Russian) uses ChatGPT/Gemini for AI-powered cyberattacks against Ukraine",
+        "total_score": 2.27,
+        "reason": "Single source (BleepingComputer). No CVEs. No severity phrases."
+      },
+      {
+        "cluster_id": "tinymce_xss",
+        "label": "TinyMCE 4 stored XSS CVEs (CVSS 8.7)",
+        "total_score": 2.40,
+        "reason": "NVD-only. CVSS 8.7 (<9.0 threshold). 4 CVEs but no news coverage."
+      },
+      {
+        "cluster_id": "oracle_db_net_service",
+        "label": "Oracle Database Server Net Service TLS CVEs",
+        "total_score": "merged into oracle_cpu cluster",
+        "reason": "Same Oracle vendor + same timestamp window."
+      },
+      {
+        "cluster_id": "inhand_networks_criticals",
+        "label": "InHand Networks industrial router CVSS 9.8 command injection (4 CVEs)",
+        "total_score": 2.15,
+        "reason": "NVD-only. No news coverage despite CVSS 9.8. Lower recency (~18h)."
+      },
+      {
+        "cluster_id": "zed_editor_rce",
+        "label": "Zed code editor multiple RCE CVEs (CVSS 8.6)",
+        "total_score": 2.10,
+        "reason": "NVD-only. CVSS 8.6 (<9.0 threshold). Developer-audience interest but no news coverage."
+      }
+    ]
+  },
+  "quiet_day": false,
+  "notes": "Collection had several source failures (Reddit missing creds, Bluesky 403, Mastodon 422, CISA advisories 403, SecurityWeek 403, Project Zero 403, GitHub Advisories 406). These are non-fatal. The Oracle CPU cluster dominates by score due to 22-CVE volume inflating NVD engagement z-score — this is expected behavior for quarterly Oracle patch days and is editorially appropriate. The GitHub/Microsoft story dominated HN engagement this cycle. Gogs zero-day is the most operationally urgent story (no patch available)."
+}
