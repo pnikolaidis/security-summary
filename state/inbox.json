@@ -1,2316 +1,882 @@
 {
   "stats": {
-    "total_fetched": 117,
-    "new": 116,
-    "repeats": 1,
+    "total_fetched": 46,
+    "new": 44,
+    "repeats": 2,
     "per_source_family": {
-      "news": 27,
-      "hn": 8,
-      "nvd": 77,
-      "youtube": 5
+      "news": 12,
+      "hn": 1,
+      "nvd": 33
     }
   },
   "items": [
     {
       "source": "bleepingcomputer",
       "source_family": "news",
-      "url": "https://www.bleepingcomputer.com/news/security/us-charges-google-security-engineer-with-polymarket-insider-trading",
-      "title": "US charges Google security engineer with Polymarket insider trading",
-      "body": "A Google security engineer was charged with insider trading after winning $1.2 million using confidential company data to place bets on the cryptocurrency-based Polymarket decentralized prediction market. [...]",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-kb5089549-windows-security-update-install-issues",
+      "title": "Microsoft fixes KB5089549 Windows security update install issues",
+      "body": "Microsoft has resolved a known issue causing installation failures and 0x800f0922 errors when deploying the May 2026 Windows 11 security update (KB5089549). [...]",
       "author": "Sergiu Gatlan",
-      "timestamp": "2026-05-29T10:11:44+00:00",
-      "engagement": 0.0,
-      "cves": [],
-      "vendors": [
-        "Google"
-      ],
-      "raw": {
-        "feed": "bleepingcomputer"
-      },
-      "url_hash": "c814a13cfc349aac",
-      "content_hash": "bbc7111075a55758"
-    },
-    {
-      "source": "bleepingcomputer",
-      "source_family": "news",
-      "url": "https://www.bleepingcomputer.com/news/security/charter-communications-data-breach-affects-49-million-accounts",
-      "title": "Charter Communications data breach affects 4.9 million accounts",
-      "body": "The ShinyHunters extortion gang stole personal information from 4.9 million accounts after hacking the U.S. telecom giant Charter Communications in early April, according to data breach notification service Have I Been Pwned. [...]",
-      "author": "Sergiu Gatlan",
-      "timestamp": "2026-05-29T08:29:40+00:00",
-      "engagement": 0.0,
-      "cves": [],
-      "vendors": [],
-      "raw": {
-        "feed": "bleepingcomputer"
-      },
-      "url_hash": "a753c018d611ca7e",
-      "content_hash": "a076d59ea21ddfac"
-    },
-    {
-      "source": "bleepingcomputer",
-      "source_family": "news",
-      "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-confirms-claude-mythos-class-models-will-roll-out-to-the-public",
-      "title": "Anthropic confirms Claude Mythos-class models will roll out to the public",
-      "body": "Anthropic has confirmed that it plans to bring Mythos-class models to the general public after delaying the rollout due to security risks to public and private software. [...]",
-      "author": "Mayank Parmar",
-      "timestamp": "2026-05-29T00:21:03+00:00",
-      "engagement": 0.0,
-      "cves": [],
-      "vendors": [],
-      "raw": {
-        "feed": "bleepingcomputer"
-      },
-      "url_hash": "11ba8929d5678e6a",
-      "content_hash": "a81c7dd71c885aed"
-    },
-    {
-      "source": "bleepingcomputer",
-      "source_family": "news",
-      "url": "https://www.bleepingcomputer.com/news/security/greyvibe-hackers-use-chatgpt-gemini-to-power-cyberattacks",
-      "title": "GreyVibe hackers use ChatGPT, Gemini to power cyberattacks",
-      "body": "A likely Russian threat cluster tracked as GreyVibe has been targeting Ukrainian entities with AI-generated lures and a rich set of custom malware tools. [...]",
-      "author": "Bill Toulas",
-      "timestamp": "2026-05-28T22:24:49+00:00",
-      "engagement": 0.0,
-      "cves": [],
-      "vendors": [],
-      "raw": {
-        "feed": "bleepingcomputer"
-      },
-      "url_hash": "a8249edcf6599487",
-      "content_hash": "94b2e44bbcc55c25"
-    },
-    {
-      "source": "bleepingcomputer",
-      "source_family": "news",
-      "url": "https://www.bleepingcomputer.com/news/security/btmob-android-malware-service-generates-custom-phishing-payloads",
-      "title": "BTMOB Android malware service generates custom phishing payloads",
-      "body": "An Android remote access trojan named BTMOB is offered to cybercriminals with a builder interface for generating malware payloads tailored to phishing lures. [...]",
-      "author": "Bill Toulas",
-      "timestamp": "2026-05-28T21:10:11+00:00",
-      "engagement": 0.0,
-      "cves": [],
-      "vendors": [
-        "Android"
-      ],
-      "raw": {
-        "feed": "bleepingcomputer"
-      },
-      "url_hash": "9a81ba3bb8cb4721",
-      "content_hash": "63bb0ce34d64e3c0"
-    },
-    {
-      "source": "bleepingcomputer",
-      "source_family": "news",
-      "url": "https://www.bleepingcomputer.com/news/security/fbi-warns-of-fake-fifa-websites-running-world-cup-fraud-schemes",
-      "title": "FBI warns of fake FIFA websites running World Cup fraud schemes",
-      "body": "The FBI is warning of fake websites impersonating FIFA ahead of the 2026 World Cup, to steal personal and financial information, sell fake tickets and hospitality packages, and push other fraud related to the event. [...]",
-      "author": "Bill Toulas",
-      "timestamp": "2026-05-28T19:08:10+00:00",
-      "engagement": 0.0,
-      "cves": [],
-      "vendors": [],
-      "raw": {
-        "feed": "bleepingcomputer"
-      },
-      "url_hash": "ce9effa9eeafb8f8",
-      "content_hash": "7f01bb48e6cbf4bb"
-    },
-    {
-      "source": "bleepingcomputer",
-      "source_family": "news",
-      "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-forticlient-ems-flaw-to-push-infostealer-malware",
-      "title": "Hackers exploit FortiClient EMS flaw to push infostealer malware",
-      "body": "Hackers are exploiting an authentication bypass vulnerability (CVE-2026-35616) in FortiClient Enterprise Management Server (EMS) to deliver an undocumented credential stealer called EKZ. [...]",
-      "author": "Bill Toulas",
-      "timestamp": "2026-05-28T17:25:43+00:00",
-      "engagement": 0.0,
-      "cves": [
-        "CVE-2026-35616"
-      ],
-      "vendors": [],
-      "raw": {
-        "feed": "bleepingcomputer"
-      },
-      "url_hash": "f1ae3409d712c5de",
-      "content_hash": "05f2778816113a22"
-    },
-    {
-      "source": "bleepingcomputer",
-      "source_family": "news",
-      "url": "https://www.bleepingcomputer.com/news/security/new-gogs-zero-day-flaw-lets-hackers-get-remote-code-execution",
-      "title": "New Gogs zero-day flaw lets hackers get remote code execution",
-      "body": "An unpatched zero-day vulnerability in the Gogs self-hosted Git service can allow attackers to gain remote code execution (RCE) on Internet-facing instances. [...]",
-      "author": "Sergiu Gatlan",
-      "timestamp": "2026-05-28T14:25:43+00:00",
-      "engagement": 0.0,
-      "cves": [],
-      "vendors": [],
-      "raw": {
-        "feed": "bleepingcomputer"
-      },
-      "url_hash": "df8e291ef842abd7",
-      "content_hash": "68b0808231aee366"
-    },
-    {
-      "source": "bleepingcomputer",
-      "source_family": "news",
-      "url": "https://www.bleepingcomputer.com/news/security/how-siem-helps-msps-reduce-noise-and-stop-threats-faster",
-      "title": "How SIEM helps MSPs reduce noise and stop threats faster",
-      "body": "MSPs don't lack security data. They struggle to separate real threats from alert noise. Kaseya explains how SIEM helps MSPs improve visibility, reduce fatigue, and respond faster. [...]",
-      "author": "Sponsored by Kaseya",
-      "timestamp": "2026-05-28T14:01:11+00:00",
-      "engagement": 0.0,
-      "cves": [],
-      "vendors": [],
-      "raw": {
-        "feed": "bleepingcomputer"
-      },
-      "url_hash": "5c0c3b6680544d9e",
-      "content_hash": "0e8ace9415161b82"
-    },
-    {
-      "source": "bleepingcomputer",
-      "source_family": "news",
-      "url": "https://www.bleepingcomputer.com/news/security/romanian-gets-5-years-in-prison-for-hacking-oregon-govt-network",
-      "title": "Romanian gets 5 years in prison for hacking Oregon govt network",
-      "body": "A Romanian national was sentenced this week to 56 months in federal prison for breaking into an Oregon state government computer network and fr cyberattacks targeting dozens of other U.S. victims. [...]",
-      "author": "Sergiu Gatlan",
-      "timestamp": "2026-05-28T12:43:29+00:00",
-      "engagement": 0.0,
-      "cves": [],
-      "vendors": [],
-      "raw": {
-        "feed": "bleepingcomputer"
-      },
-      "url_hash": "e86afff776a657eb",
-      "content_hash": "1801d010489083af"
-    },
-    {
-      "source": "bleepingcomputer",
-      "source_family": "news",
-      "url": "https://www.bleepingcomputer.com/news/security/webinar-why-network-incidents-take-too-long-to-resolve",
-      "title": "Webinar: Why network incidents take too long to resolve",
-      "body": "Many organizations can detect network issues quickly, but investigations and coordination often slow incident resolution. This webinar explores how automation and AI-assisted workflows can help IT teams reduce delays and improve response times. [...]",
-      "author": "BleepingComputer",
-      "timestamp": "2026-05-28T12:20:28+00:00",
-      "engagement": 0.0,
-      "cves": [],
-      "vendors": [],
-      "raw": {
-        "feed": "bleepingcomputer"
-      },
-      "url_hash": "ba09199c835bbe11",
-      "content_hash": "58a96c2b69aab261"
-    },
-    {
-      "source": "thehackernews",
-      "source_family": "news",
-      "url": "https://thehackernews.com/2026/05/malicious-sicoob-nuget-steals-banking.html",
-      "title": "Malicious Sicoob NuGet Steals Banking Credentials as npm Packages Target Cloud Secrets",
-      "body": "Cybersecurity researchers have discovered a malicious NuGet package that masquerades as a C# software development kit for Sicoob, one of Brazil's largest cooperative financial systems, to siphon client IDs and PFX certificates.\n\nAccording to Socket, versions 2.0.0 through 2.0.4 of \"Sicoob.Sdk\" contain functionality to exfiltrate sensitive information, including PFX certificates that are used to",
-      "author": "info@thehackernews.com (The Hacker News)",
-      "timestamp": "2026-05-29T09:11:25+00:00",
-      "engagement": 0.0,
-      "cves": [],
-      "vendors": [],
-      "raw": {
-        "feed": "thehackernews"
-      },
-      "url_hash": "be2d29571050e51a",
-      "content_hash": "dbb2804fd02d5928"
-    },
-    {
-      "source": "thehackernews",
-      "source_family": "news",
-      "url": "https://thehackernews.com/2026/05/kimsuky-deploys-httpspy-expands-arsenal.html",
-      "title": "Kimsuky Deploys HTTPSpy, Expands Arsenal with HelloDoor and VS Code Tunnels",
-      "body": "The North Korean state-sponsored threat actor known as Kimsuky (aka Velvet Chollima) has been attributed to a fresh set of cyber attacks targeting South Korean military and corporate entities through March and April 2026.\n\n\"Kimsuky employed a range of tailored social engineering tactics, such as spoofing security software installation pages and crafting a fake Webex meeting page that leveraged",
-      "author": "info@thehackernews.com (The Hacker News)",
-      "timestamp": "2026-05-29T05:57:41+00:00",
-      "engagement": 0.0,
-      "cves": [],
-      "vendors": [],
-      "raw": {
-        "feed": "thehackernews"
-      },
-      "url_hash": "ca4163d35829076b",
-      "content_hash": "647a60aa619477ae"
-    },
-    {
-      "source": "thehackernews",
-      "source_family": "news",
-      "url": "https://thehackernews.com/2026/05/critical-gogs-rce-vulnerability-lets.html",
-      "title": "Critical Gogs RCE Vulnerability Lets Any Authenticated User Execute Arbitrary Code",
-      "body": "A critical security vulnerability has been disclosed in Gogs, a popular open-source self-hosted Git service, that allows an authenticated user to execute arbitrary code under certain conditions.\n\nThe security flaw, per Rapid7, is rated 9.4 on the CVSS scoring system. It does not have a CVE identifier.\n\n\"The vulnerability allows any authenticated user to achieve remote code execution (RCE) on",
-      "author": "info@thehackernews.com (The Hacker News)",
-      "timestamp": "2026-05-28T17:24:44+00:00",
-      "engagement": 0.0,
-      "cves": [],
-      "vendors": [],
-      "raw": {
-        "feed": "thehackernews"
-      },
-      "url_hash": "321db785508b91ec",
-      "content_hash": "f59c0aa1a3307256"
-    },
-    {
-      "source": "thehackernews",
-      "source_family": "news",
-      "url": "https://thehackernews.com/2026/05/threat-actors-exploit-critical.html",
-      "title": "Threat Actors Exploit Critical FortiClient EMS Flaw to Deploy Credential Stealer",
-      "body": "Threat actors are continuing to exploit a critical, now-patched security flaw impacting FortiClient Endpoint Management Server (EMS) deployments to deliver credential-stealing malware.\n\n\"The campaign abused trusted endpoint management infrastructure to deliver malware across managed endpoints,\" Arctic Wolf said. \"Threat actors disguised the credential stealer payload as a Fortinet endpoint",
-      "author": "info@thehackernews.com (The Hacker News)",
-      "timestamp": "2026-05-28T15:26:04+00:00",
-      "engagement": 0.0,
-      "cves": [],
-      "vendors": [
-        "Fortinet"
-      ],
-      "raw": {
-        "feed": "thehackernews"
-      },
-      "url_hash": "997cfae6b12c8f86",
-      "content_hash": "c50337fb93068e59"
-    },
-    {
-      "source": "thehackernews",
-      "source_family": "news",
-      "url": "https://thehackernews.com/2026/05/microsoft-slams-public-zero-day.html",
-      "title": "Microsoft Slams Public Zero-Day Disclosures Amid GitHub Researcher Account Removal",
-      "body": "Microsoft has come out strongly in favor of Coordinated Vulnerability Disclosure (CVD), urging the research community to share their findings and give affected vendors an opportunity to better understand the impact and address them before they are publicly disclosed.\n\nThe development comes after a researcher named Chaotic Eclipse (aka Nightmare-Eclipse) disclosed details of multiple zero-day",
-      "author": "info@thehackernews.com (The Hacker News)",
-      "timestamp": "2026-05-28T13:53:52+00:00",
+      "timestamp": "2026-06-01T10:59:43+00:00",
       "engagement": 0.0,
       "cves": [],
       "vendors": [
         "Microsoft",
+        "Windows"
+      ],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "d5dd84a8c99d01bb",
+      "content_hash": "96fffd2a59ce77f0"
+    },
+    {
+      "source": "bleepingcomputer",
+      "source_family": "news",
+      "url": "https://www.bleepingcomputer.com/news/security/wp-maps-pro-bug-exploited-to-create-admin-accounts-on-wordpress-sites",
+      "title": "WP Maps Pro bug exploited to create admin accounts on WordPress sites",
+      "body": "Hackers are targeting WordPress websites running a vulnerable version of the WP Maps Pro plugin, which allows creating rogue administrator accounts without authentication. [...]",
+      "author": "Bill Toulas",
+      "timestamp": "2026-05-31T14:06:42+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "WordPress"
+      ],
+      "raw": {
+        "feed": "bleepingcomputer"
+      },
+      "url_hash": "eaba4f55c3fd317f",
+      "content_hash": "dc0df50c710c3e6b"
+    },
+    {
+      "source": "thehackernews",
+      "source_family": "news",
+      "url": "https://thehackernews.com/2026/06/openai-codex-authentication-tokens.html",
+      "title": "OpenAI Codex Authentication Tokens Stolen in codexui-android npm Supply Chain Attack",
+      "body": "Cybersecurity researchers have disclosed details of a new malicious supply chain campaign that's targeting developers using OpenAI Codex through a legitimate-looking remote web UI.\n\nThe tool, named codexui-android, is advertised on GitHub and npm as a remote web UI for OpenAI Codex, attracting over 29,000 weekly downloads. The package is still available for download from the repository.\n\nWhat",
+      "author": "info@thehackernews.com (The Hacker News)",
+      "timestamp": "2026-06-01T09:31:15+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [
+        "Android",
         "GitHub"
       ],
       "raw": {
         "feed": "thehackernews"
       },
-      "url_hash": "cfe9b1b2ba914abe",
-      "content_hash": "dd6ea4185abb2348"
+      "url_hash": "444c55f3b2a74069",
+      "content_hash": "7675bcee85ec283c"
     },
     {
       "source": "thehackernews",
       "source_family": "news",
-      "url": "https://thehackernews.com/2026/05/threatsday-bulletin-claude-security.html",
-      "title": "ThreatsDay Bulletin: Claude Security Plugin, Azure Priv-Esc, Kali365 MFA Bypass, FIFA Scams +15 More",
-      "body": "Every time you think the industry has finally stopped doing some reckless, low-effort crap, somebody spins up a fresh box full of sketchy loaders, fake installers, recycled social-engineering bait, and enough exposed infrastructure to make you wonder if prod is just a public beta now - meanwhile some researcher casually drops a technique that turns a \"minor\" foothold into total account",
+      "url": "https://thehackernews.com/2026/06/critical-wp-maps-pro-flaw-actively.html",
+      "title": "Critical WP Maps Pro Flaw Actively Exploited to Create Admin Accounts",
+      "body": "Threat actors are attempting to actively exploit a critical security flaw impacting WP Maps Pro, a WordPress plugin that has had over 15,000 sales on the Envato Market, to create malicious administrator accounts on susceptible sites.\n\nWP Maps Pro allows site owners to embed customizable Google Maps and OpenStreetMap with markers, listings, and advanced location features on WordPress sites. It is",
       "author": "info@thehackernews.com (The Hacker News)",
-      "timestamp": "2026-05-28T13:33:16+00:00",
+      "timestamp": "2026-06-01T08:45:29+00:00",
       "engagement": 0.0,
       "cves": [],
       "vendors": [
-        "Azure"
+        "Google",
+        "WordPress"
       ],
       "raw": {
         "feed": "thehackernews"
       },
-      "url_hash": "ef06d61235dad0a6",
-      "content_hash": "3643b999b0856af6"
+      "url_hash": "b796c71b86c4a5dd",
+      "content_hash": "4a77c4a71212ba7a"
     },
     {
       "source": "thehackernews",
       "source_family": "news",
-      "url": "https://thehackernews.com/2026/05/new-ai-usage-report-enterprise-ai-risk.html",
-      "title": "New AI Usage Report: Enterprise AI Risk Is Heavily Concentrated Among a Small Group of AI \"Power users\"",
-      "body": "State of AI Usage Report 2026 (full report here) by LayerX Security reveals the extent of the enterprise AI visibility gap and why most organizations still don't understand where their AI exposure is actually coming from. The research shows that enterprise AI risk is not distributed evenly across users or platforms. Instead, it is heavily concentrated among a small group of AI power users and a",
+      "url": "https://thehackernews.com/2026/05/dutch-authorities-dismantle-botnet.html",
+      "title": "Dutch Authorities Dismantle Botnet Linked to 17 Million Infected Devices",
+      "body": "Dutch authorities have announced the takedown of a botnet that enslaved millions of infected devices, including computers, tablets, smartphones, and IoT devices, to carry out malicious attacks.\n\nThe bot network, per the Dutch Politie and the National Cyber Security Center (NCSC), consisted of at least 17 million infected devices. More than 200 servers located in the Netherlands acted as the",
       "author": "info@thehackernews.com (The Hacker News)",
-      "timestamp": "2026-05-28T11:30:00+00:00",
+      "timestamp": "2026-05-31T12:22:12+00:00",
       "engagement": 0.0,
       "cves": [],
       "vendors": [],
       "raw": {
         "feed": "thehackernews"
       },
-      "url_hash": "87bddcaf677c02ff",
-      "content_hash": "240d53638f0e5967"
+      "url_hash": "03f2546636ff797b",
+      "content_hash": "dc080c58d700f0ca"
     },
     {
-      "source": "darkreading",
+      "source": "securityweek",
       "source_family": "news",
-      "url": "https://www.darkreading.com/cyber-risk/dutch-raid-russian-bulletproof-host",
-      "title": "Dutch Raid Fails to Dent Russian Bulletproof Host",
-      "body": "Dutch law enforcement seized 800 servers and arrested two operators of THE.Hosting but left the hosting provider's core IP address space intact.",
-      "author": "Jai Vijayan",
-      "timestamp": "2026-05-28T19:04:37+00:00",
+      "url": "https://www.securityweek.com/recent-palo-alto-networks-vulnerability-exploited-for-weeks",
+      "title": "Recent Palo Alto Networks Vulnerability Exploited for Weeks",
+      "body": "<p>Hackers began exploiting CVE-2026-0257, an authentication bypass in Palo Alto Networks PAN-OS, four days after public disclosure.</p>\n<p>The post <a href=\"https://www.securityweek.com/recent-palo-alto-networks-vulnerability-exploited-for-weeks/\">Recent Palo Alto Networks Vulnerability Exploited for Weeks</a> appeared first on <a href=\"https://www.securityweek.com\">SecurityWeek</a>.</p>",
+      "author": "Ionut Arghire",
+      "timestamp": "2026-06-01T10:00:00+00:00",
       "engagement": 0.0,
-      "cves": [],
-      "vendors": [],
-      "raw": {
-        "feed": "darkreading"
-      },
-      "url_hash": "1f53cf0dfcaa2b40",
-      "content_hash": "72ac744ef4270b59"
-    },
-    {
-      "source": "darkreading",
-      "source_family": "news",
-      "url": "https://www.darkreading.com/events/celebrate-20-years-of-dark-reading-name-that-toon-contest",
-      "title": "Name That Toon Contest",
-      "body": "",
-      "author": null,
-      "timestamp": "2026-06-26T11:00:00+00:00",
-      "engagement": 0.0,
-      "cves": [],
-      "vendors": [],
-      "raw": {
-        "feed": "darkreading"
-      },
-      "url_hash": "4fa3278fb38e44e8",
-      "content_hash": "a4c68fd3a812b6ff"
-    },
-    {
-      "source": "darkreading",
-      "source_family": "news",
-      "url": "https://www.darkreading.com/application-security/agentic-ai-risky",
-      "title": "Agentic AI Isn't Risky; the Way Orgs Deploy It Is",
-      "body": "AI agents aren't black boxes \u2014 they're models interacting with software tools. The risk lies in their overlap.",
-      "author": "Nate Nelson",
-      "timestamp": "2026-05-28T15:36:25+00:00",
-      "engagement": 0.0,
-      "cves": [],
-      "vendors": [],
-      "raw": {
-        "feed": "darkreading"
-      },
-      "url_hash": "8fee1e1da6eec6ec",
-      "content_hash": "79fb546fa0df300f"
-    },
-    {
-      "source": "darkreading",
-      "source_family": "news",
-      "url": "https://www.darkreading.com/cyber-risk/focus-cyber-insurance-quantifying-risk-reshape-security",
-      "title": "Focus on Cyber Insurance: How Quantifying Risk Is Reshaping Security",
-      "body": "In this latest installment of the Reporters' Notebook video series, we discuss how cyber insurance is forcing organizations to quantify risk, what's covered (and what's not), and why this could be the best thing to happen to cybersecurity.",
-      "author": "Fahmida Y. Rashid, Kristina Beek",
-      "timestamp": "2026-05-28T12:29:58+00:00",
-      "engagement": 0.0,
-      "cves": [],
-      "vendors": [],
-      "raw": {
-        "feed": "darkreading"
-      },
-      "url_hash": "91a0b79d6a3936d1",
-      "content_hash": "a4de1eb6090a461c"
-    },
-    {
-      "source": "schneier",
-      "source_family": "news",
-      "url": "https://www.schneier.com/blog/archives/2026/05/chilling-effects.html",
-      "title": "Chilling Effects",
-      "body": "<p>Younger Americans have <a href=\"https://thehill.com/homenews/campaign/5759759-young-voters-trump-approval-rating-economy/\">soured on the second Donald Trump presidency</a>, but they are not protesting it.</p>\n<p>Despite <a href=\"https://www.pbs.org/newshour/show/new-poll-shows-growing-number-of-americans-disapprove-of-trumps-handling-of-iran-war\">an unpopular Iran war</a> and an even more <a href=\"https://www.cnn.com/2026/05/05/politics/trump-approval-rating-analysis-vis\">unpopular Trump administration</a>, college campus protests nationwide <a href=\"https://www.bostonglobe.com/2026/04/03/metro/campus-protests-student-activists-no-kings/\">have gone silent</a>. And at many schools, <a href=\"https://www.theatlantic.com/ideas/2026/03/campus-protests-trump-iran/686518/\">student activism</a> is virtually <a href=\"https://www.thebulwark.com/p/the-campus-protest-culture-that-targeted-biden-goes-silent-for-trump-iran-anti-war\">nonexistent</a>.</p>\n<p>This silence comes in the wake of a relentless Trump administration <a href=\"https://www.insidehighered.com/news/deep-dives/2026/02/24/war-student-speech\">war on campus speech</a> that has involved <a href=\"https://www.usnews.com/news/national-news/articles/trumps-higher-education-crackdown-visa-revocations-dei-bans-lawsuits-and-funding-cuts\">lawsuits</a>, <a href=\"https://www.theguardian.com/us-news/2026/apr/17/tufts-rumeysa-ozturk-trump-administration\">arrests</a>, <a href=\"https://abcnews.com/Politics/foreign-college-students-targeted-deportation/story?id=120210587\">deportations</a> and <a href=\"https://www.aljazeera.com/news/2026/2/13/court-orders-trump-administration-to-facilitate-deported-students-return\">expulsions</a>.</p>\n<p><a href=\"https://www.nytimes.com/2026/04/14/opinion/trump-protest-ai-phones-social-media.html\">Reports cite a range of complicated factors</a> for the restraint, from apathy to technology-induced incapacity. But as ...</p>",
-      "author": "Bruce Schneier",
-      "timestamp": "2026-05-29T11:02:22+00:00",
-      "engagement": 0.0,
-      "cves": [],
+      "cves": [
+        "CVE-2026-0257"
+      ],
       "vendors": [
-        "SAP"
+        "Palo Alto"
       ],
       "raw": {
-        "feed": "schneier"
+        "feed": "securityweek"
       },
-      "url_hash": "279ea8d85b6792b6",
-      "content_hash": "c430cf76da222c06"
+      "url_hash": "423d8b0269cd9fbf",
+      "content_hash": "7515286faf24c702"
     },
     {
       "source": "sans_isc",
       "source_family": "news",
-      "url": "https://isc.sans.edu/diary/rss/33030",
-      "title": "ISC Stormcast For Friday, May 29th, 2026 https://isc.sans.edu/podcastdetail/9950, (Fri, May 29th)",
+      "url": "https://isc.sans.edu/diary/rss/33036",
+      "title": "ISC Stormcast For Monday, June 1st, 2026 https://isc.sans.edu/podcastdetail/9952, (Mon, Jun 1st)",
       "body": "",
       "author": null,
-      "timestamp": "2026-05-29T02:00:02+00:00",
+      "timestamp": "2026-06-01T02:00:02+00:00",
       "engagement": 0.0,
       "cves": [],
       "vendors": [],
       "raw": {
         "feed": "sans_isc"
       },
-      "url_hash": "3a57888d7718aee7",
-      "content_hash": "753ceaf61608ec7b"
+      "url_hash": "65577799a190a0b9",
+      "content_hash": "0da24947e6f12b07"
     },
     {
       "source": "sans_isc",
       "source_family": "news",
-      "url": "https://isc.sans.edu/diary/rss/33026",
-      "title": "Analysis of a Year of Files Uploaded to DShield Sensors, (Wed, May 27th)",
-      "body": "Using the data collected over the past year and using Kibana these two ES&#x7c;QL query to summarize the data, this shows the list of the most uploaded threat to two DShield sensors (local and cloud) over the past year. I have sorted the activity by months that shows the evolution of files uploaded to the sensors each month. The activity peaked during the winter months (Dec 2025 - Feb 2026) and started decreasing in March 2026 for each sensor.&#xd;",
+      "url": "https://isc.sans.edu/diary/rss/33034",
+      "title": "Unidentified RAT pushes NetSupport RAT, (Mon, Jun 1st)",
+      "body": "Introduction&#xd;",
       "author": null,
-      "timestamp": "2026-05-28T19:41:55+00:00",
+      "timestamp": "2026-06-01T00:02:30+00:00",
       "engagement": 0.0,
       "cves": [],
       "vendors": [],
       "raw": {
         "feed": "sans_isc"
       },
-      "url_hash": "6e708454fcdcdb34",
-      "content_hash": "0f4e5ec986ac4b97"
+      "url_hash": "a46fb0b37a75ad2e",
+      "content_hash": "91bab5c8221d87fc"
+    },
+    {
+      "source": "sans_isc",
+      "source_family": "news",
+      "url": "https://isc.sans.edu/diary/rss/33032",
+      "title": "YARA-X 1.17.0 Release, (Sun, May 31st)",
+      "body": "YARA-X&&#x23&#x3b;x26&#x3b;&#x23&#x3b;39&#x3b;s 1.17.0 release brings 5 improvements (several performance improvements) and 1 bugfix.&#xd;",
+      "author": null,
+      "timestamp": "2026-05-31T16:01:29+00:00",
+      "engagement": 0.0,
+      "cves": [],
+      "vendors": [],
+      "raw": {
+        "feed": "sans_isc"
+      },
+      "url_hash": "301d5401bf7f30b3",
+      "content_hash": "702713184a6558ec"
     },
     {
       "source": "risky_business_news",
       "source_family": "news",
-      "url": "https://news.risky.biz/risky-bulletin-dutch-police-take-down-giant-botnet-of-17-million-devices",
-      "title": "Risky Bulletin: Dutch police take down giant botnet of 17 million devices",
-      "body": "In other news: US military staff tracked with adtech location data; Google engineer arrested for Polymarket bets; unpatched bugs in Gogs and Casdoor IAM.",
+      "url": "https://news.risky.biz/risky-bulletin-russia-greatly-expands-sorm-surveillance-requirements",
+      "title": "Risky Bulletin: Russia greatly expands SORM surveillance requirements",
+      "body": "In other news: NIST is looking for new PQC algorithms; ENSOC launches in Europe; new PAN firewall bug exploited in the wild.",
       "author": "Catalin Cimpanu",
-      "timestamp": "2026-05-29T02:37:22+00:00",
+      "timestamp": "2026-06-01T02:57:31+00:00",
       "engagement": 0.0,
       "cves": [],
-      "vendors": [
-        "Google"
-      ],
+      "vendors": [],
       "raw": {
         "feed": "risky_business_news"
       },
-      "url_hash": "c5fc82714c0004c8",
-      "content_hash": "59e2f10a77401f1f"
+      "url_hash": "88ee95d81775a5d7",
+      "content_hash": "475fb77e7366266b"
     },
     {
       "source": "hackernews",
       "source_family": "hn",
-      "url": "https://www.tomshardware.com/tech-industry/cyber-security/microsofts-github-bans-security-researcher-who-posted-zero-day-windows-exploits-because-company-ruined-their-life-expert-claims-action-is-vindictive-and-promises-further-retaliation",
-      "title": "GitHub bans security researcher who posted zero-day Windows exploits",
+      "url": "https://thesciverse.org/scientists-found-that-the-creatine-supplement-millions-take-for-muscle-gains-is-quietly-raising-brain-energy-levels-and-slowing-early-alzheimers-cognitive-decline-by-30",
+      "title": "Creatine raises brain energy levels and slows cognitive decline: study",
       "body": "",
-      "author": "possibilistic",
-      "timestamp": "2026-05-28T21:45:54+00:00",
-      "engagement": 513.0,
-      "cves": [],
-      "vendors": [
-        "Windows",
-        "GitHub"
-      ],
-      "raw": {
-        "points": 419,
-        "num_comments": 188,
-        "object_id": "48315968"
-      },
-      "url_hash": "68d7a23f1438f893",
-      "content_hash": "dd0000173507772f"
-    },
-    {
-      "source": "hackernews",
-      "source_family": "hn",
-      "url": "https://arstechnica.com/space/2026/05/blue-origins-new-glenn-rocket-just-exploded-during-a-static-fire-test",
-      "title": "Blue Origin\u2019s New Glenn rocket exploded during a static fire test",
-      "body": "",
-      "author": "benbreen",
-      "timestamp": "2026-05-29T03:32:15+00:00",
-      "engagement": 211.0,
+      "author": "MrJagil",
+      "timestamp": "2026-05-31T16:19:34+00:00",
+      "engagement": 690.5,
       "cves": [],
       "vendors": [],
       "raw": {
-        "points": 207,
-        "num_comments": 8,
-        "object_id": "48318678"
+        "points": 516,
+        "num_comments": 349,
+        "object_id": "48346947"
       },
-      "url_hash": "33fdbf6eaa281fd0",
-      "content_hash": "5627e95a463a26ba"
+      "url_hash": "9a6166c9c4c5cbf7",
+      "content_hash": "0af5cba8a55f59e0"
     },
     {
-      "source": "hackernews",
-      "source_family": "hn",
-      "url": "https://doublepulsar.com/microsofts-stance-on-zero-day-exploits-is-a-dumpster-fire-of-their-own-making-0946117940a4",
-      "title": "Microsoft's stance on zero day exploits is a dumpster fire of their own making",
-      "body": "",
-      "author": "_tk_",
-      "timestamp": "2026-05-28T18:08:59+00:00",
-      "engagement": 78.5,
-      "cves": [],
-      "vendors": [
-        "Microsoft"
-      ],
-      "raw": {
-        "points": 67,
-        "num_comments": 23,
-        "object_id": "48313038"
-      },
-      "url_hash": "6412c29ecbd4d977",
-      "content_hash": "b022078871f2843e"
-    },
-    {
-      "source": "hackernews",
-      "source_family": "hn",
-      "url": "https://github.com/Kaelio/ktx",
-      "title": "Show HN: Ktx \u2013 Open-source executable context layer for data agents",
-      "body": "Hi HN, we\u2019re open-sourcing ktx. It\u2019s an executable context layer that makes agents reliable on your data stack.<p>We built it after going through the experience of building production-grade data agents for dozens of companies. If you\u2019ve also tried building them, or simply tried using Claude Code or Codex on your data warehouse, you\u2019ll know that accuracy is the #1 issue. Agents are great at generating valid SQL, but it\u2019s not always correct SQL.<p>To cite a few examples of \u201cagents gone wrong\u201d:<p>- Stale column + hidden business rule: when preparing a board report, a finance analyst asks Claude Code for \u201cARR by customer segment\u201d, it derives ARR from multiple tables (subscriptions, plans, accounts), then groups by accounts.industry. But CC doesn\u2019t know that this industry column was deprecated a few months prior, or that past board reports excluded paused subscriptions from the ARR calculation<p>- Join fanout: a data analyst at a retailer uses their company\u2019s internal agent to prep a product revenue deck for a QBR. The agent joins orders to order_items, then sums orders.total_amount_cents grouped by order_items.product_id. The SQL runs fine, but each order\u2019s revenue is repeated once per line item, which most people will miss if most orders only have 1 item<p>- Missing attribution logic: a marketing analyst asks Codex \u201cWhich campaigns drove the most revenue?\u201d Codex joins marketing_touches to users to orders and groups by utm_campaign. But since each order can have multiple touches before purchase, the same order can be credited to first touch, last touch, every touch, or every campaign the user clicked before buying. If the agent chooses the method that doesn\u2019t match the team\u2019s attribution logic, they\u2019ll make suboptimal decisions<p>To solve this at first we gave the agent more context through skills + a wiki-style knowledge base. That gives it some useful extra context but still relies on it writing the SQL without incorrect assumptions.<p>The next solution we explored wa",
-      "author": "lucamrtl",
-      "timestamp": "2026-05-28T15:05:06+00:00",
-      "engagement": 84.5,
-      "cves": [],
-      "vendors": [],
-      "raw": {
-        "points": 76,
-        "num_comments": 17,
-        "object_id": "48309986"
-      },
-      "url_hash": "3b7517e4b294b82a",
-      "content_hash": "12fd0a78e9388ffc"
-    },
-    {
-      "source": "hackernews",
-      "source_family": "hn",
-      "url": "https://buildingbetter.tech/p/i-read-the-claude-code-source-code",
-      "title": "Claude Code \u2013 Everything You Can Configure That the Docs Don't Tell You",
-      "body": "",
-      "author": "ankitg12",
-      "timestamp": "2026-05-29T02:13:20+00:00",
-      "engagement": 134.5,
-      "cves": [],
-      "vendors": [],
-      "raw": {
-        "points": 121,
-        "num_comments": 27,
-        "object_id": "48318174"
-      },
-      "url_hash": "0c0f485ce8f9c9a0",
-      "content_hash": "e7f9c004b7cd2d56"
-    },
-    {
-      "source": "hackernews",
-      "source_family": "hn",
-      "url": "https://news.ycombinator.com/item?id=48315206",
-      "title": "Ask HN: Entrepreneurs, how long did it take you to succeed?",
-      "body": "How long did it take? How many ideas did you go through? What made you stick to an idea vs pivot?<p>EDIT: People keep asking about the definition of success. Success means you had a venture that was successful from your perspective. Whether that&#x27;s a small business that generates enough income to replace a day job, or a million dollar exit. I don&#x27;t consider a side project a success though, would need to be full time",
-      "author": "asdev",
-      "timestamp": "2026-05-28T20:45:28+00:00",
-      "engagement": 87.5,
-      "cves": [],
-      "vendors": [],
-      "raw": {
-        "points": 60,
-        "num_comments": 55,
-        "object_id": "48315206"
-      },
-      "url_hash": "2b72dcdb1fde1f5c",
-      "content_hash": "4a998c58ea44e095"
-    },
-    {
-      "source": "hackernews",
-      "source_family": "hn",
-      "url": "https://github.com/creusot-rs/creusot/tree/master",
-      "title": "Creusot helps you prove your Rust code is correct",
-      "body": "",
-      "author": "fanf2",
-      "timestamp": "2026-05-28T14:42:04+00:00",
-      "engagement": 70.0,
-      "cves": [],
-      "vendors": [],
-      "raw": {
-        "points": 66,
-        "num_comments": 8,
-        "object_id": "48309645"
-      },
-      "url_hash": "bee049f8ca4c517a",
-      "content_hash": "5c0f73a136b1ccf5"
-    },
-    {
-      "source": "hackernews",
-      "source_family": "hn",
-      "url": "https://lenz.io/research/llm-disagreement",
-      "title": "Disagreement among frontier LLMs on real-world fact-checks",
-      "body": "",
-      "author": "kostaj",
-      "timestamp": "2026-05-28T12:20:19+00:00",
-      "engagement": 660.5,
-      "cves": [],
-      "vendors": [],
-      "raw": {
-        "points": 490,
-        "num_comments": 341,
-        "object_id": "48307887"
-      },
-      "url_hash": "a2434b0b76308abd",
-      "content_hash": "8834ec986e713032"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-37266",
-      "title": "CVE-2026-37266 (HIGH) \u2014 An issue in Responsive File Manager Responsive FileManager Version 9.14.0 allows a remote attacker to execute arbitrary code via the force_d",
-      "body": "An issue in Responsive File Manager Responsive FileManager Version 9.14.0 allows a remote attacker to execute arbitrary code via the force_download.php component",
-      "author": null,
-      "timestamp": "2026-05-28T14:16:19.317000+00:00",
-      "engagement": 8.0,
-      "cves": [
-        "CVE-2026-37266"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 8.0,
-        "severity": "HIGH"
-      },
-      "url_hash": "909dff2a7129c303",
-      "content_hash": "9a5b58ecc33ecdab"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49237",
-      "title": "CVE-2026-49237 (HIGH) \u2014 An issue was discovered in Canonical Multipass for macOS before version 1.16.3 due to an incomplete fix for CVE-2025-5199. While the patch i",
-      "body": "An issue was discovered in Canonical Multipass for macOS before version 1.16.3 due to an incomplete fix for CVE-2025-5199. While the patch in version 1.16.0 updated the ownership of the multipassd daemon binary to root:wheel, five co-located binaries (multipass, qemu-img, qemu-system-aarch64, qemu-system-x86_64, and sshfs_server) in /Library/Application Support/com.canonical.multipass/bin/ retain ownership by the installing user and remain writable. Because the root LaunchDaemon (com.canonical.multipassd.plist) configures a PATH environment variable that prioritizes this user-writable directory and invokes these auxiliary binaries by their bare names, a local attacker can replace an auxiliary binary (such as qemu-img) with a malicious wrapper. When the root daemon subsequently triggers the binary during routine execution (e.g., via multipass launch), the malicious code executes with root privileges, leading to local privilege escalation.",
-      "author": null,
-      "timestamp": "2026-05-28T14:16:24.270000+00:00",
-      "engagement": 7.8,
-      "cves": [
-        "CVE-2026-49237"
-      ],
-      "vendors": [
-        "macOS"
-      ],
-      "raw": {
-        "cvss": 7.8,
-        "severity": "HIGH"
-      },
-      "url_hash": "cf62368dfb06d195",
-      "content_hash": "c6ab6965bf333bae"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49238",
-      "title": "CVE-2026-49238 (HIGH) \u2014 An issue was discovered in Canonical Multipass before version 1.16.3. The host-side SFTP server component (sshfs_server), which executes wit",
-      "body": "An issue was discovered in Canonical Multipass before version 1.16.3. The host-side SFTP server component (sshfs_server), which executes with root privileges on the host, contains a path containment bypass vulnerability within its validate_path function in src/sshfs_mount/sftp_server.cpp. The function performs a plain string prefix comparison on requested paths without path separator validation or dot-dot (..) normalization. A local attacker with root privileges inside a guest virtual machine can bypass the FUSE layer by injecting raw SFTP frames (such as an SSH_FXP_OPEN request) directly into the sshfs_server process stdin/stdout pipes via procfs. By supplying a path containing directory traversal sequences that match the allowed mount prefix, the attacker can force the host-side root process to resolve the traversal and open files outside the designated mount boundary. This allows a guest-side user to read arbitrary files on the host filesystem, resulting in a virtual machine escape.",
-      "author": null,
-      "timestamp": "2026-05-28T14:16:24.403000+00:00",
-      "engagement": 8.4,
-      "cves": [
-        "CVE-2026-49238"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 8.4,
-        "severity": "HIGH"
-      },
-      "url_hash": "6bca0b57274be3d1",
-      "content_hash": "5bde44f68d291d1e"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-35671",
-      "title": "CVE-2026-35671 (HIGH) \u2014 phpMyFAQ before 4.1.3 contains an insecure direct object reference vulnerability in the admin API user password endpoint that allows authent",
-      "body": "phpMyFAQ before 4.1.3 contains an insecure direct object reference vulnerability in the admin API user password endpoint that allows authenticated administrators to change any user's password without authorization verification. An attacker with low-privilege admin credentials can escalate to SuperAdmin by modifying the userId parameter in the overwrite-password API request.",
-      "author": null,
-      "timestamp": "2026-05-28T16:16:21.530000+00:00",
-      "engagement": 8.8,
-      "cves": [
-        "CVE-2026-35671"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 8.8,
-        "severity": "HIGH"
-      },
-      "url_hash": "2d7cd13a141c9aa6",
-      "content_hash": "0f1e45adeaf42db2"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-35672",
-      "title": "CVE-2026-35672 (HIGH) \u2014 phpMyFAQ before 4.1.3 contains an authentication bypass vulnerability in API v4.0 where the default empty api.apiClientToken allows unauthen",
-      "body": "phpMyFAQ before 4.1.3 contains an authentication bypass vulnerability in API v4.0 where the default empty api.apiClientToken allows unauthenticated users to create and modify FAQ entries. Attackers can send an empty x-pmf-token header to bypass token validation and inject malicious content via POST endpoints /api/v4.0/faq/create, /api/v4.0/category, and /api/v4.0/question.",
-      "author": null,
-      "timestamp": "2026-05-28T16:16:21.667000+00:00",
-      "engagement": 7.5,
-      "cves": [
-        "CVE-2026-35672"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 7.5,
-        "severity": "HIGH"
-      },
-      "url_hash": "0ba5e34dbe941bf0",
-      "content_hash": "acda28ada07e0b57"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-35675",
-      "title": "CVE-2026-35675 (HIGH) \u2014 phpMyFAQ before 4.1.3 contains an authentication bypass vulnerability in the password reset endpoint that allows unauthenticated attackers t",
-      "body": "phpMyFAQ before 4.1.3 contains an authentication bypass vulnerability in the password reset endpoint that allows unauthenticated attackers to reset any user account password without token verification or email confirmation. Attackers can enumerate valid usernames, obtain plaintext passwords via email, and achieve complete account takeover including administrative access.",
-      "author": null,
-      "timestamp": "2026-05-28T16:16:21.800000+00:00",
-      "engagement": 8.2,
-      "cves": [
-        "CVE-2026-35675"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 8.2,
-        "severity": "HIGH"
-      },
-      "url_hash": "1cfcde3569e42871",
-      "content_hash": "c498f146918a5738"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-35676",
-      "title": "CVE-2026-35676 (HIGH) \u2014 phpMyFAQ before 4.1.3 contains an unauthenticated password reset vulnerability in the user password update API endpoint that allows attacker",
-      "body": "phpMyFAQ before 4.1.3 contains an unauthenticated password reset vulnerability in the user password update API endpoint that allows attackers to change account passwords without token validation. Attackers can enumerate valid username and email pairs and force immediate password changes by sending PUT requests to the /api/index.php/user/password/update endpoint, causing account disruption and invalidating legitimate user credentials.",
-      "author": null,
-      "timestamp": "2026-05-28T16:16:21.923000+00:00",
-      "engagement": 8.2,
-      "cves": [
-        "CVE-2026-35676"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 8.2,
-        "severity": "HIGH"
-      },
-      "url_hash": "978c90ee49f1e8e3",
-      "content_hash": "82472d172be449d4"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44358",
-      "title": "CVE-2026-44358 (HIGH) \u2014 Espressif Shared GitHub DangerJS is a reusable GitHub Action CI DangerJS workflow for Espressif GitHub projects. Prior to 1.0.1, the action'",
-      "body": "Espressif Shared GitHub DangerJS is a reusable GitHub Action CI DangerJS workflow for Espressif GitHub projects. Prior to 1.0.1, the action's entrypoint.sh invoked DangerJS from the caller's workspace after copying the fork's checkout into it, creating an untrusted search path for both binary resolution and Node.js module resolution. A fork pull request processed by a pull_request_target workflow could therefore cause fork-supplied code to execute inside the action container in place of the action's own code. This vulnerability is fixed in 1.0.1.",
-      "author": null,
-      "timestamp": "2026-05-28T16:16:24.210000+00:00",
-      "engagement": 8.2,
-      "cves": [
-        "CVE-2026-44358"
-      ],
-      "vendors": [
-        "GitHub"
-      ],
-      "raw": {
-        "cvss": 8.2,
-        "severity": "HIGH"
-      },
-      "url_hash": "164ad89bffbdbf3f",
-      "content_hash": "1bee08dbb76ff984"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44594",
-      "title": "CVE-2026-44594 (HIGH) \u2014 esm.sh is a no-build content delivery network (CDN) for web development. In 137 and earlier, a Local File Inclusion (LFI) vulnerability exis",
-      "body": "esm.sh is a no-build content delivery network (CDN) for web development. In 137 and earlier, a Local File Inclusion (LFI) vulnerability exists in the esbuild plugin's handling of the browser field in package.json. An attacker can publish an npm package that causes the server to read and return arbitrary files from the host filesystem during the build process.",
-      "author": null,
-      "timestamp": "2026-05-28T16:16:24.717000+00:00",
-      "engagement": 7.5,
-      "cves": [
-        "CVE-2026-44594"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 7.5,
-        "severity": "HIGH"
-      },
-      "url_hash": "971612b18eef07b0",
-      "content_hash": "bb5f1c6467a439f3"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47759",
-      "title": "CVE-2026-47759 (HIGH) \u2014 TinyMCE is an open source rich text editor. Prior to 5.11.1, 7.9.3, and 8.5.1, there is a stored XSS vulnerability via unsanitized data-mce-",
-      "body": "TinyMCE is an open source rich text editor. Prior to 5.11.1, 7.9.3, and 8.5.1, there is a stored XSS vulnerability via unsanitized data-mce-* attributes (data-mce-href, data-mce-src, data-mce-style). Allows attackers to inject malicious values that override safe attributes during serialization, bypassing validation. This vulnerability is fixed in 5.11.1, 7.9.3, and 8.5.1.",
-      "author": null,
-      "timestamp": "2026-05-28T16:16:28.070000+00:00",
-      "engagement": 8.7,
-      "cves": [
-        "CVE-2026-47759"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 8.7,
-        "severity": "HIGH"
-      },
-      "url_hash": "47f71c1d56f22cf3",
-      "content_hash": "efa02b882177248c"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47760",
-      "title": "CVE-2026-47760 (HIGH) \u2014 TinyMCE is an open source rich text editor. From 6.8.0 to before 7.1.0, TinyMCE contains an XSS vulnerability caused by improper SVG namespa",
-      "body": "TinyMCE is an open source rich text editor. From 6.8.0 to before 7.1.0, TinyMCE contains an XSS vulnerability caused by improper SVG namespace scope handling in the sanitizer. A crafted payload using nested elements can bypass attribute sanitization and execute arbitrary JavaScript. This vulnerability is fixed in 7.1.0.",
-      "author": null,
-      "timestamp": "2026-05-28T16:16:28.210000+00:00",
-      "engagement": 8.7,
-      "cves": [
-        "CVE-2026-47760"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 8.7,
-        "severity": "HIGH"
-      },
-      "url_hash": "1336b76880c53e22",
-      "content_hash": "ffbbc1aadb19d282"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47761",
-      "title": "CVE-2026-47761 (HIGH) \u2014 TinyMCE is an open source rich text editor. Prior to 5.11.1, 7.9.3, and 8.5.1, there is a stored XSS vulnerability in the media plugin. Atta",
-      "body": "TinyMCE is an open source rich text editor. Prior to 5.11.1, 7.9.3, and 8.5.1, there is a stored XSS vulnerability in the media plugin. Attackers can inject malicious scripts via crafted data-mce-* attributes, which are executed when content is rendered. Impacts users of TinyMCE with the media plugin enabled. This vulnerability is fixed in 5.11.1, 7.9.3, and 8.5.1.",
-      "author": null,
-      "timestamp": "2026-05-28T16:16:28.337000+00:00",
-      "engagement": 8.7,
-      "cves": [
-        "CVE-2026-47761"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 8.7,
-        "severity": "HIGH"
-      },
-      "url_hash": "5ea5621f4fd7b108",
-      "content_hash": "8fa741c104efcc91"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47762",
-      "title": "CVE-2026-47762 (HIGH) \u2014 TinyMCE is an open source rich text editor. Prior to 5.11.1, 7.9.3, and 8.5.1, there is a stored XSS vulnerability via forged mce:protected ",
-      "body": "TinyMCE is an open source rich text editor. Prior to 5.11.1, 7.9.3, and 8.5.1, there is a stored XSS vulnerability via forged mce:protected comments. Allows attackers to bypass sanitization and inject scripts that execute when content is restored. Impacts users who utilize the protect option. This vulnerability is fixed in 5.11.1, 7.9.3, and 8.5.1.",
-      "author": null,
-      "timestamp": "2026-05-28T16:16:28.470000+00:00",
-      "engagement": 8.7,
-      "cves": [
-        "CVE-2026-47762"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 8.7,
-        "severity": "HIGH"
-      },
-      "url_hash": "b5c255560f9f695d",
-      "content_hash": "a1245d46fd393055"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48526",
-      "title": "CVE-2026-48526 (HIGH) \u2014 PyJWT is a JSON Web Token implementation in Python. Prior to 2.13.0, when the verifier is decoding JSON Web Tokens, while supporting both as",
-      "body": "PyJWT is a JSON Web Token implementation in Python. Prior to 2.13.0, when the verifier is decoding JSON Web Tokens, while supporting both asymmetric and HMAC algorithms, the library does not validate use of JSON Web Keys in HMAC algorithm, allowing attacker to use the issuer public key as the secret key for HMAC algorithm. This vulnerability is fixed in 2.13.0.",
-      "author": null,
-      "timestamp": "2026-05-28T16:16:29.657000+00:00",
-      "engagement": 7.4,
-      "cves": [
-        "CVE-2026-48526"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 7.4,
-        "severity": "HIGH"
-      },
-      "url_hash": "d0da1090edd80955",
-      "content_hash": "d3a500129d24ed0f"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24444",
-      "title": "CVE-2026-24444 (CRITICAL) \u2014 SDMC NE6037 cable modem routers running firmware 7.1.6.0.25 and 7.1.6.1.9_B9 contain a hardcoded password vulnerability in the web managemen",
-      "body": "SDMC NE6037 cable modem routers running firmware 7.1.6.0.25 and 7.1.6.1.9_B9 contain a hardcoded password vulnerability in the web management interface recovery endpoints (mgmt.php, npcmd.php) that allows unauthenticated attackers to gain root access by submitting the hardcoded credential to the recovery endpoint via HTTP. Attackers can leverage this hardcoded password to enable filtered SSH and Telnet services on the device, resulting in unauthenticated root-level remote access to the underlying system.",
-      "author": null,
-      "timestamp": "2026-05-28T17:16:20.143000+00:00",
-      "engagement": 9.8,
-      "cves": [
-        "CVE-2026-24444"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 9.8,
-        "severity": "CRITICAL"
-      },
-      "url_hash": "a4c203ef77ed6cae",
-      "content_hash": "6aac60f73c9cc0f8"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-38702",
-      "title": "CVE-2026-38702 (CRITICAL) \u2014 A command injection vulnerability exists in the Admin Access feature of InHand Networks IR302 firmware V3.5.108, IR305 firmware V1.0.118, IR",
-      "body": "A command injection vulnerability exists in the Admin Access feature of InHand Networks IR302 firmware V3.5.108, IR305 firmware V1.0.118, IR315 firmware V1.0.118, IR615 firmware V1.0.118, and earlier versions. Attackers can exploit this vulnerability to obtain ROOT privileges on remote target devices.",
-      "author": null,
-      "timestamp": "2026-05-28T17:16:21.177000+00:00",
-      "engagement": 9.8,
-      "cves": [
-        "CVE-2026-38702"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 9.8,
-        "severity": "CRITICAL"
-      },
-      "url_hash": "017539f1fb2c9245",
-      "content_hash": "a41a90a5b5b95f02"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-38703",
-      "title": "CVE-2026-38703 (CRITICAL) \u2014 A command injection vulnerability exists in the ZeroTier VPN feature of InHand Networks IR302 firmware V3.5.108, IR305 firmware V1.0.118, IR",
-      "body": "A command injection vulnerability exists in the ZeroTier VPN feature of InHand Networks IR302 firmware V3.5.108, IR305 firmware V1.0.118, IR315 firmware V1.0.118, IR615 firmware V1.0.118, and earlier versions. Attackers can exploit this vulnerability to obtain ROOT privileges on remote target devices.",
-      "author": null,
-      "timestamp": "2026-05-28T17:16:21.293000+00:00",
-      "engagement": 9.8,
-      "cves": [
-        "CVE-2026-38703"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 9.8,
-        "severity": "CRITICAL"
-      },
-      "url_hash": "915c69602698a7a9",
-      "content_hash": "9c8ac3611e181eab"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-38704",
-      "title": "CVE-2026-38704 (CRITICAL) \u2014 A command injection vulnerability exists in the WireGuard VPN feature of InHand Networks IR302 firmware V3.5.108, IR305 firmware V1.0.118, I",
-      "body": "A command injection vulnerability exists in the WireGuard VPN feature of InHand Networks IR302 firmware V3.5.108, IR305 firmware V1.0.118, IR315 firmware V1.0.118, IR615 firmware V1.0.118, and earlier versions. Attackers can exploit this vulnerability to obtain ROOT privileges on remote target devices.",
-      "author": null,
-      "timestamp": "2026-05-28T17:16:21.413000+00:00",
-      "engagement": 9.8,
-      "cves": [
-        "CVE-2026-38704"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 9.8,
-        "severity": "CRITICAL"
-      },
-      "url_hash": "33715cb8bf126ac3",
-      "content_hash": "457a424e51382c16"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-38707",
-      "title": "CVE-2026-38707 (CRITICAL) \u2014 A command injection vulnerability exists in the IPSec VPN feature of InHand Networks IR302 firmware V3.5.108, IR305 firmware V1.0.118, IR315",
-      "body": "A command injection vulnerability exists in the IPSec VPN feature of InHand Networks IR302 firmware V3.5.108, IR305 firmware V1.0.118, IR315 firmware V1.0.118, IR615 firmware V1.0.118, and earlier versions. Attackers can exploit this vulnerability to obtain ROOT privileges on remote target devices.",
-      "author": null,
-      "timestamp": "2026-05-28T17:16:21.530000+00:00",
-      "engagement": 9.8,
-      "cves": [
-        "CVE-2026-38707"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 9.8,
-        "severity": "CRITICAL"
-      },
-      "url_hash": "fa567da22684d51d",
-      "content_hash": "0e6b578b8ee9914b"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44461",
-      "title": "CVE-2026-44461 (HIGH) \u2014 Zed is a code editor. Prior to 0.227.1, Zed builds SSH/WSL remote commands as a shell command string that starts with exec env ..., but envi",
-      "body": "Zed is a code editor. Prior to 0.227.1, Zed builds SSH/WSL remote commands as a shell command string that starts with exec env ..., but environment variable keys are inserted without shell quoting or validation. If an attacker can control an environment variable key (for example via project terminal settings), shell expansions in the key (such as $(...)) are evaluated by the remote shell when a terminal is opened. This can lead to arbitrary command execution on the remote host under the victim user's account. This vulnerability is fixed in 0.227.1.",
-      "author": null,
-      "timestamp": "2026-05-28T17:16:28.853000+00:00",
-      "engagement": 8.6,
-      "cves": [
-        "CVE-2026-44461"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 8.6,
-        "severity": "HIGH"
-      },
-      "url_hash": "36daebd1afdfca4a",
-      "content_hash": "a00ff859b11dde5d"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44463",
-      "title": "CVE-2026-44463 (HIGH) \u2014 Zed is a code editor. Prior to 0.229.0, Zed's terminal tool permission system can be bypassed by prepending environment variable assignments",
-      "body": "Zed is a code editor. Prior to 0.229.0, Zed's terminal tool permission system can be bypassed by prepending environment variable assignments to allowlisted commands, hijacking program behavior (e.g., PAGER) to execute arbitrary code. This vulnerability is fixed in 0.229.0.",
-      "author": null,
-      "timestamp": "2026-05-28T17:16:29.810000+00:00",
-      "engagement": 8.6,
-      "cves": [
-        "CVE-2026-44463"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 8.6,
-        "severity": "HIGH"
-      },
-      "url_hash": "a1d3e8ec49493076",
-      "content_hash": "f4f9f7be4460aa9e"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44465",
-      "title": "CVE-2026-44465 (HIGH) \u2014 Zed is a code editor. Prior to 0.227.1, Zed IDE executes arbitrary commands when opening a folder with a malicious .git/config file that abu",
-      "body": "Zed is a code editor. Prior to 0.227.1, Zed IDE executes arbitrary commands when opening a folder with a malicious .git/config file that abuses the core.fsmonitor Git configuration option. This allows an attacker to achieve Remote Code Execution (RCE) when a victim open a folder in untrusted mode. This vulnerability is fixed in 0.227.1.",
-      "author": null,
-      "timestamp": "2026-05-28T17:16:30.043000+00:00",
-      "engagement": 8.6,
-      "cves": [
-        "CVE-2026-44465"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 8.6,
-        "severity": "HIGH"
-      },
-      "url_hash": "5ad5431db935d498",
-      "content_hash": "41c04e405e6da253"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44466",
-      "title": "CVE-2026-44466 (HIGH) \u2014 Zed is a code editor. Prior to 0.229.0, Zed's terminal tool permission system can be bypassed via bash arithmetic expansion $((...)), allowi",
-      "body": "Zed is a code editor. Prior to 0.229.0, Zed's terminal tool permission system can be bypassed via bash arithmetic expansion $((...)), allowing execution of arbitrary commands nested inside an allowlisted command like echo. This vulnerability is fixed in 0.229.0.",
-      "author": null,
-      "timestamp": "2026-05-28T17:16:30.317000+00:00",
-      "engagement": 8.6,
-      "cves": [
-        "CVE-2026-44466"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 8.6,
-        "severity": "HIGH"
-      },
-      "url_hash": "343cc3721593052b",
-      "content_hash": "5317a1c46c459346"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44543",
-      "title": "CVE-2026-44543 (HIGH) \u2014 Local Path Provisioner provides a way for the Kubernetes users to utilize the local storage in each node. Prior to 0.0.36, a malicious user ",
-      "body": "Local Path Provisioner provides a way for the Kubernetes users to utilize the local storage in each node. Prior to 0.0.36, a malicious user with permission to edit the local-path-config ConfigMap in the local-path-storage namespace can manipulate the helperPod.yaml template used by rancher/local-path-provisioner. The helperPod.yaml template is loaded by the provisioner and used to create HelperPods during PVC provisioning and cleanup operations. However, the template is not sufficiently validated before use. Security-sensitive fields such as securityContext.privileged, hostPath volumes, and Linux capabilities can be injected into the template. When a PVC operation triggers HelperPod creation, the provisioner creates the HelperPod using the attacker-controlled template. This can result in a privileged pod running on the target node with the host root filesystem mounted. This may allow the attacker to access sensitive host files, read ServiceAccount tokens from other pods on the same node, access other tenants' local-path volume data, or modify files on the host node. This vulnerability is fixed in 0.0.36.",
-      "author": null,
-      "timestamp": "2026-05-28T17:16:30.967000+00:00",
-      "engagement": 8.7,
-      "cves": [
-        "CVE-2026-44543"
-      ],
-      "vendors": [
-        "Linux"
-      ],
-      "raw": {
-        "cvss": 8.7,
-        "severity": "HIGH"
-      },
-      "url_hash": "e7f212c23ab97ff0",
-      "content_hash": "08edaa6ea28962e7"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9095",
-      "title": "CVE-2026-9095 (HIGH) \u2014 Casdoor versions 2.362.0 and earlier map SAML assertions to user sessions without replay protection. The ParseSamlResponse() function in obj",
-      "body": "Casdoor versions 2.362.0 and earlier map SAML assertions to user sessions without replay protection. The ParseSamlResponse() function in object/saml_sp.go calls sp.RetrieveAssertionInfo() and immediately maps the result to a user session. There is no assertion ID cache, OneTimeUse condition enforcement, or replay detection anywhere in the SAML SP code path. As a result, an attacker can replay a previously captured SAML assertion to obtain an authenticated session for the assertion\u2019s subject, including administrator accounts, without needing the user\u2019s password or MFA credentials.",
-      "author": null,
-      "timestamp": "2026-05-28T17:16:34.460000+00:00",
-      "engagement": 8.1,
-      "cves": [
-        "CVE-2026-9095"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 8.1,
-        "severity": "HIGH"
-      },
-      "url_hash": "e6e34f73b4c67cef",
-      "content_hash": "96aa640b261b1972"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-43898",
-      "title": "CVE-2026-43898 (CRITICAL) \u2014 SandboxJS is a JavaScript sandboxing library. Prior to 0.9.6, sandbox-defined functions expose Function.caller, allowing sandboxed code to r",
-      "body": "SandboxJS is a JavaScript sandboxing library. Prior to 0.9.6, sandbox-defined functions expose Function.caller, allowing sandboxed code to recover the internal LispType.Call runtime callback. That callback can then be invoked with attacker-controlled fake context and obj values to extract blocked host statics, recover the real host Function constructor, and execute arbitrary host JavaScript. This vulnerability is fixed in 0.9.6.",
-      "author": null,
-      "timestamp": "2026-05-28T18:16:32.837000+00:00",
-      "engagement": 10.0,
-      "cves": [
-        "CVE-2026-43898"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 10.0,
-        "severity": "CRITICAL"
-      },
-      "url_hash": "a5858bc17ba3dda4",
-      "content_hash": "dcf8b9f452c2168e"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44797",
-      "title": "CVE-2026-44797 (HIGH) \u2014 Nautobot is a Network Source of Truth and Network Automation Platform. Prior to 2.4.33 and 3.1.2, Nautobot's Webhook data model and associat",
-      "body": "Nautobot is a Network Source of Truth and Network Automation Platform. Prior to 2.4.33 and 3.1.2, Nautobot's Webhook data model and associated feature set could be configured by users with sufficient access to perform requests to various hosts and IP addresses that should not be permitted, allowing for various behaviors similar to server-side request forgery (SSRF). This vulnerability is fixed in 2.4.33 and 3.1.2.",
-      "author": null,
-      "timestamp": "2026-05-28T18:16:33.837000+00:00",
-      "engagement": 8.5,
-      "cves": [
-        "CVE-2026-44797"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 8.5,
-        "severity": "HIGH"
-      },
-      "url_hash": "5a717c771d5fda59",
-      "content_hash": "889b6abce0241e25"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44798",
-      "title": "CVE-2026-44798 (HIGH) \u2014 Nautobot is a Network Source of Truth and Network Automation Platform. Prior to 2.4.33 and 3.1.2, a user with access to add/change a GitRepo",
-      "body": "Nautobot is a Network Source of Truth and Network Automation Platform. Prior to 2.4.33 and 3.1.2, a user with access to add/change a GitRepository record could use the REST API to directly set the current_head field on the record, which was not intended to be user-editable. Doing so could cause Nautobot's local clone(s) of the relevant repository to checkout a commit other than the latest commit on the specified branch (resulting in misleading state), or potentially to be unable to make use of the repository at all (until manually remediated) due to the current_head pointing to a nonexistent commit hash or malformed value. This vulnerability is fixed in 2.4.33 and 3.1.2.",
-      "author": null,
-      "timestamp": "2026-05-28T18:16:34.007000+00:00",
-      "engagement": 7.1,
-      "cves": [
-        "CVE-2026-44798"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 7.1,
-        "severity": "HIGH"
-      },
-      "url_hash": "728088acb6aa333a",
-      "content_hash": "889d7d17adedf234"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45296",
-      "title": "CVE-2026-45296 (HIGH) \u2014 OpenReplay is a self-hosted session replay suite. Prior to 1.26.0, OpenReplay's Python API exposes several app_apikey routes that trust a ca",
-      "body": "OpenReplay is a self-hosted session replay suite. Prior to 1.26.0, OpenReplay's Python API exposes several app_apikey routes that trust a caller-provided projectKey after validating only that the API key itself is valid and that the target projectKey exists. The authorization flow does not verify that the authenticated API key and the requested project belong to the same tenant. Because the public tracker design exposes projectKey to browser-side code, an attacker who owns any valid API key for their own tenant can target another tenant's project by reusing that public projectKey. The vulnerable routes allow the attacker to enumerate victim user sessions and then retrieve sensitive session event data across the tenant boundary. This vulnerability is fixed in 1.26.0.",
-      "author": null,
-      "timestamp": "2026-05-28T18:16:34.507000+00:00",
-      "engagement": 7.7,
-      "cves": [
-        "CVE-2026-45296"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 7.7,
-        "severity": "HIGH"
-      },
-      "url_hash": "f0e1dc41130e7763",
-      "content_hash": "ffc3572c331f8668"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45310",
-      "title": "CVE-2026-45310 (HIGH) \u2014 CodeWhale is a DeepSeek + MiMo coding agent in terminal. Prior to 0.8.22, the fetch_url tool validates the initial URL's resolved IP address",
-      "body": "CodeWhale is a DeepSeek + MiMo coding agent in terminal. Prior to 0.8.22, the fetch_url tool validates the initial URL's resolved IP address against a restricted-IP blocklist (is_restricted_ip()) to prevent SSRF attacks against internal services (cloud metadata endpoints, localhost, private networks). However, the HTTP client (reqwest) is configured to automatically follow up to 5 redirects (reqwest::redirect::Policy::limited(5)) without re-validating the redirect target against the same SSRF protections. This vulnerability is fixed in 0.8.22.",
-      "author": null,
-      "timestamp": "2026-05-28T18:16:35.037000+00:00",
-      "engagement": 7.4,
-      "cves": [
-        "CVE-2026-45310"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 7.4,
-        "severity": "HIGH"
-      },
-      "url_hash": "726a5127d66da5b9",
-      "content_hash": "3157585d9b51c025"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45311",
-      "title": "CVE-2026-45311 (CRITICAL) \u2014 CodeWhale is a DeepSeek + MiMo coding agent in terminal. From 0.3.0 to 0.8.23, the run_tests tool executes cargo test in the workspace with ",
-      "body": "CodeWhale is a DeepSeek + MiMo coding agent in terminal. From 0.3.0 to 0.8.23, the run_tests tool executes cargo test in the workspace with ApprovalRequirement::Auto, meaning it runs without any user approval prompt. cargo test compiles and executes arbitrary code: test binaries, build.rs build scripts, and proc macros. While auto-approving test execution is a deliberate design choice, it creates an inconsistency in the security boundary. However, in a malicious repository, test code can execute arbitrary shell commands, exfiltrate credentials, or establish persistence with zero approval. The attack is amplified by AGENTS.md (auto-loaded into the system prompt), which can instruct the model to run tests proactively at session start. This vulnerability is fixed in 0.8.23.",
-      "author": null,
-      "timestamp": "2026-05-28T18:16:35.170000+00:00",
-      "engagement": 9.6,
-      "cves": [
-        "CVE-2026-45311"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 9.6,
-        "severity": "CRITICAL"
-      },
-      "url_hash": "353b99a29764bc96",
-      "content_hash": "a7546cff1a9439ea"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45323",
-      "title": "CVE-2026-45323 (CRITICAL) \u2014 MeshCore Card provides MeshCore Lovelace card for Home Assistant. Prior to 0.3.3, Meshcore node names are rendered without HTML escaping in ",
-      "body": "MeshCore Card provides MeshCore Lovelace card for Home Assistant. Prior to 0.3.3, Meshcore node names are rendered without HTML escaping in meshcore-card, allowing any node within direct or indirect (repeated) radio range to execute arbitrary javascript in the Home Assistant frontend of anyone viewing the card. This vulnerability is fixed in 0.3.3.",
-      "author": null,
-      "timestamp": "2026-05-28T18:16:35.300000+00:00",
-      "engagement": 9.6,
-      "cves": [
-        "CVE-2026-45323"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 9.6,
-        "severity": "CRITICAL"
-      },
-      "url_hash": "c825ec3e3dc448f4",
-      "content_hash": "97cb48d306ff4fe0"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45348",
-      "title": "CVE-2026-45348 (HIGH) \u2014 pyLoad is a free and open-source download manager written in Python. Prior to 0.5.0b3.dev100, the packages.js template at src/pyload/webui/a",
-      "body": "pyLoad is a free and open-source download manager written in Python. Prior to 0.5.0b3.dev100, the packages.js template at src/pyload/webui/app/themes/modern/templates/js/packages.js:172 interpolates a stored link URL into a template literal inside single-quoted HTML and then writes the result to the DOM via $(div).html(html). No escaping runs between the API value and innerHTML. An attacker (Alice) who can submit a package link puts a single quote plus event handler into the URL, breaks out of the attribute, and executes JavaScript in every operator's browser that opens the downloads view. The theme does not set a Content Security Policy that restricts inline script or event handlers. This vulnerability is fixed in 0.5.0b3.dev100.",
-      "author": null,
-      "timestamp": "2026-05-28T18:16:35.437000+00:00",
-      "engagement": 8.7,
-      "cves": [
-        "CVE-2026-45348"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 8.7,
-        "severity": "HIGH"
-      },
-      "url_hash": "7b8408450c3d7a33",
-      "content_hash": "0b865af55ca94be3"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45373",
-      "title": "CVE-2026-45373 (HIGH) \u2014 CodeWhale is a DeepSeek + MiMo coding agent in terminal. Prior to 0.8.26, although SSRF is validated against hostnames that resolve to priva",
-      "body": "CodeWhale is a DeepSeek + MiMo coding agent in terminal. Prior to 0.8.26, although SSRF is validated against hostnames that resolve to private IPv6 addresses, when providing the IPV6 in\u200c\u200c URL\u200c as http://[::1], the SSRF defenses do not work. This vulnerability is fixed in 0.8.26.",
-      "author": null,
-      "timestamp": "2026-05-28T18:16:35.717000+00:00",
-      "engagement": 7.4,
-      "cves": [
-        "CVE-2026-45373"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 7.4,
-        "severity": "HIGH"
-      },
-      "url_hash": "ebd7d6694b93d7b8",
-      "content_hash": "7e9aba3ec974ac73"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45374",
-      "title": "CVE-2026-45374 (CRITICAL) \u2014 CodeWhale is a DeepSeek + MiMo coding agent in terminal. Prior to 0.8.26, the task_create tool spawns durable sub-agents that inherit two in",
-      "body": "CodeWhale is a DeepSeek + MiMo coding agent in terminal. Prior to 0.8.26, the task_create tool spawns durable sub-agents that inherit two insecure defaults, allow_shell defaults to true (config.rs:1499: self.allow_shell.unwrap_or(true)) and auto_approve defaults to true (task_manager.rs:297: auto_approve: Some(true)). When a user approves a task_create call (which requires ApprovalRequirement::Required), they approve what appears to be a benign work prompt. However, the spawned sub-agent silently receives unrestricted, unapproved shell access. This vulnerability is fixed in 0.8.26.",
-      "author": null,
-      "timestamp": "2026-05-28T18:16:35.843000+00:00",
-      "engagement": 9.6,
-      "cves": [
-        "CVE-2026-45374"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 9.6,
-        "severity": "CRITICAL"
-      },
-      "url_hash": "b0e3dab9fcaa1fae",
-      "content_hash": "b62bb68c8da5e9b0"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45039",
-      "title": "CVE-2026-45039 (CRITICAL) \u2014 RustFS is a distributed object storage system built in Rust. Prior to 1.0.0-beta.2, the internode RPC layer authenticates every request with",
-      "body": "RustFS is a distributed object storage system built in Rust. Prior to 1.0.0-beta.2, the internode RPC layer authenticates every request with an HMAC-SHA256 signature using a shared secret. The function that produces this secret, get_shared_secret() in crates/ecstore/src/rpc/http_auth.rs, falls back to the public, source-tree-embedded DEFAULT_SECRET_KEY = \"rustfsadmin\" when neither the RUSTFS_RPC_SECRET environment variable nor the global S3 secret key has been configured. This vulnerability is fixed in 1.0.0-beta.2.",
-      "author": null,
-      "timestamp": "2026-05-28T19:16:38.390000+00:00",
-      "engagement": 9.8,
-      "cves": [
-        "CVE-2026-45039"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 9.8,
-        "severity": "CRITICAL"
-      },
-      "url_hash": "8102183dfd8c2f48",
-      "content_hash": "7245092a9654fe7e"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45332",
-      "title": "CVE-2026-45332 (HIGH) \u2014 Automad is a flat-file content management system and template engine. From 2.0.0-alpha.1 to 2.0.0-beta.27, a Broken Access Control vulnerabi",
-      "body": "Automad is a flat-file content management system and template engine. From 2.0.0-alpha.1 to 2.0.0-beta.27, a Broken Access Control vulnerability allows an unauthenticated attacker to retrieve the bcrypt password hash of every administrator account with a single POST request. The /_api/user-collection/create-first-user setup endpoint remains publicly accessible once initial configuration is complete and returns full serialized user data in the JSON response body. This vulnerability is fixed in 2.0.0-beta.28.",
-      "author": null,
-      "timestamp": "2026-05-28T19:16:39.133000+00:00",
-      "engagement": 7.5,
-      "cves": [
-        "CVE-2026-45332"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 7.5,
-        "severity": "HIGH"
-      },
-      "url_hash": "2894dbbba08b5467",
-      "content_hash": "298ebb28ca0b30ed"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46509",
-      "title": "CVE-2026-46509 (HIGH) \u2014 deepobj provides get, set, delete deep objects in javascript. Prior to 1.0.3, prototype pollution is possible when property paths contain __",
-      "body": "deepobj provides get, set, delete deep objects in javascript. Prior to 1.0.3, prototype pollution is possible when property paths contain __proto__/constructor/prototype. The property path must not be exposed as user input. This vulnerability is fixed in 1.0.3.",
-      "author": null,
-      "timestamp": "2026-05-28T19:16:39.280000+00:00",
-      "engagement": 8.2,
-      "cves": [
-        "CVE-2026-46509"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 8.2,
-        "severity": "HIGH"
-      },
-      "url_hash": "9e8911ead041ef9b",
-      "content_hash": "59d5186c0edce07e"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47331",
-      "title": "CVE-2026-47331 (HIGH) \u2014 Ubuntu Linux 6.8 contains AppArmor SAUCE patches which fail to acquire a lock when modifying a linked list. An unprivileged local user could",
-      "body": "Ubuntu Linux 6.8 contains AppArmor SAUCE patches which fail to acquire a lock when modifying a linked list. An unprivileged local user could trigger the race condition that can lead to a use-after-free (UAF) and, theoretically, arbitrary code execution.",
-      "author": null,
-      "timestamp": "2026-05-28T19:16:41.757000+00:00",
-      "engagement": 7.8,
-      "cves": [
-        "CVE-2026-47331"
-      ],
-      "vendors": [
-        "Linux"
-      ],
-      "raw": {
-        "cvss": 7.8,
-        "severity": "HIGH"
-      },
-      "url_hash": "9c3f2fc2518e6361",
-      "content_hash": "953025a59749c54e"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47333",
-      "title": "CVE-2026-47333 (HIGH) \u2014 Ubuntu Linux 6.8, 6.17 and 7.0 contain AppArmor SAUCE patches which can potentially incorrectly compute the size of an internal buffer, lead",
-      "body": "Ubuntu Linux 6.8, 6.17 and 7.0 contain AppArmor SAUCE patches which can potentially incorrectly compute the size of an internal buffer, leading to a heap memory out-of-bounds read in notification handling code. The bug can be triggered by an unprivileged local user and can result in invalid data being processed by the AppArmor DFA policy engine.",
-      "author": null,
-      "timestamp": "2026-05-28T19:16:42.073000+00:00",
-      "engagement": 7.8,
-      "cves": [
-        "CVE-2026-47333"
-      ],
-      "vendors": [
-        "Linux"
-      ],
-      "raw": {
-        "cvss": 7.8,
-        "severity": "HIGH"
-      },
-      "url_hash": "c4011f05c3abe4b9",
-      "content_hash": "f241486f578cd420"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-4944",
-      "title": "CVE-2026-4944 (HIGH) \u2014 vllm-project/vllm version 0.14.1 contains a vulnerability where the `trust_remote_code=True` parameter is hardcoded in two model implementat",
-      "body": "vllm-project/vllm version 0.14.1 contains a vulnerability where the `trust_remote_code=True` parameter is hardcoded in two model implementation files (`vllm/model_executor/models/nemotron_vl.py` and `vllm/model_executor/models/kimi_k25.py`). This bypasses the user's explicit `--trust-remote-code=False` setting, enabling remote code execution via malicious HuggingFace model repositories. This issue is an incomplete fix for CVE-2025-66448 and CVE-2026-22807, as it affects separate code paths in model implementation files. Deployments loading NemotronVL or KimiK25 models are particularly impacted.",
-      "author": null,
-      "timestamp": "2026-05-28T19:16:42.677000+00:00",
-      "engagement": 8.8,
-      "cves": [
-        "CVE-2026-4944"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 8.8,
-        "severity": "HIGH"
-      },
-      "url_hash": "1a7af4437a26af1b",
-      "content_hash": "c431ef8b49be2c6b"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-32847",
-      "title": "CVE-2026-32847 (HIGH) \u2014 DeepCode through commit c991dc2 contains a path traversal vulnerability in the SPA catch-all route in new_ui/backend/main.py that allows una",
-      "body": "DeepCode through commit c991dc2 contains a path traversal vulnerability in the SPA catch-all route in new_ui/backend/main.py that allows unauthenticated attackers to read arbitrary files by supplying percent-encoded path segments to the GET /{full_path:path} endpoint. Attackers can bypass Starlette's path normalization by encoding slashes as %2F and dots as %2E%2E, causing the joined path to traverse outside FRONTEND_DIST and exposing sensitive files such as SSH private keys, TLS certificates, and application secrets with a single HTTP request.",
-      "author": null,
-      "timestamp": "2026-05-28T20:16:22.613000+00:00",
-      "engagement": 7.5,
-      "cves": [
-        "CVE-2026-32847"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 7.5,
-        "severity": "HIGH"
-      },
-      "url_hash": "0c8011cf9cdc4b7c",
-      "content_hash": "4e8a755ff0da2a8e"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49127",
-      "title": "CVE-2026-49127 (HIGH) \u2014 Music Player Daemon (MPD) before version 0.24.11 contains a stack buffer overflow vulnerability in the pcm_unpack_24be function in src/pcm/P",
-      "body": "Music Player Daemon (MPD) before version 0.24.11 contains a stack buffer overflow vulnerability in the pcm_unpack_24be function in src/pcm/Pack.cxx that allows unauthenticated attackers to corrupt stack memory by triggering an off-by-one write in the PCM decoder plugin. Attackers can issue two MPD commands referencing a malicious HTTP audio source to cause the unpack loop to write 1366 entries into a 1365-entry buffer, overwriting four bytes past the array boundary with three attacker-controlled bytes from an HTTP response body, resulting in daemon termination or potential code execution.",
-      "author": null,
-      "timestamp": "2026-05-28T20:16:26.387000+00:00",
-      "engagement": 8.6,
-      "cves": [
-        "CVE-2026-49127"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 8.6,
-        "severity": "HIGH"
-      },
-      "url_hash": "1cd71aca7c29a4cf",
-      "content_hash": "dcf5b6913fac1d6b"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49128",
-      "title": "CVE-2026-49128 (HIGH) \u2014 Music Player Daemon (MPD) before version 0.24.11 contains a path traversal vulnerability in LocalStorage::MapFSOrThrow and LocalStorage::Map",
-      "body": "Music Player Daemon (MPD) before version 0.24.11 contains a path traversal vulnerability in LocalStorage::MapFSOrThrow and LocalStorage::MapUTF8 within the local storage plugin, where the on-disk path is constructed by joining the storage root with a user-supplied URI as plain strings without canonicalization, allowing '..' segments to survive into the resolved path and be flattened by the kernel at openat() time. An unauthenticated attacker can exploit this flaw using the listfiles command to enumerate names, sizes, and modification times of arbitrary directories readable by the MPD process, and the albumart command to read image files in any attacker-chosen directory outside the configured music_directory.",
-      "author": null,
-      "timestamp": "2026-05-28T20:16:26.547000+00:00",
-      "engagement": 7.5,
-      "cves": [
-        "CVE-2026-49128"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 7.5,
-        "severity": "HIGH"
-      },
-      "url_hash": "19e03dc51a1a2e81",
-      "content_hash": "4679c87911003588"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34311",
-      "title": "CVE-2026-34311 (CRITICAL) \u2014 Vulnerability in the Oracle Hospitality OPERA 5 Property Services product of Oracle Hospitality Applications (component: Opera).  Supported ",
-      "body": "Vulnerability in the Oracle Hospitality OPERA 5 Property Services product of Oracle Hospitality Applications (component: Opera).  Supported versions that are affected are 5.6.19.24, 5.6.22, 5.6.25.19, 5.6.27.6 and  5.6.28. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Hospitality OPERA 5 Property Services.  Successful attacks of this vulnerability can result in takeover of Oracle Hospitality OPERA 5 Property Services. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:29.180000+00:00",
-      "engagement": 9.8,
-      "cves": [
-        "CVE-2026-34311"
-      ],
-      "vendors": [
-        "Oracle"
-      ],
-      "raw": {
-        "cvss": 9.8,
-        "severity": "CRITICAL"
-      },
-      "url_hash": "aee6504c31bfc00b",
-      "content_hash": "8d8d8b41a03fa4ce"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-35266",
-      "title": "CVE-2026-35266 (HIGH) \u2014 Vulnerability in Oracle REST Data Services (component: Core).  Supported versions that are affected are 24.2.0-26.1.0. Difficult to exploit ",
-      "body": "Vulnerability in Oracle REST Data Services (component: Core).  Supported versions that are affected are 24.2.0-26.1.0. Difficult to exploit vulnerability allows low privileged attacker with network access via HTTPS to compromise Oracle REST Data Services.  Successful attacks require human interaction from a person other than the attacker and while the vulnerability is in Oracle REST Data Services, attacks may significantly impact additional products (scope change). Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle REST Data Services accessible data as well as  unauthorized access to critical data or complete access to all Oracle REST Data Services accessible data and unauthorized ability to cause a partial denial of service (partial DOS) of Oracle REST Data Services. CVSS 3.1 Base Score 7.9 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:L).",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:29.330000+00:00",
-      "engagement": 7.9,
-      "cves": [
-        "CVE-2026-35266"
-      ],
-      "vendors": [
-        "Oracle"
-      ],
-      "raw": {
-        "cvss": 7.9,
-        "severity": "HIGH"
-      },
-      "url_hash": "d6104191cb021a4b",
-      "content_hash": "1d0e4b90910dfa78"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-35277",
-      "title": "CVE-2026-35277 (HIGH) \u2014 Vulnerability in Oracle REST Data Services (component: Core).  Supported versions that are affected are 24.2.0-26.1.0. Easily exploitable vu",
-      "body": "Vulnerability in Oracle REST Data Services (component: Core).  Supported versions that are affected are 24.2.0-26.1.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTPS to compromise Oracle REST Data Services.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle REST Data Services accessible data as well as  unauthorized access to critical data or complete access to all Oracle REST Data Services accessible data. CVSS 3.1 Base Score 8.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N).",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:29.460000+00:00",
-      "engagement": 8.1,
-      "cves": [
-        "CVE-2026-35277"
-      ],
-      "vendors": [
-        "Oracle"
-      ],
-      "raw": {
-        "cvss": 8.1,
-        "severity": "HIGH"
-      },
-      "url_hash": "764ce15eb6563325",
-      "content_hash": "a4c75cb5f012170c"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42398",
-      "title": "CVE-2026-42398 (HIGH) \u2014 Server-Side Request Forgery (CWE-918) in Kibana allows authenticated users with connector management privileges to bypass the operator-confi",
-      "body": "Server-Side Request Forgery (CWE-918) in Kibana allows authenticated users with connector management privileges to bypass the operator-configured connection allowlist. By configuring a Webhook connector with a crafted target, an attacker can cause Kibana to issue outbound requests to destinations that the egress restriction controls were intended to block.",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:30.180000+00:00",
-      "engagement": 7.7,
-      "cves": [
-        "CVE-2026-42398"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 7.7,
-        "severity": "HIGH"
-      },
-      "url_hash": "bd7d735e9c565e42",
-      "content_hash": "43528597d96a5822"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45288",
-      "title": "CVE-2026-45288 (CRITICAL) \u2014 Marten is a .NET Transactional Document DB and Event Store on PostgreSQL. Prior to 8.36.1, Marten's full-text search APIs interpolated the u",
-      "body": "Marten is a .NET Transactional Document DB and Event Store on PostgreSQL. Prior to 8.36.1, Marten's full-text search APIs interpolated the user-supplied regConfig parameter directly into the generated SQL without parameterization or validation, making every code path that exposes regConfig to untrusted input a SQL injection sink. This vulnerability is fixed in 8.36.1.",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:31.220000+00:00",
-      "engagement": 9.8,
-      "cves": [
-        "CVE-2026-45288"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 9.8,
-        "severity": "CRITICAL"
-      },
-      "url_hash": "809cc753da00d7a6",
-      "content_hash": "fe16b2e9cebf49be"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46775",
-      "title": "CVE-2026-46775 (CRITICAL) \u2014 Vulnerability in Oracle REST Data Services (component: Core).  Supported versions that are affected are 24.2.0-26.1.0. Easily exploitable vu",
-      "body": "Vulnerability in Oracle REST Data Services (component: Core).  Supported versions that are affected are 24.2.0-26.1.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTPS to compromise Oracle REST Data Services.  While the vulnerability is in Oracle REST Data Services, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Oracle REST Data Services. CVSS 3.1 Base Score 9.9 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H).",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:31.383000+00:00",
-      "engagement": 9.9,
-      "cves": [
-        "CVE-2026-46775"
-      ],
-      "vendors": [
-        "Oracle"
-      ],
-      "raw": {
-        "cvss": 9.9,
-        "severity": "CRITICAL"
-      },
-      "url_hash": "6a44f8628442a24a",
-      "content_hash": "0feaa6fc85e0b254"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46817",
-      "title": "CVE-2026-46817 (CRITICAL) \u2014 Vulnerability in the Oracle Payments product of Oracle E-Business Suite (component: File Transmission).  Supported versions that are affecte",
-      "body": "Vulnerability in the Oracle Payments product of Oracle E-Business Suite (component: File Transmission).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Payments.  Successful attacks of this vulnerability can result in takeover of Oracle Payments. CVSS 3.1 Base Score 9.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H).",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:31.503000+00:00",
-      "engagement": 9.8,
-      "cves": [
-        "CVE-2026-46817"
-      ],
-      "vendors": [
-        "Oracle"
-      ],
-      "raw": {
-        "cvss": 9.8,
-        "severity": "CRITICAL"
-      },
-      "url_hash": "7817115cc1499925",
-      "content_hash": "25473ee4983c2c01"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46818",
-      "title": "CVE-2026-46818 (HIGH) \u2014 Vulnerability in the Oracle Payments product of Oracle E-Business Suite (component: File Transmission).  Supported versions that are affecte",
-      "body": "Vulnerability in the Oracle Payments product of Oracle E-Business Suite (component: File Transmission).  Supported versions that are affected are 12.2.3-12.2.15. Difficult to exploit vulnerability allows unauthenticated attacker with network access via HTTPS to compromise Oracle Payments.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Payments accessible data as well as  unauthorized access to critical data or complete access to all Oracle Payments accessible data. CVSS 3.1 Base Score 7.4 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N).",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:31.637000+00:00",
-      "engagement": 7.4,
-      "cves": [
-        "CVE-2026-46818"
-      ],
-      "vendors": [
-        "Oracle"
-      ],
-      "raw": {
-        "cvss": 7.4,
-        "severity": "HIGH"
-      },
-      "url_hash": "4691d4a4f12e5935",
-      "content_hash": "5e594ac8054e515b"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46819",
-      "title": "CVE-2026-46819 (CRITICAL) \u2014 Vulnerability in the Oracle Internet Procurement Connector product of Oracle E-Business Suite (component: Internal Operations).  Supported v",
-      "body": "Vulnerability in the Oracle Internet Procurement Connector product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Internet Procurement Connector.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Internet Procurement Connector accessible data as well as  unauthorized access to critical data or complete access to all Oracle Internet Procurement Connector accessible data. CVSS 3.1 Base Score 9.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N).",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:31.760000+00:00",
-      "engagement": 9.1,
-      "cves": [
-        "CVE-2026-46819"
-      ],
-      "vendors": [
-        "Oracle"
-      ],
-      "raw": {
-        "cvss": 9.1,
-        "severity": "CRITICAL"
-      },
-      "url_hash": "da6f9be5b6ff9026",
-      "content_hash": "5b6b0b85ab9ed61e"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46820",
-      "title": "CVE-2026-46820 (HIGH) \u2014 Vulnerability in the Oracle Financials Common Modules product of Oracle E-Business Suite (component: Common Components).  Supported versions",
-      "body": "Vulnerability in the Oracle Financials Common Modules product of Oracle E-Business Suite (component: Common Components).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Financials Common Modules.  While the vulnerability is in Oracle Financials Common Modules, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Financials Common Modules accessible data as well as  unauthorized update, insert or delete access to some of Oracle Financials Common Modules accessible data. CVSS 3.1 Base Score 8.5 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:L/A:N).",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:31.890000+00:00",
-      "engagement": 8.5,
-      "cves": [
-        "CVE-2026-46820"
-      ],
-      "vendors": [
-        "Oracle"
-      ],
-      "raw": {
-        "cvss": 8.5,
-        "severity": "HIGH"
-      },
-      "url_hash": "0715c52f64ff3d85",
-      "content_hash": "a3e1a9b6ce30936a"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46821",
-      "title": "CVE-2026-46821 (HIGH) \u2014 Vulnerability in the Oracle Financials Common Modules product of Oracle E-Business Suite (component: Common Components).  Supported versions",
-      "body": "Vulnerability in the Oracle Financials Common Modules product of Oracle E-Business Suite (component: Common Components).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Financials Common Modules.  While the vulnerability is in Oracle Financials Common Modules, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Financials Common Modules accessible data. CVSS 3.1 Base Score 7.7 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N).",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:32.020000+00:00",
-      "engagement": 7.7,
-      "cves": [
-        "CVE-2026-46821"
-      ],
-      "vendors": [
-        "Oracle"
-      ],
-      "raw": {
-        "cvss": 7.7,
-        "severity": "HIGH"
-      },
-      "url_hash": "2eb37e744211e340",
-      "content_hash": "2a76b45c3451e53d"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46822",
-      "title": "CVE-2026-46822 (CRITICAL) \u2014 Vulnerability in the Oracle iAssets product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affect",
-      "body": "Vulnerability in the Oracle iAssets product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle iAssets.  While the vulnerability is in Oracle iAssets, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Oracle iAssets. CVSS 3.1 Base Score 9.9 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H).",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:32.157000+00:00",
-      "engagement": 9.9,
-      "cves": [
-        "CVE-2026-46822"
-      ],
-      "vendors": [
-        "Oracle"
-      ],
-      "raw": {
-        "cvss": 9.9,
-        "severity": "CRITICAL"
-      },
-      "url_hash": "0f931e5931c9a9b5",
-      "content_hash": "eebddb1aa4c01cb2"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46823",
-      "title": "CVE-2026-46823 (HIGH) \u2014 Vulnerability in the Oracle Public Sector Financials (International) product of Oracle E-Business Suite (component: Authorization).  Support",
-      "body": "Vulnerability in the Oracle Public Sector Financials (International) product of Oracle E-Business Suite (component: Authorization).  Supported versions that are affected are 12.2.6-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTPS to compromise Oracle Public Sector Financials (International).  While the vulnerability is in Oracle Public Sector Financials (International), attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Oracle Public Sector Financials (International) accessible data. CVSS 3.1 Base Score 7.7 (Confidentiality impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N).",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:32.280000+00:00",
-      "engagement": 7.7,
-      "cves": [
-        "CVE-2026-46823"
-      ],
-      "vendors": [
-        "Oracle"
-      ],
-      "raw": {
-        "cvss": 7.7,
-        "severity": "HIGH"
-      },
-      "url_hash": "f5e511a8d7540aad",
-      "content_hash": "7f172f31fc09bd9d"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46824",
-      "title": "CVE-2026-46824 (CRITICAL) \u2014 Vulnerability in the Oracle Universal Work Queue product of Oracle E-Business Suite (component: Work Provider Site Level Administration).  S",
-      "body": "Vulnerability in the Oracle Universal Work Queue product of Oracle E-Business Suite (component: Work Provider Site Level Administration).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Universal Work Queue.  While the vulnerability is in Oracle Universal Work Queue, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Oracle Universal Work Queue. CVSS 3.1 Base Score 9.9 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H).",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:32.413000+00:00",
-      "engagement": 9.9,
-      "cves": [
-        "CVE-2026-46824"
-      ],
-      "vendors": [
-        "Oracle"
-      ],
-      "raw": {
-        "cvss": 9.9,
-        "severity": "CRITICAL"
-      },
-      "url_hash": "3df03dce0340ada2",
-      "content_hash": "38e95c800bd03ba0"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46826",
-      "title": "CVE-2026-46826 (HIGH) \u2014 Vulnerability in the Oracle Payroll product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affect",
-      "body": "Vulnerability in the Oracle Payroll product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTPS to compromise Oracle Payroll.  Successful attacks of this vulnerability can result in takeover of Oracle Payroll. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:32.560000+00:00",
-      "engagement": 8.8,
-      "cves": [
-        "CVE-2026-46826"
-      ],
-      "vendors": [
-        "Oracle"
-      ],
-      "raw": {
-        "cvss": 8.8,
-        "severity": "HIGH"
-      },
-      "url_hash": "21441e19be54fb45",
-      "content_hash": "f55bbe40b4901fb9"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46827",
-      "title": "CVE-2026-46827 (HIGH) \u2014 Vulnerability in the Oracle Payroll product of Oracle E-Business Suite (component: Self Service Manager).  Supported versions that are affec",
-      "body": "Vulnerability in the Oracle Payroll product of Oracle E-Business Suite (component: Self Service Manager).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Payroll.  Successful attacks of this vulnerability can result in takeover of Oracle Payroll. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:32.687000+00:00",
-      "engagement": 8.8,
-      "cves": [
-        "CVE-2026-46827"
-      ],
-      "vendors": [
-        "Oracle"
-      ],
-      "raw": {
-        "cvss": 8.8,
-        "severity": "HIGH"
-      },
-      "url_hash": "1661e2f60207232e",
-      "content_hash": "27e47e9e007d51f5"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46828",
-      "title": "CVE-2026-46828 (HIGH) \u2014 Vulnerability in the Oracle Payroll product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affect",
-      "body": "Vulnerability in the Oracle Payroll product of Oracle E-Business Suite (component: Internal Operations).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Payroll.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Payroll accessible data as well as  unauthorized access to critical data or complete access to all Oracle Payroll accessible data. CVSS 3.1 Base Score 8.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N).",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:32.820000+00:00",
-      "engagement": 8.1,
-      "cves": [
-        "CVE-2026-46828"
-      ],
-      "vendors": [
-        "Oracle"
-      ],
-      "raw": {
-        "cvss": 8.1,
-        "severity": "HIGH"
-      },
-      "url_hash": "26619381d2254a30",
-      "content_hash": "fd8a528aeea85411"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46829",
-      "title": "CVE-2026-46829 (HIGH) \u2014 Vulnerability in Oracle REST Data Services (component: Mongoapi).  Supported versions that are affected are 24.2.0-26.1.0. Easily exploitabl",
-      "body": "Vulnerability in Oracle REST Data Services (component: Mongoapi).  Supported versions that are affected are 24.2.0-26.1.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTPS to compromise Oracle REST Data Services.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of Oracle REST Data Services. CVSS 3.1 Base Score 7.5 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H).",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:32.950000+00:00",
-      "engagement": 7.5,
-      "cves": [
-        "CVE-2026-46829"
-      ],
-      "vendors": [
-        "Oracle"
-      ],
-      "raw": {
-        "cvss": 7.5,
-        "severity": "HIGH"
-      },
-      "url_hash": "ed49eb57225b8e65",
-      "content_hash": "5902ccd245170a6a"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46833",
-      "title": "CVE-2026-46833 (CRITICAL) \u2014 Vulnerability in the Net Service component of Oracle Database Server.  Supported versions that are affected are 23.4.0-23.26.2. Difficult to",
-      "body": "Vulnerability in the Net Service component of Oracle Database Server.  Supported versions that are affected are 23.4.0-23.26.2. Difficult to exploit vulnerability allows unauthenticated attacker with network access via TLS to compromise Net Service.  While the vulnerability is in Net Service, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Net Service. CVSS 3.1 Base Score 9.0 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H).",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:33.200000+00:00",
-      "engagement": 9.0,
-      "cves": [
-        "CVE-2026-46833"
-      ],
-      "vendors": [
-        "Oracle"
-      ],
-      "raw": {
-        "cvss": 9.0,
-        "severity": "CRITICAL"
-      },
-      "url_hash": "991eb65181d8a60e",
-      "content_hash": "686dc5428913c412"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46834",
-      "title": "CVE-2026-46834 (HIGH) \u2014 Vulnerability in the Net Service component of Oracle Database Server.  Supported versions that are affected are 23.4.0-23.26.2. Easily explo",
-      "body": "Vulnerability in the Net Service component of Oracle Database Server.  Supported versions that are affected are 23.4.0-23.26.2. Easily exploitable vulnerability allows unauthenticated attacker with network access via TLS to compromise Net Service.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of Net Service. CVSS 3.1 Base Score 7.5 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H).",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:33.330000+00:00",
-      "engagement": 7.5,
-      "cves": [
-        "CVE-2026-46834"
-      ],
-      "vendors": [
-        "Oracle"
-      ],
-      "raw": {
-        "cvss": 7.5,
-        "severity": "HIGH"
-      },
-      "url_hash": "040b4ab0f458d6fe",
-      "content_hash": "46884b24e666dcb1"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46835",
-      "title": "CVE-2026-46835 (HIGH) \u2014 Vulnerability in the Net Service component of Oracle Database Server.  Supported versions that are affected are 23.4.0-23.26.2. Easily explo",
-      "body": "Vulnerability in the Net Service component of Oracle Database Server.  Supported versions that are affected are 23.4.0-23.26.2. Easily exploitable vulnerability allows unauthenticated attacker with network access via TLS to compromise Net Service.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of Net Service. CVSS 3.1 Base Score 7.5 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H).",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:33.450000+00:00",
-      "engagement": 7.5,
-      "cves": [
-        "CVE-2026-46835"
-      ],
-      "vendors": [
-        "Oracle"
-      ],
-      "raw": {
-        "cvss": 7.5,
-        "severity": "HIGH"
-      },
-      "url_hash": "c2f408333bdd7c02",
-      "content_hash": "c2caca5a80cd6ae9"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46837",
-      "title": "CVE-2026-46837 (HIGH) \u2014 Vulnerability in the Oracle Flow Manufacturing product of Oracle E-Business Suite (component: Security).  Supported versions that are affect",
-      "body": "Vulnerability in the Oracle Flow Manufacturing product of Oracle E-Business Suite (component: Security).  Supported versions that are affected are 12.2.9-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via SQL to compromise Oracle Flow Manufacturing.  Successful attacks of this vulnerability can result in takeover of Oracle Flow Manufacturing. CVSS 3.1 Base Score 8.8 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H).",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:33.573000+00:00",
-      "engagement": 8.8,
-      "cves": [
-        "CVE-2026-46837"
-      ],
-      "vendors": [
-        "Oracle"
-      ],
-      "raw": {
-        "cvss": 8.8,
-        "severity": "HIGH"
-      },
-      "url_hash": "a85151bc6dedc8f9",
-      "content_hash": "8aa7a59ffaed0aa6"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46839",
-      "title": "CVE-2026-46839 (CRITICAL) \u2014 Vulnerability in Oracle REST Data Services (component: Core).  Supported versions that are affected are 24.2.0-26.1.0. Easily exploitable vu",
-      "body": "Vulnerability in Oracle REST Data Services (component: Core).  Supported versions that are affected are 24.2.0-26.1.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTPS to compromise Oracle REST Data Services.  While the vulnerability is in Oracle REST Data Services, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Oracle REST Data Services. CVSS 3.1 Base Score 9.9 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H).",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:33.707000+00:00",
-      "engagement": 9.9,
-      "cves": [
-        "CVE-2026-46839"
-      ],
-      "vendors": [
-        "Oracle"
-      ],
-      "raw": {
-        "cvss": 9.9,
-        "severity": "CRITICAL"
-      },
-      "url_hash": "df4d4cb52717d87b",
-      "content_hash": "230946590eeceb2f"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46840",
-      "title": "CVE-2026-46840 (CRITICAL) \u2014 Vulnerability in Oracle REST Data Services (component: Backend-as-a-Service).  Supported versions that are affected are 24.2.0-26.1.0. Easil",
-      "body": "Vulnerability in Oracle REST Data Services (component: Backend-as-a-Service).  Supported versions that are affected are 24.2.0-26.1.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTPS to compromise Oracle REST Data Services.  While the vulnerability is in Oracle REST Data Services, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Oracle REST Data Services. CVSS 3.1 Base Score 10.0 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H).",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:33.837000+00:00",
-      "engagement": 10.0,
-      "cves": [
-        "CVE-2026-46840"
-      ],
-      "vendors": [
-        "Oracle"
-      ],
-      "raw": {
-        "cvss": 10.0,
-        "severity": "CRITICAL"
-      },
-      "url_hash": "06d7bec464a5fa40",
-      "content_hash": "c27352f4958a39d9"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9645",
-      "title": "CVE-2026-9645 (CRITICAL) \u2014 Exposed methods allow authenticated users to create and execute arbitrary JavaScript code on the server. The scripts execute with full acces",
-      "body": "Exposed methods allow authenticated users to create and execute arbitrary JavaScript code on the server. The scripts execute with full access, enabling complete system compromise as commands are executed as root.",
-      "author": null,
-      "timestamp": "2026-05-28T21:16:34.950000+00:00",
-      "engagement": 9.9,
-      "cves": [
-        "CVE-2026-9645"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 9.9,
-        "severity": "CRITICAL"
-      },
-      "url_hash": "a5e25a1f9642b825",
-      "content_hash": "69556e460762d9e2"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10044",
-      "title": "CVE-2026-10044 (HIGH) \u2014 Usagi-org ai-goofish-monitor contains an unauthenticated arbitrary file read vulnerability in the GET /api/prompts/{filename} endpoint on Wi",
-      "body": "Usagi-org ai-goofish-monitor contains an unauthenticated arbitrary file read vulnerability in the GET /api/prompts/{filename} endpoint on Windows deployments that allows unauthenticated remote attackers to read arbitrary files by supplying absolute Windows paths or backslash-based traversal sequences. Attackers can bypass the incomplete path traversal guard, which only blocks forward slashes and '..', by providing absolute paths such as Windows system file locations, causing os.path.join to discard the intended prompts directory prefix and expose files accessible to the application process.",
-      "author": null,
-      "timestamp": "2026-05-28T22:16:58.453000+00:00",
-      "engagement": 7.5,
-      "cves": [
-        "CVE-2026-10044"
-      ],
-      "vendors": [
-        "Windows"
-      ],
-      "raw": {
-        "cvss": 7.5,
-        "severity": "HIGH"
-      },
-      "url_hash": "7ce32f57c3b55f10",
-      "content_hash": "525259464bfb5a96"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-39929",
-      "title": "CVE-2026-39929 (HIGH) \u2014 Lakeside SysTrack Agent versions prior to 11.2.1.28, 11.3.0.38, 11.4.0.24, 11.5.0.15 contain an out-of-bounds read vulnerability in the Comm",
-      "body": "Lakeside SysTrack Agent versions prior to 11.2.1.28, 11.3.0.38, 11.4.0.24, 11.5.0.15 contain an out-of-bounds read vulnerability in the Command ID 30 UDP packet handler that allows remote attackers to crash the application by sending a specially crafted UDP packet. Attackers can send a malformed packet with an invalid memory address at offset 0x4 in the payload to trigger an access violation and cause a denial of service.",
-      "author": null,
-      "timestamp": "2026-05-28T22:16:58.693000+00:00",
-      "engagement": 7.5,
-      "cves": [
-        "CVE-2026-39929"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 7.5,
-        "severity": "HIGH"
-      },
-      "url_hash": "7c0d2665621ff30e",
-      "content_hash": "722a2377b9c6e23f"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44850",
-      "title": "CVE-2026-44850 (HIGH) \u2014 Portainer Community Edition is a lightweight service delivery platform for containerized applications that can be used to manage Docker, Swa",
-      "body": "Portainer Community Edition is a lightweight service delivery platform for containerized applications that can be used to manage Docker, Swarm, Kubernetes and ACI environments. From 2.33.0 to before 2.33.8, 2.39.2, and 2.41.0, Portainer offers an environment-level Disable bind mounts for non-administrators security setting that blocks regular users from binding host paths into containers they create through the Portainer-mediated Docker API. The check that enforces this setting only inspected the legacy HostConfig.Binds array on the container-create proxy and never looked at the equivalent HostConfig.Mounts array. Any authenticated user with rights to create containers on a Docker environment where the restriction is enabled could submit a bind-typed entry under HostConfig.Mounts and mount any host path into their container. This vulnerability is fixed in 2.33.8, 2.39.2, and 2.41.0.",
-      "author": null,
-      "timestamp": "2026-05-28T22:16:59.107000+00:00",
-      "engagement": 8.5,
-      "cves": [
-        "CVE-2026-44850"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 8.5,
-        "severity": "HIGH"
-      },
-      "url_hash": "751789381a098ce2",
-      "content_hash": "f1f5a2cb0ee7dedf"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44882",
-      "title": "CVE-2026-44882 (HIGH) \u2014 Portainer Community Edition is a lightweight service delivery platform for containerized applications that can be used to manage Docker, Swa",
-      "body": "Portainer Community Edition is a lightweight service delivery platform for containerized applications that can be used to manage Docker, Swarm, Kubernetes and ACI environments. From 2.33.0 to before 2.33., Portainer proxies requests to Kubernetes clusters through a middleware layer (kubeClientMiddleware) that validates the requesting user's token before forwarding traffic to the cluster. When security.RetrieveTokenData returned an error, the middleware wrote an HTTP 403 response but was missing a return statement \u2014 execution continued into the handler with a nil tokenData value. The Kubernetes endpoints sit behind Portainer's outer AuthenticatedAccess bouncer, so an attacker requires a valid Portainer session. However, a user whose secondary token validation fails in kubeClientMiddleware \u2014 for example a user without permission to access a given Kubernetes endpoint \u2014 would have their request forwarded to the cluster anyway, bypassing the authorization check. The same defect was present in both the CE and EE codebases. This vulnerability is fixed in 2.33.8.",
-      "author": null,
-      "timestamp": "2026-05-28T22:16:59.380000+00:00",
-      "engagement": 8.1,
-      "cves": [
-        "CVE-2026-44882"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 8.1,
-        "severity": "HIGH"
-      },
-      "url_hash": "8a6be0c5acc3a609",
-      "content_hash": "6858cc8ed0eff261"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44973",
-      "title": "CVE-2026-44973 (HIGH) \u2014 Billy is an interface filesystem abstraction for Go. Prior to 5.9.0, multiple path traversal issues exist across different components of go-",
-      "body": "Billy is an interface filesystem abstraction for Go. Prior to 5.9.0, multiple path traversal issues exist across different components of go-billy. Insufficient path sanitization and boundary enforcement may allow crafted paths (e.g., using ..) to escape intended base directories. While go-billy was not originally designed to provide a strong security boundary, some of these issues were inconsistent across some of the built-in implementations. This results in scenarios where applications relying on go-billy for some level of isolation may inadvertently expose access to unintended filesystem locations. This vulnerability is fixed in 5.9.0.",
-      "author": null,
-      "timestamp": "2026-05-28T22:16:59.937000+00:00",
-      "engagement": 8.1,
-      "cves": [
-        "CVE-2026-44973"
-      ],
-      "vendors": [
-        "iOS"
-      ],
-      "raw": {
-        "cvss": 8.1,
-        "severity": "HIGH"
-      },
-      "url_hash": "39092af521964512",
-      "content_hash": "7dac446a226b7f23"
-    },
-    {
-      "source": "nvd",
-      "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45344",
-      "title": "CVE-2026-45344 (HIGH) \u2014 LinkAce is a self-hosted archive to collect website links. Prior to 2.5.6, the setup database configuration flow on uninitialized LinkAce in",
-      "body": "LinkAce is a self-hosted archive to collect website links. Prior to 2.5.6, the setup database configuration flow on uninitialized LinkAce instances accepts attacker-controlled database credential fields and writes them back into .env without escaping. A remote attacker who can reach the setup endpoints and supply a database they control can inject mail configuration variables and achieve command execution when the application later sends mail. This vulnerability is fixed in 2.5.6.",
-      "author": null,
-      "timestamp": "2026-05-28T22:17:00.497000+00:00",
-      "engagement": 8.1,
-      "cves": [
-        "CVE-2026-45344"
-      ],
-      "vendors": [],
-      "raw": {
-        "cvss": 8.1,
-        "severity": "HIGH"
-      },
-      "url_hash": "9156f3e0df1cf966",
-      "content_hash": "4de2964749564047"
-    },
-    {
       "source": "nvd",
       "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45364",
-      "title": "CVE-2026-45364 (HIGH) \u2014 Better Auth is an authentication and authorization library for TypeScript. Prior to 1.4.17 and 1.5.0-beta.9, Better Auth's HTTP rate limiter",
-      "body": "Better Auth is an authentication and authorization library for TypeScript. Prior to 1.4.17 and 1.5.0-beta.9, Better Auth's HTTP rate limiter keyed each request by the exact textual IP address it received in x-forwarded-for (or the configured IP-bearing header). IPv6 clients controlling a typical /64 allocation could rotate through 2^64 distinct source addresses without exhausting the per-address counter, defeating rate limiting on /sign-in/email, /sign-up/email, /forget-password, and every other path the limiter protects. The same bug allowed a single client to vary the textual encoding of one IPv6 address (uppercase, compression, IPv4-mapped, hex-encoded IPv4-in-IPv6) and produce multiple distinct keys. This vulnerability is fixed in 1.4.17 and 1.5.0-beta.9.",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10178",
+      "title": "CVE-2026-10178 (HIGH) \u2014 A vulnerability was detected in code-projects Online Music Site 1.0. This vulnerability affects unknown code of the file /Administrator/PHP/",
+      "body": "A vulnerability was detected in code-projects Online Music Site 1.0. This vulnerability affects unknown code of the file /Administrator/PHP/AdminEditAlbum.php. The manipulation of the argument ID results in sql injection. The attack may be performed from remote. The exploit is now public and may be used.",
       "author": null,
-      "timestamp": "2026-05-28T22:17:00.633000+00:00",
+      "timestamp": "2026-05-31T11:16:47.583000+00:00",
       "engagement": 7.3,
       "cves": [
-        "CVE-2026-45364"
+        "CVE-2026-10178"
       ],
       "vendors": [],
       "raw": {
         "cvss": 7.3,
         "severity": "HIGH"
       },
-      "url_hash": "6cb623d3d56c86c7",
-      "content_hash": "1b6163dd24feac3a"
+      "url_hash": "c41119904d6e2389",
+      "content_hash": "75f5d684a98097e2"
     },
     {
       "source": "nvd",
       "source_family": "nvd",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48116",
-      "title": "CVE-2026-48116 (HIGH) \u2014 AnythingLLM is an application that turns pieces of content into context that any LLM can use as references during chatting. Prior to 1.13.0,",
-      "body": "AnythingLLM is an application that turns pieces of content into context that any LLM can use as references during chatting. Prior to 1.13.0, the filesystem-search-files agent skill passes its LLM-controlled pattern parameter to ripgrep as a positional argument without a -- end-of-options separator. ripgrep parses any argument that starts with - as an option, so a pattern of --pre=/bin/sh turns ripgrep into a script executor: it runs /bin/sh <file> for every file it walks. An attacker who can chat with an agent on a deployment with the filesystem plugin enabled (the default in the official Docker image) can use this, together with the sibling filesystem-write-text-file skill, to run arbitrary commands inside the AnythingLLM server container. This vulnerability is fixed in 1.13.0.",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10179",
+      "title": "CVE-2026-10179 (HIGH) \u2014 A flaw has been found in TRENDnet TEW-432BRP 3.10B20. This issue affects the function formSetWlanEncrypt of the file /goform/formSetWlanEncr",
+      "body": "A flaw has been found in TRENDnet TEW-432BRP 3.10B20. This issue affects the function formSetWlanEncrypt of the file /goform/formSetWlanEncrypt. This manipulation of the argument webpage causes stack-based buffer overflow. It is possible to initiate the attack remotely. The exploit has been published and may be used. The vendor explains: \"This product has been EOL for 15 years (since 2009). As the item has been EOL for such a long time, we are not able to replicate or fix any vulnerabilities.\" This vulnerability only affects products that are no longer supported by the maintainer.",
       "author": null,
-      "timestamp": "2026-05-28T22:17:01.390000+00:00",
-      "engagement": 7.5,
+      "timestamp": "2026-05-31T11:16:47.750000+00:00",
+      "engagement": 8.8,
       "cves": [
-        "CVE-2026-48116"
+        "CVE-2026-10179"
       ],
       "vendors": [],
       "raw": {
-        "cvss": 7.5,
+        "cvss": 8.8,
         "severity": "HIGH"
       },
-      "url_hash": "0dda5b433b795513",
-      "content_hash": "5b77fe8fcf41eaed"
+      "url_hash": "0390376c26a70ba2",
+      "content_hash": "f0361ea6a6bcbe35"
     },
     {
-      "source": "crowdstrike",
-      "source_family": "youtube",
-      "url": "https://www.youtube.com/watch?v=Jyj1LuOqQGs",
-      "title": "Lightboard Lab: Why Defenders Fight Blind",
-      "body": "",
-      "author": "crowdstrike",
-      "timestamp": "2026-05-28T19:19:38+00:00",
-      "engagement": 0.0,
-      "cves": [],
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10181",
+      "title": "CVE-2026-10181 (HIGH) \u2014 A vulnerability was found in TRENDnet TEW-432BRP 3.10B20. The affected element is the function formSysCmd of the file /goform/formSysCmd. Pe",
+      "body": "A vulnerability was found in TRENDnet TEW-432BRP 3.10B20. The affected element is the function formSysCmd of the file /goform/formSysCmd. Performing a manipulation of the argument submit-url results in stack-based buffer overflow. The attack can be initiated remotely. The exploit has been made public and could be used. The vendor explains: \"This product has been EOL for 15 years (since 2009). As the item has been EOL for such a long time, we are not able to replicate or fix any vulnerabilities.\" This vulnerability only affects products that are no longer supported by the maintainer.",
+      "author": null,
+      "timestamp": "2026-05-31T13:16:48.407000+00:00",
+      "engagement": 8.8,
+      "cves": [
+        "CVE-2026-10181"
+      ],
       "vendors": [],
       "raw": {
-        "channel_id": "UCsRdY9CtEVWTNO4ulwfzqVA"
+        "cvss": 8.8,
+        "severity": "HIGH"
       },
-      "url_hash": "1896c1f3bd4c7836",
-      "content_hash": "1d8bf009658fc481"
+      "url_hash": "2ccdf4c1330b1e33",
+      "content_hash": "48b6e53d4aa3aa2f"
     },
     {
-      "source": "crowdstrike",
-      "source_family": "youtube",
-      "url": "https://www.youtube.com/watch?v=rEp8VCcvRX4",
-      "title": "Falcon Cloud Security: Graph Explorer - Investigating Internet-Exposed Risk",
-      "body": "",
-      "author": "crowdstrike",
-      "timestamp": "2026-05-28T18:14:35+00:00",
-      "engagement": 0.0,
-      "cves": [],
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49489",
+      "title": "CVE-2026-49489 (HIGH) \u2014 OpenCATS through 0.9.7.4 contains a sql injection vulnerability in the sortDirection parameter of the DataGrid component that allows authent",
+      "body": "OpenCATS through 0.9.7.4 contains a sql injection vulnerability in the sortDirection parameter of the DataGrid component that allows authenticated users to extract database contents. Attackers can inject malicious SQL via the sortDirection parameter in ajax/getDataGridPager.php to perform time-based blind injection attacks and read sensitive data.",
+      "author": null,
+      "timestamp": "2026-05-31T13:16:49.090000+00:00",
+      "engagement": 8.5,
+      "cves": [
+        "CVE-2026-49489"
+      ],
       "vendors": [],
       "raw": {
-        "channel_id": "UCsRdY9CtEVWTNO4ulwfzqVA"
+        "cvss": 8.5,
+        "severity": "HIGH"
       },
-      "url_hash": "43e6bb44b24bb009",
-      "content_hash": "e79d5657fe175ed4"
+      "url_hash": "a9eb1ee01d32447d",
+      "content_hash": "6916acd89ff49357"
     },
     {
-      "source": "crowdstrike",
-      "source_family": "youtube",
-      "url": "https://www.youtube.com/watch?v=nYbGUnfHyVY",
-      "title": "Falcon Shield: Securing GitHub Enterprise",
-      "body": "",
-      "author": "crowdstrike",
-      "timestamp": "2026-05-28T17:45:18+00:00",
-      "engagement": 0.0,
-      "cves": [],
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49490",
+      "title": "CVE-2026-49490 (HIGH) \u2014 OpenCATS from version 0.9.1a contains an SQL injection vulnerability in DataGrid filter handling that allows authenticated attackers to inje",
+      "body": "OpenCATS from version 0.9.1a contains an SQL injection vulnerability in DataGrid filter handling that allows authenticated attackers to inject SQL through crafted filters targeting the non-filterable Tags column in the Candidates DataGrid. Attackers can bypass column filterable restrictions by manipulating filter requests to execute arbitrary SQL queries against the database.",
+      "author": null,
+      "timestamp": "2026-05-31T13:16:49.243000+00:00",
+      "engagement": 8.1,
+      "cves": [
+        "CVE-2026-49490"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "cf3e945f57183355",
+      "content_hash": "224996a6bf84aa58"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10183",
+      "title": "CVE-2026-10183 (HIGH) \u2014 A vulnerability was identified in TRENDnet TEW-432BRP 3.10B20. This affects the function formWlanSetup of the file /goform/formWlanSetup. Th",
+      "body": "A vulnerability was identified in TRENDnet TEW-432BRP 3.10B20. This affects the function formWlanSetup of the file /goform/formWlanSetup. The manipulation of the argument enrollee leads to stack-based buffer overflow. The attack may be initiated remotely. The exploit is publicly available and might be used. The vendor explains: \"This product has been EOL for 15 years (since 2009). As the item has been EOL for such a long time, we are not able to replicate or fix any vulnerabilities.\" This vulnerability only affects products that are no longer supported by the maintainer.",
+      "author": null,
+      "timestamp": "2026-05-31T14:16:51.557000+00:00",
+      "engagement": 8.8,
+      "cves": [
+        "CVE-2026-10183"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "e92459d81cfd5e50",
+      "content_hash": "2f1c122bbce3a228"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10184",
+      "title": "CVE-2026-10184 (HIGH) \u2014 A security flaw has been discovered in SourceCodester Hospitals Patient Records Management System 1.0. This impacts an unknown function of t",
+      "body": "A security flaw has been discovered in SourceCodester Hospitals Patient Records Management System 1.0. This impacts an unknown function of the file /classes/Users.php?f=delete. The manipulation of the argument ID results in sql injection. The attack may be launched remotely. The exploit has been released to the public and may be used for attacks.",
+      "author": null,
+      "timestamp": "2026-05-31T14:16:51.717000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-10184"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "72536d120437619f",
+      "content_hash": "53bb7ec98a7278fe"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10185",
+      "title": "CVE-2026-10185 (HIGH) \u2014 A weakness has been identified in SourceCodester Hospitals Patient Records Management System 1.0. Affected is an unknown function of the fil",
+      "body": "A weakness has been identified in SourceCodester Hospitals Patient Records Management System 1.0. Affected is an unknown function of the file /classes/Users.php?f=save. This manipulation of the argument ID causes sql injection. Remote exploitation of the attack is possible. The exploit has been made available to the public and could be used for attacks.",
+      "author": null,
+      "timestamp": "2026-05-31T14:16:51.870000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-10185"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "9bc19d339b274300",
+      "content_hash": "d3efdd2ce06dfb94"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10186",
+      "title": "CVE-2026-10186 (HIGH) \u2014 A security vulnerability has been detected in code-projects Online Hospital Management System 1.0. Affected by this vulnerability is an unkn",
+      "body": "A security vulnerability has been detected in code-projects Online Hospital Management System 1.0. Affected by this vulnerability is an unknown functionality of the file /patient.php. Such manipulation of the argument editid leads to sql injection. The attack can be executed remotely. The exploit has been disclosed publicly and may be used.",
+      "author": null,
+      "timestamp": "2026-05-31T14:16:52.027000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-10186"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "e3430f3c0268f53e",
+      "content_hash": "e6a3112400f495ad"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10187",
+      "title": "CVE-2026-10187 (CRITICAL) \u2014 A vulnerability was detected in Totolink N300RH 6.1c.1353_B20190305. Affected by this issue is the function setWiFiBasicConfig of the file w",
+      "body": "A vulnerability was detected in Totolink N300RH 6.1c.1353_B20190305. Affected by this issue is the function setWiFiBasicConfig of the file wireless.so of the component Web Management Interface. Performing a manipulation of the argument KeyStr results in stack-based buffer overflow. The attack is possible to be carried out remotely. The exploit is now public and may be used.",
+      "author": null,
+      "timestamp": "2026-05-31T15:16:15.937000+00:00",
+      "engagement": 9.8,
+      "cves": [
+        "CVE-2026-10187"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.8,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "da38808930e40d53",
+      "content_hash": "31bc9da8f0a629b4"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10188",
+      "title": "CVE-2026-10188 (HIGH) \u2014 A flaw has been found in Tenda W12 3.0.0.7(4763). This affects the function cgistaKickOff of the file /bin/httpd. Executing a manipulation o",
+      "body": "A flaw has been found in Tenda W12 3.0.0.7(4763). This affects the function cgistaKickOff of the file /bin/httpd. Executing a manipulation of the argument staMac can lead to stack-based buffer overflow. The attack may be performed from remote. The exploit has been published and may be used.",
+      "author": null,
+      "timestamp": "2026-05-31T15:16:16.117000+00:00",
+      "engagement": 8.8,
+      "cves": [
+        "CVE-2026-10188"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "992ef4b3305e9837",
+      "content_hash": "a69e6b9e35d65be4"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10189",
+      "title": "CVE-2026-10189 (HIGH) \u2014 A vulnerability has been found in Tenda W12 3.0.0.7(4763). This vulnerability affects the function cgiSysTimeInfoSet of the file /bin/httpd.",
+      "body": "A vulnerability has been found in Tenda W12 3.0.0.7(4763). This vulnerability affects the function cgiSysTimeInfoSet of the file /bin/httpd. The manipulation of the argument sec leads to stack-based buffer overflow. It is possible to initiate the attack remotely. The exploit has been disclosed to the public and may be used.",
+      "author": null,
+      "timestamp": "2026-05-31T16:16:41.230000+00:00",
+      "engagement": 8.8,
+      "cves": [
+        "CVE-2026-10189"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "e117111fe66dd836",
+      "content_hash": "60203c3a4a7c3bdf"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10191",
+      "title": "CVE-2026-10191 (HIGH) \u2014 A vulnerability was determined in Tenda W12 3.0.0.7(4763). Impacted is the function cgiWifiMacFilterSet of the file /bin/httpd. This manipul",
+      "body": "A vulnerability was determined in Tenda W12 3.0.0.7(4763). Impacted is the function cgiWifiMacFilterSet of the file /bin/httpd. This manipulation of the argument wifiMacFilterSet.macList.mac causes stack-based buffer overflow. The attack can be initiated remotely. The exploit has been publicly disclosed and may be utilized.",
+      "author": null,
+      "timestamp": "2026-05-31T16:16:41.537000+00:00",
+      "engagement": 8.8,
+      "cves": [
+        "CVE-2026-10191"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "610bc533612ac2a5",
+      "content_hash": "79b85a3fef3ba321"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10192",
+      "title": "CVE-2026-10192 (HIGH) \u2014 A vulnerability was identified in Tenda W12 3.0.0.7(4763). The affected element is the function set_local_time_0 of the file /bin/httpd. Suc",
+      "body": "A vulnerability was identified in Tenda W12 3.0.0.7(4763). The affected element is the function set_local_time_0 of the file /bin/httpd. Such manipulation of the argument Time leads to stack-based buffer overflow. The attack can be launched remotely. The exploit is publicly available and might be used.",
+      "author": null,
+      "timestamp": "2026-05-31T17:16:30.753000+00:00",
+      "engagement": 8.8,
+      "cves": [
+        "CVE-2026-10192"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "b8ae71992946f84f",
+      "content_hash": "804ce3853cfc0d65"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10206",
+      "title": "CVE-2026-10206 (HIGH) \u2014 A vulnerability was detected in D-Link DI-8400 up to 16.07.26A1. This affects an unknown function of the file /dbsrv.asp. Performing a manip",
+      "body": "A vulnerability was detected in D-Link DI-8400 up to 16.07.26A1. This affects an unknown function of the file /dbsrv.asp. Performing a manipulation of the argument str results in stack-based buffer overflow. Remote exploitation of the attack is possible. The exploit is now public and may be used. The initial researcher advisory mentions contradicting parameter names to be affected.",
+      "author": null,
+      "timestamp": "2026-06-01T01:16:47.620000+00:00",
+      "engagement": 8.8,
+      "cves": [
+        "CVE-2026-10206"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.8,
+        "severity": "HIGH"
+      },
+      "url_hash": "ca8ef770e8c0dc51",
+      "content_hash": "98f39370a4eb6993"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10208",
+      "title": "CVE-2026-10208 (HIGH) \u2014 A flaw has been found in code-projects Online Hospital Management System 1.php. This impacts the function login_user of the file login_1.php",
+      "body": "A flaw has been found in code-projects Online Hospital Management System 1.php. This impacts the function login_user of the file login_1.php. Executing a manipulation of the argument Username can lead to sql injection. The attack can be executed remotely. The exploit has been published and may be used.",
+      "author": null,
+      "timestamp": "2026-06-01T02:16:16.477000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-10208"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "578b69649ad8bb25",
+      "content_hash": "2968449837be14d7"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10214",
+      "title": "CVE-2026-10214 (HIGH) \u2014 A weakness has been identified in zhayujie chatgpt-on-wechat up to 2.0.8. This issue affects the function _get_safety_warning of the file ag",
+      "body": "A weakness has been identified in zhayujie chatgpt-on-wechat up to 2.0.8. This issue affects the function _get_safety_warning of the file agent/tools/bash/bash.py of the component Bash Tool. Executing a manipulation can lead to os command injection. The attack can be launched remotely. The exploit has been made available to the public and could be used for attacks. Upgrading to version 2.0.9 is capable of addressing this issue. This patch is called 16d9b449c9aa53ccee44144a762a2737d7ba4fc4. It is recommended to upgrade the affected component.",
+      "author": null,
+      "timestamp": "2026-06-01T03:16:25.123000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-10214"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "ff34c9fbd67fc585",
+      "content_hash": "25c9839f174ecec9"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10219",
+      "title": "CVE-2026-10219 (HIGH) \u2014 A vulnerability was found in nextlevelbuilder GoClaw up to 3.11.3. This impacts the function FsBridge.WriteFile of the file internal/sandbox",
+      "body": "A vulnerability was found in nextlevelbuilder GoClaw up to 3.11.3. This impacts the function FsBridge.WriteFile of the file internal/sandbox/fsbridge.go of the component write_file Tool. Performing a manipulation results in os command injection. The attack is possible to be carried out remotely. The exploit has been made public and could be used. The pull request to fix this issue awaits acceptance.",
+      "author": null,
+      "timestamp": "2026-06-01T04:16:21.060000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-10219"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "d4344d82bda0f92d",
+      "content_hash": "7431e62d42cff1d9"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10220",
+      "title": "CVE-2026-10220 (HIGH) \u2014 A vulnerability was determined in NousResearch hermes-agent up to 2026.4.30. Affected is the function _serve_plugin_skill/skill_view of the ",
+      "body": "A vulnerability was determined in NousResearch hermes-agent up to 2026.4.30. Affected is the function _serve_plugin_skill/skill_view of the file tools/skills_tool.py. Executing a manipulation can lead to injection. The attack may be performed from remote. The exploit has been publicly disclosed and may be utilized. The vendor was contacted early about this disclosure but did not respond in any way.",
+      "author": null,
+      "timestamp": "2026-06-01T04:16:21.260000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-10220"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "347b2615a8158e75",
+      "content_hash": "652dc26c9c79055b"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10221",
+      "title": "CVE-2026-10221 (HIGH) \u2014 A vulnerability was identified in NousResearch hermes-agent up to 0.12.0. Affected by this vulnerability is the function _compress_context o",
+      "body": "A vulnerability was identified in NousResearch hermes-agent up to 0.12.0. Affected by this vulnerability is the function _compress_context of the file run_agent.py. The manipulation leads to injection. It is possible to initiate the attack remotely. The exploit is publicly available and might be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+      "author": null,
+      "timestamp": "2026-06-01T04:16:21.550000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-10221"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "4f53f8bddc900a82",
+      "content_hash": "54613bfe59154c8d"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48188",
+      "title": "CVE-2026-48188 (CRITICAL) \u2014 An improper Input Validation vulnerability in OTRS or ((OTRS)) Community Edition\u00a0database layer module allows an unauthenticated SQL injecti",
+      "body": "An improper Input Validation vulnerability in OTRS or ((OTRS)) Community Edition\u00a0database layer module allows an unauthenticated SQL injection which can lead to an authentication bypass. This issue only affects the system if\u00a0the MySQL/MariaDB server is configured with the NO_BACKSLASH_ESCAPES SQL mode.\n\nThis issue affects OTRS: \n\n  *  7.0.X\n  *  8.0.X\n  *  2023.X\n  *  2024.X\n  *  2025.X\n  *  2026.X before 2026.4.X\n  *  (OTRS)) Community Edition: 6.0.x\n\nProducts based on the ((OTRS)) Community Edition also very likely to be affected",
+      "author": null,
+      "timestamp": "2026-06-01T04:16:22.583000+00:00",
+      "engagement": 9.1,
+      "cves": [
+        "CVE-2026-48188"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.1,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "aa7a55c6b4834411",
+      "content_hash": "a13c1a7f2d02e5f3"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48209",
+      "title": "CVE-2026-48209 (HIGH) \u2014 An improper neutralization of user-controllable input in OTRS or ((OTRS)) Community Edition ticket handling allows authenticated attackers t",
+      "body": "An improper neutralization of user-controllable input in OTRS or ((OTRS)) Community Edition ticket handling allows authenticated attackers to perform reflected cross-site scripting (XSS) attacks via crafted request parameters associated with ticket actions. By injecting malicious JavaScript into manipulated request URLs, attackers can execute arbitrary script code in the context of an authenticated agent session when the crafted link is opened.\n\nThis issue affects OTRS:\n\n  *  7.0.x\n\nPlease note that ((OTRS)) Community Edition 6.x and before are vulnerable. Products based on the ((OTRS)) Community Edition also very likely to be affected",
+      "author": null,
+      "timestamp": "2026-06-01T04:16:23.257000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-48209"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "e5b35b19a95fdde3",
+      "content_hash": "376deb400dc46093"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10225",
+      "title": "CVE-2026-10225 (HIGH) \u2014 A vulnerability was detected in raisulislamg4 student_management_system_by_php up to 310d950e09013d5133c6b9210aff9444382d16d1. This issue af",
+      "body": "A vulnerability was detected in raisulislamg4 student_management_system_by_php up to 310d950e09013d5133c6b9210aff9444382d16d1. This issue affects some unknown processing of the file login_check.php of the component Login. Performing a manipulation of the argument Username results in sql injection. The attack may be initiated remotely. The exploit is now public and may be used. This product uses a rolling release model to deliver continuous updates. As a result, specific version information for affected or updated releases is not available. The project was informed of the problem early through an issue report but has not responded yet.",
+      "author": null,
+      "timestamp": "2026-06-01T06:16:39.753000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-10225"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "deddeab3798377f7",
+      "content_hash": "4228c863334566ec"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10226",
+      "title": "CVE-2026-10226 (HIGH) \u2014 A flaw has been found in raisulislamg4 student_management_system_by_php up to 310d950e09013d5133c6b9210aff9444382d16d1. Impacted is an unkno",
+      "body": "A flaw has been found in raisulislamg4 student_management_system_by_php up to 310d950e09013d5133c6b9210aff9444382d16d1. Impacted is an unknown function of the file delete.php. Executing a manipulation of the argument user_id/course_id/teacher_id/student_id/application_id can lead to sql injection. The attack may be launched remotely. The exploit has been published and may be used. This product operates on a rolling release basis, ensuring continuous delivery. Consequently, there are no version details for either affected or updated releases. The project was informed of the problem early through an issue report but has not responded yet.",
+      "author": null,
+      "timestamp": "2026-06-01T06:16:39.947000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-10226"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "8c3d9d171d01cc8e",
+      "content_hash": "20f13802bea1cc1e"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10227",
+      "title": "CVE-2026-10227 (HIGH) \u2014 A vulnerability has been found in raisulislamg4 student_management_system_by_php up to 310d950e09013d5133c6b9210aff9444382d16d1. The affecte",
+      "body": "A vulnerability has been found in raisulislamg4 student_management_system_by_php up to 310d950e09013d5133c6b9210aff9444382d16d1. The affected element is an unknown function of the file add_user_check.php of the component User Creation Handler. The manipulation of the argument role leads to sql injection. Remote exploitation of the attack is possible. The exploit has been disclosed to the public and may be used. This product follows a rolling release approach for continuous delivery, so version details for affected or updated releases are not provided. The project was informed of the problem early through an issue report but has not responded yet.",
+      "author": null,
+      "timestamp": "2026-06-01T06:16:40.100000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-10227"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "a1f188ade24fcdf3",
+      "content_hash": "8cbdb625407b73d3"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10236",
+      "title": "CVE-2026-10236 (HIGH) \u2014 A vulnerability has been found in SourceCodester Water Billing Management System 1.0. This issue affects some unknown processing of the file",
+      "body": "A vulnerability has been found in SourceCodester Water Billing Management System 1.0. This issue affects some unknown processing of the file /classes/Users.php?f=save of the component User Management Endpoint. Such manipulation leads to improper authorization. The attack may be launched remotely. The exploit has been disclosed to the public and may be used.",
+      "author": null,
+      "timestamp": "2026-06-01T09:16:15.347000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-10236"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "f9cc5aa3c4f98528",
+      "content_hash": "79c33ab1d9215dee"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10243",
+      "title": "CVE-2026-10243 (HIGH) \u2014 A security vulnerability has been detected in code-projects Smart Parking System 1.0. Affected is an unknown function of the component Admin",
+      "body": "A security vulnerability has been detected in code-projects Smart Parking System 1.0. Affected is an unknown function of the component Admin Endpoint. Such manipulation leads to missing authentication. It is possible to launch the attack remotely. The exploit has been disclosed publicly and may be used. Multiple endpoints are affected.",
+      "author": null,
+      "timestamp": "2026-06-01T09:16:16.290000+00:00",
+      "engagement": 7.3,
+      "cves": [
+        "CVE-2026-10243"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.3,
+        "severity": "HIGH"
+      },
+      "url_hash": "0a693e0bb89f4115",
+      "content_hash": "daef88cc8ef942c8"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-27788",
+      "title": "CVE-2026-27788 (HIGH) \u2014 Incorrect permission assignment for critical resource issue exists in ServerView Agents for Windows V11.60.04 and earlier. If this vulnerabi",
+      "body": "Incorrect permission assignment for critical resource issue exists in ServerView Agents for Windows V11.60.04 and earlier. If this vulnerability is exploited, a local authenticated attacker who can log in to the server where the affected product is installed may obtain SYSTEM privilege.",
+      "author": null,
+      "timestamp": "2026-06-01T09:16:16.590000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2026-27788"
+      ],
       "vendors": [
-        "GitHub"
+        "Windows"
       ],
       "raw": {
-        "channel_id": "UCsRdY9CtEVWTNO4ulwfzqVA"
+        "cvss": 7.8,
+        "severity": "HIGH"
       },
-      "url_hash": "0972a06876ccd294",
-      "content_hash": "8c646c7bea3e2748"
+      "url_hash": "225dd33cb84c2b22",
+      "content_hash": "a7670c3143c36d95"
     },
     {
-      "source": "crowdstrike",
-      "source_family": "youtube",
-      "url": "https://www.youtube.com/watch?v=V2IdXfkH-cU",
-      "title": "Charlotte AI AgentWorks: Build Your Security Workforce Demo",
-      "body": "",
-      "author": "crowdstrike",
-      "timestamp": "2026-05-28T13:25:54+00:00",
-      "engagement": 0.0,
-      "cves": [],
-      "vendors": [],
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-32325",
+      "title": "CVE-2026-32325 (HIGH) \u2014 Privilege chaining issue exists in ServerView Agents for Windows V11.60.04 and earlier. If this vulnerability is exploited, a local authenti",
+      "body": "Privilege chaining issue exists in ServerView Agents for Windows V11.60.04 and earlier. If this vulnerability is exploited, a local authenticated attacker who can log in to the server where the affected product is installed may obtain SYSTEM privilege.",
+      "author": null,
+      "timestamp": "2026-06-01T09:16:16.767000+00:00",
+      "engagement": 7.8,
+      "cves": [
+        "CVE-2026-32325"
+      ],
+      "vendors": [
+        "Windows"
+      ],
       "raw": {
-        "channel_id": "UCsRdY9CtEVWTNO4ulwfzqVA"
+        "cvss": 7.8,
+        "severity": "HIGH"
       },
-      "url_hash": "b619807d6d1cb106",
-      "content_hash": "7f122078e11da63c"
+      "url_hash": "57b1e26d8a39cb1f",
+      "content_hash": "c9b74fa00e6b548a"
     },
     {
-      "source": "the_record_news",
-      "source_family": "youtube",
-      "url": "https://www.youtube.com/watch?v=rFDChQF-rEQ",
-      "title": "No face to hide",
-      "body": "",
-      "author": "the_record_news",
-      "timestamp": "2026-05-29T07:09:26+00:00",
-      "engagement": 0.0,
-      "cves": [],
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44825",
+      "title": "CVE-2026-44825 (HIGH) \u2014 Hardcoded credentials in the Basic Authentication setup tool (bin/solr auth enable) in Apache Solr versions 9.4.0 through 9.10.1 and 10.0.0 ",
+      "body": "Hardcoded credentials in the Basic Authentication setup tool (bin/solr auth enable) in Apache Solr versions 9.4.0 through 9.10.1 and 10.0.0 allows a remote attacker to gain full administrative access to the cluster via publicly known default credentials installed silently alongside the user-specified account. \n\nAs an immediate workaround without upgrading, delete the template users (superadmin, admin, search, index) from security.json\u00a0or change their passwords.\nThe future, not yet released, versions 9.11.0 and 10.1.0 will not be vulnerable, and it will be enough to upgrade to solve the issue.\n\nNot affected:\n  *  Clusters where bin/solr auth enable was not used to bootstrap BasicAuth\n  *  Clusters where template users have been assigned strong passwords after bootstrap",
+      "author": null,
+      "timestamp": "2026-06-01T09:16:19.267000+00:00",
+      "engagement": 8.1,
+      "cves": [
+        "CVE-2026-44825"
+      ],
       "vendors": [],
       "raw": {
-        "channel_id": "UCuBJQyzTWDP3C-BQTPG4DaQ"
+        "cvss": 8.1,
+        "severity": "HIGH"
       },
-      "url_hash": "abe14e06e908ba30",
-      "content_hash": "3d45ff2c0681e069"
+      "url_hash": "79c232532a9d9b23",
+      "content_hash": "60c39392fd5d6e31"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48827",
+      "title": "CVE-2026-48827 (HIGH) \u2014 Path traversal vulnerability in Apache MINA SSHD bundle sshd-git. Lack of path validation in git-upload-pack, git-receive-pack, and other gi",
+      "body": "Path traversal vulnerability in Apache MINA SSHD bundle sshd-git. Lack of path validation in git-upload-pack, git-receive-pack, and other git operations allows users authenticated over SSH access to git repositories outside the configured git server root directory.\n\n\n\n\nApplications are affected if they use org.apache.sshd:sshd-git. Applications not using sshd-git are not affected.\n\n\n\n\nUsers are advised to upgrade affected applications to Apche MINA SSHD 2.18.0, which fixes the issue.\n\n\n\n\nThe issue also is present in the pre-release milestones 3.0.0-M1 to 3.0.0-M3 for a new upcoming new major version 3.0.0. Again, applications are affected only if they use sshd-git. Upgrade affected applications to 3.0.0-M4.\n\n\n\n\nWe would like to point out that a professional git server should not rely solely on file system layout and permissions, but should implement additional security controls to govern access to git repositories and operations allowed on particular git repositories.",
+      "author": null,
+      "timestamp": "2026-06-01T09:16:20.307000+00:00",
+      "engagement": 7.1,
+      "cves": [
+        "CVE-2026-48827"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 7.1,
+        "severity": "HIGH"
+      },
+      "url_hash": "af9e0252b9106496",
+      "content_hash": "2684f9297155a44d"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7858",
+      "title": "CVE-2026-7858 (CRITICAL) \u2014 A Deserialization of Untrusted Data vulnerability affecting Teamwork Cloud from No Magic Release 2022x through No Magic Release 2026x and Ma",
+      "body": "A Deserialization of Untrusted Data vulnerability affecting Teamwork Cloud from No Magic Release 2022x through No Magic Release 2026x and Magic Collaboration Studio from CATIA Magic Release 2022x through CATIA Magic Release 2026x could lead to an unauthenticated remote code execution.",
+      "author": null,
+      "timestamp": "2026-06-01T09:16:20.990000+00:00",
+      "engagement": 9.8,
+      "cves": [
+        "CVE-2026-7858"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 9.8,
+        "severity": "CRITICAL"
+      },
+      "url_hash": "dd30ad46700b3e94",
+      "content_hash": "0fdd996b5cec8958"
+    },
+    {
+      "source": "nvd",
+      "source_family": "nvd",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9024",
+      "title": "CVE-2026-9024 (HIGH) \u2014 A Stored Cross-site Scripting (XSS) vulnerability affecting Process Experience Studio in DELMIA Service Process Engineer from Release 3DEXPE",
+      "body": "A Stored Cross-site Scripting (XSS) vulnerability affecting Process Experience Studio in DELMIA Service Process Engineer from Release 3DEXPERIENCE R2024x through Release 3DEXPERIENCE R2026x could allow an attacker to execute arbitrary script code in user's browser session.",
+      "author": null,
+      "timestamp": "2026-06-01T09:16:21.413000+00:00",
+      "engagement": 8.7,
+      "cves": [
+        "CVE-2026-9024"
+      ],
+      "vendors": [],
+      "raw": {
+        "cvss": 8.7,
+        "severity": "HIGH"
+      },
+      "url_hash": "d7bdc65715a35f0f",
+      "content_hash": "3113a204cb718705"
     }
   ]
 }

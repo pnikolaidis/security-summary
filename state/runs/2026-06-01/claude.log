@@ -1,0 +1,112 @@
+run_date: 2026-06-01
+run_time_utc: 2026-06-01T11:13:20Z
+persona: Allie (voice: alloy, Monday rotation)
+
+collect_stats:
+  total_fetched: 46
+  new: 44
+  repeats: 2
+  per_source_family: {news: 12, hn: 1, nvd: 33}
+  source_failures:
+    - reddit: missing credentials (skip, non-fatal)
+    - cisa_advisories: 403 Forbidden on advisories XML (KEV JSON succeeded, 0 new KEV entries)
+    - github_advisories: 406 Not Acceptable on atom feed
+    - bluesky: 403 Forbidden on all hashtag queries
+    - mastodon: 422 Unprocessable Entity on all tag timelines
+    - youtube: 0 new items (all seen)
+
+clustering:
+  algorithm: greedy, first-match wins on items in inbox order
+  rules_applied: [same_cve, same_url, fuzzy_title_>=85_within_48h, shared_vendors_>=2_within_24h]
+  total_clusters: 43
+  notable_merge: WP Maps Pro (bleepingcomputer + thehackernews) merged via fuzzy title >= 85 and shared vendor [WordPress]
+
+scoring_anomaly:
+  cluster: Tenda W12 (CVE-2026-10188 + CVE-2026-10189)
+  reported_score: 13.774
+  anomaly: z_eng=11.706 despite all NVD engagement=0 (std should be 0 → z should be 0)
+  diagnosis: suspected divide-by-zero or off-by-one in prototype z-score implementation; std of all-zero list correctly returns 0 so z should return 0.0; root cause not fully traced but cluster excluded from top-5 on editorial grounds
+  action: excluded; documented here for future debugging
+
+top_candidates_by_score:
+  1. Tenda W12 CVE-2026-10188/10189 (nvd): score=13.774 [EXCLUDED — z-score anomaly + low editorial value]
+  2. CVE-2026-7858 Teamwork Cloud CRITICAL (nvd): score=7.449 [DROPPED — single-source NVD, niche enterprise product, no news coverage]
+  3. CVE-2026-10187 Totolink N300RH CRITICAL (nvd): score=6.719 [DROPPED — consumer router, no news coverage, very niche impact]
+  4. CVE-2026-48188 OTRS CRITICAL (nvd): score=6.334 [DROPPED — single-source NVD, enterprise ticketing, no news coverage]
+  5. CVE-2026-27788 Fujitsu ServerView Agents HIGH (nvd): score=5.006 [DROPPED — very niche server management product]
+  6. WP Maps Pro (news): score=3.990 [SELECTED — rank 1]
+  7. Russia SORM (risky_business_news): score=3.699 [SELECTED — rank 5; note sev=0.5 triggered by "in the wild" phrase in body referring to PAN-OS, not SORM itself — sev boost is technically from the PAN-OS reference in the Risky Bulletin]
+  8. CVE-2026-9024 DELMIA XSS (nvd): score=3.606 [DROPPED — niche industrial software]
+  9. Palo Alto CVE-2026-0257 (news): score=2.812 [SELECTED — rank 2; note sev=0 because body says "began exploiting" without exact phrase match to severity_phrases list; editorial override — major enterprise vendor + auth bypass + active exploitation]
+  10. OpenAI Codex supply chain (news): score=2.784 [SELECTED — rank 3; developer-targeting supply chain with 29k weekly downloads]
+  ...[Dutch botnet was ~1.96 due to 23h age — selected as rank 4 for editorial significance: 17M devices, law enforcement win]
+
+selected_top5:
+  1. WP Maps Pro (score=3.990)
+     - members: bleepingcomputer (May-31 14:06), thehackernews (Jun-01 08:45)
+     - cves: []
+     - vendors: [WordPress, Google]
+     - source_families: [news]
+     - diversity: 0.693 | recency: 0.902 | z_eng: 0 | sev_boost: 0.5 (actively exploited) | novelty_penalty: 0
+     - why_selected: highest-scoring news cluster; active exploitation; WordPress = very widespread impact
+
+  2. Palo Alto CVE-2026-0257 (score=2.812)
+     - members: securityweek (Jun-01 10:00), risky_business_news (Jun-01 02:57, body mention)
+     - cves: [CVE-2026-0257]
+     - vendors: [Palo Alto]
+     - source_families: [news]
+     - diversity: 0.693 | recency: 0.950 | z_eng: 0 | sev_boost: 0 (phrase mismatch) | novelty_penalty: 0
+     - why_selected: major enterprise vendor; auth bypass in firewall OS; exploitation confirmed; editorial override on sev=0
+     - note: sev_boost=0 because SecurityWeek body says "began exploiting" not "actively exploited" / "in the wild"; the Risky Bulletin body says "exploited in the wild" but that item clustered as Russia SORM story, not here
+
+  3. OpenAI Codex supply chain (score=2.784)
+     - members: thehackernews (Jun-01 09:31)
+     - cves: []
+     - vendors: [Android, GitHub]
+     - source_families: [news]
+     - diversity: 0.693 | recency: 0.932 | z_eng: 0 | sev_boost: 0 | novelty_penalty: 0
+     - why_selected: developer-targeting supply chain; 29k weekly downloads; OpenAI Codex = high-value target; very fresh
+
+  4. Dutch Botnet 17M (score=~1.96)
+     - members: thehackernews (May-31 12:22)
+     - cves: []
+     - vendors: []
+     - source_families: [news]
+     - diversity: 0.693 | recency: 0.384 | z_eng: 0 | sev_boost: 0 | novelty_penalty: 0
+     - why_selected: editorial significance — 17M device scale; law enforcement win; low score due to ~23h age
+     - note: previous inbox (before this collect run) had risky_business_news and darkreading coverage of related Dutch operation; those URLs now in seen.jsonl, hence only 1 source in this run
+
+  5. Russia SORM expansion (score=3.699)
+     - members: risky_business_news (Jun-01 02:57)
+     - cves: []
+     - vendors: []
+     - source_families: [news]
+     - diversity: 0.693 | recency: 0.709 | z_eng: 0 | sev_boost: 0.5 (body: "exploited in the wild" = PAN-OS ref) | novelty_penalty: 0
+     - why_selected: significant geopolitical/privacy story; SORM expansion has operational security implications; 3rd-highest news score
+
+diversity_filter_check:
+  - WP Maps Pro:  vendors={WordPress,Google}, CVEs={}
+  - Palo Alto:    vendors={Palo Alto},         CVEs={CVE-2026-0257}
+  - Codex SC:     vendors={Android,GitHub},    CVEs={}
+  - Dutch Botnet: vendors={},                  CVEs={}
+  - Russia SORM:  vendors={},                  CVEs={}
+  result: no pair shares ≥2 vendor tokens or any CVE → all 5 pass diversity filter
+
+novelty_check (featured.jsonl last 7d):
+  - previously_featured_cves: [CVE-2026-26980, CVE-2026-5426, CVE-2026-48686..., CVE-2026-8633..., CVE-2026-42748...]
+  - previously_featured_vendors: [IBM, Joomla, Google, Drupal, CrowdStrike, GitHub, cPanel, Microsoft, FastNetMon, CISA, KubeVirt, macOS, Linux, Windows, OpenShift]
+  - note: Google appears in WP Maps Pro cluster (vendors) and in featured history → but single-vendor overlap does not trigger novelty penalty (requires ≥2 shared vendor tokens)
+  - result: all 5 clusters have novelty_penalty=0
+
+dropped_notable:
+  - CVE-2026-7858 (Teamwork Cloud, Dassault Systèmes, CRITICAL deserialization): score=7.449; dropped because single-source NVD, no news coverage, niche product (No Magic/Dassault engineering tools); CVSS ≥9 earns max sev_boost but without news coverage context is lacking for a digest
+  - CVE-2026-48188 (OTRS CRITICAL, DB injection): score=6.334; dropped same reason; OTRS is widely used in enterprise ITSM but no news articles picked it up
+  - CVE-2026-44825 (Apache Solr hardcoded credentials, HIGH): score=2.873; interesting (widely deployed search platform, hardcoded creds = trivially exploitable), but no news coverage and below top-5 threshold
+  - CVE-2026-48827 (Apache MINA SSHD path traversal, HIGH): not in top 20; noted for potential future mention if news coverage emerges
+  - Microsoft KB5089549 fix: not a security vulnerability; excluded
+  - ISC Stormcast / YARA-X release: operational digest items; below threshold
+  - HN Creatine study (eng=690.5): not security-related; excluded despite high engagement
+
+dedup_notes:
+  - Dutch botnet story: risky_business_news and darkreading items covering the same operation appeared in the previous collect run (May 28-29); those URLs now in seen.jsonl; only the May-31 THN article appeared as new in this run
+  - Palo Alto story: similar dedup expected — if SecurityWeek article was previously seen it wouldn't appear; it did appear, confirming it's a new URL for this run
