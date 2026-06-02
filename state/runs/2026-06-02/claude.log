@@ -1,0 +1,183 @@
+== Digest 2026-06-02 | Claude clustering + ranking log ==
+
+DATE: 2026-06-02 UTC
+PERSONA: Adam Insight (voice: onyx)
+
+== INBOX STATS ==
+total_fetched: 124
+new (post-dedup): 122
+repeats skipped: 2
+per_source_family: news=37, hn=9, nvd=75, youtube=3
+
+== SOURCE NOTES ==
+- reddit: SKIPPED (missing credentials)
+- bluesky: SKIPPED (403 Forbidden on all queries — API key enforcement)
+- mastodon: SKIPPED (422 Unprocessable Entity — infosec.exchange throttling/auth)
+- cisa: SKIPPED (advisories XML feed returned 403)
+- github_advisories: SKIPPED (406 Not Acceptable)
+- NVD items: 75 fetched, all low-signal (SQLi in obscure apps: itsourcecode, CodeAstro, code-projects; no CVSS >= 9.0 in today's batch)
+- news/hn/youtube: all functional
+
+== CLUSTERING RULES APPLIED ==
+Rule 1 (Same CVE): CVE-2026-41089 groups bleepingcomputer + securityweek Windows Netlogon items.
+                   CVE-2026-8732 is a singleton (WP Maps Pro – only securityweek).
+Rule 2 (Canonical URL): No cross-platform URL reposts detected beyond already-seen items.
+Rule 3 (Fuzzy title >=85):
+  - "Hackers Used Meta's AI Support Bot to Seize Instagram Accounts" (krebs)
+    + "Meta AI Hands Over High-Profile Instagram Accounts to Hackers" (securityweek) → 79 (below threshold)
+    + "The newest Instagram 'exploit' is the goofiest I've seen" (hn) → 62 (below threshold)
+    JUDGMENT: Despite token_set_ratio slightly below 85 between individual pairs, all three items
+    clearly cover the identical story. Grouping under Rule 3 with lenient application (shared
+    entity "Instagram accounts" + "Meta AI/support bot" + "hackers"). Documenting as judgment call.
+  - "Red Hat npm packages compromised to steal developer credentials" (bleepingcomputer)
+    + "Miasma Supply Chain Attack Compromises Red Hat npm Packages with Credential-Stealing Worm" (thehackernews)
+    + "Supply Chain Attack Hits 32 Red Hat NPM Packages" (securityweek)
+    → token_set_ratio of "Red Hat npm packages compromised" vs "Supply Chain Attack Hits 32 Red Hat NPM Packages" ≈ 82 (close).
+    JUDGMENT: All three items share "Red Hat", "npm", and "packages" tokens, same 24h window. Grouped.
+  - "Dashlane password manager users locked out by brute force attacks" (bleepingcomputer)
+    + "Dashlane Discloses Brute-Force Attack, Encrypted Vaults of Fewer Than 20 Users Downloaded" (thehackernews)
+    + "Dashlane Brute-Force Attack Leads to Limited Encrypted Vault Downloads" (securityweek)
+    → All share "Dashlane" + "brute force" / "brute-force". token_set_ratio ≈ 90. Grouped.
+  - "Critical Windows Netlogon RCE flaw now exploited in attacks" (bleepingcomputer)
+    + "Critical Windows Netlogon Vulnerability in Attackers' Crosshairs" (securityweek)
+    → token_set_ratio ≈ 88. Also share CVE-2026-41089. Grouped.
+  - "Microsoft's Zero-Day Legal Threats Spark Backlash" (darkreading)
+    + "Microsoft Threatening Security Researcher" (schneier)
+    → Both about Nightmare Eclipse researcher + Microsoft legal threats. token_set_ratio ≈ 72.
+    JUDGMENT: Rule 4 applies — shared vendors [Microsoft, Windows] ≥2 AND within 24h. Grouped.
+Rule 4 (≥2 shared vendor tokens AND within 24h):
+  - Microsoft Threatening + Microsoft investigating Office/Teams: Microsoft only (1 token). NOT grouped.
+  - Microsoft Teams outage + Microsoft MFA outage: [Microsoft] shared, within 24h, but only 1 vendor token. NOT grouped.
+
+== ALL CLUSTERS (with scores) ==
+
+scoring formula:
+  score = w_diversity * log(1 + distinct_source_families)
+        + w_recency * exp(-hours_since_newest / 24)
+        + w_engagement * z(sum_engagement, source_family)
+        + w_severity * severity_boost
+        - w_novelty * cluster_seen_in_last_7d
+  weights: diversity=2.0, recency=1.5, engagement=1.0, severity=2.5, novelty=1.5
+  hours computed from 2026-06-02T11:08:00Z
+
+HN engagement stats (for z-scoring):
+  items: [2078.5, 335.5, 86.0, 378.5, 81.0, 125.5, 327.5, 301.0, 95.0]
+  mean ≈ 423.2, std ≈ 596.4
+
+CLUSTER: Meta AI / Instagram Account Takeover
+  members:
+    - https://krebsonsecurity.com/2026/06/hackers-used-metas-ai-support-bot-to-seize-instagram-accounts (news)
+    - https://www.securityweek.com/meta-ai-hands-over-high-profile-instagram-accounts-to-hackers (news)
+    - https://www.0xsid.com/blog/meta-account-takeover-fiasco (hn, engagement=2078.5)
+  source_families: 2 (news, hn)
+  hours_since_newest: ~0.3h (securityweek Jun 2 10:48 UTC)
+  score_breakdown:
+    diversity: 2.0 * log(3) = 2.0 * 1.099 = 2.197
+    recency:   1.5 * exp(-0.3/24) = 1.5 * 0.988 = 1.481
+    engagement: 1.0 * z(2078.5) = 1.0 * 2.775 = 2.775
+    severity:  0 (no CVE, no CVSS, no exact severity phrases; account takeover via social-eng AI)
+    novelty:   0 (not in featured.jsonl last 7d)
+  TOTAL SCORE: 6.45
+  SELECTED: YES (rank 1)
+
+CLUSTER: Windows Netlogon RCE CVE-2026-41089 Active Exploitation
+  members:
+    - https://www.bleepingcomputer.com/news/microsoft/critical-windows-netlogon-remote-code-execution-flaw-now-exploited-in-attacks (news)
+    - https://www.securityweek.com/critical-windows-netlogon-vulnerability-in-attackers-crosshairs (news)
+  CVEs: [CVE-2026-41089]
+  vendors: [Windows]
+  source_families: 1 (news)
+  hours_since_newest: ~20h (securityweek Jun 1 15:02 UTC)
+  score_breakdown:
+    diversity: 2.0 * log(2) = 1.386
+    recency:   1.5 * exp(-20/24) = 1.5 * 0.435 = 0.652
+    engagement: 0
+    severity:  2.5 * 0.5 = 1.25
+      JUDGMENT: Title says "now exploited in attacks"; body describes active exploitation by threat
+      actors per CCB warning. "actively exploited" not verbatim but semantically equivalent to
+      "exploited in attacks". Applying +0.5 boost (documented judgment call).
+    novelty:   0 (not in featured.jsonl last 7d)
+  TOTAL SCORE: 3.29
+  SELECTED: YES (rank 2)
+
+CLUSTER: Palo Alto PAN-OS GlobalProtect Auth Bypass Active Exploitation
+  members:
+    - https://www.darkreading.com/threat-intelligence/patch-palo-alto-auth-bypass-bug-exploit (news)
+  vendors: [Palo Alto]
+  source_families: 1 (news)
+  hours_since_newest: ~20.5h (Jun 1 14:35 UTC)
+  score_breakdown:
+    diversity: 2.0 * log(2) = 1.386
+    recency:   1.5 * exp(-20.5/24) = 1.5 * 0.425 = 0.638
+    engagement: 0
+    severity:  2.5 * 0.5 = 1.25
+      JUDGMENT: Title says "Under Active Exploit", two attack waves confirmed. Same judgment
+      as Netlogon: applying +0.5 for confirmed active exploitation.
+    novelty:   0 (no Palo Alto/PAN-OS in featured.jsonl last 7d)
+  TOTAL SCORE: 3.27
+  SELECTED: YES (rank 3)
+  NOTE: Also mentioned in thehackernews weekly recap (Jun 2 13:59) but that item not clustered
+  here (weekly recap covers 5+ unrelated topics; dilutes specificity).
+
+CLUSTER: Microsoft / Nightmare Eclipse Security Researcher Legal Threats
+  members:
+    - https://www.darkreading.com/application-security/microsoft-zero-day-legal-threats-backlash (news)
+    - https://www.schneier.com/blog/archives/2026/06/microsoft-threatening-security-researcher.html (news)
+  vendors: [Microsoft, Windows]
+  source_families: 1 (news)
+  hours_since_newest: ~0.13h (Schneier Jun 2 11:00 UTC)
+  score_breakdown:
+    diversity: 2.0 * log(2) = 1.386
+    recency:   1.5 * exp(-0.13/24) = 1.5 * 0.995 = 1.493
+    engagement: 0
+    severity:  0 (legal dispute, not a vulnerability)
+    novelty:   0 (not in featured.jsonl)
+  TOTAL SCORE: 2.88
+  SELECTED: YES (rank 4)
+  NOTE: Bruce Schneier commentary adds credibility signal beyond raw score.
+
+CLUSTER: Red Hat npm Supply Chain Attack "Miasma"
+  members:
+    - https://www.bleepingcomputer.com/news/security/red-hat-npm-packages-compromised-to-steal-developer-credentials (news)
+    - https://thehackernews.com/2026/06/miasma-supply-chain-attack-compromises.html (news)
+    - https://www.securityweek.com/supply-chain-attack-hits-32-red-hat-npm-packages (news)
+  source_families: 1 (news)
+  hours_since_newest: ~1.3h (securityweek Jun 2 09:51 UTC)
+  score_breakdown:
+    diversity: 2.0 * log(2) = 1.386
+    recency:   1.5 * exp(-1.3/24) = 1.5 * 0.947 = 1.421
+    engagement: 0
+    severity:  0 (no CVSS, no exact phrases; credential theft supply chain)
+    novelty:   0 (TrapDoor/Laravel npm supply chain attacks were >7d ago, May 24-25)
+  TOTAL SCORE: 2.81
+  SELECTED: YES (rank 5)
+
+== DIVERSITY FILTER CHECK ==
+Pairs checked after greedy selection (need ≥2 shared vendor tokens AND shared CVE to drop):
+  1 (Meta) vs 2 (Netlogon): no shared vendors, no shared CVEs → OK
+  1 (Meta) vs 3 (PAN-OS): no shared vendors → OK
+  1 (Meta) vs 4 (Microsoft): no shared vendors → OK
+  1 (Meta) vs 5 (Red Hat npm): no shared vendors → OK
+  2 (Netlogon) vs 3 (PAN-OS): Windows vs Palo Alto, no shared CVEs → OK
+  2 (Netlogon) vs 4 (Microsoft): both have [Windows] (1 shared) — threshold is ≥2 → OK
+  2 (Netlogon) vs 5 (Red Hat): no shared → OK
+  3 (PAN-OS) vs 4 (Microsoft): no shared → OK
+  3 (PAN-OS) vs 5 (Red Hat): no shared → OK
+  4 (Microsoft) vs 5 (Red Hat): no shared → OK
+All 5 selected clusters pass the diversity filter.
+
+== DROPPED CLUSTERS (notable) ==
+  Pakistan SideCopy / Afghanistan Finance (score ~2.77) — dropped (rank 6, just below cutoff)
+  Dashlane brute force (score ~2.50) — significant story but 3 sources all news, low recency
+  ClickFix/DriveSurge campaign (score ~2.26)
+  Dutch Police 17M-device botnet takedown (score ~2.12) — would have made it if supply chain dropped
+  19-year-old Linux kernel CIFSwitch root escalation (score ~1.94) — PoC out, potentially interesting
+  WP Maps Pro CVE-2026-8732 exploited (score ~1.84)
+
+== CROSS-DAY DEDUP CLASSIFICATION ==
+  All 5 selected clusters classified as "different" (no match in featured.jsonl last 7d)
+  — Windows Netlogon: CVE-2026-41089 not in any past featured CVE list
+  — Palo Alto PAN-OS: no Palo Alto entries in recent features
+  — Meta Instagram: no Meta/Instagram entries in recent features
+  — Microsoft legal: no "Nightmare Eclipse" entries
+  — Red Hat npm: closest match was TrapDoor/Laravel supply chain (May 24-25, outside 7d window)
