@@ -1,0 +1,33 @@
+Good morning. This is Adam Insight with your security digest for Tuesday, June 2nd, 2026. It's a busy day: AI-assisted account takeovers have gone from theoretical to embarrassing reality, two critical flaws are being exploited in enterprise networks right now, a supply chain attack just hit Red Hat's official developer packages, and the security research community is in an uproar over Microsoft's apparent legal threats against a prolific zero-day publisher.
+
+Story one. Hackers weaponized Meta's own AI support chatbot to take over high-profile Instagram accounts — including the Obama White House page and a U.S. Space Force general's account.
+
+Here's how it worked: a threat actor discovered that Meta's AI customer service assistant would simply do what it was asked. Ask the bot to link a given Instagram account to a new email address, and it would. No ownership verification. No second factor. Just a polite request, and the AI handed over the keys.
+
+Why it matters: the accounts belonging to the Obama White House and the Chief Master Sergeant of the United States Space Force were briefly defaced with pro-Iranian imagery before access was restored. This isn't a theoretical paper about prompt injection. It is a real attack, against real high-profile accounts, carried out by asking a chatbot a question. The security community has been talking about AI confused-deputy attacks for years; this week, one happened at scale.
+
+Story two. A critical remote-code-execution flaw in the Windows Netlogon service — tracked as CVE 2026 dash 41089 — is now being actively exploited in the wild.
+
+Belgium's Centre for Cybersecurity issued a public warning on Friday that threat actors are using this vulnerability against live targets. Netlogon is the protocol Windows domains use for authentication. A successful exploit against a domain controller hands an attacker deep, persistent control of an entire Active Directory environment — every user, every workstation, every server on the domain.
+
+Why it matters: If you run Windows infrastructure and haven't patched this, you should treat it as an emergency today. When a European national cybersecurity authority puts out a warning on a Friday about active exploitation, that's not a drill.
+
+Story three. Another Palo Alto Networks PAN-OS GlobalProtect authentication bypass is being actively exploited — adversaries have already completed two separate attack waves.
+
+Dark Reading reports the vulnerability requires specific configuration conditions, but attackers have met those conditions in practice. Palo Alto has issued a fix. This is the second high-severity PAN-OS vulnerability to see real-world exploitation in recent months. If your organization has GlobalProtect portals exposed to the internet, check that you've applied the latest patches — not just the ones from the last round.
+
+Why it matters: VPN gateways are high-value targets because they sit at the perimeter and, once compromised, let attackers move quietly into internal networks. Two waves of exploitation in the space of a few months on the same component is a pattern that deserves attention.
+
+Story four. An anonymous security researcher who goes by the name Nightmare Eclipse has been publishing a steady stream of unpatched Windows vulnerabilities on a public blog. Microsoft's response, according to reports in Dark Reading and a commentary from Bruce Schneier, has been to signal that criminal charges are on the table.
+
+The backlash from the security community has been immediate and loud. Critics argue that threatening researchers chills the independent vulnerability research that ultimately makes software safer for everyone. Supporters of Microsoft's position contend that publishing live exploits before patches exist puts ordinary users at risk. Schneier notes that this debate is intensifying as AI tooling makes finding and weaponizing vulnerabilities faster than ever before.
+
+Why it matters: How this plays out will affect how security researchers decide what to publish, and when. The norms around vulnerability disclosure have always been contested terrain, but a major vendor threatening criminal prosecution is a significant escalation that could reshape that ecosystem for years.
+
+Story five. A supply-chain attack campaign codenamed Miasma has compromised 32 npm packages under Red Hat's official at-redhat-cloud-services namespace. Attackers published 96 malicious package versions, injecting a credential-stealing worm called Mini Shai-Hulud into packages that are widely used in enterprise developer toolchains.
+
+The worm harvests credentials and secrets from any environment where the poisoned packages are installed — that includes developer laptops and, critically, CI/CD pipelines that automatically pull dependencies. The malicious versions have been pulled, but anything that already installed them may still be compromised.
+
+Why it matters: This isn't a supply-chain attack against some obscure, community-maintained package. Red Hat's developer namespace is enterprise infrastructure. If you or your team use the at-redhat-cloud-services packages, rotate your secrets now, audit your pipelines for the affected versions, and check your logs for unusual network activity.
+
+That's your digest for Tuesday, June 2nd. Active exploitation on your Netlogon servers and your PAN-OS gateways needs attention today. Rotate secrets if your pipelines touch Red Hat npm packages. And keep a close eye on how Meta responds to the AI chatbot account-takeover story — this attack pattern will not be the last of its kind. Stay safe out there.
