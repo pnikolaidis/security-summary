@@ -1,0 +1,130 @@
+{
+  "run_date": "2026-06-03",
+  "persona": {"name": "Ada Iverson", "voice": "nova"},
+  "collection": {
+    "total": 124,
+    "new_after_dedup": 122,
+    "repeats": 2,
+    "per_family": {"news": 42, "hn": 8, "nvd": 74},
+    "source_failures": ["reddit (missing credentials)", "bluesky (403 Forbidden all queries)", "mastodon (422 all tags)", "cisa_advisories_xml (403)", "github_advisories (406)", "youtube (no recent security items)"]
+  },
+  "clustering": {
+    "algorithm": "union-find, 4 rules",
+    "rapidfuzz_available": false,
+    "note_rule3_skipped": "rapidfuzz not installed; fuzzy title match (Rule 3) did not run. HTTP/2 Bomb items (THN + SecurityWeek) and WeedHack items did not cluster automatically. Treated as manually merged narratives.",
+    "clusters_formed": 116,
+    "manual_narrative_merges": [
+      "Oracle WebLogic: bleepingcomputer item 11 lacked CVE extraction (body has CVE-2024-21182 but extractor missed it); merged narratively with items 18 and 36 which share the CVE.",
+      "HTTP/2 Bomb: items 14 (THN) and 27 (SecurityWeek) describe identical vulnerability but lack shared CVE or 2+ shared vendors; merged narratively.",
+      "WeedHack: items 6 (bleepingcomputer) and 15 (THN) describe same campaign but have no CVE and no extracted vendors; merged narratively."
+    ],
+    "false_clusters_noted": [
+      "Cluster containing items 1+12+16+32: 'Google Android deepfake protection' (item 1) was incorrectly merged with Android patch stories via Rule 4 (shared vendors Google+Android, within 24h). Inflated recency score for that cluster. Narrative excludes item 1 from Android patch story."
+    ]
+  },
+  "scoring": {
+    "weights": {"diversity": 2.0, "recency": 1.5, "engagement": 1.0, "severity": 2.5, "novelty": 1.5},
+    "note_engagement": "All news/RSS items have engagement=0. HN items have real engagement but no security-relevant HN items scored in top 5. NVD items use CVSS-derived engagement (7–10); z-score within NVD family used.",
+    "note_severity_phrase": "Code uses any() on severity phrases → max +0.5 bonus per cluster regardless of phrase count. KEV mention adds additional +0.5."
+  },
+  "clusters_scored": [
+    {
+      "rank": 1,
+      "selected": true,
+      "headline": "Oracle WebLogic CVE-2024-21182 — CISA KEV, Active Exploitation",
+      "members": [
+        {"idx": 11, "source": "bleepingcomputer", "title": "CISA flags two-year-old Oracle flaw as actively exploited in attacks", "url": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-oracle-weblogic-flaw", "hours_ago": 22.5},
+        {"idx": 18, "source": "thehackernews", "title": "Oracle WebLogic CVE-2024-21182 Added to KEV Catalog After Active Exploitation", "url": "https://thehackernews.com/2026/06/oracle-weblogic-cve-2024-21182-added-to.html", "hours_ago": 17.0},
+        {"idx": 36, "source": "securityweek", "title": "Oracle WebLogic Vulnerability Exploited in the Wild", "url": "https://www.securityweek.com/oracle-weblogic-vulnerability-exploited-in-the-wild", "hours_ago": 23.6}
+      ],
+      "cves": ["CVE-2024-21182"],
+      "source_families": ["news"],
+      "score_breakdown": {"diversity": 1.386, "recency": 0.739, "engagement": 0.0, "severity": 2.5, "novelty_penalty": 0.0},
+      "severity_boost_detail": "KEV +0.5 (text contains 'KEV Catalog') + actively_exploited +0.5 (severity phrase matched) = 1.0; score = 2.5 * 1.0 = 2.5",
+      "total_score": 4.625,
+      "cross_day": "different — not in featured.jsonl last 7d; CVE-2024-21182 not in featured CVE set"
+    },
+    {
+      "rank": 2,
+      "selected": true,
+      "headline": "Android June 2026 — Zero-Day CVE-2025-48595 Actively Exploited, 124 Flaws Patched",
+      "members": [
+        {"idx": 12, "source": "bleepingcomputer", "title": "Google fixes one actively exploited Android zero-day, 124 flaws", "url": "https://www.bleepingcomputer.com/news/security/google-fixes-one-actively-exploited-android-zero-day-124-flaws", "hours_ago": 24.0},
+        {"idx": 16, "source": "thehackernews", "title": "Google June 2026 Android Update Patches 124 Flaws, One Actively Exploited", "url": "https://thehackernews.com/2026/06/google-june-2026-android-update-patches.html", "hours_ago": 16.4},
+        {"idx": 32, "source": "securityweek", "title": "Android Update Patches Exploited Zero-Day, 123 Other Vulnerabilities", "url": "https://www.securityweek.com/android-update-patches-exploited-zero-day-123-other-vulnerabilities", "hours_ago": 20.6}
+      ],
+      "false_cluster_member_excluded": {"idx": 1, "source": "bleepingcomputer", "title": "Google adds Android protection against AI deepfake scam calls", "reason": "Rule 4 false positive via shared vendors [Google, Android]; different story"},
+      "cves": ["CVE-2025-48595"],
+      "source_families": ["news"],
+      "score_breakdown": {"diversity": 1.386, "recency": 1.371, "engagement": 0.0, "severity": 1.25, "novelty_penalty": 0.0},
+      "severity_boost_detail": "severity phrase 'actively exploited' / 'zero-day' matched → boost 0.5; score = 2.5 * 0.5 = 1.25",
+      "total_score": 4.007,
+      "cross_day": "different — not in featured.jsonl last 7d"
+    },
+    {
+      "rank": 3,
+      "selected": true,
+      "headline": "HTTP/2 Bomb — Remote DoS Against NGINX, Apache, IIS, Envoy, Cloudflare",
+      "members": [
+        {"idx": 14, "source": "thehackernews", "title": "New HTTP/2 Bomb Vulnerability Allows Remote DoS on NGINX, Apache, IIS, Envoy & Cloudflare", "url": "https://thehackernews.com/2026/06/new-http2-bomb-vulnerability-allows.html", "hours_ago": 2.7},
+        {"idx": 27, "source": "securityweek", "title": "'HTTP/2 Bomb' Exploit Knocks Web Servers Offline in Seconds", "url": "https://www.securityweek.com/http-2-bomb-exploit-knocks-web-servers-offline-in-seconds", "hours_ago": 0.3}
+      ],
+      "cves": [],
+      "source_families": ["news"],
+      "note": "Manual narrative merge; Rule 3 skipped (rapidfuzz absent). Items scored individually by algorithm at ~2.86 each.",
+      "score_breakdown": {"diversity": 1.386, "recency": 1.472, "engagement": 0.0, "severity": 0.0, "novelty_penalty": 0.0},
+      "total_score": 2.858,
+      "cross_day": "different — novel vulnerability disclosure"
+    },
+    {
+      "rank": 4,
+      "selected": true,
+      "headline": "VS Code Zero-Day — GitHub Token Theft via Single Click",
+      "members": [
+        {"idx": 2, "source": "bleepingcomputer", "title": "VS Code zero-day lets hackers steal GitHub tokens in one click", "url": "https://www.bleepingcomputer.com/news/security/vs-code-zero-day-lets-hackers-steal-github-tokens-in-one-click", "hours_ago": 4.4}
+      ],
+      "related_not_merged": {"idx": 28, "source": "securityweek", "title": "Microsoft Tries to Calm Legal Threat Fears After Zero-Day Disclosure Backlash", "reason": "Different topic — Microsoft's response to legal threats against zero-day researchers; not about VS Code exploit itself"},
+      "cves": [],
+      "source_families": ["news"],
+      "score_breakdown": {"diversity": 1.386, "recency": 1.237, "engagement": 0.0, "severity": 1.25, "novelty_penalty": 0.0},
+      "severity_boost_detail": "severity phrase 'zero-day' in title → boost 0.5; score = 2.5 * 0.5 = 1.25",
+      "total_score": 3.873,
+      "cross_day": "different — not in featured.jsonl last 7d"
+    },
+    {
+      "rank": 5,
+      "selected": true,
+      "headline": "WeedHack — 116,000+ Minecraft Systems Infected via YouTube",
+      "members": [
+        {"idx": 6, "source": "bleepingcomputer", "title": "Over 116,000 Minecraft systems infected in WeedHack malware campaign", "url": "https://www.bleepingcomputer.com/news/security/over-116-000-minecraft-systems-infected-in-weedhack-malware-campaign", "hours_ago": 13.3},
+        {"idx": 15, "source": "thehackernews", "title": "Weedhack Attacks Minecraft Users, CountLoader Hits 86K, Miners Spread via Pirated Content", "url": "https://thehackernews.com/2026/06/weedhack-attacks-minecraft-users.html", "hours_ago": 4.9}
+      ],
+      "cves": [],
+      "source_families": ["news"],
+      "note": "Manual narrative merge; Rule 3 skipped (rapidfuzz absent). No shared CVE or vendors.",
+      "score_breakdown": {"diversity": 1.386, "recency": 1.349, "engagement": 0.0, "severity": 0.0, "novelty_penalty": 0.0},
+      "total_score": 2.735,
+      "cross_day": "different — not in featured.jsonl last 7d"
+    }
+  ],
+  "dropped_notable_clusters": [
+    {"headline": "AI-built ransomware toolkit automates EDR evasion, AD discovery", "source": "bleepingcomputer", "score_approx": 2.2, "reason": "Single source, 15h old, no severity phrases matched; beat by WeedHack on recency and source coverage"},
+    {"headline": "Gamaredon Exploits WinRAR (CVE-2025-8088) vs Ukraine", "source": "thehackernews", "score_approx": 2.15, "reason": "Single source, 16.8h old; geopolitically significant but scored below picks"},
+    {"headline": "Unpatched Windows NTLMv2 hash theft (CVE-2026-33829)", "source": "thehackernews", "score_approx": 2.84, "reason": "Very recent (0.9h), strong candidate for slot 3; HTTP/2 Bomb preferred for broader infrastructure impact across multiple platforms"},
+    {"headline": "Critical Kirki WordPress flaw exploited (CVE-2026-8206)", "source": "bleepingcomputer", "score_approx": 2.64, "reason": "Actively exploited admin takeover; single source, 13h old"},
+    {"headline": "authentik CRITICAL CVEs (CVE-2026-42849, CVE-2026-49448, CVE-2026-49443)", "source": "nvd", "score_approx": 6.85, "reason": "High algorithmic score (CRITICAL NVD items) but no news coverage and narrow audience; identity provider relevance deferred to NVD-watching teams"},
+    {"headline": "Instagram users locked out after Meta AI abused (account theft)", "source": "bleepingcomputer", "score_approx": 2.4, "reason": "Interesting novel AI-abuse vector; single source, 19.4h old, no CVE"}
+  ],
+  "diversity_filter_applied": "No clusters were dropped by the diversity filter. Top 5 have distinct CVEs (CVE-2024-21182 / CVE-2025-48595 / none / none / none) and no 2+ shared vendor tokens between any two picks.",
+  "cross_day_dedup": {
+    "featured_last_7d_cves": ["CVE-2026-48686","CVE-2026-48689","CVE-2026-48692","CVE-2026-48695","CVE-2026-48694","CVE-2026-48688","CVE-2026-8633","CVE-2026-8855","CVE-2026-3660","CVE-2026-7374","CVE-2026-48898","CVE-2026-48899","CVE-2026-48904","CVE-2026-42748","CVE-2026-42756","CVE-2026-42757","CVE-2026-42758","CVE-2026-42731","CVE-2026-42740","CVE-2026-42727","CVE-2026-42747","CVE-2026-42755","CVE-2026-42761"],
+    "overlap_with_picks": "none",
+    "all_picks_classified": "different"
+  },
+  "signal_stats": {
+    "total_collected": 124,
+    "new_post_dedup": 122,
+    "clusters_formed": 116,
+    "top5_from": "116 candidate clusters"
+  }
+}
