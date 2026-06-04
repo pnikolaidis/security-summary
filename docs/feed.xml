@@ -10,12 +10,136 @@
     <description>Daily OSINT cybersecurity digest. Top five stories surfaced from news, social,
 and authoritative sources, narrated by a rotating cast of hosts.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 May 2026 16:48:40 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 04 Jun 2026 11:18:46 +0000</lastBuildDate>
     <itunes:author>pnikolaidis</itunes:author>
     <itunes:category text="Technology"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:summary>Daily OSINT cybersecurity digest. Top five stories surfaced from news, social,
 and authoritative sources, narrated by a rotating cast of hosts.</itunes:summary>
+    <item>
+      <title>Security Digest — 2026-06-04</title>
+      <description>CISA added a critical Magento RCE (CVE-2026-45247, CVSS 9.8) to its Known Exploited Vulnerabilities catalog with active exploitation confirmed in the wild — e-commerce operators running the Mirasvit Cache Warmer extension must patch immediately. OpenStack Mistral carries a CVSS 9.9 RCE flaw that turns any exposed workflow API into an unauthenticated backdoor into the cloud environment. ABB T-MAC Plus industrial devices have a CVSS 9.9 file-exposure vulnerability alongside an 8.8 auth bypass, a cluster that should concern OT security teams. A researcher dropped a one-click PoC that steals GitHub OAuth tokens from VS Code without notifying Microsoft first. And Let's Encrypt announced production post-quantum hybrid certificates, a landmark moment for the encrypted web.</description>
+      <content:encoded><![CDATA[<h2>TL;DR</h2>
+<p>CISA added a critical Magento RCE (CVE-2026-45247, CVSS 9.8) to its Known Exploited Vulnerabilities catalog with active exploitation confirmed in the wild — e-commerce operators running the Mirasvit Cache Warmer extension must patch immediately. OpenStack Mistral carries a CVSS 9.9 RCE flaw that turns any exposed workflow API into an unauthenticated backdoor into the cloud environment. ABB T-MAC Plus industrial devices have a CVSS 9.9 file-exposure vulnerability alongside an 8.8 auth bypass, a cluster that should concern OT security teams. A researcher dropped a one-click PoC that steals GitHub OAuth tokens from VS Code without notifying Microsoft first. And Let's Encrypt announced production post-quantum hybrid certificates, a landmark moment for the encrypted web.</p>
+<h2>1. CISA KEV: Magento RCE CVE-2026-45247 (CVSS 9.8) Exploited in the Wild</h2>
+<p><strong>Why it matters:</strong> E-commerce stores running the Mirasvit Cache Warmer Magento extension are being actively attacked — this unauthenticated deserialization flaw allows full remote code execution and is now on the federal patch-it-now list.</p>
+<p>CISA added CVE-2026-45247 to its Known Exploited Vulnerabilities catalog after confirmed reports of active exploitation in the wild. The vulnerability is a deserialization of untrusted data flaw in the Mirasvit Cache Warmer full-page cache extension for Magento, rated CVSS 9.8. No authentication is needed; an attacker can send a crafted request to achieve remote code execution on the host server. Federal agencies face a mandatory patching deadline, and any organization running the affected extension should treat this as urgent given active exploitation is already underway.</p>
+<p><em>Covered in: thehackernews — 1 post across 1 source</em></p>
+<ul>
+<li><a href="https://thehackernews.com/2026/06/cisa-adds-exploited-magento-rce-flaw.html">CISA Adds Exploited Magento RCE Flaw CVE-2026-45247 to KEV Catalog (The Hacker News)</a></li>
+</ul>
+<h2>2. OpenStack Mistral CVSS 9.9 RCE — Exposed Workflow API Hands Over Cloud Credentials (CVE-2026-41283)</h2>
+<p><strong>Why it matters:</strong> Any OpenStack deployment with the Mistral workflow service API reachable from the network is vulnerable to unauthenticated remote code execution that can cascade into full exfiltration of cloud service credentials.</p>
+<p>CVE-2026-41283 affects OpenStack Mistral through version 22.0.0. The workflow automation service exposes API endpoints that allow direct code execution, rated CVSS 9.9 with scope change — meaning exploitation spills beyond Mistral itself into the broader cloud environment and yields service credentials. Cloud operators running Mistral with the API reachable from any untrusted segment should restrict access at the network level immediately as an interim control while planning the patch.</p>
+<p><em>Covered in: nvd — 1 CVE across 1 source</em></p>
+<ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-41283">CVE-2026-41283 (CRITICAL 9.9) — OpenStack Mistral Arbitrary RCE via exposed workflow API</a></li>
+</ul>
+<h2>3. ABB T-MAC Plus Industrial Devices: CVSS 9.9 File Exposure + Auth Bypass Cluster (CVE-2025-14771/14772/14773/14774)</h2>
+<p><strong>Why it matters:</strong> ABB T-MAC Plus industrial networking modules have a CVSS 9.9 unauthenticated file-access flaw paired with an 8.8 authorization bypass — a combination that gives external attackers both a read path and a login bypass on OT network devices.</p>
+<p>Four CVEs were published for ABB T-MAC Plus version 4.0-24. CVE-2025-14771 (CVSS 9.9) is a &quot;files or directories accessible to external parties&quot; vulnerability — any external party can read configuration data and sensitive files directly from the device without authentication. CVE-2025-14772 (CVSS 8.8) adds an authorization bypass through a user-controlled key, removing the need for valid credentials. Two additional flaws cover XSS (CVE-2025-14773, CVSS 8.0) and incorrect authorization (CVE-2025-14774, CVSS 7.4). Industrial facilities with T-MAC Plus modules reachable from untrusted network segments should apply patches or implement network segmentation immediately.</p>
+<p><em>Covered in: nvd — 4 CVEs across 1 source</em></p>
+<ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-14771">CVE-2025-14771 (CRITICAL 9.9) — ABB T-MAC Plus files accessible to external parties</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-14772">CVE-2025-14772 (HIGH 8.8) — ABB T-MAC Plus authorization bypass via user-controlled key</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-14773">CVE-2025-14773 (HIGH 8.0) — ABB T-MAC Plus cross-site scripting</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2025-14774">CVE-2025-14774 (HIGH 7.4) — ABB T-MAC Plus incorrect authorization</a></li>
+</ul>
+<h2>4. Let's Encrypt Announces Post-Quantum Hybrid Certificates in Production</h2>
+<p><strong>Why it matters:</strong> The world's largest free certificate authority has shipped hybrid classical/post-quantum certificates to the open web, marking the beginning of the web PKI's transition to quantum-resistant encryption at real scale.</p>
+<p>Let's Encrypt published a blog post announcing production rollout of hybrid certificates combining classical ECDSA keys with ML-KEM (CRYSTALS-Kyber), one of NIST's finalized post-quantum standards. The hybrid design means connections remain protected even if classical cryptography is eventually broken by a sufficiently powerful quantum computer. Let's Encrypt issues certificates for a significant fraction of the HTTPS web, making this a genuine infrastructure shift rather than a research preview. The Hacker News post gathered 267 points and 149 comments from practitioners working through compatibility tradeoffs — larger certificate payloads, slightly longer TLS handshakes, and partial client support are the known costs.</p>
+<p><em>Covered in: hackernews — 1 post across 1 source</em></p>
+<ul>
+<li><a href="https://letsencrypt.org/2026/06/03/pq-certs">A Post-Quantum Future for Let's Encrypt (Let's Encrypt blog via Hacker News)</a></li>
+</ul>
+<h2>5. VS Code One-Click GitHub OAuth Token Theft — Full PoC Dropped Without Vendor Notice</h2>
+<p><strong>Why it matters:</strong> A single crafted link clicked inside VS Code hands over the user's full GitHub OAuth token to an attacker, granting read/write access to all their repositories including private ones — with a working exploit now public and no coordinated disclosure made to Microsoft beforehand.</p>
+<p>Researcher Ammar Askar disclosed a vulnerability in VS Code's GitHub.dev feature: a single click on a malicious link steals the victim's GitHub OAuth token. The token grants full read/write access to all repositories — no login prompt, no additional action required. The researcher published complete technical details and a proof-of-concept without prior notice to Microsoft. SecurityWeek confirmed the PoC is publicly available. The disclosure method will likely reignite coordinated-disclosure debates after last week's GitHub researcher account removal controversy. Any developer who opens untrusted links inside VS Code, or anyone who receives a crafted GitHub.dev URL, is at risk while a patch is pending.</p>
+<p><em>Covered in: thehackernews, securityweek — 2 posts across 1 source family</em></p>
+<ul>
+<li><a href="https://thehackernews.com/2026/06/one-click-github-dev-attack-lets.html">One-Click GitHub Dev Attack Lets Attackers Steal Full GitHub OAuth Tokens (The Hacker News)</a></li>
+<li><a href="https://www.securityweek.com/vs-code-vulnerability-allows-one-click-github-token-theft">VS Code Vulnerability Allows One-Click GitHub Token Theft (SecurityWeek)</a></li>
+</ul>
+<h2>Signal stats</h2>
+<ul>
+<li>Total items processed: 96</li>
+<li>New (post-dedup): 95</li>
+<li>Clusters formed: 22</li>
+<li>Top 5 selected from: 22 candidate clusters</li>
+</ul>
+]]></content:encoded>
+      <pubDate>Thu, 04 Jun 2026 12:00:00 +0000</pubDate>
+      <guid isPermaLink="false">security-summary-2026-06-04</guid>
+      <enclosure url="https://raw.githubusercontent.com/pnikolaidis/security-summary/main/state/runs/2026-06-04/digest.mp3" length="6956160" type="audio/mpeg"/>
+      <itunes:duration>00:05:47</itunes:duration>
+      <itunes:author>Aiden Iyer</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>Security Digest — 2026-05-29</title>
+      <description>Oracle dropped a massive critical patch update with over 20 CVEs across E-Business Suite and REST Data Services — including a CVSS 10.0 unauthenticated takeover. GitHub's removal of a researcher's account after they published unpatched Windows zero-days sparked a high-profile dispute about vulnerability disclosure norms. An unpatched zero-day in Gogs (CVSS 9.4) lets any authenticated user run arbitrary code on exposed instances. Attackers are actively exploiting a FortiClient EMS authentication bypass to deploy a novel credential stealer called EKZ. Supply chain attackers hit the NuGet and npm ecosystems, targeting Brazilian banking systems and cloud credentials.</description>
+      <content:encoded><![CDATA[<h2>TL;DR</h2>
+<p>Oracle dropped a massive critical patch update with over 20 CVEs across E-Business Suite and REST Data Services — including a CVSS 10.0 unauthenticated takeover. GitHub's removal of a researcher's account after they published unpatched Windows zero-days sparked a high-profile dispute about vulnerability disclosure norms. An unpatched zero-day in Gogs (CVSS 9.4) lets any authenticated user run arbitrary code on exposed instances. Attackers are actively exploiting a FortiClient EMS authentication bypass to deploy a novel credential stealer called EKZ. Supply chain attackers hit the NuGet and npm ecosystems, targeting Brazilian banking systems and cloud credentials.</p>
+<h2>1. Oracle Critical Patch Update — Up to CVSS 10.0 Across E-Business Suite and REST Data Services</h2>
+<p><strong>Why it matters:</strong> Multiple Oracle products used by enterprises worldwide are vulnerable to unauthenticated remote takeover; the highest-rated flaw (CVE-2026-46840, CVSS 10.0) requires no authentication and achieves full system compromise with scope change across Oracle REST Data Services.</p>
+<p>Oracle's latest Critical Patch Update includes more than 20 high- and critical-severity CVEs spanning Oracle E-Business Suite, Oracle REST Data Services (ORDS), and Oracle Database Server. The most severe, CVE-2026-46840 (CVSS 10.0), allows an unauthenticated attacker with network access via HTTPS to fully take over Oracle REST Data Services, with attacks spilling across the scope boundary into dependent products. Several other ORDS flaws rate 9.9, including CVE-2026-46839 and CVE-2026-46775, which require only low-privilege network access. Oracle Hospitality OPERA 5 (CVE-2026-34311, CVSS 9.8) and Oracle iAssets (CVE-2026-46822, CVSS 9.9) round out the critical set — both allowing unauthenticated HTTP-based takeover.</p>
+<p>Patching is urgent for any organization running Oracle E-Business Suite 12.2.x, ORDS 24.2–26.1, or Oracle Database Server 23.4–23.26. The scope-change flag on several ORDS flaws means a compromised ORDS instance can pivot to downstream Oracle infrastructure.</p>
+<p><em>Covered in: nvd — 22 CVEs</em></p>
+<ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-46840">CVE-2026-46840 (CVSS 10.0) — Oracle REST Data Services unauthenticated takeover</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-46822">CVE-2026-46822 (CVSS 9.9) — Oracle iAssets low-priv takeover via scope change</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-46839">CVE-2026-46839 (CVSS 9.9) — Oracle ORDS low-priv takeover via scope change</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-34311">CVE-2026-34311 (CVSS 9.8) — Oracle Hospitality OPERA 5 unauthenticated HTTP takeover</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-46833">CVE-2026-46833 (CVSS 9.0) — Oracle Database Server Net Service TLS takeover</a></li>
+</ul>
+<h2>2. GitHub Bans Security Researcher Over Windows Zero-Days — Disclosure War Erupts</h2>
+<p><strong>Why it matters:</strong> Microsoft's removal of a researcher's GitHub account after they published unpatched Windows exploits reignited a fractious debate about who controls the timeline for vulnerability disclosure, with hundreds of comments on Hacker News and a sharp public counter-essay calling Microsoft's disclosure posture a &quot;dumpster fire.&quot;</p>
+<p>A researcher going by Chaotic Eclipse (aka Nightmare-Eclipse) disclosed multiple unpatched zero-day vulnerabilities in Windows and had their GitHub account removed shortly afterward. Microsoft publicly advocated for Coordinated Vulnerability Disclosure (CVD), arguing researchers should give vendors time to patch before going public. Critics responded that Microsoft routinely misses deadlines, dismisses low-severity reports, and retaliates against researchers — pointing to a history of contentious interactions with external bug hunters. The HN thread &quot;GitHub bans security researcher who posted zero-day Windows exploits&quot; reached over 500 engagement points with 188 comments, making it the most-discussed security story on the platform this cycle.</p>
+<p>The removal of a researcher's account from GitHub (owned by Microsoft) drew particular criticism, as it was seen as using platform power to suppress security disclosures rather than fix the underlying vulnerabilities.</p>
+<p><em>Covered in: hackernews (×2), thehackernews — 3 posts across 2 sources</em></p>
+<ul>
+<li><a href="https://www.tomshardware.com/tech-industry/cyber-security/microsofts-github-bans-security-researcher-who-posted-zero-day-windows-exploits-because-company-ruined-their-life-expert-claims-action-is-vindictive-and-promises-further-retaliation">GitHub bans security researcher who posted zero-day Windows exploits (Tom's Hardware via HN)</a></li>
+<li><a href="https://doublepulsar.com/microsofts-stance-on-zero-day-exploits-is-a-dumpster-fire-of-their-own-making-0946117940a4">Microsoft's stance on zero day exploits is a dumpster fire of their own making (DoublePulsar via HN)</a></li>
+<li><a href="https://thehackernews.com/2026/05/microsoft-slams-public-zero-day.html">Microsoft Slams Public Zero-Day Disclosures Amid GitHub Researcher Account Removal (The Hacker News)</a></li>
+</ul>
+<h2>3. Unpatched Gogs Zero-Day — Authenticated Users Get Full RCE (CVSS 9.4)</h2>
+<p><strong>Why it matters:</strong> Any authenticated user on a public-facing Gogs instance — no special privilege required — can achieve remote code execution right now, with no patch available.</p>
+<p>Rapid7 disclosed a critical RCE vulnerability in Gogs, a popular open-source self-hosted Git service with broad adoption among teams that don't want to run GitLab or Gitea. Rated CVSS 9.4, the flaw requires only an authenticated session — not admin rights — to execute arbitrary code on the server. There is currently no CVE assigned and no patch available from the Gogs project, making this a true zero-day. Both BleepingComputer and The Hacker News reported independently on the same day, confirming its significance. Administrators are advised to restrict network access to Gogs instances or require stronger authentication controls until a fix lands.</p>
+<p><em>Covered in: bleepingcomputer, thehackernews — 2 posts across 2 sources</em></p>
+<ul>
+<li><a href="https://www.bleepingcomputer.com/news/security/new-gogs-zero-day-flaw-lets-hackers-get-remote-code-execution">New Gogs zero-day flaw lets hackers get remote code execution (BleepingComputer)</a></li>
+<li><a href="https://thehackernews.com/2026/05/critical-gogs-rce-vulnerability-lets.html">Critical Gogs RCE Vulnerability Lets Any Authenticated User Execute Arbitrary Code (The Hacker News)</a></li>
+</ul>
+<h2>4. Attackers Exploit FortiClient EMS Auth-Bypass to Deploy Novel Credential Stealer</h2>
+<p><strong>Why it matters:</strong> CVE-2026-35616, an authentication bypass in FortiClient Enterprise Management Server, is being actively weaponized to push a previously undocumented credential stealer called EKZ across managed enterprise endpoints.</p>
+<p>Arctic Wolf and other researchers confirmed that threat actors are exploiting CVE-2026-35616 — a now-patched authentication bypass in FortiClient EMS — to deliver EKZ, an undocumented infostealer disguised as a legitimate Fortinet endpoint binary. The attack abuses the trusted endpoint management infrastructure itself to push malware to all connected managed devices, multiplying the blast radius far beyond a single compromised machine. Organizations running FortiClient EMS deployments that have not applied the latest patches should treat this as urgent; the campaign specifically exploits the trusted relationship between EMS and its managed fleet.</p>
+<p><em>Covered in: bleepingcomputer, thehackernews — 2 posts across 2 sources</em></p>
+<ul>
+<li><a href="https://www.bleepingcomputer.com/news/security/hackers-exploit-forticlient-ems-flaw-to-push-infostealer-malware">Hackers exploit FortiClient EMS flaw to push infostealer malware (BleepingComputer)</a></li>
+<li><a href="https://thehackernews.com/2026/05/threat-actors-exploit-critical.html">Threat Actors Exploit Critical FortiClient EMS Flaw to Deploy Credential Stealer (The Hacker News)</a></li>
+</ul>
+<h2>5. Supply Chain: Malicious NuGet Package Steals Banking Credentials; npm Packages Hit Cloud Secrets</h2>
+<p><strong>Why it matters:</strong> Software supply chain attackers are targeting both the .NET and JavaScript ecosystems simultaneously — one campaign harvesting PFX certificates from Brazilian banking SDK users, another siphoning cloud credentials from npm package consumers.</p>
+<p>Socket researchers discovered that versions 2.0.0–2.0.4 of &quot;Sicoob.Sdk&quot; on NuGet are malicious — they impersonate the legitimate C# SDK for Sicoob, one of Brazil's largest cooperative banking networks, and exfiltrate PFX certificates and client IDs used for financial authentication. In parallel, The Hacker News also reported npm packages targeting cloud secrets from developer environments. The dual-ecosystem timing suggests coordinated or copycat supply chain activity. Developers using either ecosystem should audit recent package additions and verify publisher identity for any SDK touching financial or cloud infrastructure.</p>
+<p><em>Covered in: thehackernews — 1 post</em></p>
+<ul>
+<li><a href="https://thehackernews.com/2026/05/malicious-sicoob-nuget-steals-banking.html">Malicious Sicoob NuGet Steals Banking Credentials as npm Packages Target Cloud Secrets (The Hacker News)</a></li>
+</ul>
+<h2>Signal stats</h2>
+<ul>
+<li>Total items processed: 117</li>
+<li>New (post-dedup): 116</li>
+<li>Clusters formed: 28</li>
+<li>Top 5 selected from: 28 candidate clusters</li>
+</ul>
+]]></content:encoded>
+      <pubDate>Fri, 29 May 2026 12:00:00 +0000</pubDate>
+      <guid isPermaLink="false">security-summary-2026-05-29</guid>
+      <enclosure url="https://raw.githubusercontent.com/pnikolaidis/security-summary/main/state/runs/2026-05-29/digest.mp3" length="5681280" type="audio/mpeg"/>
+      <itunes:duration>00:04:44</itunes:duration>
+      <itunes:author>Avery Ito</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Security Digest — 2026-05-28</title>
       <description>A wave of ten critical WordPress plugin vulnerabilities disclosed today includes a CVSS 9.9 unrestricted file-upload flaw enabling web shell deployment. Carnival Cruise Corporation confirmed a ShinyHunters breach affecting nearly 6 million guests. The GlassWorm developer supply-chain botnet was dismantled by CrowdStrike, Google, and Shadowserver — its C2 ran over Solana and BitTorrent DHT to resist takedown. A newly documented threat actor, JINX-0164, is hitting cryptocurrency firms with fake recruiter lures and custom macOS malware targeting CI/CD pipelines. And a cryptojacking campaign is now exploiting both SEO poisoning and AI chatbot recommendations to deliver GPU mining malware.</description>

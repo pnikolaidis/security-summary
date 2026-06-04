@@ -1,0 +1,452 @@
+{
+  "run_date": "2026-06-04",
+  "persona": "Ada Iverson",
+  "voice": "nova",
+  "collection": {
+    "total_fetched": 96,
+    "new": 95,
+    "repeats": 1,
+    "per_source_family": {
+      "news": 39,
+      "hn": 8,
+      "nvd": 47,
+      "youtube": 2
+    },
+    "source_failures": [
+      "reddit: missing credentials (non-fatal)",
+      "cisa advisories RSS: 403 Forbidden (non-fatal)",
+      "github advisories atom: 406 Not Acceptable (non-fatal)",
+      "bluesky: all 5 queries 403 Forbidden (non-fatal)",
+      "mastodon: all 5 tags 422 Unprocessable Entity (non-fatal)",
+      "cisa KEV JSON: 503 Service Unavailable (non-fatal)"
+    ]
+  },
+  "clustering": {
+    "total_clusters": 22,
+    "method": "rules applied in order: same CVE, same canonical URL, fuzzy title (token_set_ratio>=85 within 48h), shared vendors (>=2) within 24h",
+    "cluster_details": [
+      {
+        "id": "C01",
+        "label": "CISA KEV Magento RCE CVE-2026-45247",
+        "members": ["https://thehackernews.com/2026/06/cisa-adds-exploited-magento-rce-flaw.html"],
+        "cves": ["CVE-2026-45247"],
+        "vendors": [],
+        "distinct_source_families": 1,
+        "newest_timestamp": "2026-06-04T07:19:33+00:00",
+        "hours_since_newest": 3.7,
+        "engagement_sum": 0.0,
+        "severity_boost": 2.0,
+        "severity_detail": "+1.0 CVSS 9.8>=9, +0.5 KEV (CISA catalog add), +0.5 'in the wild' in body",
+        "score_breakdown": {
+          "diversity": 1.386,
+          "recency": 1.284,
+          "engagement": 0.0,
+          "severity": 5.0,
+          "novelty_penalty": 0.0,
+          "total": 7.670
+        },
+        "decision": "SELECTED rank=1 — highest score, active exploitation confirmed, KEV adds urgency"
+      },
+      {
+        "id": "C02",
+        "label": "OpenStack Mistral RCE CVE-2026-41283",
+        "members": ["https://nvd.nist.gov/vuln/detail/CVE-2026-41283"],
+        "cves": ["CVE-2026-41283"],
+        "vendors": [],
+        "distinct_source_families": 1,
+        "newest_timestamp": "2026-06-04T04:17:12+00:00",
+        "hours_since_newest": 6.7,
+        "engagement_sum": 9.9,
+        "severity_boost": 1.0,
+        "severity_detail": "+1.0 CVSS 9.9>=9",
+        "score_breakdown": {
+          "diversity": 1.386,
+          "recency": 1.134,
+          "engagement": 0.0,
+          "severity": 2.5,
+          "novelty_penalty": 0.0,
+          "total": 5.020
+        },
+        "note": "engagement z-score within nvd family computed as ~0 (CVSS 9.9 near mean of critical items)",
+        "decision": "SELECTED rank=2 — CVSS 9.9 scope-change RCE in widely deployed cloud infrastructure, credential exfiltration risk"
+      },
+      {
+        "id": "C03",
+        "label": "ABB T-MAC Plus CVE cluster (CVE-2025-14771/14772/14773/14774)",
+        "members": [
+          "https://nvd.nist.gov/vuln/detail/CVE-2025-14771",
+          "https://nvd.nist.gov/vuln/detail/CVE-2025-14772",
+          "https://nvd.nist.gov/vuln/detail/CVE-2025-14773",
+          "https://nvd.nist.gov/vuln/detail/CVE-2025-14774"
+        ],
+        "cves": ["CVE-2025-14771", "CVE-2025-14772", "CVE-2025-14773", "CVE-2025-14774"],
+        "vendors": [],
+        "cluster_rule": "same CVE-group for same product (ABB T-MAC Plus 4.0-24), same timestamp batch",
+        "distinct_source_families": 1,
+        "newest_timestamp": "2026-06-03T11:16:19+00:00",
+        "hours_since_newest": 23.8,
+        "engagement_sum": 34.1,
+        "severity_boost": 1.0,
+        "severity_detail": "+1.0 CVSS 9.9>=9 (CVE-2025-14771)",
+        "score_breakdown": {
+          "diversity": 1.386,
+          "recency": 0.555,
+          "engagement": 0.0,
+          "severity": 2.5,
+          "novelty_penalty": 0.0,
+          "total": 4.441
+        },
+        "decision": "SELECTED rank=3 — OT/industrial device CVSS 9.9, unauthenticated file read + auth bypass combination is high-risk for ICS environments"
+      },
+      {
+        "id": "C04",
+        "label": "Let's Encrypt Post-Quantum Hybrid Certificates",
+        "members": ["https://letsencrypt.org/2026/06/03/pq-certs"],
+        "cves": [],
+        "vendors": [],
+        "distinct_source_families": 1,
+        "newest_timestamp": "2026-06-03T15:06:09+00:00",
+        "hours_since_newest": 20.0,
+        "engagement_sum": 341.5,
+        "engagement_z_score": 2.14,
+        "severity_boost": 0.0,
+        "score_breakdown": {
+          "diversity": 1.386,
+          "recency": 0.653,
+          "engagement": 2.14,
+          "severity": 0.0,
+          "novelty_penalty": 0.0,
+          "total": 4.179
+        },
+        "note": "HN engagement z-score computed: hn family mean=158.3, std=85.5; z=(341.5-158.3)/85.5=2.14. Non-security HN items (SpaceX, Uber, Books, ceiling projection, AI data centers) excluded from security digest candidates.",
+        "decision": "SELECTED rank=4 — strong community signal, genuine infrastructure milestone, relevant to all web security practitioners"
+      },
+      {
+        "id": "C05",
+        "label": "VS Code One-Click GitHub OAuth Token Theft (zero-day disclosure)",
+        "members": [
+          "https://thehackernews.com/2026/06/one-click-github-dev-attack-lets.html",
+          "https://www.securityweek.com/vs-code-vulnerability-allows-one-click-github-token-theft"
+        ],
+        "cves": [],
+        "vendors": ["Microsoft", "GitHub"],
+        "cluster_rule": "fuzzy title match — 'One-Click GitHub Dev Attack Lets Attackers Steal Full GitHub OAuth Tokens' vs 'VS Code Vulnerability Allows One-Click GitHub Token Theft'; token_set_ratio estimated ~88; both within 24h",
+        "distinct_source_families": 1,
+        "newest_timestamp": "2026-06-04T08:14:52+00:00",
+        "hours_since_newest": 2.8,
+        "engagement_sum": 0.0,
+        "severity_boost": 0.5,
+        "severity_detail": "+0.5 'zero-day' context (PoC released without vendor disclosure)",
+        "score_breakdown": {
+          "diversity": 1.386,
+          "recency": 1.335,
+          "engagement": 0.0,
+          "severity": 1.25,
+          "novelty_penalty": 0.0,
+          "total": 3.971
+        },
+        "decision": "SELECTED rank=5 — multi-source coverage, live PoC, affects all GitHub-connected VS Code users, timely developer toolchain risk"
+      },
+      {
+        "id": "C06",
+        "label": "Cisco Unified CM SSRF CVE-2026-20230 + PoC Available",
+        "members": [
+          "https://www.securityweek.com/cisco-warns-of-available-poc-for-critical-unified-cm-vulnerability",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-20230"
+        ],
+        "cves": ["CVE-2026-20230"],
+        "vendors": ["Cisco"],
+        "distinct_source_families": 2,
+        "score_breakdown": {
+          "diversity": 2.197,
+          "recency": 1.363,
+          "engagement": 0.0,
+          "severity": 0.0,
+          "novelty_penalty": 0.0,
+          "total": 3.560
+        },
+        "decision": "DROPPED (rank 6, below cutoff) — CVSS 8.6 below 9.0 threshold; no 'actively exploited' language; PoC available but no confirmed exploitation"
+      },
+      {
+        "id": "C07",
+        "label": "DoJ Disrupts Southeast Asia Crypto Fraud / 1.4M Accounts",
+        "members": [
+          "https://www.securityweek.com/over-1-4-million-accounts-disrupted-in-cybercrime-crackdown",
+          "https://thehackernews.com/2026/06/doj-disrupts-southeast-asia-crypto.html"
+        ],
+        "cves": [],
+        "vendors": [],
+        "score_breakdown": {
+          "diversity": 1.386,
+          "recency": 1.482,
+          "engagement": 0.0,
+          "severity": 0.0,
+          "total": 2.868
+        },
+        "decision": "DROPPED — good story but no technical severity; law enforcement action, not an exploitable vuln"
+      },
+      {
+        "id": "C08",
+        "label": "Meta/Instagram AI Chatbot Account Hijack (Schneier)",
+        "members": ["https://www.schneier.com/blog/archives/2026/06/hacking-metas-ai-chatbot.html"],
+        "cves": [],
+        "vendors": [],
+        "score_breakdown": {
+          "diversity": 1.386,
+          "recency": 1.494,
+          "engagement": 0.0,
+          "severity": 0.0,
+          "total": 2.880
+        },
+        "decision": "DROPPED — interesting social engineering story but no technical CVE/exploitation details; lower impact than top 5"
+      },
+      {
+        "id": "C09",
+        "label": "Stock Exchange Executive Outlook Mailbox Espionage (5 months)",
+        "members": [
+          "https://thehackernews.com/2026/06/hackers-spied-on-stock-exchange.html",
+          "https://www.securityweek.com/hackers-target-global-stock-exchange-in-espionage-operation"
+        ],
+        "cves": [],
+        "vendors": [],
+        "score_breakdown": {
+          "diversity": 1.386,
+          "recency": 1.413,
+          "engagement": 0.0,
+          "severity": 0.0,
+          "total": 2.799
+        },
+        "decision": "DROPPED — significant espionage story but no exploitable vulnerability; actionable guidance limited; multi-source but both news family"
+      },
+      {
+        "id": "C10",
+        "label": "CISA + Active Android/Linux Kernel Exploits",
+        "members": [
+          "https://www.bleepingcomputer.com/news/security/cisa-warns-of-active-attacks-exploiting-android-linux-bugs",
+          "https://www.securityweek.com/organizations-warned-of-exploited-linux-kernel-vulnerability"
+        ],
+        "cves": [],
+        "vendors": ["Android", "Linux"],
+        "cluster_rule": ">=2 shared vendor tokens (Android, Linux) AND within 24h",
+        "score_breakdown": {
+          "diversity": 1.386,
+          "recency": 0.668,
+          "engagement": 0.0,
+          "severity": 1.25,
+          "total": 3.304
+        },
+        "decision": "DROPPED (rank 7 effective) — noteworthy but no specific CVE IDs in collected items, CISA KEV story #1 already covers CISA alert angle; older timestamp hurts recency score"
+      },
+      {
+        "id": "C11",
+        "label": "Fake Open-Source Sites Google TDS Malware (Remus Stealer / AnimateClipper)",
+        "members": ["https://thehackernews.com/2026/06/fake-sites-mimicking-open-source-tools.html"],
+        "score_breakdown": {
+          "diversity": 1.386,
+          "recency": 1.427,
+          "engagement": 0.0,
+          "severity": 0.0,
+          "total": 2.813
+        },
+        "decision": "DROPPED — single source, no CVE, SEO poisoning campaign is interesting but below top-5 threshold"
+      },
+      {
+        "id": "C12",
+        "label": "Microsoft 365 Android Debug Flag Token Theft",
+        "members": [
+          "https://thehackernews.com/2026/06/microsoft-365-android-apps-let-any-app.html",
+          "https://www.darkreading.com/application-security/coding-gaffe-exposes-microsoft-365-accounts-takeover"
+        ],
+        "cves": [],
+        "vendors": ["Microsoft", "Android"],
+        "score_breakdown": {
+          "diversity": 1.386,
+          "recency": 0.768,
+          "engagement": 0.0,
+          "severity": 0.0,
+          "total": 2.154
+        },
+        "decision": "DROPPED — notable bug but no CVE, no active exploitation, patchable by Microsoft app update; diversity filter: shares Microsoft+Android with cluster C05 conceptually, VS Code story is higher impact for our audience"
+      },
+      {
+        "id": "C13",
+        "label": "Google Gemini Prompt Injection via Notifications",
+        "members": [
+          "https://thehackernews.com/2026/06/whatsapp-slack-notifications-could.html",
+          "https://www.darkreading.com/application-security/malicious-notifications-could-trick-google-gemini-users"
+        ],
+        "cves": [],
+        "vendors": ["Google", "Android"],
+        "score_breakdown": {
+          "diversity": 1.386,
+          "recency": 0.775,
+          "engagement": 0.0,
+          "severity": 0.0,
+          "total": 2.161
+        },
+        "decision": "DROPPED — interesting AI security story, no active exploitation, multi-source but older"
+      },
+      {
+        "id": "C14",
+        "label": "Acer Wave 7 Router Max-Severity Zero-Days",
+        "members": ["https://www.bleepingcomputer.com/news/security/acer-warns-of-max-severity-zero-days-affecting-wave-7-routers"],
+        "score_breakdown": {
+          "diversity": 1.386,
+          "recency": 0.564,
+          "engagement": 0.0,
+          "severity": 1.25,
+          "total": 3.200
+        },
+        "decision": "DROPPED — single source, no CVE IDs published yet, consumer router; ABB T-MAC Plus (OT/industrial, CVSS 9.9 with CVE IDs) scored higher for comparable severity category"
+      },
+      {
+        "id": "C15",
+        "label": "HTTP/2 Bomb DoS Attack",
+        "members": ["https://www.bleepingcomputer.com/news/security/new-http-2-bomb-dos-attack-crashes-web-servers-in-under-a-minute"],
+        "score_breakdown": {
+          "diversity": 1.386,
+          "recency": 0.769,
+          "engagement": 0.0,
+          "severity": 0.0,
+          "total": 2.155
+        },
+        "decision": "DROPPED — interesting DoS research, no CVE, no active exploitation reported"
+      },
+      {
+        "id": "C16",
+        "label": "Chinese Hackers Atlas RAT in European Cyberattacks",
+        "members": ["https://www.bleepingcomputer.com/news/security/chinese-hackers-use-new-atlas-rat-malware-in-european-cyberattacks"],
+        "score_breakdown": {
+          "diversity": 1.386,
+          "recency": 0.864,
+          "engagement": 0.0,
+          "severity": 0.0,
+          "total": 2.250
+        },
+        "decision": "DROPPED — geopolitical APT story, single source, no CVE, below threshold"
+      },
+      {
+        "id": "C17",
+        "label": "Nobitex OFAC Sanctions (Iranian Ransomware)",
+        "members": ["https://www.bleepingcomputer.com/news/security/the-us-sanctions-nobitex-crypto-exchange-used-by-ransomware"],
+        "score_breakdown": {
+          "diversity": 1.386,
+          "recency": 0.820,
+          "engagement": 0.0,
+          "severity": 0.0,
+          "total": 2.206
+        },
+        "decision": "DROPPED — policy/sanctions story, no technical vulnerability, below threshold"
+      },
+      {
+        "id": "C18",
+        "label": "Zcash Emergency Fork Critical Orchard Vulnerability",
+        "members": ["https://www.cryptotimes.io/2026/06/02/zcash-executes-emergency-fork-after-critical-orchard-vulnerability-discovery"],
+        "score_breakdown": {
+          "diversity": 1.386,
+          "recency": 0.769,
+          "engagement": -1.18,
+          "severity": 0.0,
+          "total": 0.975
+        },
+        "decision": "DROPPED — HN engagement z-score negative, below min_score threshold"
+      },
+      {
+        "id": "C19",
+        "label": "HuggingFace Transformers trust_remote_code bypass CVE-2026-5241",
+        "members": ["https://nvd.nist.gov/vuln/detail/CVE-2026-5241"],
+        "score_breakdown": {
+          "diversity": 1.386,
+          "recency": 0.624,
+          "engagement": 0.0,
+          "severity": 0.0,
+          "total": 2.010
+        },
+        "decision": "DROPPED — relevant for ML/AI pipelines, CVSS 8.0 below severity boost threshold, single source"
+      },
+      {
+        "id": "C20",
+        "label": "BOSH Director RCE/MITM CVE cluster (CVE-2026-41010/41011/41858/41859/41860)",
+        "members": [
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-41010",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-41011",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-41858",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-41859",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-41860"
+        ],
+        "score_breakdown": {
+          "diversity": 1.386,
+          "recency": 0.739,
+          "engagement": 0.0,
+          "severity": 0.0,
+          "total": 2.125
+        },
+        "decision": "DROPPED — BOSH is niche cloud infrastructure (CF/BOSH ecosystem), CVSS 8.x range, no news coverage, niche audience"
+      },
+      {
+        "id": "C21",
+        "label": "Mercusys Router CVE cluster (CVE-2026-36606 through 36611)",
+        "members": [
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-36606",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-36607",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-36608",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-36609",
+          "https://nvd.nist.gov/vuln/detail/CVE-2026-36611"
+        ],
+        "score_breakdown": {
+          "diversity": 1.386,
+          "recency": 0.502,
+          "engagement": 0.0,
+          "severity": 0.0,
+          "total": 1.888
+        },
+        "decision": "DROPPED — consumer/SOHO router, CVSS max 8.8, no news coverage, very old firmware"
+      },
+      {
+        "id": "C22",
+        "label": "Mandiant YouTube: AI Features Zero-Click Pixel 9 Chain",
+        "members": ["https://www.youtube.com/watch?v=U80NrIRrjy0"],
+        "score_breakdown": {
+          "diversity": 1.386,
+          "recency": 0.768,
+          "engagement": 0.0,
+          "severity": 0.0,
+          "total": 2.154
+        },
+        "decision": "DROPPED — YouTube content, no body text, no CVE, engagement=0"
+      }
+    ]
+  },
+  "diversity_filter_checks": {
+    "C01_vs_C02": "no shared CVEs, no shared vendors — pass",
+    "C01_vs_C03": "no shared CVEs, no shared vendors — pass",
+    "C01_vs_C04": "no shared CVEs, no shared vendors — pass",
+    "C01_vs_C05": "no shared CVEs, no shared vendors — pass",
+    "C02_vs_C03": "no shared CVEs, no shared vendors — pass",
+    "C02_vs_C04": "no shared CVEs, no shared vendors — pass",
+    "C02_vs_C05": "no shared CVEs, no shared vendors — pass",
+    "C03_vs_C04": "no shared CVEs, no shared vendors — pass",
+    "C03_vs_C05": "no shared CVEs, no shared vendors — pass",
+    "C04_vs_C05": "no shared CVEs, no shared vendors — pass"
+  },
+  "novelty_check": {
+    "lookback_days": 7,
+    "featured_dates_checked": ["2026-05-28", "2026-05-29"],
+    "results": {
+      "C01_magento_rce": "different — no past Magento/CISA KEV feature in window",
+      "C02_openstack_mistral": "different — no past OpenStack feature in window",
+      "C03_abb_tmac": "different — no past ABB/T-MAC feature in window",
+      "C04_letsencrypt_pq": "different — no past PQ/Let's Encrypt feature in window",
+      "C05_vscode_github": "different — May 29 GitHub story was researcher account removal, not VS Code token theft; separate incident"
+    },
+    "novelty_penalties_applied": 0
+  },
+  "non_security_hn_items_excluded": [
+    "The SpaceX IPO Will Be the Theft of the Century",
+    "A Man Who Reads Books for a Living",
+    "If AI data centers are so great, why are they being built in secret?",
+    "Uber cuts 23% of people division as new president takes over",
+    "I built a ceiling projection mapping of the planes flying over my house",
+    "Launch HN: Hyper (YC P26) — Company brain to power agentic development"
+  ]
+}
