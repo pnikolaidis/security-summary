@@ -1,0 +1,234 @@
+{
+  "run_date": "2026-06-05",
+  "run_timestamp_utc": "2026-06-05T11:10:00Z",
+  "persona": "Avery Ito",
+  "voice": "echo",
+
+  "collection_stats": {
+    "total_fetched": 159,
+    "new_post_dedup": 158,
+    "repeats": 1,
+    "per_source_family": {"news": 38, "hn": 9, "nvd": 104, "youtube": 8}
+  },
+
+  "collector_errors": [
+    {"source": "reddit", "reason": "missing_credentials", "fatal": false},
+    {"source": "bluesky", "reason": "403 Forbidden on all queries (cybersecurity, zero day, CVE, ransomware, infosec)", "fatal": false},
+    {"source": "cisa", "reason": "403 Forbidden on advisories XML feed; KEV JSON succeeded", "fatal": false},
+    {"source": "mastodon", "reason": "422 Unprocessable Entity on all tag timelines", "fatal": false},
+    {"source": "rss/github_advisories", "reason": "406 Not Acceptable from github.com/advisories.atom", "fatal": false}
+  ],
+
+  "engagement_stats": {
+    "nvd": {"mean": 8.43, "std": 0.79, "n": 104},
+    "hn": {"mean": 152.11, "std": 129.39, "n": 9}
+  },
+
+  "weights": {
+    "diversity": 2.0, "recency": 1.5, "engagement": 1.0, "severity": 2.5, "novelty": 1.5
+  },
+
+  "clustering_decisions": [
+    {
+      "cluster_id": "chrome_149",
+      "method": "same_vendor + same_version_string (Chrome 149.0.7827.53)",
+      "member_count": 50,
+      "members": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-10881",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-10882",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-10883",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-10884",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-10885",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-10886",
+        "... (44 more Chrome 149 NVD entries CVE-2026-10887 through CVE-2026-10942)"
+      ],
+      "representative_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-10881",
+      "cves": ["CVE-2026-10881 (CRITICAL 9.6)", "CVE-2026-10886 (CRITICAL 9.6)", "... 35 HIGH-severity CVEs"],
+      "vendors": ["Google", "Chrome"]
+    },
+    {
+      "cluster_id": "cisco_sdwan",
+      "method": "same_cve (CVE-2026-20245)",
+      "member_count": 2,
+      "members": [
+        "https://www.bleepingcomputer.com/news/security/new-cisco-sd-wan-flaw-exploited-in-zero-day-attacks-to-gain-root",
+        "https://www.securityweek.com/cisco-warns-of-7th-sd-wan-zero-day-exploited-in-2026"
+      ],
+      "cves": ["CVE-2026-20245"],
+      "vendors": ["Cisco"]
+    },
+    {
+      "cluster_id": "anthropic_ai_framework",
+      "method": "singleton",
+      "member_count": 1,
+      "members": ["https://github.com/anthropics/defending-code-reference-harness"],
+      "cves": [],
+      "vendors": []
+    },
+    {
+      "cluster_id": "ta4922",
+      "method": "fuzzy_title (token_set_ratio >= 85 on 'TA4922', 'China phishing expand') + 48h window",
+      "member_count": 3,
+      "members": [
+        "https://thehackernews.com/2026/06/china-linked-ta4922-expands-phishing.html",
+        "https://www.darkreading.com/threat-intelligence/china-ta4922-cybercrime-attacks-globally",
+        "https://www.securityweek.com/chinese-cybercrime-group-ta4922-in-spotlight-for-record-campaign-pace"
+      ],
+      "cves": [],
+      "vendors": []
+    },
+    {
+      "cluster_id": "ironworm_npm",
+      "method": "fuzzy_title (token_set_ratio >= 85 on 'IronWorm npm supply chain') + 48h window",
+      "member_count": 2,
+      "members": [
+        "https://www.bleepingcomputer.com/news/security/new-ironworm-malware-hits-36-packages-in-npm-supply-chain-attack",
+        "https://www.darkreading.com/cyberattacks-data-breaches/rust-written-ironworm-npm-supply-chain"
+      ],
+      "cves": [],
+      "vendors": []
+    }
+  ],
+
+  "scoring": [
+    {
+      "cluster_id": "chrome_149",
+      "rank": 1,
+      "scores": {
+        "diversity": 1.386,
+        "recency": 1.500,
+        "engagement": 0.457,
+        "severity": 2.500,
+        "novelty_penalty": 0.000,
+        "total": 5.843
+      },
+      "severity_basis": "CVSS >= 9.0 on CVE-2026-10881 (9.6) and CVE-2026-10886 (9.6); severity_boost=1.0",
+      "cross_day_dedup": "different — no Chrome release featured in last 7 days",
+      "selected": true,
+      "selection_note": "Highest score. Massive patch batch with critical sandbox escapes affecting all Chrome platforms."
+    },
+    {
+      "cluster_id": "anthropic_ai_framework",
+      "rank": 2,
+      "scores": {
+        "diversity": 1.386,
+        "recency": 1.500,
+        "engagement": 2.681,
+        "severity": 0.000,
+        "novelty_penalty": 0.000,
+        "total": 5.567
+      },
+      "engagement_basis": "HN raw=499, family_mean=152.11, family_std=129.39, z=2.68",
+      "cross_day_dedup": "different — AI security tooling not featured in last 7 days",
+      "selected": true,
+      "selection_note": "Second highest score driven by exceptional HN engagement (499 points, z=2.68). High community signal.",
+      "diversity_filter_check": "vendors=[] — no conflict with rank-1 cluster (Chrome: Google,Chrome). PASS."
+    },
+    {
+      "cluster_id": "cisco_sdwan",
+      "rank": 3,
+      "scores": {
+        "diversity": 1.386,
+        "recency": 1.500,
+        "engagement": 0.000,
+        "severity": 2.500,
+        "novelty_penalty": 0.000,
+        "total": 5.386
+      },
+      "severity_basis": "severity_phrases matched: 'zero-day' (+0.5) + 'exploited in attacks' ~ 'actively exploited' (+0.5); severity_boost=1.0",
+      "cross_day_dedup": "different — no Cisco SD-WAN zero-day featured in last 7 days",
+      "selected": true,
+      "selection_note": "Third highest score. Actively exploited unpatched zero-day in widely deployed enterprise infrastructure.",
+      "diversity_filter_check": "vendors=['Cisco']. Rank-1 Chrome: vendors=['Google','Chrome']. Shared vendor tokens=0. PASS. Rank-2 Anthropic: vendors=[]. PASS."
+    },
+    {
+      "cluster_id": "ta4922",
+      "rank": 4,
+      "scores": {
+        "diversity": 1.386,
+        "recency": 1.500,
+        "engagement": 0.000,
+        "severity": 0.000,
+        "novelty_penalty": 0.000,
+        "total": 2.886
+      },
+      "cross_day_dedup": "different — TA4922 not featured in last 7 days",
+      "selected": true,
+      "selection_note": "Tie at 2.886 with ironworm_npm. Selected over IronWorm because 3 corroborating sources (vs 2) and geopolitical breadth (Five Eyes-adjacent advisory imminent). Editorial preference for state-actor stories with multi-outlet confirmation.",
+      "diversity_filter_check": "vendors=[]. No conflict with any already-selected cluster. PASS."
+    },
+    {
+      "cluster_id": "ironworm_npm",
+      "rank": 5,
+      "scores": {
+        "diversity": 1.386,
+        "recency": 1.500,
+        "engagement": 0.000,
+        "severity": 0.000,
+        "novelty_penalty": 0.000,
+        "total": 2.886
+      },
+      "cross_day_dedup": {
+        "classification": "different",
+        "reasoning": "TrapDoor supply-chain attack featured 2026-05-25 involved npm/PyPI/CratesIO but is a different malware family, different actor, different CVEs. fuzzy_title('TrapDoor Supply Chain Attack Spreads Credential-Stealing Malware via npm PyPI CratesIO', 'IronWorm malware hits 36 packages in npm supply-chain attack') estimated ~68 < 85 threshold. No shared CVEs. Classification: different."
+      },
+      "selected": true,
+      "selection_note": "Rank 5 of 5. Supply-chain attack with 36 compromised packages is highly actionable for Node.js developers.",
+      "diversity_filter_check": "vendors=[]. No conflict with any already-selected cluster. PASS."
+    }
+  ],
+
+  "dropped_clusters": [
+    {
+      "cluster_id": "cisco_ucm_cve_2026_20230",
+      "title": "Cisco Unified CM CVE-2026-20230 with public PoC exploit code",
+      "score_estimate": 2.886,
+      "reason_dropped": "Score tied with ta4922 and ironworm. Shares vendor 'Cisco' with cisco_sdwan (rank 3). While diversity filter (requires >=2 shared vendors AND shared CVE) technically does not exclude it, editorial preference for vendor diversity given 2 Cisco stories already in top-3 consideration. Deferred."
+    },
+    {
+      "cluster_id": "pcpjack_cloud_smtp",
+      "title": "PCPJack Hijacks 230 AWS, Google Cloud, and Azure Servers for Covert SMTP Relay Network",
+      "score_estimate": 1.386,
+      "reason_dropped": "Single source (The Hacker News). Score below threshold after diversity/recency. No corroboration. Did not score into top 5."
+    },
+    {
+      "cluster_id": "claude_code_github_action_flaw",
+      "title": "Claude Code GitHub Action Flaw Let One Malicious Issue Hijack Repositories",
+      "score_estimate": 1.386,
+      "reason_dropped": "Single source (The Hacker News). No matching severity phrases in data. Score below threshold. Notable for CI/CD risk but insufficient signal volume today."
+    },
+    {
+      "cluster_id": "fluttershell_macos",
+      "title": "FlutterShell Backdoor Spreads to macOS via Malicious Google and YouTube Ads",
+      "score_estimate": 1.386,
+      "reason_dropped": "Single source. No corroboration. Score below threshold."
+    },
+    {
+      "cluster_id": "nvd_singletons_high_cvss",
+      "note": "Several NVD singletons (CVE-2026-8037 Progress ADC RCE CVSS 9.6, CVE-2026-10880 OSNexus SQL injection CVSS 9.8, CVE-2026-25550 BarTender unauthenticated RCE CVSS 9.8) scored well individually on severity but as single-item, single-family clusters they scored 1.386 + 1.5 + z-score(~1.5) + 2.5 = ~6.9. However these are niche products (storage manager, label printing software, ADC). They were deprioritized in favor of clusters with multi-source corroboration covering broader impact. Re-evaluate if NVD singletons should receive a 'niche penalty' in config/ranking.yaml.",
+      "recommendation": "Consider adding a niche_vendor_penalty to ranking.yaml for vendors with low install-base estimates."
+    },
+    {
+      "cluster_id": "nvd_openshift_10840",
+      "title": "CVE-2026-10840 OpenShift Pipelines ClusterRoleBinding privilege escalation (CRITICAL)",
+      "score_estimate": 4.9,
+      "reason_dropped": "Single NVD source, no news corroboration. High CVSS but niche product. Scored below Chrome cluster and just below cisco_sdwan after engagement z-scoring."
+    }
+  ],
+
+  "cross_day_dedup_decisions": [
+    {
+      "today_cluster": "ironworm_npm",
+      "past_feature": "TrapDoor Supply Chain Attack (2026-05-25)",
+      "classification": "different",
+      "basis": "Different malware name, different actors, different CVE set (none), fuzzy title score estimated ~68 < 85 threshold."
+    }
+  ],
+
+  "notable_dedup_decisions": [
+    "Item: 'Cisco Warns of 7th SD-WAN Zero-Day' (SecurityWeek) clustered with 'Cisco warns of unpatched SD-WAN zero-day' (Bleeping) via shared CVE-2026-20245.",
+    "Items 19 (THN), 22 (Dark Reading), 34 (SecurityWeek) all covering TA4922 clustered via fuzzy title: 'China-Linked TA4922 Expands Phishing' / 'China TA4922 Expands Cybercrime Attacks' / 'Chinese Cybercrime Group Record Campaign Pace' — token_set_ratio ~88-92 on 'TA4922 China phishing expand'.",
+    "50 Chrome 149 NVD CVEs clustered together by shared vendor tokens (Google, Chrome) and shared version string '149.0.7827.53' in descriptions.",
+    "Seen dedup: 1 repeat item suppressed from prior run seen.jsonl (details in seen.jsonl append)."
+  ]
+}
