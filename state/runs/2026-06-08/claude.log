@@ -1,0 +1,169 @@
+CLAUDE OBSERVABILITY LOG — 2026-06-08
+Generated: 2026-06-08T11:04 UTC
+Persona: Allie (voice: alloy)
+
+=== COLLECTION STATS ===
+total_fetched: 52
+new (post-dedup): 52
+repeats: 0
+per_family: {news: 15, hn: 9, nvd: 28}
+featured_in_last_7d: 0 (last run was 2026-05-29, 10 days ago → no novelty penalty anywhere)
+
+Source notes:
+- reddit: skipped (missing credentials)
+- bluesky: 403 Forbidden on all queries (network policy may block auth endpoint)
+- mastodon: 422 Unprocessable Entity on all tags (API deprecation or auth required)
+- github_advisories: 406 Not Acceptable (feed format issue)
+- darkreading: 404 Not Found (URL changed)
+- cisa advisories XML: 403 Forbidden (but KEV feed succeeded with 0 new items in window)
+- youtube: 0 items in 24h window
+
+=== NVD ENGAGEMENT Z-SCORE BASELINE ===
+28 NVD items, CVSS values as engagement
+mean = 7.857, std_dev = 0.894
+High-value z-scores: CVSS 9.8 → z=2.172, CVSS 8.8 → z=1.055, CVSS 8.0 → z=0.160
+Low-value z-scores: CVSS 7.5 → z=-0.399, CVSS 7.3 → z=-0.623, CVSS 7.2 → z=-0.735
+
+HN 9 items: mean=169.17, std_dev=83.4
+(security-relevant HN items have moderate z-scores; none high enough to crack top 5 alone)
+
+=== CLUSTERING ===
+
+CLUSTER A: WordPress Critical/High RCE (5 members) [RULE 4: shared vendor "WordPress" + within 24h]
+  Members:
+    - https://nvd.nist.gov/vuln/detail/CVE-2023-54352 (CRITICAL 9.8) — Seotheme unauthenticated PHP upload+exec
+    - https://nvd.nist.gov/vuln/detail/CVE-2024-58348 (CRITICAL 9.8) — Background Image Cropper arbitrary file upload
+    - https://nvd.nist.gov/vuln/detail/CVE-2024-58349 (CRITICAL 9.8) — Travelscape theme arbitrary file upload
+    - https://nvd.nist.gov/vuln/detail/CVE-2023-54350 (HIGH 7.5) — Augmented-Reality plugin RCE via elFinder
+    - https://nvd.nist.gov/vuln/detail/CVE-2023-54351 (HIGH 7.2) — Sonaar Music Plugin stored XSS
+  Newest: 2026-06-08T02:16Z → hours_since_newest ≈ 9.0h
+  Score breakdown:
+    diversity:  2.0 × log(1+1) = 1.386  [1 source family: nvd]
+    recency:    1.5 × exp(-9.0/24) = 1.047
+    engagement: 1.0 × (3×2.172 + 1×(-0.399) + 1×(-0.735)) = 1.0 × 5.382 = 5.382
+    severity:   2.5 × 1.0 = 2.500  [CVSS ≥ 9.0]
+    novelty:    0
+  TOTAL: 10.315  ← SELECTED (#1)
+
+CLUSTER B: Tenda Router Stack Overflow (3 members) [RULE 3: fuzzy title ≥85, share "Tenda"+"stack-based buffer overflow"]
+  Members:
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-11499 (CRITICAL 9.8) — Tenda HG7/HG9/HG10 formDOMAINBLK stack overflow
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-11498 (HIGH 8.8) — Tenda HG7/HG9/HG10 asp_voip_OtherSet stack overflow
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-11503 (HIGH 8.8) — Tenda CX12L form_fast_setting_wifi_set stack overflow
+  Newest: 2026-06-08T10:16Z → hours_since_newest ≈ 0.8h
+  Score breakdown:
+    diversity:  1.386  [1 source family: nvd]
+    recency:    1.5 × exp(-0.8/24) = 1.451
+    engagement: 1.0 × (2.172 + 1.055 + 1.055) = 4.282
+    severity:   2.5 × 1.0 = 2.500  [CVSS 9.8 ≥ 9.0]
+    novelty:    0
+  TOTAL: 9.619  ← SELECTED (#2)
+
+CLUSTER C: SolarWinds Serv-U Exploited in the Wild (1 member) [standalone]
+  Members:
+    - https://www.securityweek.com/solarwinds-patches-exploited-serv-u-vulnerability
+      "SolarWinds Serv-U Vulnerability Exploited in the Wild" (2026-06-08T07:52Z)
+  Newest: 2026-06-08T07:52Z → hours_since_newest ≈ 3.2h
+  Score breakdown:
+    diversity:  1.386  [1 source family: news]
+    recency:    1.5 × exp(-3.2/24) = 1.313
+    engagement: 0  [news, no engagement signal]
+    severity:   2.5 × 0.5 = 1.250  [phrase: "in the wild"]
+    novelty:    0
+  TOTAL: 3.949  ← SELECTED (#3)
+
+CLUSTER D: Risky Bulletin — Cisco SD-WAN Zero-Day + RubyGems (1 member) [standalone]
+  Members:
+    - https://news.risky.biz/risky-bulletin-rubygems-adds-dependency-cooldowns-to-counter-supply-chain-attacks
+      "Risky Bulletin: RubyGems adds dependency cooldowns..." (2026-06-08T02:08Z)
+      Body: "AT&T and IBM accused of hiding foreign hacks; Cisco warns of a new SD-WAN zero-day; Google layoffs hit security teams"
+  Newest: 2026-06-08T02:08Z → hours_since_newest ≈ 9.0h
+  Severity phrase match: "zero-day" found in body → +0.5 boost
+  Score breakdown:
+    diversity:  1.386  [1 source family: news]
+    recency:    1.5 × exp(-9.0/24) = 1.047
+    engagement: 0
+    severity:   2.5 × 0.5 = 1.250
+    novelty:    0
+  TOTAL: 3.683  ← SELECTED (#4)
+
+CLUSTER E: VMware Cloud Foundation Operations Stored XSS (3 members) [RULE 4: shared vendor "VMware" + within 24h]
+  Members:
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-41722 (HIGH 8.0) — VMware CF Operations stored XSS
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-41723 (HIGH 8.0) — VMware CF Operations stored XSS
+    - https://nvd.nist.gov/vuln/detail/CVE-2026-41724 (HIGH 8.0) — VMware CF Operations stored XSS
+  Newest: 2026-06-08T09:16Z → hours_since_newest ≈ 1.8h
+  Score breakdown:
+    diversity:  1.386  [1 source family: nvd]
+    recency:    1.5 × exp(-1.8/24) = 1.392
+    engagement: 1.0 × (3 × 0.160) = 0.481
+    severity:   0  [CVSS 8.0 < 9.0]
+    novelty:    0
+  TOTAL: 3.259  ← SELECTED (#5)
+
+=== DIVERSITY FILTER CHECK (top 5) ===
+Cluster A (WordPress): vendors={WordPress}, CVEs={CVE-2023-54352, CVE-2024-58348, CVE-2024-58349, CVE-2023-54350, CVE-2023-54351}
+Cluster B (Tenda):     vendors={} (none extracted), CVEs={CVE-2026-11499, CVE-2026-11498, CVE-2026-11503}
+Cluster C (SolarWinds): vendors={}, CVEs={}
+Cluster D (Cisco/Risky): vendors={Cisco, Google}, CVEs={}
+Cluster E (VMware):    vendors={VMware}, CVEs={CVE-2026-41722, CVE-2026-41723, CVE-2026-41724}
+→ No pair shares ≥2 vendor tokens or any CVE. Diversity filter PASSES for all 5.
+
+=== DROPPED CLUSTERS (with reason) ===
+
+Cluster F: Anthropic Project Glasswing (Schneier) — score 2.883
+  URL: https://www.schneier.com/blog/archives/2026/06/anthropics-project-glasswing-update.html
+  Reason: Score below threshold after critical CVE clusters consumed top slots.
+
+Cluster G: Silent Ransom Group / UNC3753 law firm attacks (3 members) — score 2.852
+  URLs: bleepingcomputer + thehackernews + securityweek (same story, different angles)
+  Reason: Solid story, but score 2.852 below selected cluster E (3.259).
+
+Cluster H: VerdantBamboo BRICKSTORM China espionage — score 2.850
+  URL: https://thehackernews.com/2026/06/verdantbamboo-deploys-bsd-variant-of.html
+  Reason: Score just below Silent Ransom Group; both bumped by critical CVE clusters.
+
+Cluster I: Meta Instagram AI hack (2 members) — score 2.634
+  URLs: bleepingcomputer + securityweek
+  Reason: Lower score; impact (20k accounts) is notable but score fell short.
+
+Cluster J: Troy Hunt — Data Breach Disclosure Lag (HN) — score 2.728
+  URL: https://www.troyhunt.com/1000-data-breaches-later-the-disclosure-lag-is-worse-than-ever
+  HN engagement: 190.5 points (z=0.256 within HN family)
+  Reason: Security-adjacent, solid HN engagement, but bumped.
+
+Cluster K: OpenAI ChatGPT security controls — score 2.740
+  URL: https://www.securityweek.com/openai-rolling-out-chatgpt-account-security-controls
+  Reason: Product announcement, not an incident. Bumped.
+
+Cluster L: VS Code 2-hour extension delay — score 2.605
+  URL: https://thehackernews.com/2026/06/vs-code-adds-2-hour-extension-auto.html
+  Reason: Defensive improvement, no severity boost. Bumped.
+
+Cluster M: SourceCodester Timetabling System SQL injections (7 CVEs) — score -1.797
+  CVEs: CVE-2026-11471, 11472, 11482, 11483, 11484, 11485, 11486
+  Reason: Low CVSS (7.3), research-grade product of minimal real-world impact.
+  Negative engagement z-score dragged total below zero. Dropped.
+
+Cluster N: Comodo Firewall IPv6 BSOD — score 1.593
+  CVE-2026-49494 (HIGH 7.5)
+  Reason: Notable crash-from-IPv6 attack, but old (21.8h), single item, no cross-source coverage.
+
+Cluster O: Boost Serialization no-patch — score 1.365
+  CVE-2026-11460 (HIGH 7.3)
+  Reason: Interesting (maintainer postponed indefinitely), but low CVSS, very old, no coverage.
+
+Cluster P: C0XMO Botnet DD-WRT — score 2.016
+  URL: https://www.bleepingcomputer.com/news/security/c0xmo-botnet-spreads-via-dd-wrt-router-flaw-kills-rival-malware
+  Reason: Interesting (kills rival malware), but 20.8h old, single source. Bumped.
+
+Cluster Q: SANS ISC Stormcast — dropped (no body, stormcast podcast link only)
+Cluster R: Emphere funding — dropped (not security incident)
+Cluster S: Intelligent Terminal (Windows) — dropped (not security)
+Cluster T: HN non-security items (perceptron, gamers, Texas grid, etc.) — dropped (not security)
+
+=== DEDUP NOTES ===
+- UNC3753 (thehackernews) and "Silent Ransom Group" (bleepingcomputer, securityweek) are the same threat actor;
+  clustered via rule 3 (fuzzy title 85+) + rule 4 (no shared CVE but overlapping incident).
+- Meta Instagram hack: bleepingcomputer + securityweek versions fuzzy-matched at ~90.
+- All 52 items were NEW (0 repeats from seen.jsonl).

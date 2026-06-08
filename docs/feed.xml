@@ -10,12 +10,145 @@
     <description>Daily OSINT cybersecurity digest. Top five stories surfaced from news, social,
 and authoritative sources, narrated by a rotating cast of hosts.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 May 2026 16:48:40 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 08 Jun 2026 11:12:32 +0000</lastBuildDate>
     <itunes:author>pnikolaidis</itunes:author>
     <itunes:category text="Technology"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:summary>Daily OSINT cybersecurity digest. Top five stories surfaced from news, social,
 and authoritative sources, narrated by a rotating cast of hosts.</itunes:summary>
+    <item>
+      <title>Security Digest — 2026-06-08</title>
+      <description>Multiple unauthenticated WordPress plugins have critical 9.8 CVSS remote code execution flaws published today alongside three Tenda home-router models with stack-overflow vulnerabilities, at least one rated critical. SolarWinds has confirmed its Serv-U managed file-transfer product is being actively exploited in the wild and has issued an emergency patch. A Risky Business bulletin flags a newly disclosed Cisco SD-WAN zero-day alongside a supply-chain hygiene move by RubyGems. Finally, VMware has patched three stored cross-site scripting vulnerabilities in Cloud Foundation Operations that could allow privilege escalation.</description>
+      <content:encoded><![CDATA[<h2>TL;DR</h2>
+<p>Multiple unauthenticated WordPress plugins have critical 9.8 CVSS remote code execution flaws published today alongside three Tenda home-router models with stack-overflow vulnerabilities, at least one rated critical. SolarWinds has confirmed its Serv-U managed file-transfer product is being actively exploited in the wild and has issued an emergency patch. A Risky Business bulletin flags a newly disclosed Cisco SD-WAN zero-day alongside a supply-chain hygiene move by RubyGems. Finally, VMware has patched three stored cross-site scripting vulnerabilities in Cloud Foundation Operations that could allow privilege escalation.</p>
+<h2>1. Batch of Critical WordPress CVEs: Unauthenticated RCE Across Multiple Plugins and Themes</h2>
+<p><strong>Why it matters:</strong> Any WordPress site running the Seotheme, Background Image Cropper, Travelscape, or Augmented-Reality plugins is exposed to complete server takeover by unauthenticated remote attackers — no credentials required.</p>
+<p>NVD published five WordPress-related CVEs today, three rated critical (CVSS 9.8). CVE-2023-54352 (Seotheme theme) and CVE-2024-58348 (Background Image Cropper) allow unauthenticated PHP file upload and execution, giving attackers a persistent shell. CVE-2024-58349 (Travelscape 1.0.3 theme) similarly allows arbitrary file upload to achieve remote code execution. CVE-2023-54350 (Augmented-Reality plugin) exposes an elFinder connector that lets attackers create and execute malicious PHP files without authentication. CVE-2023-54351 (Sonaar Music Plugin 4.7) adds a stored XSS to the set. Exploits for all five have been made public.</p>
+<p>WordPress administrators should audit installed plugins and themes against this list and update or remove affected components immediately. The availability of public exploits makes mass scanning and opportunistic compromise highly likely.</p>
+<p><em>Covered in: nvd — 5 posts across 1 source</em></p>
+<ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-54352">CVE-2023-54352 (CRITICAL 9.8) — WordPress Seotheme unauthenticated RCE</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-58348">CVE-2024-58348 (CRITICAL 9.8) — WordPress Background Image Cropper arbitrary file upload</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2024-58349">CVE-2024-58349 (CRITICAL 9.8) — WordPress Travelscape theme arbitrary file upload</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-54350">CVE-2023-54350 (HIGH 7.5) — WordPress Augmented-Reality plugin RCE via elFinder</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-54351">CVE-2023-54351 (HIGH 7.2) — WordPress Sonaar Music Plugin stored XSS</a></li>
+</ul>
+<h2>2. Tenda Router Stack Overflows: Critical and High CVEs Across Multiple Models</h2>
+<p><strong>Why it matters:</strong> Three Tenda home and SOHO router models contain remotely exploitable stack-based buffer overflows, one rated critical at CVSS 9.8, putting home networks and small businesses at risk of complete device compromise.</p>
+<p>CVE-2026-11499 (CRITICAL 9.8) affects the Tenda HG7, HG9, and HG10 routers' domain-blocking function; an attacker can trigger a stack overflow remotely without authentication. CVE-2026-11498 (HIGH 8.8) hits the same device family via the VoIP configuration interface. CVE-2026-11503 (HIGH 8.8) targets the Tenda CX12L via a Wi-Fi SSID configuration endpoint. All three flaws allow remote exploitation and public exploits are available or likely imminent.</p>
+<p>Tenda routers are widely deployed in home and small-office environments and are rarely updated. Administrators who cannot patch immediately should consider disabling the web management interface from the WAN or restricting access by firewall rules. No vendor patch timeline has been publicly announced.</p>
+<p><em>Covered in: nvd — 3 posts across 1 source</em></p>
+<ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-11499">CVE-2026-11499 (CRITICAL 9.8) — Tenda HG7/HG9/HG10 formDOMAINBLK stack overflow</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-11498">CVE-2026-11498 (HIGH 8.8) — Tenda HG7/HG9/HG10 VoIP OtherSet stack overflow</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-11503">CVE-2026-11503 (HIGH 8.8) — Tenda CX12L Wi-Fi configuration stack overflow</a></li>
+</ul>
+<h2>3. SolarWinds Serv-U Vulnerability Actively Exploited in the Wild</h2>
+<p><strong>Why it matters:</strong> Unauthenticated attackers are already exploiting a flaw in SolarWinds' Serv-U managed file-transfer server — organizations that have not yet patched are actively being targeted.</p>
+<p>SolarWinds has disclosed and patched a vulnerability in Serv-U that allows unauthenticated attackers to crash the service via specially crafted HTTP POST requests. Active exploitation in the wild has been confirmed, making this an urgent patching priority for all organizations running Serv-U. SolarWinds products have been repeatedly targeted in significant breaches, so threat actors are keenly aware of their enterprise footprint.</p>
+<p>Organizations should apply the SolarWinds patch immediately and review Serv-U access logs for unusual POST request patterns indicative of exploitation attempts.</p>
+<p><em>Covered in: securityweek — 1 post across 1 source</em></p>
+<ul>
+<li><a href="https://www.securityweek.com/solarwinds-patches-exploited-serv-u-vulnerability">SolarWinds Serv-U Vulnerability Exploited in the Wild</a></li>
+</ul>
+<h2>4. Cisco SD-WAN Zero-Day Disclosed; RubyGems Adds Supply-Chain Cooldowns; AT&amp;T/IBM Foreign Hack Allegations</h2>
+<p><strong>Why it matters:</strong> A newly disclosed Cisco SD-WAN zero-day could affect enterprise network infrastructure, while simultaneous moves by RubyGems and allegations against AT&amp;T and IBM underscore a broad, ongoing supply-chain and infrastructure security pressure.</p>
+<p>Today's Risky Business security bulletin reports that Cisco has warned of a new zero-day in its SD-WAN product, an enterprise networking staple. The same bulletin flags that AT&amp;T and IBM have been accused of concealing foreign hacking incidents from regulators. On the defensive side, RubyGems is adding dependency cooldown periods to its package registry to blunt supply-chain attacks — similar in spirit to what npm has deployed — slowing down the window for typosquatting or malicious version bumps. Google security team layoffs were also noted as a concern for defensive research capacity.</p>
+<p>Cisco SD-WAN administrators should monitor for Cisco's advisory and apply mitigations as soon as available. The RubyGems change is a net positive for Ruby ecosystem security.</p>
+<p><em>Covered in: risky_business_news — 1 post across 1 source</em></p>
+<ul>
+<li><a href="https://news.risky.biz/risky-bulletin-rubygems-adds-dependency-cooldowns-to-counter-supply-chain-attacks">Risky Bulletin: RubyGems adds dependency cooldowns to counter supply chain attacks</a></li>
+</ul>
+<h2>5. VMware Cloud Foundation Operations: Three Stored XSS Vulnerabilities (CVE-2026-41722/41723/41724)</h2>
+<p><strong>Why it matters:</strong> Authenticated VMware Cloud Foundation users with policy-creation privileges can inject persistent scripts to perform administrative actions on behalf of other users, enabling privilege escalation in virtualization management planes.</p>
+<p>VMware has patched three stored cross-site scripting vulnerabilities (CVE-2026-41722, CVE-2026-41723, CVE-2026-41724, all CVSS 8.0) in Cloud Foundation Operations. An attacker with limited privileges — sufficient to create policies, views, or text widgets — can embed malicious JavaScript that executes in other administrators' browsers, potentially taking over higher-privileged sessions. These flaws are concerning in VMware environments where Cloud Foundation Operations is used to manage large virtualization estates.</p>
+<p>Administrators should apply VMware's patch promptly and audit who has policy/view-creation permissions in Cloud Foundation Operations.</p>
+<p><em>Covered in: nvd — 3 posts across 1 source</em></p>
+<ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-41722">CVE-2026-41722 (HIGH 8.0) — VMware Cloud Foundation Operations stored XSS</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-41723">CVE-2026-41723 (HIGH 8.0) — VMware Cloud Foundation Operations stored XSS</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-41724">CVE-2026-41724 (HIGH 8.0) — VMware Cloud Foundation Operations stored XSS</a></li>
+</ul>
+<h2>Signal stats</h2>
+<ul>
+<li>Total items processed: 52</li>
+<li>New (post-dedup): 52</li>
+<li>Clusters formed: 17</li>
+<li>Top 5 selected from: 17 candidate clusters</li>
+</ul>
+]]></content:encoded>
+      <pubDate>Mon, 08 Jun 2026 12:00:00 +0000</pubDate>
+      <guid isPermaLink="false">security-summary-2026-06-08</guid>
+      <enclosure url="https://raw.githubusercontent.com/pnikolaidis/security-summary/main/state/runs/2026-06-08/digest.mp3" length="6417120" type="audio/mpeg"/>
+      <itunes:duration>00:05:20</itunes:duration>
+      <itunes:author>Allie</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>Security Digest — 2026-05-29</title>
+      <description>Oracle dropped a massive critical patch update with over 20 CVEs across E-Business Suite and REST Data Services — including a CVSS 10.0 unauthenticated takeover. GitHub's removal of a researcher's account after they published unpatched Windows zero-days sparked a high-profile dispute about vulnerability disclosure norms. An unpatched zero-day in Gogs (CVSS 9.4) lets any authenticated user run arbitrary code on exposed instances. Attackers are actively exploiting a FortiClient EMS authentication bypass to deploy a novel credential stealer called EKZ. Supply chain attackers hit the NuGet and npm ecosystems, targeting Brazilian banking systems and cloud credentials.</description>
+      <content:encoded><![CDATA[<h2>TL;DR</h2>
+<p>Oracle dropped a massive critical patch update with over 20 CVEs across E-Business Suite and REST Data Services — including a CVSS 10.0 unauthenticated takeover. GitHub's removal of a researcher's account after they published unpatched Windows zero-days sparked a high-profile dispute about vulnerability disclosure norms. An unpatched zero-day in Gogs (CVSS 9.4) lets any authenticated user run arbitrary code on exposed instances. Attackers are actively exploiting a FortiClient EMS authentication bypass to deploy a novel credential stealer called EKZ. Supply chain attackers hit the NuGet and npm ecosystems, targeting Brazilian banking systems and cloud credentials.</p>
+<h2>1. Oracle Critical Patch Update — Up to CVSS 10.0 Across E-Business Suite and REST Data Services</h2>
+<p><strong>Why it matters:</strong> Multiple Oracle products used by enterprises worldwide are vulnerable to unauthenticated remote takeover; the highest-rated flaw (CVE-2026-46840, CVSS 10.0) requires no authentication and achieves full system compromise with scope change across Oracle REST Data Services.</p>
+<p>Oracle's latest Critical Patch Update includes more than 20 high- and critical-severity CVEs spanning Oracle E-Business Suite, Oracle REST Data Services (ORDS), and Oracle Database Server. The most severe, CVE-2026-46840 (CVSS 10.0), allows an unauthenticated attacker with network access via HTTPS to fully take over Oracle REST Data Services, with attacks spilling across the scope boundary into dependent products. Several other ORDS flaws rate 9.9, including CVE-2026-46839 and CVE-2026-46775, which require only low-privilege network access. Oracle Hospitality OPERA 5 (CVE-2026-34311, CVSS 9.8) and Oracle iAssets (CVE-2026-46822, CVSS 9.9) round out the critical set — both allowing unauthenticated HTTP-based takeover.</p>
+<p>Patching is urgent for any organization running Oracle E-Business Suite 12.2.x, ORDS 24.2–26.1, or Oracle Database Server 23.4–23.26. The scope-change flag on several ORDS flaws means a compromised ORDS instance can pivot to downstream Oracle infrastructure.</p>
+<p><em>Covered in: nvd — 22 CVEs</em></p>
+<ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-46840">CVE-2026-46840 (CVSS 10.0) — Oracle REST Data Services unauthenticated takeover</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-46822">CVE-2026-46822 (CVSS 9.9) — Oracle iAssets low-priv takeover via scope change</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-46839">CVE-2026-46839 (CVSS 9.9) — Oracle ORDS low-priv takeover via scope change</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-34311">CVE-2026-34311 (CVSS 9.8) — Oracle Hospitality OPERA 5 unauthenticated HTTP takeover</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-46833">CVE-2026-46833 (CVSS 9.0) — Oracle Database Server Net Service TLS takeover</a></li>
+</ul>
+<h2>2. GitHub Bans Security Researcher Over Windows Zero-Days — Disclosure War Erupts</h2>
+<p><strong>Why it matters:</strong> Microsoft's removal of a researcher's GitHub account after they published unpatched Windows exploits reignited a fractious debate about who controls the timeline for vulnerability disclosure, with hundreds of comments on Hacker News and a sharp public counter-essay calling Microsoft's disclosure posture a &quot;dumpster fire.&quot;</p>
+<p>A researcher going by Chaotic Eclipse (aka Nightmare-Eclipse) disclosed multiple unpatched zero-day vulnerabilities in Windows and had their GitHub account removed shortly afterward. Microsoft publicly advocated for Coordinated Vulnerability Disclosure (CVD), arguing researchers should give vendors time to patch before going public. Critics responded that Microsoft routinely misses deadlines, dismisses low-severity reports, and retaliates against researchers — pointing to a history of contentious interactions with external bug hunters. The HN thread &quot;GitHub bans security researcher who posted zero-day Windows exploits&quot; reached over 500 engagement points with 188 comments, making it the most-discussed security story on the platform this cycle.</p>
+<p>The removal of a researcher's account from GitHub (owned by Microsoft) drew particular criticism, as it was seen as using platform power to suppress security disclosures rather than fix the underlying vulnerabilities.</p>
+<p><em>Covered in: hackernews (×2), thehackernews — 3 posts across 2 sources</em></p>
+<ul>
+<li><a href="https://www.tomshardware.com/tech-industry/cyber-security/microsofts-github-bans-security-researcher-who-posted-zero-day-windows-exploits-because-company-ruined-their-life-expert-claims-action-is-vindictive-and-promises-further-retaliation">GitHub bans security researcher who posted zero-day Windows exploits (Tom's Hardware via HN)</a></li>
+<li><a href="https://doublepulsar.com/microsofts-stance-on-zero-day-exploits-is-a-dumpster-fire-of-their-own-making-0946117940a4">Microsoft's stance on zero day exploits is a dumpster fire of their own making (DoublePulsar via HN)</a></li>
+<li><a href="https://thehackernews.com/2026/05/microsoft-slams-public-zero-day.html">Microsoft Slams Public Zero-Day Disclosures Amid GitHub Researcher Account Removal (The Hacker News)</a></li>
+</ul>
+<h2>3. Unpatched Gogs Zero-Day — Authenticated Users Get Full RCE (CVSS 9.4)</h2>
+<p><strong>Why it matters:</strong> Any authenticated user on a public-facing Gogs instance — no special privilege required — can achieve remote code execution right now, with no patch available.</p>
+<p>Rapid7 disclosed a critical RCE vulnerability in Gogs, a popular open-source self-hosted Git service with broad adoption among teams that don't want to run GitLab or Gitea. Rated CVSS 9.4, the flaw requires only an authenticated session — not admin rights — to execute arbitrary code on the server. There is currently no CVE assigned and no patch available from the Gogs project, making this a true zero-day. Both BleepingComputer and The Hacker News reported independently on the same day, confirming its significance. Administrators are advised to restrict network access to Gogs instances or require stronger authentication controls until a fix lands.</p>
+<p><em>Covered in: bleepingcomputer, thehackernews — 2 posts across 2 sources</em></p>
+<ul>
+<li><a href="https://www.bleepingcomputer.com/news/security/new-gogs-zero-day-flaw-lets-hackers-get-remote-code-execution">New Gogs zero-day flaw lets hackers get remote code execution (BleepingComputer)</a></li>
+<li><a href="https://thehackernews.com/2026/05/critical-gogs-rce-vulnerability-lets.html">Critical Gogs RCE Vulnerability Lets Any Authenticated User Execute Arbitrary Code (The Hacker News)</a></li>
+</ul>
+<h2>4. Attackers Exploit FortiClient EMS Auth-Bypass to Deploy Novel Credential Stealer</h2>
+<p><strong>Why it matters:</strong> CVE-2026-35616, an authentication bypass in FortiClient Enterprise Management Server, is being actively weaponized to push a previously undocumented credential stealer called EKZ across managed enterprise endpoints.</p>
+<p>Arctic Wolf and other researchers confirmed that threat actors are exploiting CVE-2026-35616 — a now-patched authentication bypass in FortiClient EMS — to deliver EKZ, an undocumented infostealer disguised as a legitimate Fortinet endpoint binary. The attack abuses the trusted endpoint management infrastructure itself to push malware to all connected managed devices, multiplying the blast radius far beyond a single compromised machine. Organizations running FortiClient EMS deployments that have not applied the latest patches should treat this as urgent; the campaign specifically exploits the trusted relationship between EMS and its managed fleet.</p>
+<p><em>Covered in: bleepingcomputer, thehackernews — 2 posts across 2 sources</em></p>
+<ul>
+<li><a href="https://www.bleepingcomputer.com/news/security/hackers-exploit-forticlient-ems-flaw-to-push-infostealer-malware">Hackers exploit FortiClient EMS flaw to push infostealer malware (BleepingComputer)</a></li>
+<li><a href="https://thehackernews.com/2026/05/threat-actors-exploit-critical.html">Threat Actors Exploit Critical FortiClient EMS Flaw to Deploy Credential Stealer (The Hacker News)</a></li>
+</ul>
+<h2>5. Supply Chain: Malicious NuGet Package Steals Banking Credentials; npm Packages Hit Cloud Secrets</h2>
+<p><strong>Why it matters:</strong> Software supply chain attackers are targeting both the .NET and JavaScript ecosystems simultaneously — one campaign harvesting PFX certificates from Brazilian banking SDK users, another siphoning cloud credentials from npm package consumers.</p>
+<p>Socket researchers discovered that versions 2.0.0–2.0.4 of &quot;Sicoob.Sdk&quot; on NuGet are malicious — they impersonate the legitimate C# SDK for Sicoob, one of Brazil's largest cooperative banking networks, and exfiltrate PFX certificates and client IDs used for financial authentication. In parallel, The Hacker News also reported npm packages targeting cloud secrets from developer environments. The dual-ecosystem timing suggests coordinated or copycat supply chain activity. Developers using either ecosystem should audit recent package additions and verify publisher identity for any SDK touching financial or cloud infrastructure.</p>
+<p><em>Covered in: thehackernews — 1 post</em></p>
+<ul>
+<li><a href="https://thehackernews.com/2026/05/malicious-sicoob-nuget-steals-banking.html">Malicious Sicoob NuGet Steals Banking Credentials as npm Packages Target Cloud Secrets (The Hacker News)</a></li>
+</ul>
+<h2>Signal stats</h2>
+<ul>
+<li>Total items processed: 117</li>
+<li>New (post-dedup): 116</li>
+<li>Clusters formed: 28</li>
+<li>Top 5 selected from: 28 candidate clusters</li>
+</ul>
+]]></content:encoded>
+      <pubDate>Fri, 29 May 2026 12:00:00 +0000</pubDate>
+      <guid isPermaLink="false">security-summary-2026-05-29</guid>
+      <enclosure url="https://raw.githubusercontent.com/pnikolaidis/security-summary/main/state/runs/2026-05-29/digest.mp3" length="5681280" type="audio/mpeg"/>
+      <itunes:duration>00:04:44</itunes:duration>
+      <itunes:author>Avery Ito</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Security Digest — 2026-05-28</title>
       <description>A wave of ten critical WordPress plugin vulnerabilities disclosed today includes a CVSS 9.9 unrestricted file-upload flaw enabling web shell deployment. Carnival Cruise Corporation confirmed a ShinyHunters breach affecting nearly 6 million guests. The GlassWorm developer supply-chain botnet was dismantled by CrowdStrike, Google, and Shadowserver — its C2 ran over Solana and BitTorrent DHT to resist takedown. A newly documented threat actor, JINX-0164, is hitting cryptocurrency firms with fake recruiter lures and custom macOS malware targeting CI/CD pipelines. And a cryptojacking campaign is now exploiting both SEO poisoning and AI chatbot recommendations to deliver GPU mining malware.</description>
