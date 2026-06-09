@@ -1,0 +1,198 @@
+run_date: 2026-06-09
+persona: Adam Insight (voice: onyx)
+inbox_stats: {total_fetched: 116, new: 115, repeats: 1, per_family: {news: 39, hn: 15, nvd: 61, youtube: 1}}
+
+--- COLLECTOR NOTES ---
+reddit: skipped (missing credentials)
+bluesky: all 5 queries returned 403 Forbidden (API restriction)
+mastodon: all 5 hashtags returned 422 Unprocessable Entity (likely auth required for timeline)
+cisa_advisories: 403 Forbidden on all.xml (KEV feed succeeded: 0 new items)
+github_advisories: 406 Not Acceptable (feed format mismatch)
+youtube: 1 new item (The Record News channel)
+nvd: 61 items (no API key, unauthenticated rate limit applied)
+hn: 15 items (multiple security-adjacent keywords)
+news/rss: 39 items across krebs, bleepingcomputer, thehackernews, darkreading, securityweek, schneier, project_zero, msrc, sans_isc, risky_business_news, seriously_risky_business
+
+--- CLUSTERING ---
+
+Cluster CKP (Check Point VPN + Qilin Ransomware):
+  Rule: same CVE (CVE-2026-50751) + fuzzy title match on "Check Point VPN"
+  Members:
+    - [idx=1]  bleepingcomputer: CISA gives feds 3 days to patch Check Point VPN bug
+    - [idx=11] bleepingcomputer: Check Point links VPN zero-day attacks to Qilin ransomware gang
+    - [idx=18] thehackernews: Critical Check Point VPN Flaw Exploited (CVE-2026-50751)
+    - [idx=23] darkreading: Check Point VPN Flaw Exploited Since Early May
+    - [idx=27] securityweek: Check Point VPN Zero-Day Exploited in Qilin Ransomware Attacks
+    - [idx=54] nvd: CVE-2026-50751 (CRITICAL, CVSS 9.3)
+    - [idx=55] nvd: CVE-2026-50752 (HIGH, CVSS 7.4) — related cert validation logic
+  distinct_source_families: 2 (news, nvd)
+  severity_boost: +1.0 (CVSS>=9) + 0.5 (zero-day phrase) + 0.5 (actively exploited phrase) = +2.0
+  score_breakdown:
+    diversity: 2.0 * log(1+2) = 2.197
+    recency: 1.5 * exp(-0/24) = 1.500
+    engagement: ~0.3 (nvd CVSS z-scored)
+    severity: 2.5 * 2.0 = 5.000
+    novelty: 0 (no match in featured.jsonl last 7d)
+  total_score: 9.00
+  STATUS: SELECTED (rank 1)
+
+Cluster CHR (Chrome Zero-Day CVE-2026-11645):
+  Rule: same CVE (CVE-2026-11645) shared between news items [2],[28] and NVD items [94-113]
+  Members:
+    - [idx=2]   bleepingcomputer: Google patches new Chrome zero-day flaw exploited in the wild
+    - [idx=28]  securityweek: Google Patches 5th Chrome Zero-Day Exploited in 2026
+    - [idx=94]  nvd: CVE-2026-11632 (HIGH, 7.5) — Use after free TabStrip
+    - [idx=95]  nvd: CVE-2026-11633 (HIGH, 8.8) — Use after free Bluetooth/Mac
+    - [idx=96]  nvd: CVE-2026-11634 (CRITICAL, 9.6) — Use after free Gamepad/Windows
+    - [idx=97]  nvd: CVE-2026-11635 (HIGH, 8.3) — Use after free Bluetooth/Mac
+    - [idx=98]  nvd: CVE-2026-11637 (HIGH, 8.8) — Use after free Views/Mac
+    - [idx=99]  nvd: CVE-2026-11638 (CRITICAL, 9.6) — Use after free Printing
+    - [idx=100] nvd: CVE-2026-11639 (HIGH, 7.5) — Use after free Compositing/Mac
+    - [idx=101] nvd: CVE-2026-11641 (HIGH, 7.5) — Use after free Bluetooth/Windows
+    - [idx=102] nvd: CVE-2026-11642 (HIGH, 8.3) — Use after free Web Apps
+    - [idx=103] nvd: CVE-2026-11643 (HIGH, 8.1) — Use after free Proxy
+    - [idx=104] nvd: CVE-2026-11644 (HIGH, 7.5) — Use after free Views/Linux
+    - [idx=105] nvd: CVE-2026-11645 (HIGH, 8.8) — OOB read/write V8 (THE EXPLOITED ONE)
+    - [idx=106] nvd: CVE-2026-11646 (HIGH, 8.8) — Use after free ViewTransitions
+    - [idx=107] nvd: CVE-2026-11647 (HIGH, 8.3) — Use after free Printing/Android
+    - [idx=108] nvd: CVE-2026-11649 (HIGH, 8.8) — Use after free V8
+    - [idx=109] nvd: CVE-2026-11650 (HIGH, 8.8) — Use after free V8
+    - [idx=110] nvd: CVE-2026-11651 (CRITICAL, 9.6) — Use after free Network
+    - [idx=111] nvd: CVE-2026-11652 (HIGH, 8.3) — Use after free Extensions
+    - [idx=112] nvd: CVE-2026-11656 (HIGH, 8.3) — Use after free ServiceWorker
+    - [idx=113] nvd: CVE-2026-11657 (HIGH, 8.8) — Use after free Payments/Mac
+  distinct_source_families: 2 (news, nvd)
+  severity_boost: +1.0 (CVSS 9.6 >=9) + 0.5 (zero-day) + 0.5 (exploited in wild) = +2.0
+  score_breakdown:
+    diversity: 2.0 * log(1+2) = 2.197
+    recency: 1.5 * exp(-0/24) = 1.500
+    engagement: ~0.3
+    severity: 2.5 * 2.0 = 5.000
+    novelty: 0
+  total_score: 9.00
+  STATUS: SELECTED (rank 2)
+  diversity_check vs CKP: no shared CVEs, no shared vendor tokens (Google/Chrome vs Check Point) — PASS
+
+Cluster APH (Apache HTTP Server CVE batch):
+  Rule: fuzzy title match "Apache HTTP Server" (all titles share exact vendor name), all within 24h window
+  Members:
+    - [idx=65] nvd: CVE-2026-34355 (HIGH, 7.5) — buffer overflow mod_proxy_html
+    - [idx=66] nvd: CVE-2026-34356 (HIGH, 7.5) — Heap buffer overflow
+    - [idx=68] nvd: CVE-2026-42536 (HIGH, 7.5) — Heap buffer overflow
+    - [idx=69] nvd: CVE-2026-44185 (HIGH, 7.3) — Buffer Over-read outbound proxy
+    - [idx=70] nvd: CVE-2026-44631 (CRITICAL, 9.8) — Buffer Underwrite
+    - [idx=74] nvd: CVE-2026-48913 (HIGH, 7.3) — Use After Free mod_http2
+  distinct_source_families: 1 (nvd)
+  severity_boost: +1.0 (CVSS 9.8 >= 9) = +1.0
+  score_breakdown:
+    diversity: 2.0 * log(1+1) = 1.386
+    recency: 1.5 * exp(-0/24) = 1.500
+    engagement: ~0.5 (high CVSS z-scored within nvd family)
+    severity: 2.5 * 1.0 = 2.500
+    novelty: 0
+  total_score: 5.89
+  STATUS: SELECTED (rank 3)
+  diversity_check vs CKP, CHR: no shared CVEs, no shared vendor tokens — PASS
+
+Cluster PYP (PyPI Hades/Shai-Hulud supply chain):
+  Rule: fuzzy title match "PyPI" + "Shai-Hulud"/"Hades" (token_set_ratio ~95 between [6] and [25]),
+        [14] and [6] share "19 packages" exact token; [37] linked via SANS cross-reference
+  Members:
+    - [idx=6]  bleepingcomputer: New Shai-Hulud attack trojanizes 19 science-focused PyPI packages
+    - [idx=14] thehackernews: Hades PyPI Attack: 19 Packages Poisoned to Auto-Run Bun Credential Stealer
+    - [idx=25] darkreading: 'Hades' Campaign Against PyPI Puts New Spin on Shai-Hulud
+    - [idx=37] sans_isc: TeamPCP Supply Chain Campaign — Activity Through 2026-06-07
+  distinct_source_families: 1 (news — bleepingcomputer, thehackernews, darkreading, sans_isc all map to 'news')
+  severity_boost: 0 (no matching phrases, no CVE, no CVSS)
+  note: "credential stealer" not in severity_phrases; supply chain attack is important but not auto-boosted
+  score_breakdown:
+    diversity: 2.0 * log(1+1) = 1.386
+    recency: 1.5 * exp(-0/24) = 1.500
+    engagement: 0
+    severity: 0
+    novelty: 0 (TrapDoor PyPI story 2026-05-25 in featured.jsonl shares "PyPI" but different campaign, >7d ago — no penalty)
+  total_score: 2.886
+  STATUS: SELECTED (rank 4) — editorial: highest-novelty story; 4 sources across different news outlets despite single family
+  diversity_check vs CKP, CHR, APH: no shared CVEs, no shared vendor tokens — PASS
+
+Cluster NSO (NSO Group WhatsApp Spyware):
+  Rule: fuzzy title match on "NSO" + "WhatsApp" (token_set_ratio ~90 across [7],[17],[31])
+  Members:
+    - [idx=7]  bleepingcomputer: WhatsApp says it disrupted new NSO spyware phishing attacks
+    - [idx=17] thehackernews: Meta Blocks NSO Group's New WhatsApp Phishing Attack, Files Contempt Order
+    - [idx=31] securityweek: WhatsApp Catches Spyware Firm NSO Defying No-Hacking Court Order
+  distinct_source_families: 1 (news)
+  severity_boost: 0 (no severity phrases match; "phishing" not in list)
+  note: vendor tokens from normalize.py show 'SAP' for all three — this appears to be a normalization artifact
+        (SAP vendor token likely matched a substring). Not used for clustering or diversity filter.
+  score_breakdown:
+    diversity: 2.0 * log(1+1) = 1.386
+    recency: 1.5 * exp(-0/24) = 1.500
+    engagement: 0
+    severity: 0
+    novelty: 0
+  total_score: 2.886
+  STATUS: SELECTED (rank 5) — tie-break with PyPI cluster (same score); selected over other 2.886-score clusters
+         due to editorial significance (contempt-of-court filing, high-profile legal escalation)
+  diversity_check vs CKP, CHR, APH, PYP: no shared CVEs, no shared vendor tokens — PASS
+
+--- DROPPED CLUSTERS (notable) ---
+
+Cluster LNX (Linux Kernel CVE-2026-23111):
+  Members: [idx=16] thehackernews: One-Character Linux Kernel Flaw Enables Local Root Access, Exploits Now Public
+  Score: 1.386 + 1.5 + 0 + 1.25 = 4.136  (severity boost +0.5 for "zero-day" adjacent phrasing)
+  Dropped: below Apache cluster (5.89). Single source, local root (not remote).
+
+Cluster LLM (LiteLLM CVE-2026-42271):
+  Members: [idx=15] thehackernews: LiteLLM Flaw CVE-2026-42271 Exploited in the Wild
+  Score: 1.386 + 1.5 + 0 + 1.25 = 4.136  (severity boost +0.5 for "in the wild")
+  Dropped: below Apache cluster (5.89). Single source, niche product (AI infrastructure).
+
+Cluster GOG (Gogs RCE zero-day):
+  Members: [idx=8] bleepingcomputer: Gogs patches critical zero-day enabling remote code execution
+  Score: 1.386 + 1.5 + 0 + 1.25 = 4.136
+  Dropped: below Apache. Single source, niche product (self-hosted git).
+
+Cluster UNF (UniFi OS critical auth bypass):
+  Members: [idx=9] bleepingcomputer: Critical UniFi OS bug lets hackers gain root without authentication
+  Score: 1.386 + 1.5 + 0 + 0 = 2.886
+  Dropped: ties with NSO/PyPI but less editorial significance.
+
+Cluster FRN (French govt messaging breach):
+  Members: [idx=0] bleepingcomputer
+  Score: ~2.886 (no severity boost, single source)
+  Dropped: insufficient multi-source signal.
+
+Cluster OXF (Oxford University careers breach):
+  Members: [idx=12] bleepingcomputer
+  Score: ~2.886. Dropped: single source.
+
+Cluster IRN (Iran hackers ignore ceasefire):
+  Members: [idx=24] darkreading
+  Score: ~2.886. Dropped: single source, no CVE/severity.
+
+Cluster SRG (Silent Ransom Group law firms):
+  Members: [idx=22] darkreading
+  Score: ~2.886. Dropped: single source.
+
+HN items [38-52]: Mostly off-topic (iPhone fertility study, SpaceX IPO, Apple WWDC, AI trends).
+  Only security-adjacent HN item: [idx=42] Let's Encrypt bans certs in sanctioned territories (score: 2.886)
+  Dropped: policy item, no active exploitation.
+
+NVD single-CVE items not clustered:
+  - Tenda router CVEs [53,57-63]: Low novelty, mass SOHO router vulns, no news coverage
+  - Keycloak [56]: Single NVD item, moderate severity
+  - OpenBullet2 [77-80]: CVSS 9.8 critical auth bypass — notable but single NVD source, niche tool
+    Score: 1.386 + 1.5 + 0.5 + 2.5 = 5.886 — close to Apache cluster; dropped as 6th place
+  - AdGuard Home [82]: CVSS 9.4 critical; single NVD item, dropped
+  - Python triple-quote injection [87]: CVSS 9.0, interesting but no news coverage
+  - STACKIT IaaS missing auth [81]: CVSS 9.8, but cloud-specific, no news coverage
+
+--- DEDUP NOTE ---
+1 repeat detected by seen.jsonl (exact URL match from previous run state).
+featured.jsonl last entry: 2026-05-28. No entries from last 7 days relative to 2026-06-09
+  → novelty penalty = 0 for all clusters (no recent repeat features).
+TrapDoor PyPI (2026-05-25) noted as thematically adjacent to Hades cluster but:
+  - 15 days ago (outside 7-day novelty window)
+  - Different campaign/technique
+  → no penalty applied.
