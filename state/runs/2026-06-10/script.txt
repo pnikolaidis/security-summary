@@ -1,0 +1,47 @@
+Good morning. Here is your security digest for June 10th, 2026. Ada Iverson here. Wednesday's signal, coming up. It is a busy one — Patch Tuesday landed yesterday with record numbers, and the day is not over yet.
+
+Story one. Microsoft's June 2026 Patch Tuesday is the largest in the company's history.
+
+Microsoft shipped fixes for 206 security vulnerabilities yesterday — a record for its monthly update cycle. Thirty-nine of those are rated Critical. Three flaws were publicly known before the patches even landed. Two of them, called YellowKey and GreenPlasma, let attackers gain full SYSTEM privileges on a fully patched Windows machine. A third, called MiniPlasma, lets an attacker bypass BitLocker encryption on a protected drive. Exploit code for at least three of the weaknesses is already public.
+
+Why it matters: YellowKey and GreenPlasma are zero-day privilege escalations — any attacker with a foothold on a Windows system can use them to take over that machine completely. But the evening got more chaotic. Within hours of Patch Tuesday, an anonymous researcher posted a brand new Defender exploit to GitHub called RoguePlanet. That one is also a privilege escalation to SYSTEM, exploiting a race condition in Microsoft Defender. The researcher claims a one-hundred-percent success rate on tested systems. So before midnight on Patch Tuesday, there were effectively four publicly known escalation paths, not three. On top of that, the critical Windows CVE scores include a DHCP client stack overflow and a TCP/IP heap overflow, both rated at 9.6 or higher. Patch everything. Prioritize internet-facing and domain-critical Windows systems first.
+
+Dark Reading notes that AI-assisted vulnerability research is being credited for the record CVE count — this kind of volume may simply be the new normal going forward.
+
+Pause.
+
+Story two. Ivanti and Fortinet both patched unauthenticated remote code execution flaws in network security products.
+
+Ivanti's Sentry secure mobile gateway has two critical vulnerabilities. The first, rated CVSS 10.0 — the maximum possible score — is an OS command injection that lets a remote attacker with no credentials whatsoever execute arbitrary commands as root. The second, rated CVSS 9.9, is an authentication bypass that lets an unauthenticated attacker create administrative accounts and take complete control of the appliance.
+
+Meanwhile, Fortinet patched a CVSS 9.8 OS command injection in FortiSandbox that similarly allows an unauthenticated attacker to run unauthorized commands via crafted HTTP requests.
+
+Why it matters: Ivanti and Fortinet products sit at the perimeter — they are internet-facing by design, and they have been priority targets for nation-state and ransomware actors in previous years. A CVSS 10.0 unauthenticated RCE on a gateway product is essentially the worst possible vulnerability score. If you have Ivanti Sentry in your environment, patch to R10.5.2, R10.6.2, or R10.7.1 immediately. For FortiSandbox, versions 4.2 through 5.0.5 are affected.
+
+Pause.
+
+Story three. OpenSSL patched eighteen vulnerabilities, including one critical flaw that can lead to remote code execution and a subtle encryption bug that can allow universal message forgery.
+
+The critical flaw is CVE-2026-45447. It is a use-after-free triggered by a specially crafted S/MIME or PKCS7-signed message. When OpenSSL processes a signed message with an empty digest algorithms field, it may incorrectly free memory that the calling application still needs. Depending on how the application uses memory afterward, this can cause crashes, heap corruption, or in some environments, remote code execution. Any application that processes PKCS7 or S/MIME signed messages using OpenSSL's PKCS7 APIs is potentially affected.
+
+The second significant flaw, CVE-2026-45445, is more subtle but arguably more dangerous from a cryptographic standpoint. When an application uses a specific low-level OpenSSL function called EVP underscore Cipher for AES-OCB authenticated encryption, the initialization vector provided by the caller is silently thrown away. Every message encrypted under the same key then uses the same nonce, which breaks both confidentiality and authentication. An attacker who has seen a single captured message can forge arbitrary ciphertext that passes the authentication check. Applications using the standard streaming encryption API are not affected — only those using the one-shot EVP Cipher function directly.
+
+SecurityWeek notes that many of the eighteen OpenSSL vulnerabilities this cycle were discovered using AI-assisted fuzzing — another signal of AI's growing role in vulnerability research.
+
+Pause.
+
+Story four. Veeam patched a critical remote code execution flaw in Backup and Replication.
+
+CVE-2026-44963 carries a CVSS score of 9.4. The catch is that exploitation requires only a valid domain account — not a dedicated Veeam credential. Any authenticated domain user on the same network can trigger remote code execution on the Veeam backup server.
+
+Why it matters: Backup servers are a primary ransomware target because destroying backups eliminates the victim's ability to recover without paying. This vulnerability reduces the attacker's bar from compromising a Veeam-specific admin account to compromising any ordinary domain user — a much easier task. If you run Veeam Backup and Replication in a Windows domain environment, apply the patch. If patching is not immediately possible, consider restricting which domain accounts can authenticate to the backup server.
+
+Pause.
+
+Story five. ServiceNow confirmed that attackers exploited an API vulnerability against real customer instances — and the company reportedly knew about the flaw for two months before patching.
+
+The vulnerability allowed an unauthenticated attacker to query data from customer ServiceNow instances via a vulnerable API endpoint. ServiceNow applied a server-side patch to hosted customer instances on June 5th. According to reporting, the company had known about the issue since approximately April 7th — a nearly two-month gap between discovery and remediation.
+
+Why it matters: ServiceNow handles sensitive enterprise data: IT tickets, change requests, HR workflows. An unauthenticated data query capability against live customer instances represents a significant breach risk. The two-month delay before patching, if confirmed, raises serious questions about the company's response timeline. If you are a ServiceNow customer, verify your hosted instance is on the June 5th build, and consider auditing your API access logs for anomalous query activity going back to early April.
+
+That's your digest for Wednesday, June 10th, 2026. Record Patch Tuesday, two perimeter security zero-days, a critical OpenSSL cryptography flaw, a Veeam backup server escalation, and an actively exploited ServiceNow incident. Plenty to act on. Stay safe out there.

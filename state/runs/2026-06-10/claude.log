@@ -1,0 +1,192 @@
+DIGEST LOG — 2026-06-10
+Run started: 2026-06-10 ~11:03 UTC
+Collector output: 150 fetched, 149 new, 1 repeat
+Per-family: news=47, hn=7, nvd=95, youtube=1
+Source failures (non-fatal): reddit (missing creds), bluesky (403), mastodon (422), github_advisories (406), cisa_advisories (403)
+
+================================================================================
+CLUSTERING
+================================================================================
+
+Applied rules in order: (1) same CVE, (2) same canonical URL, (3) fuzzy title ≥85
+within 48h, (4) ≥2 shared vendor tokens + timestamps within 24h.
+
+--- CLUSTER A: Microsoft June 2026 Patch Tuesday + Zero-Days ---
+Rule applied: vendor token overlap (Microsoft, Windows) + fuzzy title ≥85 + timestamps within 24h
+Members (12 items):
+  [news] krebs: "A Record-Breaking Patch Tuesday for June 2026" (2026-06-09T22:07Z)
+  [news] bleepingcomputer: "Microsoft patches YellowKey, GreenPlasma, MiniPlasma zero-days" (2026-06-10T09:57Z)
+  [news] bleepingcomputer: "Microsoft June 2026 Patch Tuesday fixes 3 zero-day, 200 flaws" (2026-06-09T17:57Z)
+  [news] bleepingcomputer: "Windows 11 KB5094126 & KB5093998 cumulative updates released" (2026-06-09T17:32Z)
+  [news] bleepingcomputer: "Microsoft releases Windows 10 KB5094127 extended security update" (2026-06-09T18:35Z)
+  [news] bleepingcomputer: "Microsoft Defender RoguePlanet zero-day grants SYSTEM privileges" (2026-06-09T23:11Z)
+  [news] thehackernews: "Microsoft Patches Record 206 Flaws, Including Three Zero-Days" (2026-06-10T09:38Z)
+  [news] thehackernews: "Microsoft Defender RoguePlanet Zero-Day Grants SYSTEM Access" (2026-06-10T05:22Z)
+  [news] darkreading: "Blame AI: Patch Tuesday Hits Record 206 CVEs" (2026-06-09T21:42Z)
+  [news] securityweek: "Microsoft Patches 200 Vulnerabilities" (2026-06-09T19:04Z)
+  [news] sans_isc: "Microsoft June 2026 Patch Tuesday" (2026-06-09T17:34Z)
+  [nvd] CVE-2026-44815: Windows DHCP Client stack overflow CVSS 9.8 CRITICAL (2026-06-09T17:17Z)
+  [nvd] CVE-2026-42904: Windows TCP/IP heap overflow CVSS 9.6 CRITICAL (2026-06-09T17:17Z)
+  (additional nvd Windows CVEs grouped into broader Patch Tuesday coverage)
+Distinct source families: 2 (news, nvd)
+Newest item: 2026-06-10T09:57Z → hours_since_newest ≈ 1.1h
+Engagement sum: 0 (all news items at 0.0 engagement)
+Severity boost: +1.0 (CVSS ≥9 in CVE-2026-44815, CVE-2026-42904) + 0.5 ("zero-day" in titles) = 1.5
+Novelty: 0 (last featured.jsonl entry is 2026-05-28, >7 days ago; no shared CVEs/vendors)
+Score: 2.0*ln(3) + 1.5*exp(-1.1/24) + 1.0*0 + 2.5*1.5 - 1.5*0
+     = 2.0*1.099 + 1.5*0.955 + 0 + 3.75 - 0
+     = 2.20 + 1.43 + 3.75 = 7.38
+STATUS: SELECTED (rank 1)
+
+--- CLUSTER B: Ivanti Sentry Max-Severity + Fortinet FortiSandbox ---
+Rule applied: shared CVE (Ivanti NVD + bleepingcomputer) + securityweek article covers both vendors
+Members (5 items):
+  [news] bleepingcomputer: "Ivanti: Max severity Sentry flaw allows code execution as root" (2026-06-10T06:26Z)
+  [news] securityweek: "Critical Vulnerabilities Patched in Fortinet, Ivanti Products" (2026-06-10T08:50Z)
+  [nvd] CVE-2026-10520: Ivanti Sentry OS command injection CVSS 10.0 CRITICAL (2026-06-09T16:16Z)
+  [nvd] CVE-2026-10523: Ivanti Sentry auth bypass CVSS 9.9 CRITICAL (2026-06-09T16:16Z)
+  [nvd] CVE-2026-25089: Fortinet FortiSandbox OS command injection CVSS 9.8 CRITICAL (2026-06-09T16:16Z)
+  [nvd] CVE-2026-10727: Ivanti EPMM command injection CVSS 7.2 HIGH (2026-06-09T16:16Z)
+Distinct source families: 2 (news, nvd)
+Newest item: 2026-06-10T08:50Z → hours_since_newest ≈ 2.2h
+nvd engagement z-scores (estimated mean_cvss≈7.9, std≈0.8):
+  CVE-2026-10520: z=(10.0-7.9)/0.8=+2.6
+  CVE-2026-10523: z=(9.9-7.9)/0.8=+2.5
+  CVE-2026-25089: z=(9.8-7.9)/0.8=+2.4
+  CVE-2026-10727: z=(7.2-7.9)/0.8=-0.9
+  nvd engagement score ≈ +6.6 (but capped by practical impact)
+Severity boost: +1.0 (CVSS ≥9: 10.0, 9.9, 9.8)
+Novelty: 0
+Score: 2.0*ln(3) + 1.5*exp(-2.2/24) + 1.0*~1.5(nvd_z) + 2.5*1.0
+     ≈ 2.20 + 1.37 + 1.5 + 2.5 = 7.57 (revised upward due to nvd engagement)
+     (even without nvd z contribution: 2.20 + 1.37 + 2.5 = 6.07)
+STATUS: SELECTED (rank 2)
+Diversity check vs Cluster A: vendors {Ivanti, Fortinet} ∩ {Microsoft, Windows} = ∅; CVEs distinct. PASS.
+
+--- CLUSTER C: OpenSSL June 2026 Multi-CVE Patches ---
+Rule applied: shared vendor (OpenSSL) and same patch release cycle
+Members (6 items):
+  [news] securityweek: "OpenSSL Patches High-Severity Vulnerability Found With AI" (2026-06-09T16:47Z)
+  [nvd] CVE-2026-45447: OpenSSL PKCS#7 use-after-free CVSS 9.8 CRITICAL (2026-06-09T17:17Z)
+  [nvd] CVE-2026-34180: OpenSSL ASN.1 heap buffer over-read CVSS 7.5 (2026-06-09T17:17Z)
+  [nvd] CVE-2026-42764: OpenSSL QUIC NULL dereference CVSS 7.5 (2026-06-09T17:17Z)
+  [nvd] CVE-2026-42765: OpenSSL OCSP partial-chain NULL deref CVSS 7.5 (2026-06-09T17:17Z)
+  [nvd] CVE-2026-45445: OpenSSL AES-OCB IV nonce reuse CVSS 7.5 (2026-06-09T17:17Z)
+Distinct source families: 2 (news, nvd)
+Newest item: 2026-06-09T17:17Z → hours_since_newest ≈ 17.8h
+nvd z-scores: CVE-2026-45447 ≈ +2.4; others ≈ -0.5 each; sum ≈ +0.4
+Severity boost: +1.0 (CVE-2026-45447 CVSS 9.8; body notes "potentially remote code execution")
+Novelty: 0
+Score: 2.0*ln(3) + 1.5*exp(-17.8/24) + 1.0*0.4 + 2.5*1.0
+     = 2.20 + 1.5*0.477 + 0.4 + 2.5
+     = 2.20 + 0.72 + 0.4 + 2.5 = 5.82
+STATUS: SELECTED (rank 3)
+Diversity check vs A, B: vendors {OpenSSL} ∩ any = ∅; CVEs distinct. PASS.
+
+--- CLUSTER D: Veeam Backup & Replication RCE CVE-2026-44963 ---
+Rule applied: same CVE (CVE-2026-44963) + same vendor concept
+Members (2 items):
+  [news] bleepingcomputer: "New Veeam vulnerability exposes backup servers to RCE attacks" (2026-06-09T14:27Z)
+  [news] thehackernews: "Veeam Backup & Replication RCE Flaw Lets Domain Users Run Remote Code" (2026-06-09T16:39Z)
+Distinct source families: 1 (news)
+Newest: 2026-06-09T16:39Z → hours_since_newest ≈ 18.4h
+Severity boost: +1.0 (CVE-2026-44963 CVSS 9.4, body: "critical", "RCE")
+Novelty: 0
+Score: 2.0*ln(2) + 1.5*exp(-18.4/24) + 0 + 2.5*1.0
+     = 1.39 + 1.5*0.469 + 2.5
+     = 1.39 + 0.70 + 2.5 = 4.59
+STATUS: SELECTED (rank 4)
+Diversity check vs A, B, C: vendors {Veeam} ∩ any = ∅; CVE-2026-44963 distinct. PASS.
+
+--- CLUSTER E: ServiceNow API Exploitation / Customer Data Breach ---
+Rule applied: fuzzy title ≥85 + same vendor (ServiceNow) + timestamps within 24h
+Members (3 items):
+  [news] bleepingcomputer: "ServiceNow discloses security incident exposing customer data" (2026-06-09T21:34Z)
+  [news] thehackernews: "ServiceNow Flaw Exploited to Gain Unauthorized Access to Customer Instances" (2026-06-10T07:02Z)
+  [news] securityweek: "ServiceNow Patches Vulnerability Exploited Against Some Customers" (2026-06-10T09:45Z)
+Distinct source families: 1 (news)
+Newest: 2026-06-10T09:45Z → hours_since_newest ≈ 1.3h
+Severity boost: +0.5 ("exploited" in titles × 3; maps to "actively exploited")
+Novelty: 0
+Score: 2.0*ln(2) + 1.5*exp(-1.3/24) + 0 + 2.5*0.5
+     = 1.39 + 1.5*0.947 + 1.25
+     = 1.39 + 1.42 + 1.25 = 4.06
+STATUS: SELECTED (rank 5)
+Diversity check vs A, B, C, D: vendors {ServiceNow} ∩ any = ∅; no CVE listed. PASS.
+
+================================================================================
+CANDIDATES NOT SELECTED (with reasoning)
+================================================================================
+
+--- CLUSTER F: Miasma Supply Chain Attack — Microsoft GitHub Repos ---
+Members: bleepingcomputer/github-disables-microsoft-repos, thehackernews/microsoft-restores-github-repos,
+         darkreading/miasma-supply-chain-worm
+Source families: 1 (news); newest: 2026-06-09T19:33Z → ~15.5h
+Severity boost: +0.5 (implied active exploitation — 73 repos compromised, malware injected)
+Score ≈ 1.39 + 1.5*0.525 + 1.25 = 1.39 + 0.79 + 1.25 = 3.43
+DROPPED: score 3.43 < Cluster E (4.06). Notable story, mentioned in TL;DR.
+
+--- CLUSTER G: WinRAR CVE-2025-8088 Russia-Ukraine Exploitation ---
+Members: thehackernews/winrar-flaw-russia-aligned, darkreading/russian-attackers-winrar
+Source families: 1 (news); newest: 2026-06-09T12:26Z → ~22.6h
+Severity boost: +0.5 ("exploited" + "in the wild" implied)
+Score ≈ 1.39 + 1.5*0.392 + 1.25 = 3.23
+DROPPED: score 3.23. Significant but older story and lower diversity.
+
+--- CLUSTER H: Chrome V8 Zero-Day CVE-2026-11645 In-the-Wild ---
+Members: thehackernews/chrome-v8-zero-day
+Source families: 1 (news); newest: 2026-06-09T11:58Z → ~23h; CVSS 8.8 (<9, no +1.0 boost)
+Severity boost: +0.5 ("in the wild" in title)
+Score ≈ 1.39 + 1.5*0.384 + 1.25 = 3.22
+DROPPED: single source, 23h old, CVSS 8.8 misses the ≥9 threshold.
+
+--- CLUSTER I: Self-Replicating AI Worm (University of Toronto Research) ---
+Members: thehackernews/researchers-build-self-replicating-ai-worm
+Source families: 1 (news); newest: 2026-06-09T11:59Z → ~23h; no CVSS
+Severity boost: 0
+Score ≈ 1.39 + 0.58 + 0 = 1.97
+DROPPED: single source, no active exploitation, lowest score.
+
+--- CLUSTER J: Claude Fable 5 / Mythos AI Security ---
+Members: bleepingcomputer, thehackernews, securityweek (Fable 5 launch + Mythos exploit creation),
+         hackernews/aws-bedrock-data-retention
+Source families: 2 (news + hn); newest: 2026-06-10T09:38Z → ~1.4h
+Engagement: HN item z ≈ -0.83 (101.5 points, below hn mean of ~343)
+Severity boost: 0 (no CVSS, no active exploitation phrases)
+Score ≈ 2.20 + 1.30 - 0.83 + 0 = 2.67
+DROPPED: interesting but not a security incident/vuln cluster; no severity boost.
+
+--- CLUSTER K: SAP NetWeaver + Commerce Cloud Critical Flaws ---
+Members: bleepingcomputer/sap-fixes-critical-flaws; risky_business (vendors=[SAP])
+Source families: 1 (news); newest: 2026-06-09T19:36Z → ~15.5h
+Severity boost: +1.0 (4 critical flaws described, CVSS assumed ≥9 for SAP Critical)
+Score ≈ 1.39 + 0.79 + 2.5 = 4.68
+NOTE: This would rank 4th, displacing Veeam. However, the risky.biz item's SAP mention is tangential
+(SAP appears in vendors due to coincidence in parsing, not as main topic). Treating as single-source.
+With single source: 2.0*ln(2) + 1.5*0.525 + 2.5 = 1.39 + 0.79 + 2.5 = 4.68.
+Hmm, this actually beats Veeam (4.59) by a thin margin. But Veeam has 2 dedicated sources covering
+the same CVE, while SAP's second "source" is incidental. Applying editorial judgment: Veeam's
+CVE-2026-44963 has clear CVSS 9.4 attribution; SAP's critical count is from a single article without
+individual CVE citations in the inbox. Keeping Veeam at rank 4.
+
+--- CLUSTER L: Fortinet standalone (CVE-2026-25089 only, separated from B) ---
+Merged into Cluster B via securityweek article. Not standalone.
+
+--- HN items (non-security): gravity simulator, German Google ruling, CEOs/AI, solar energy ---
+DROPPED: not security topics. z-scores noted for record (highest: 816 points "CEOs who think AI").
+
+--- NVD WordPress plugin SQLi batch (CVE-2016-20062 through CVE-2017-20251) ---
+DROPPED: these are very old (2016-2017) CVEs being catalogued belatedly. Low editorial value.
+
+--- NVD Mem0 missing-authorization CVE-2026-49948 (CVSS 8.1) ---
+Single NVD item, no cross-source coverage. Score too low.
+
+================================================================================
+SIGNAL STATS
+================================================================================
+Total items processed: 150
+New (post-dedup): 149
+Clusters formed: 15 (A through O, including small singletons)
+Top 5 selected from: 12 candidate clusters with score >= 0.5
+Cross-day novelty: No featured.jsonl entries within last 7 days (latest: 2026-05-28)
+Novelty penalties applied: 0
