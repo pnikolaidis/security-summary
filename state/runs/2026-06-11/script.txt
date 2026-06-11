@@ -1,0 +1,41 @@
+Good morning. Aiden Iyer reporting in for Thursday. Today's digest is a patch-heavy one — two actively exploited vulnerabilities lead the list, so if you're on call, you'll want to have your change-management window ready before you finish listening.
+
+Here is your security digest for June 11th, 2026.
+
+
+Story one: Ivanti Sentry has a maximum-severity vulnerability being exploited right now.
+
+Ivanti has disclosed a CVSS 10.0 flaw in Sentry, its mobile-device-gateway product, and confirmed that attackers are actively exploiting it in the wild. That combination — top-of-scale severity plus confirmed exploitation — means this is not a patch-at-your-convenience situation. If your organisation runs Ivanti Sentry, treat this as an emergency. Apply the vendor's fix immediately, and if you can't patch right away, consider isolating the Sentry instance from external access until you can.
+
+Why it matters: Ivanti Sentry sits between mobile devices and your internal network. A compromised gateway can intercept traffic, harvest credentials, and serve as a pivot point into internal systems. Ivanti has had a steady stream of high-profile exploits over the past 18 months, and threat actors — including nation-state groups — have made its products a priority target.
+
+
+Story two: Splunk has patched a critical unauthenticated remote-code-execution vulnerability in its enterprise and cloud SIEM platform.
+
+CVE-2026-20253 affects Splunk Enterprise versions below 10.2.4 and 10.0.7, and Splunk Cloud Platform versions below 10.4.2604.3 and 10.2.2510.14. An unauthenticated attacker can use this flaw to execute arbitrary code on the Splunk server. Three additional high-severity CVEs were fixed in the same release. Palo Alto Networks also shipped a separate security patch batch this week.
+
+Why it matters: Splunk is the observability and security-operations platform for a huge number of enterprise environments. If an attacker can compromise your SIEM, they can blind your detection capabilities, tamper with log data, and use the platform's privileged access to pivot further. Patching the tool you rely on to catch intrusions is especially urgent.
+
+
+Story three: Microsoft patched an Exchange Server zero-day that was already being used in attacks before the fix arrived.
+
+CVE-2026-42897 was included in June's Patch Tuesday, but the key detail is that it was a zero-day — meaning attackers were exploiting it before a patch existed. Exchange Server is a perennial high-value target because it processes all of an organisation's internal email and often holds sensitive data directly. Two major security outlets confirmed the active exploitation.
+
+Why it matters: If your Exchange environment was reachable during the exploitation window, you should patch AND hunt. Look for unusual web-shell activity in the Exchange directories, unexpected authentication events, and any new or modified scheduled tasks. Patching stops new exploitation but does not evict an attacker who already got in.
+
+
+Story four: The Fission open-source Kubernetes serverless framework received twelve CVEs today, five of them rated critical.
+
+Fission is a lightweight event-driven serverless layer that runs on top of Kubernetes. The critical issues include unauthenticated access to privileged APIs, broken access controls in the executor and router components, and paths to remote code execution. If you are running Fission in a production Kubernetes cluster, upgrade to a patched release immediately. Because these CVEs were just published to the National Vulnerability Database, broader exploit tooling may not exist yet — but that window closes quickly.
+
+Why it matters: Serverless frameworks often run with elevated permissions inside a cluster, and a compromise can give an attacker broad lateral movement capabilities across every workload on the same Kubernetes infrastructure.
+
+
+Story five: Nine CVEs — four of them critical — were published today against Roxy-WI, a widely used open-source web interface for managing HAProxy, Nginx, Apache, and Keepalived.
+
+All of the vulnerabilities affect versions 8.2.6.4 and prior. The critical issues include unauthenticated command injection via the service monitoring endpoint, operating-system command execution through the HAProxy management interface, and arbitrary command execution via the WAF configuration endpoint. Five additional high-severity issues cover authentication bypass and log injection. If your team uses Roxy-WI to manage load-balancer configuration — especially on a publicly accessible admin panel — treat any unpatched instance as potentially compromised and prioritise the upgrade.
+
+Why it matters: Load balancers and reverse proxies sit at a privileged position in your network architecture. An attacker who controls the management interface controls traffic routing, SSL termination, and can quietly intercept or redirect connections across your entire infrastructure.
+
+
+That is your digest for Thursday, June 11th. Three exploited or critical-severity patches to prioritise — Ivanti Sentry, Splunk, and Exchange — and two disclosure clusters in infrastructure tooling that deserve your attention before the weekend. Stay safe out there.

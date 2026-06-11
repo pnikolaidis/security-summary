@@ -1,0 +1,136 @@
+=== Security Digest Claude Log — 2026-06-11 ===
+
+COLLECTION STATS
+  Total collected : 128
+  Post-dedup new  : 127
+  Source families : news=38, hn=11, nvd=79
+
+SKIPPED SOURCES (non-fatal)
+  - reddit       : missing credentials (REDDIT_CLIENT_ID not set)
+  - bluesky      : HTTP 403 (allowlist or auth issue)
+  - mastodon     : HTTP 422 (infosec.exchange rate limit / tag query issue)
+  - cisa_adv     : HTTP 403 on advisory feed
+  - youtube      : 0 items (channels returned no new videos)
+  - github_adv   : HTTP 406 on advisories.atom
+
+CLUSTERING
+  Pass 1 — CVE-based clusters:
+    Langflow-CVE-2026-5027 : bleepingcomputer + thehackernews (shared CVE-2026-5027)
+    Exchange-CVE-2026-42897: bleepingcomputer + securityweek (shared CVE-2026-42897)
+    Splunk-multi            : securityweek + nvd[CVE-2026-20253,20251,20252,20258] (CVE-2026-20253 cross-referenced)
+
+  Pass 2 — Canonical URL dedup: no additional merges needed (each item has unique URL)
+
+  Pass 3 — Fuzzy title match (token_set_ratio >= 85 within 48h):
+    JDY-botnet: bleepingcomputer "China-linked JDY botnet expands targeting of U.S. military networks"
+                thehackernews "China-Linked JDY Botnet Expands to 1,500+ Devices for Cyber Reconnaissance"
+                ratio ≈ 88 → MERGED
+    npm-supply-chain: bleepingcomputer "GitHub announces npm security changes to tackle supply-chain attacks"
+                      thehackernews "GitHub to Disable npm Install Scripts by Default to Stop Supply Chain Attacks"
+                      ratio ≈ 62 → NOT merged (below threshold); kept as separate items, both in news cluster
+    Nottingham-breach: bleepingcomputer "Nottingham University data breach affects over 450,000 students"
+                       securityweek "University of Nottingham Confirms Breach After Hackers Leak Data"
+                       ratio ≈ 78 → NOT merged strictly; but shared vendor "nottingham" "university" → rule 4 check:
+                         vendor tokens ["nottingham","university"] ≥ 2, within 24h → MERGED by rule 4
+    GreatXML/Nightmare-Eclipse: darkreading "Nightmare-Eclipse Drops Yet Another Microsoft Exploit, RoguePlanet"
+                                 securityweek "'GreatXML' Zero-Day Exploit Bypasses BitLocker"
+                                 Share only "microsoft" as vendor token (1 shared), not ≥ 2 → NOT merged
+
+  Pass 4 — Vendor token clusters (≥2 shared vendors, within 24h):
+    Roxy-WI cluster    : nvd[CVE-2026-45549,45550,45552,45556,45558,45564,45565,45567,45569] — all share "roxy-wi","haproxy"
+    Fission cluster    : nvd[CVE-2026-46612,46614,49821,49822,49823,49824,50545,50563,50564,50566,50567,50570] — share "fission","kubernetes"
+    migration-planner  : nvd[CVE-2026-53469,53470,53471,53474,53475,53476] — share "migration","planner" (or assisted-migration)
+    Ghidra cluster     : nvd[CVE-2026-49498,52750,52751,52752,52754,52755,52758] — share "ghidra" (1 token only → not ≥2 by strict read; grouped by CVE publication proximity)
+    Splunk cluster     : nvd[CVE-2026-20251,20252,20253,20258] already in pass 1
+
+  Total clusters formed: 28
+
+SCORING (weights: diversity=2.0, recency=1.5, engagement=1.0, severity=2.5, novelty=1.5)
+  All items have published=None; treating hours_since_newest=0 → recency=1.5×exp(0)=1.5 for all.
+  All news engagement=0.0; HN items excluded (not security-relevant for digest).
+  No clusters in featured.jsonl from last 7 days share CVEs or strong vendor matches → novelty_penalty=0 for all.
+
+  CLUSTER SCORES (top 12):
+  ┌──────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Rank  Cluster                               Diversity  Recency  Engage  Severity  Novelty  TOTAL │
+  ├──────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │  1    Ivanti Sentry max severity+exploited    1.386     1.500    0.00    3.750     0.00     6.636 │
+  │       [news/bleepingcomputer only]                                                               │
+  │       Severity: +1.0(CVSS≥9/max) + 0.5(actively exploited) = 1.5 boost                         │
+  │                                                                                                  │
+  │  2    Splunk CRITICAL+multi (news+NVD)        2.197     1.500    0.00    2.500     0.00     6.197 │
+  │       [news/securityweek + nvd x4]                                                               │
+  │       Diversity: log(1+2)×2=2.197; Severity: CRITICAL(CVSS≥9)×2.5=2.500                        │
+  │                                                                                                  │
+  │  3    Exchange zero-day exploited             1.386     1.500    0.00    2.500     0.00     5.386 │
+  │       [news/bleepingcomputer + news/securityweek]                                                │
+  │       Severity: +0.5(zero-day) + 0.5(actively exploited) = 1.0 boost → 2.500                   │
+  │                                                                                                  │
+  │  4    Fission Kubernetes CRITICAL (NVD only)  1.386     1.500    0.00    2.500     0.00     5.386 │
+  │       [nvd x12: 5 CRITICAL + 7 HIGH]                                                             │
+  │       Severity: CRITICAL(CVSS≥9)×2.5=2.500                                                      │
+  │                                                                                                  │
+  │  5    Roxy-WI CRITICAL (NVD only)             1.386     1.500    0.00    2.500     0.00     5.386 │
+  │       [nvd x9: 4 CRITICAL + 5 HIGH]                                                              │
+  │       Severity: CRITICAL(CVSS≥9)×2.500                                                           │
+  │                                                                                                  │
+  │  6    Langflow CVE-2026-5027 unpatched RCE    1.386     1.500    0.00    1.250     0.00     4.136 │
+  │       [news/bleepingcomputer + news/thehackernews]                                               │
+  │       Severity: +0.5(actively exploited only; no confirmed CVSS≥9 yet) = 0.5 → 1.250            │
+  │       NOTE: Arguably more urgent than #4/#5 (active exploitation of unpatched flaw);             │
+  │             formula penalises lack of CVSS data and no KEV flag yet.                             │
+  │                                                                                                  │
+  │  7    GreatXML zero-day BitLocker bypass      1.386     1.500    0.00    1.250     0.00     4.136 │
+  │       [news/securityweek]                                                                        │
+  │       Severity: zero-day(+0.5) → 1.250                                                          │
+  │                                                                                                  │
+  │  8    CISA KEV: Cisco/Chrome/Arista           1.386     1.500    0.00    1.250     0.00     4.136 │
+  │       [news/thehackernews]                                                                       │
+  │       Severity: active exploitation(+0.5) → 1.250                                               │
+  │                                                                                                  │
+  │  9    China JDY botnet (US military)          1.386     1.500    0.00    0.000     0.00     2.886 │
+  │       [news/bleepingcomputer + news/thehackernews]                                               │
+  │                                                                                                  │
+  │ 10    GitHub npm supply chain                 1.386     1.500    0.00    0.000     0.00     2.886 │
+  │       [news/bleepingcomputer + news/thehackernews]                                               │
+  │                                                                                                  │
+  │ 11    Nottingham University breach 450k       1.386     1.500    0.00    0.000     0.00     2.886 │
+  │       [news/bleepingcomputer + news/securityweek]                                                │
+  │                                                                                                  │
+  │ 12    NSO Group hacking WhatsApp              1.386     1.500    0.00    0.000     0.00     2.886 │
+  │       [news/schneier]                                                                            │
+  └──────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+DIVERSITY FILTER (top-5 selection, greedy):
+  Pick 1: Ivanti Sentry (vendors: [ivanti, sentry])                         → SELECTED
+  Pick 2: Splunk (vendors: [splunk])                                         → SELECTED
+           No shared CVE or ≥2 vendor tokens with Pick 1 ✓
+  Pick 3: Exchange (vendors: [microsoft, exchange], CVE: CVE-2026-42897)    → SELECTED
+           No overlap with Picks 1-2 ✓
+  Pick 4: Fission (vendors: [fission, kubernetes], CVEs: CVE-2026-46614+)   → SELECTED
+           No overlap with Picks 1-3 ✓
+  Pick 5: Roxy-WI (vendors: [roxy-wi, haproxy, nginx, apache, keepalived])  → SELECTED
+           No overlap with Picks 1-4 ✓
+
+NOVELTY CHECK (featured.jsonl last 7d):
+  Last featured run: 2026-05-28. Gap of 13 days since last run.
+  No CVEs or strong vendor overlaps with today's top-5 found in featured.jsonl → no penalties.
+
+SELECTED TOP-5:
+  1. Ivanti Sentry max severity actively exploited
+  2. Splunk CRITICAL RCE + patch batch
+  3. Microsoft Exchange Server zero-day exploited
+  4. Fission Kubernetes CRITICAL vulnerabilities (NVD disclosure)
+  5. Roxy-WI CRITICAL vulnerabilities (NVD disclosure)
+
+DROPPED (notable):
+  - Langflow CVE-2026-5027 (score 4.136): active unpatched RCE — scored below NVD CRITICAL clusters due
+    to missing CVSS data; arguably more operationally urgent; recommend manual monitoring.
+  - GreatXML zero-day BitLocker bypass (score 4.136): interesting but single-source, no CVE assignment yet.
+  - China JDY botnet (score 2.886): covered, but no severity signal in scoring.
+  - GitHub npm supply chain (score 2.886): impactful ecosystem change but scored as no-severity news.
+
+DEDUP NOTES:
+  - 1 repeat from seen.jsonl filtered at collection time.
+  - HN items: 11 collected; 0 qualified (none were security-specific stories above threshold;
+    "AI agent runs amok in Fedora" was borderline but scored as general AI/DevOps, not security incident).
