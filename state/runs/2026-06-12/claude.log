@@ -1,0 +1,136 @@
+digest_date: 2026-06-12
+persona: Avery Ito (voice: echo, Friday rotation)
+collection_stats: {total_fetched: 137, new: 135, repeats: 2}
+source_families: {news: 36, hn: 6, nvd: 91, youtube: 4}
+
+=== NOVELTY CHECK (featured.jsonl last 7 days) ===
+2026-06-11 rank=1 title="Max severity Ivanti Sentry vulnerability now exploited in attacks" vendors=[ivanti, sentry]
+  → MATCH: today's Ivanti/CISA cluster shares vendor "Ivanti" + fuzzy title match ~80 on DarkReading item
+  → NEW EVENT: CISA issued BOD 26-04 (new patching directive) today; exploitation hitting honeypots (scope expanding)
+  → CLASSIFICATION: developing — headline prefixed "Developing:"
+  → NOVELTY PENALTY: -1.5 applied to score
+
+2026-06-11 rank=2 "Splunk/Palo Alto Critical RCE" — no matching items today
+2026-06-11 rank=3 "Microsoft Exchange Zero-Day" — no matching items today
+2026-06-11 rank=4 "Fission Kubernetes CVEs" — no matching items today
+2026-06-11 rank=5 "Roxy-WI Critical CVEs" — no matching items today
+
+=== CLUSTERING ===
+
+CLUSTER A: Oracle PeopleSoft CVE-2026-35273 / ShinyHunters [PICKED #1]
+  Rule: same CVE (CVE-2026-35273)
+  Members (5):
+    [news] https://www.bleepingcomputer.com/news/security/oracle-mitigates-peoplesoft-zero-day-exploited-in-data-theft-attacks (Jun 11 19:39)
+    [news] https://thehackernews.com/2026/06/shinyhunters-exploits-oracle-peoplesoft.html (Jun 11 20:29)
+    [news] https://www.securityweek.com/google-confirms-exploitation-of-oracle-peoplesoft-zero-day-by-shinyhunters (Jun 12 06:44)
+    [news] https://www.securityweek.com/oracle-addresses-peoplesoft-vulnerability-amid-reports-of-zero-day-attacks (Jun 11 13:57)
+    [news] https://news.risky.biz/risky-bulletin-in-the-age-of-ai-cisa-changes-federal-patching-rules (Jun 12 04:57) [mentions ShinyHunters zero-day]
+  Score breakdown:
+    diversity: 2.0 * log(1+1) = 1.386 [1 source_family: news]
+    recency:   1.5 * exp(-4.3/24) = 1.254 [newest: Jun 12 06:44, ~4.3h ago]
+    engagement: 1.0 * 0 = 0 [all news items, zero engagement metric]
+    severity:  2.5 * 2.0 = 5.0 [zero-day +0.5, actively exploited +0.5, in-the-wild +0.5, CVSS implied critical +0.5]
+    novelty:   0 [not seen in last 7d]
+  TOTAL SCORE: 7.64
+  SELECTED: yes — highest score, strong cross-source consensus on active zero-day
+
+CLUSTER B: Developing — Ivanti Sentry / CISA BOD 26-04 [PICKED #2]
+  Rule: shared vendor "Ivanti" + timestamps within 24h; BOD cluster merged by theme
+  Members (5):
+    [news] https://www.bleepingcomputer.com/news/security/cisa-gives-feds-3-days-to-patch-ivanti-flaw-exploited-in-attacks (Jun 12 08:26)
+    [news] https://www.darkreading.com/vulnerabilities-threats/max-severity-ivanti-sentry-flaw-exploited-24-hours (Jun 11 18:43)
+    [news] https://www.securityweek.com/ivanti-sentry-exploitation-attempts-hitting-honeypots (Jun 12 09:44)
+    [news] https://www.bleepingcomputer.com/news/security/cisa-tells-govt-agencies-to-patch-critical-exploited-flaws-in-3-days (Jun 11 12:46)
+    [news] https://www.securityweek.com/cisa-directs-federal-agencies-to-prioritize-security-patches-based-on-risk (Jun 11 13:01)
+  Score breakdown:
+    diversity: 2.0 * log(2) = 1.386 [1 source_family: news]
+    recency:   1.5 * exp(-1.35/24) = 1.418 [newest: Jun 12 09:44, ~1.35h ago]
+    engagement: 0
+    severity:  2.5 * 2.0 = 5.0 [actively exploited +0.5, CISA KEV +0.5, max-severity CVSS>=9 +1.0]
+    novelty:   1.5 * 1 = -1.5 [seen in featured.jsonl 2026-06-11 rank=1]
+  TOTAL SCORE: 6.30
+  CLASSIFICATION: developing (CISA BOD 26-04 is new event; exploitation hitting honeypots = scope expansion)
+  SELECTED: yes — significant new development on yesterday's top story
+
+CLUSTER C: MariaDB CVSS 10.0 — CVE-2026-49261 [PICKED #3]
+  Rule: single NVD item
+  Members (1):
+    [nvd] https://nvd.nist.gov/vuln/detail/CVE-2026-49261 (Jun 11 18:16, CVSS 10.0)
+  Score breakdown:
+    diversity: 2.0 * log(2) = 1.386 [1 source_family: nvd]
+    recency:   1.5 * exp(-17/24) = 0.739 [~17h ago]
+    engagement: 1.0 * 1.5 = 1.5 [CVSS 10.0, highest in nvd set; z-score ~+1.5]
+    severity:  2.5 * 1.0 = 2.5 [CVSS 10.0 >= 9 → +1.0]
+    novelty:   0
+  TOTAL SCORE: 6.125
+  SELECTED: yes — maximum CVSS score, affects all MariaDB Galera cluster deployments, command injection via node name
+
+CLUSTER D: UniFi OS Multiple Critical CVEs (9.9) [PICKED #4]
+  Rule: same product "UniFi OS" and timestamps within 24h
+  Members (4):
+    [nvd] https://nvd.nist.gov/vuln/detail/CVE-2026-47368 (Jun 12 04:17, HIGH 8.6) path traversal
+    [nvd] https://nvd.nist.gov/vuln/detail/CVE-2026-47369 (Jun 12 04:17, CRITICAL 9.9) privilege escalation
+    [nvd] https://nvd.nist.gov/vuln/detail/CVE-2026-47370 (Jun 12 04:17, CRITICAL 9.9) command injection
+    [nvd] https://nvd.nist.gov/vuln/detail/CVE-2026-48610 (Jun 12 04:17, HIGH 8.1) access control
+  Score breakdown:
+    diversity: 1.386 [1 source_family: nvd]
+    recency:   1.5 * exp(-7/24) = 1.122 [~7h ago]
+    engagement: 1.0 * 0.65 = 0.65 [multiple 9.9 items, above-average nvd z-score]
+    severity:  2.5 * 1.0 = 2.5 [CVSS >= 9 → +1.0]
+    novelty:   0
+  TOTAL SCORE: 5.66
+  SELECTED: yes — network-edge hardware vulnerabilities (widely deployed in enterprise/SMB), 2× CVSS 9.9
+
+CLUSTER E: Chrome 149 / 28 Vulnerabilities [PICKED #5]
+  Rule: same product "Chrome" and timestamps within 24h
+  Members (14 total — SecurityWeek article + NVD CVEs):
+    [news] https://www.securityweek.com/chrome-149-update-patches-28-vulnerabilities (Jun 12 09:27)
+    [nvd] CVE-2026-12007 (HIGH 8.8) use-after-free Core RCE
+    [nvd] CVE-2026-12008 (HIGH 8.3) use-after-free DigitalCredentials sandbox escape
+    [nvd] CVE-2026-12009 (HIGH 8.3) accessibility sandbox escape
+    [nvd] CVE-2026-12010 (HIGH 8.3) heap buffer overflow GPU Android
+    [nvd] CVE-2026-12011 (HIGH 8.3) use-after-free WebMIDI sandbox escape
+    [nvd] CVE-2026-12012 (HIGH 8.1) use-after-free Network
+    [nvd] CVE-2026-12013 (HIGH 8.8) use-after-free Media
+    [nvd] CVE-2026-12014 (HIGH 8.3) use-after-free Cast sandbox escape
+    [nvd] CVE-2026-12016 (HIGH 8.3) DevTools sandbox escape
+    [nvd] CVE-2026-12018 (HIGH 8.8) Mojo privilege escalation Windows
+    ... (28 CVEs total per SecurityWeek)
+  Score breakdown:
+    diversity: 2.0 * log(3) = 2.197 [2 source_families: news + nvd]
+    recency:   1.5 * exp(-1.35/24) = 1.418 [newest: Jun 12 09:44 NVD, ~1.35h ago]
+    engagement: ~0.4 [moderate CVSSes 8.1-8.8, news engagement=0]
+    severity:  0 [CVSS < 9 in all; no explicit severity phrases in titles]
+    novelty:   0
+  TOTAL SCORE: 3.62
+  NOTE: No CVSS >= 9 in Chrome CVEs (reported as Critical severity by Chromium team but NVD CVSS is 8.3-8.8)
+  SELECTED: yes — broad user impact (billions of Chrome users), 28-vuln security update with 12 use-after-free bugs
+
+=== DROPPED CLUSTERS ===
+
+AudiA6 crypto-laundering takedown (BleepingComputer + THN Europol): score 2.63 — dropped, lower score than Chrome
+INTERPOL Sniper Dz / Operation Ramz (THN): score 2.76 — dropped, single source, lower score
+OpenClaw AI agent attacks (THN + NVD): score 3.04 — dropped, marginally below Chrome; AI security theme notable but loses on diversity cross-source
+LangGraph/Langflow RCE (THN + SecurityWeek): score ~2.9 — dropped
+CISA BOD merged with Ivanti cluster above
+GitLab 4-CVE batch: score 2.46 — dropped (older, lower CVSS, no news coverage)
+Novo Nordisk breach: score 2.84 — dropped (single source, no CVEs)
+French Tchap messenger breach: score 2.2 — dropped
+Axios npm multi-CVE: score 2.39 — dropped (no news coverage, CVSS < 9)
+Gentlemen Ransomware: score 2.09 — dropped (single source, no severity phrase triggers)
+Windows BitLocker GreatXML: dropped (single source, no CVE, PoC-only)
+MariaDB use-after-free CVE-2026-11933: score ~2.5 — separate cluster from CVE-2026-49261; dropped
+Sponsored/roundup content (Kaseya MSP, Cybersecurity Stars Awards, AI BAS pitch): filtered as promotional
+
+=== DEDUP NOTES ===
+Risky Business "CISA changes federal patching rules" item: body covers CISA BOD, Ivanti, and ShinyHunters
+  → included in Cluster A (ShinyHunters mention) and noted in Cluster B context
+  → not double-counted in diversity score
+2 items marked as repeats by src.collect dedup (URLs seen in seen.jsonl): not in inbox, not visible
+Bluesky (all 403) and Mastodon (all 422) sources failed; 0 items from social
+Reddit credentials not set; 0 items from Reddit
+
+Total items processed: 137
+New (post-dedup): 135
+Clusters formed: ~25 meaningful clusters (excluding single low-signal items)
+Top 5 selected from: 10 scored candidate clusters
