@@ -1,0 +1,30 @@
+Good morning. Here is your security digest for Friday, June 12th, 2026. It's Avery Ito. This week closes with two active exploitation campaigns, a perfect-ten database flaw, a wave of critical network-gear vulnerabilities, and the biggest Chrome security update in months. Let's get into it.
+
+First up: Oracle PeopleSoft, zero-day, ShinyHunters.
+
+A critical unauthenticated remote code execution vulnerability in Oracle's PeopleSoft suite — identified as CVE-2026-35273 — was actively exploited by the ShinyHunters extortion group for nearly two weeks before Oracle even published an advisory. Google's Mandiant tracked the campaign between May 27th and June 9th, hitting universities and enterprises. Oracle quietly pushed mitigations on June 10th without publicly confirming exploitation, but SecurityWeek and The Hacker News confirmed it independently, citing Mandiant's attribution. ShinyHunters is threatening to publish stolen data unless victims pay. If your organization runs PeopleSoft, apply Oracle's mitigation immediately — this one was a true zero-day and attackers had a head start.
+
+
+Story two is a follow-up to yesterday's top item, and it has gotten worse.
+
+The Ivanti Sentry max-severity vulnerability we reported on Thursday is now hitting honeypot systems — meaning automated scanning and exploitation are underway at scale. CISA has responded by issuing Binding Operational Directive 26-04, a new federal mandate that compresses the patch window for actively exploited flaws to just three days. The first practical deadline under the new directive: federal civilian agencies must patch the Ivanti Sentry vulnerability by this Sunday. This directive also requires all federal agencies to revise their vulnerability management policies around the Known Exploited Vulnerabilities catalog. If you're in the public sector, you're on the clock. And if you're in the private sector, the same urgency applies — exploitation is confirmed and spreading.
+
+
+Story three is a database emergency — maximum severity, and it's a quiet one.
+
+CVE-2026-49261 affects MariaDB server and carries a CVSS score of 10.0, the highest possible. The vulnerability is in the Galera cluster replication feature. When the wsrep notify command configuration option is enabled, shell commands embedded in a joining node's name are executed unsanitized on the server. In a Galera cluster environment — where multiple nodes communicate to replicate data — this means any node that can inject a crafted name can run arbitrary commands with full server privileges. The flaw affects MariaDB versions across the 10.6, 10.11, 11.4, 11.8, and 12.3 release lines. Patches are available. The workaround, if patching immediately isn't possible, is to disable wsrep notify command in your configuration. MariaDB clusters are common in high-availability web infrastructure, so this one deserves immediate attention.
+
+
+Story four: Ubiquiti has disclosed a batch of serious vulnerabilities in UniFi OS.
+
+UniFi OS is the firmware that runs UniFi routers, switches, and security gateways — the Ubiquiti gear you'll find in millions of enterprise and small business networks. This week's advisory includes two CVSS 9.9 vulnerabilities: one allows command injection, the other allows privilege escalation, and both require only low-privilege network access. A path traversal flaw rated 8.6 allows data exfiltration from the device. A separate access-control bug lets attackers make unauthorized configuration changes. No public exploitation has been reported yet, but the attack bar is very low. If you manage UniFi hardware, check Ubiquiti's security advisory and apply firmware updates.
+
+
+And story five: Chrome got a large security update this week.
+
+Google shipped Chrome 149, patching 28 vulnerabilities. The most serious is a use-after-free bug in Chrome's Core component that allows a remote attacker to execute arbitrary code via a crafted webpage — no renderer compromise required. Alongside it are eleven more use-after-free bugs in WebMIDI, GPU, Media, Cast, Autofill, and Video, plus heap buffer overflows and sandbox escapes. The Chromium security team rated several of these critical, even though NVID CVSS scores land in the high-severity range. Chrome auto-updates for most users, but if you manage fleet deployments or use extended stable channels, verify you're on 149.0.7827.115 or later. This applies to Chrome on Windows, Mac, Linux, Android, and ChromeOS.
+
+
+That's your digest for Friday, June 12th. The active threats this week are Oracle PeopleSoft and Ivanti Sentry — both have confirmed exploitation and both need immediate action. The MariaDB and UniFi disclosures are fresh and unpatched at scale, so move on those before the weekend. And get Chrome updated.
+
+Stay safe out there.
