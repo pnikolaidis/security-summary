@@ -1,0 +1,103 @@
+# Claude Digest Log — 2026-06-16
+
+## Collect Stats
+- Total items: 142
+- New (post-dedup): 142
+- Source breakdown: news=45, hn=11, cisa=1, nvd=80, youtube=5
+
+## Source Notes
+- Reddit: skipped (missing credentials)
+- Bluesky: all 5 queries returned HTTP 403 (likely API auth required)
+- Mastodon infosec.exchange: all tags returned HTTP 422 (likely API deprecation/auth gate)
+- GitHub Advisories: HTTP 406 on atom feed
+- Risky Biz, MSRC blog: followed redirects successfully
+
+## Clustering (rapidfuzz token_set_ratio ≥ 85 within 48h, CVE union-find)
+- Total clusters formed: 130
+- Most NVD items form singleton clusters (unique CVEs, no cross-source coverage)
+- HN items are mostly non-security general tech/science; notable high-engagement exceptions scored high but filtered editorially
+
+## Top Cluster Scoring (weights: diversity=2.0, recency=1.5, engagement=1.0, severity=2.5, novelty=1.5)
+
+### Cluster A — CISA Dual KEV: Cisco SD-WAN + cPanel LiteSpeed [SELECTED #1]
+Members:
+- [cisa]  https://www.cisa.gov/news-events/alerts/2026/06/15/cisa-adds-two-known-exploited-vulnerabilities-catalog
+- [news]  https://www.bleepingcomputer.com/news/security/cisa-warns-of-another-actively-exploited-cpanel-plugin-flaw
+- [news]  https://thehackernews.com/2026/06/cisa-flags-litespeed-cpanel-plugin-flaw.html
+- [news]  https://www.bleepingcomputer.com/news/security/cisco-fixes-sd-wan-vmanage-flaw-exploited-in-zero-day-attacks
+- [news]  https://thehackernews.com/2026/06/cisco-releases-security-updates-for.html
+- [news]  https://www.securityweek.com/cisco-patches-another-sd-wan-zero-day-exploited-in-attacks
+CVEs: CVE-2026-20262 (Cisco Catalyst SD-WAN Manager), CVE-2026-54420 (LiteSpeed cPanel Plugin)
+Vendors: Cisco
+Score: 6.23
+  diversity: 1.099 * 2.0 = 2.198  (2 source families: news + cisa)
+  recency: 0.988 * 1.5 = 1.482  (newest = 10:47:59 UTC, ~0.3h ago)
+  engagement: 0.05 * 1.0 = 0.05  (news engagement=0, cisa=5; normalized /100)
+  severity: 1.0 * 2.5 = 2.500  (+0.5 KEV, +0.5 "exploited in attacks" phrase)
+Selection rationale: Highest scoring cluster. CISA added both CVEs to KEV simultaneously.
+  CVE-2026-20262: Cisco Catalyst SD-WAN Manager arbitrary file write / path traversal, CVSS 6.5, zero-day exploited actively. FCEB agencies had mandatory patch deadline.
+  CVE-2026-54420: LiteSpeed cPanel plugin privilege escalation to root, CVSS 8.5, mandatory FCEB patch deadline June 18, 2026.
+  Coverage across 3 major news outlets + CISA official alert.
+
+### Cluster B — Fortinet FortiSandbox Triple Exploitation [SELECTED #2]
+Members:
+- [news]  https://www.bleepingcomputer.com/news/security/critical-fortinet-fortisandbox-flaws-now-exploited-in-attacks
+- [news]  https://thehackernews.com/2026/06/attackers-exploit-three-fortinet.html
+CVEs: CVE-2026-25089, CVE-2026-39808, CVE-2026-39813
+Vendors: Fortinet
+Score: ~4.1
+  diversity: 0.693 * 2.0 = 1.386  (1 source family: news)
+  recency: 0.976 * 1.5 = 1.464  (newest = 10:30:41 UTC, ~0.6h ago)
+  engagement: 0.0 * 1.0 = 0.0
+  severity: 0.5 * 2.5 = 1.25  (+0.5 "exploited in attacks")
+Selection rationale: Three CVEs actively exploited in the past 24h per threat intel firm Defused. Critical severity. Very recent. FortiSandbox is a security product — ironic and impactful.
+
+### Cluster C — Microsoft 365 Copilot SearchLeak [SELECTED #3]
+Members:
+- [news]  https://www.bleepingcomputer.com/news/security/new-attack-turned-microsoft-365-copilot-into-1-click-data-theft-tool
+- [news]  https://thehackernews.com/2026/06/one-click-microsoft-365-copilot-flaw.html
+- [news]  https://www.darkreading.com/application-security/copilot-searchleak-attack-1-click-data-theft
+CVEs: none assigned
+Vendors: Microsoft
+Score: ~2.5
+  diversity: 0.693 * 2.0 = 1.386  (1 source family)
+  recency: 0.516 * 1.5 = 0.774  (newest = 19:27:48 UTC prior day, ~15.7h ago)
+  engagement: 0 * 1.0 = 0.0
+  severity: 0.0  (no KEV, no exact severity phrases; now patched)
+Selection rationale: 3 major security news sources. Broad impact on Microsoft 365 enterprise users. Novel attack chain (3 chained bugs → 1-click steal emails/files/MFA codes). Now patched but warrants awareness.
+
+### Cluster D — Atomic Arch Linux AUR Supply Chain Attack [SELECTED #4]
+Members:
+- [news]  https://www.securityweek.com/atomic-arch-supply-chain-attack-hits-1500-aur-packages
+CVEs: none
+Vendors: Linux
+Score: ~2.87
+  diversity: 0.693 * 2.0 = 1.386  (1 source family)
+  recency: 0.992 * 1.5 = 1.488  (newest = 10:51:49 UTC, ~0.2h ago)
+  engagement: 0.0
+  severity: 0.0
+Selection rationale: Breaking news (most recent item in the inbox). 1,500 AUR packages poisoned; Arch Linux suspended account registrations. Supply chain attacks on Linux package repositories have broad developer impact.
+
+### Cluster E — China-Linked SprySOCKS Backdoor Expands to Windows [SELECTED #5]
+Members:
+- [news]  https://www.bleepingcomputer.com/news/security/windows-version-of-sprysocks-linux-malware-used-to-attack-govt-orgs
+- [news]  https://thehackernews.com/2026/06/china-linked-sprysocks-backdoor-expands.html
+CVEs: none
+Vendors: Windows, Linux
+Score: ~2.80
+  diversity: 0.693 * 2.0 = 1.386  (1 source family)
+  recency: 0.943 * 1.5 = 1.414  (newest = 09:44:34 UTC, ~1.4h ago)
+  engagement: 0.0
+  severity: 0.0
+Selection rationale: ESET discovery of Windows variants (WIN_DRV, WIN_PLUS) of previously Linux-only backdoor. Attacks confirmed against government organizations in 4+ countries. China-linked APT activity, driver-based stealth. 2 sources, very recent.
+
+## Notable clusters not selected
+- DragonForce Ransomware abusing Microsoft Teams relays (score ~2.84): dropped to maintain vendor diversity (Microsoft already in #3).
+- Chinese hackers UNC6508 targeting US medical/defense via REDCap/Google Workspace (score ~2.17): partially folded into SprySOCKS narrative. Separate story but lower recency score.
+- HN items (Alzheimer's drug, AI intelligence explosion): very high engagement scores but not security content; excluded editorially.
+- NVD CRITICAL singletons: High CVSS boosts score but no cross-source coverage indicates lower real-world signal.
+
+## Dedup Notes
+- All 142 items were new (repeats=0); first run in 5 days.
+- seen.jsonl last updated 2026-06-11; items from 2026-06-15 to 2026-06-16 are all genuinely new.
+- novelty penalty = 0 for all clusters (not seen in last 7d based on seen.jsonl).
