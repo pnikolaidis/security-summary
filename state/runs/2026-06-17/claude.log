@@ -1,0 +1,177 @@
+{
+  "run_date": "2026-06-17",
+  "run_timestamp": "2026-06-17T11:06:13Z",
+  "total_items": 100,
+  "new_after_dedup": 100,
+  "source_breakdown": {
+    "news": 36,
+    "hn": 8,
+    "cisa": 6,
+    "nvd": 49,
+    "youtube": 2
+  },
+  "clusters": [
+    {
+      "id": "A",
+      "headline": "Joomla JCE CVE-2026-48907 Actively Exploited — CISA KEV",
+      "members": [
+        {"idx": 0,  "url": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-max-severity-joomla-plugin-flaw-by-friday", "fam": "news"},
+        {"idx": 12, "url": "https://thehackernews.com/2026/06/cisa-warns-of-actively-exploited-joomla.html", "fam": "news"},
+        {"idx": 27, "url": "https://www.securityweek.com/joomla-litespeed-vulnerabilities-exploited-in-attacks", "fam": "news"},
+        {"idx": 47, "url": "https://www.cisa.gov/news-events/alerts/2026/06/16/cisa-adds-one-known-exploited-vulnerability-catalog", "fam": "cisa"}
+      ],
+      "cluster_rule": "same CVE (CVE-2026-48907) + same vendor (Joomla)",
+      "source_families": ["news", "cisa"],
+      "distinct_source_families": 2,
+      "newest_item_hours_ago": 0.9,
+      "cves": ["CVE-2026-48907"],
+      "vendors": ["Joomla"],
+      "score_breakdown": {
+        "diversity": 2.197,
+        "recency": 1.445,
+        "engagement": 0.0,
+        "severity": 5.0,
+        "novelty_penalty": 0.0,
+        "total": 8.642
+      },
+      "severity_notes": "CVSS 10.0 (+1.0), KEV (+0.5), 'actively exploited in the wild' (+0.5), 'in the wild' (+0.5) → capped at 2.0 * w_severity=2.5 = 5.0",
+      "novelty_check": "CVE-2026-48907 not in featured.jsonl (prior Joomla entries were CVE-2026-48898/48899/48904 on 2026-05-27 — different CVEs, no penalty)",
+      "decision": "SELECTED — rank 1"
+    },
+    {
+      "id": "C",
+      "headline": "Firefox 152 + Chrome: 3 Critical CVEs including same-origin bypass",
+      "members": [
+        {"idx": 26, "url": "https://www.securityweek.com/chrome-and-firefox-updated-to-patch-critical-high-severity-vulnerabilities", "fam": "news"},
+        {"idx": 51, "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12304", "fam": "nvd"},
+        {"idx": 56, "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12315", "fam": "nvd"},
+        {"idx": 57, "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12316", "fam": "nvd"},
+        {"idx": 50, "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12289", "fam": "nvd"},
+        {"idx": 52, "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12305", "fam": "nvd"},
+        {"idx": 53, "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12310", "fam": "nvd"},
+        {"idx": 54, "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12312", "fam": "nvd"},
+        {"idx": 55, "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12314", "fam": "nvd"},
+        {"idx": 58, "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12317", "fam": "nvd"},
+        {"idx": 59, "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12318", "fam": "nvd"},
+        {"idx": 60, "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12324", "fam": "nvd"},
+        {"idx": 61, "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12326", "fam": "nvd"},
+        {"idx": 62, "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12327", "fam": "nvd"},
+        {"idx": 63, "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12328", "fam": "nvd"}
+      ],
+      "cluster_rule": "shared vendor Firefox/Mozilla + timestamps within 24h",
+      "source_families": ["news", "nvd"],
+      "distinct_source_families": 2,
+      "newest_item_hours_ago": 2.8,
+      "cves": ["CVE-2026-12304", "CVE-2026-12315", "CVE-2026-12316", "CVE-2026-12289", "CVE-2026-12305", "CVE-2026-12310", "CVE-2026-12312", "CVE-2026-12314", "CVE-2026-12317", "CVE-2026-12318", "CVE-2026-12324", "CVE-2026-12326", "CVE-2026-12327", "CVE-2026-12328"],
+      "vendors": ["Firefox", "Mozilla", "Chrome"],
+      "score_breakdown": {
+        "diversity": 2.197,
+        "recency": 1.337,
+        "engagement": 0.0,
+        "severity": 2.5,
+        "novelty_penalty": 0.0,
+        "total": 6.034
+      },
+      "severity_notes": "3 CRITICAL CVEs (CVSS implied >=9): CVE-2026-12304, CVE-2026-12315, CVE-2026-12316 → +1.0 * w_severity=2.5",
+      "novelty_check": "Firefox/Chrome not in featured.jsonl within last 7 days — no penalty",
+      "decision": "SELECTED — rank 2"
+    },
+    {
+      "id": "B",
+      "headline": "Microsoft Defender RoguePlanet Zero-Day (CVE-2026-50656) — Public PoC, unpatched",
+      "members": [
+        {"idx": 1,  "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-working-on-defender-patch-for-rogueplanet-zero-day", "fam": "news"},
+        {"idx": 24, "url": "https://www.securityweek.com/microsoft-working-on-patch-for-rogueplanet-zero-day", "fam": "news"},
+        {"idx": 79, "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50656", "fam": "nvd"}
+      ],
+      "cluster_rule": "fuzzy title match (token_set_ratio ~95) + shared CVE CVE-2026-50656 via NVD body",
+      "source_families": ["news", "nvd"],
+      "distinct_source_families": 2,
+      "newest_item_hours_ago": 1.4,
+      "cves": ["CVE-2026-50656"],
+      "vendors": ["Microsoft", "Windows"],
+      "score_breakdown": {
+        "diversity": 2.197,
+        "recency": 1.415,
+        "engagement": 0.0,
+        "severity": 1.25,
+        "novelty_penalty": 0.0,
+        "total": 4.862
+      },
+      "severity_notes": "'zero-day' in titles → +0.5 * w_severity=2.5 = 1.25. CVE is HIGH not CRITICAL so no CVSS>=9 bonus. No KEV.",
+      "novelty_check": "No Microsoft Defender entry in featured.jsonl last 7d — no penalty",
+      "diversity_filter": "Shares vendor 'Microsoft' with cluster G (DragonForce/Teams). Only 1 shared vendor token (not >=2), different CVEs — filter does NOT apply.",
+      "decision": "SELECTED — rank 3"
+    },
+    {
+      "id": "G",
+      "headline": "DragonForce Ransomware Uses Microsoft Teams Relay Servers as C2",
+      "members": [
+        {"idx": 23, "url": "https://www.securityweek.com/microsoft-teams-relay-servers-abused-in-dragonforce-ransomware-attack", "fam": "news"}
+      ],
+      "cluster_rule": "singleton",
+      "source_families": ["news"],
+      "distinct_source_families": 1,
+      "newest_item_hours_ago": 0.5,
+      "cves": [],
+      "vendors": ["Microsoft"],
+      "score_breakdown": {
+        "diversity": 1.386,
+        "recency": 1.470,
+        "engagement": 0.0,
+        "severity": 0.0,
+        "novelty_penalty": 0.0,
+        "total": 2.856
+      },
+      "severity_notes": "No CVE, no severity phrases — ransomware not in severity_phrases list",
+      "novelty_check": "DragonForce not in featured.jsonl last 7d — no penalty",
+      "diversity_filter": "Shares vendor 'Microsoft' with cluster B. Only 1 shared vendor token (not >=2), no shared CVEs — filter does NOT apply.",
+      "decision": "SELECTED — rank 4"
+    },
+    {
+      "id": "E",
+      "headline": "Malicious JetBrains Marketplace Plugins Steal AI API Keys",
+      "members": [
+        {"idx": 3,  "url": "https://www.bleepingcomputer.com/news/security/malicious-jetbrains-marketplace-plugins-steal-ai-api-keys-from-developers", "fam": "news"},
+        {"idx": 10, "url": "https://thehackernews.com/2026/06/malicious-jetbrains-plugins-steal-ai.html", "fam": "news"}
+      ],
+      "cluster_rule": "fuzzy title match: 'Malicious JetBrains Marketplace plugins steal AI API keys' vs 'Malicious JetBrains Plugins Steal AI API Keys' → token_set_ratio ~97",
+      "source_families": ["news"],
+      "distinct_source_families": 1,
+      "newest_item_hours_ago": 1.5,
+      "cves": [],
+      "vendors": [],
+      "score_breakdown": {
+        "diversity": 1.386,
+        "recency": 1.410,
+        "engagement": 0.0,
+        "severity": 0.0,
+        "novelty_penalty": 0.0,
+        "total": 2.796
+      },
+      "severity_notes": "No CVE, no severity phrases",
+      "novelty_check": "Not in featured.jsonl — no penalty",
+      "decision": "SELECTED — rank 5"
+    }
+  ],
+  "dropped_clusters": [
+    {"id": "H", "headline": "Oracle 245 patches", "score": 2.766, "reason": "Outranked; no CVEs or severity boost"},
+    {"id": "F", "headline": "144 Mastra npm packages compromised", "score": 2.681, "reason": "Outranked by higher-scoring clusters"},
+    {"id": "D", "headline": "Kodak data breach (ShinyHunters)", "score": 2.655, "reason": "Outranked; no CVE, no severity boost"},
+    {"id": "I", "headline": "Fortinet FortiSandbox in hacker crosshairs", "score": 2.647, "reason": "Outranked; no KEV, older"},
+    {"id": "L", "headline": "China arrests Silver Fox cybercrime group", "score": 2.553, "reason": "Outranked"},
+    {"id": "N", "headline": "Rokarolla Android banking malware", "score": 2.189, "reason": "Outranked; older items, single source family"},
+    {"id": "K", "headline": "Steam Workshop malware via Wallpaper Engine", "score": 2.136, "reason": "Outranked; older item (16.6h)"},
+    {"id": "M", "headline": "GhostTree Windows junctions attack", "score": 2.017, "reason": "Outranked; older item (20.8h)"},
+    {"id": "J", "headline": "Rockwell Automation ICS CISA advisories (5)", "score": 1.957, "reason": "Outranked; old items (23.1h), single source family, no news coverage"},
+    {"id": "HN_misc", "headline": "HN items (non-security)", "score": "<1.0", "reason": "Not security-relevant (DOJ/xAI gas turbines, Wolfram, Apple anti-nausea dots, etc.)"},
+    {"id": "YT_marketing", "headline": "YouTube CrowdStrike marketing videos", "score": "<1.0", "reason": "Marketing/product videos, not news"}
+  ],
+  "notable_dedup": [
+    "Items 0 and 12 cover same CVE-2026-48907 from different sources (BleepingComputer + TheHackerNews) — clustered by same CVE rule",
+    "Items 1 and 24 have near-identical titles (token_set_ratio ~95) — fuzzy title rule; item 79 (NVD CVE-2026-50656) joined by body text confirming 'RoguePlanet'",
+    "Items 3 and 10 fuzzy-match on JetBrains/AI API key theft (token_set_ratio ~97) — 15 malicious plugins confirmed in both",
+    "Items 4, 15, 21 share vendor 'Android' and tokens 'Rokarolla' + 'malware' but scored below top 5 cutoff",
+    "Items 14 and 22 both involve ClickFix but titles too dissimilar for fuzzy cluster; treated as separate singletons both below cutoff"
+  ]
+}
