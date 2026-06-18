@@ -1,0 +1,152 @@
+SECURITY DIGEST — CLUSTERING & RANKING LOG
+Date: 2026-06-18
+Reference time: 2026-06-18T11:04:36 UTC
+Total items: 38  New (post-dedup): 38  Non-security filtered out: ~15 (HN off-topic, sponsored posts, webinars)
+
+WEIGHTS (from config/ranking.yaml):
+  diversity: 2.0   recency: 1.5   engagement: 1.0   severity: 2.5   novelty: 1.5
+
+NOVELTY CHECK: 0 items seen in seen.jsonl since 2026-06-11. All novelty penalties = 0.
+
+Z-SCORE COMPUTATION:
+  source_family=news: all engagement=0 → z-score=0 for all news items
+  source_family=hn:   values=[166,229.5,112,95,200,66,293.5,1462.5] mean=328.06 std≈434.5
+  source_family=youtube: single item, z-score=0
+
+CLUSTERS FORMED:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CLUSTER B — Microsoft RoguePlanet Defender Zero-Day
+Members (1):
+  - https://thehackernews.com/2026/06/microsoft-confirms-rogueplanet-defender_02022423645.html
+    [thehackernews/news, CVE-2026-50656, CVSS 7.8, ts=2026-06-17T17:36:28Z]
+Score breakdown:
+  diversity:    2.0 * ln(1+1) = 1.386
+  recency:      1.5 * exp(-17.47/24) = 1.5 * 0.482 = 0.723
+  engagement:   1.0 * 0 = 0
+  severity:     2.5 * 0.5 ("zero-day" in title) = 1.250
+  novelty:      -1.5 * 0 = 0
+  TOTAL:        3.359
+SELECTED as #1.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CLUSTER J — Atlassian & Splunk Critical Patches
+Members (1):
+  - https://www.securityweek.com/atlassian-splunk-patch-critical-vulnerabilities
+    [securityweek/news, vendors=[Atlassian], ts=2026-06-18T10:59:50Z]
+Score breakdown:
+  diversity:    1.386
+  recency:      1.5 * exp(-0.07/24) = 1.5 * 0.997 = 1.495
+  engagement:   0
+  severity:     0  (no severity_phrase match; "critical" is editorial not in phrase list)
+  novelty:      0
+  TOTAL:        2.881
+SELECTED as #2.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CLUSTER L — Rokarolla Android Banking Trojan
+Members (1):
+  - https://www.securityweek.com/rokarolla-banking-trojan-targets-200-applications
+    [securityweek/news, vendors=[Android], ts=2026-06-18T10:42:21Z]
+Score breakdown:
+  diversity:    1.386
+  recency:      1.5 * exp(-0.37/24) = 1.5 * 0.977 = 1.466 (corrected from earlier)
+  engagement:   0
+  severity:     0
+  novelty:      0
+  TOTAL:        2.852
+SELECTED as #3. (Beats Cluster H by 0.005 on recency alone.)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CLUSTER H — Cisco ISE Critical Command Execution
+Members (1):
+  - https://www.securityweek.com/critical-command-execution-vulnerability-patched-in-cisco-ise
+    [securityweek/news, vendors=[Cisco], ts=2026-06-18T10:27:14Z]
+Score breakdown:
+  diversity:    1.386
+  recency:      1.5 * exp(-0.62/24) = 1.5 * 0.975 = 1.463
+  engagement:   0
+  severity:     0  (no severity_phrase match despite "Critical" editorial label)
+  novelty:      0
+  TOTAL:        2.849
+SELECTED as #4.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CLUSTER C — Microsoft Windows/Office June Update Failures
+Members (2): [clustered via ≥2 shared vendor tokens (Microsoft + Windows) within 24h]
+  - https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-windows-server-2016-security-update-failures
+    [bleepingcomputer/news, vendors=[Microsoft,Windows], ts=2026-06-18T10:14:20Z]
+  - https://www.bleepingcomputer.com/news/microsoft/microsoft-confirms-office-apps-launch-issues-after-june-updates
+    [bleepingcomputer/news, vendors=[Microsoft,Windows], ts=2026-06-17T11:54:21Z]
+Score breakdown:
+  diversity:    2.0 * ln(1+1) = 1.386  (both news; 2 items but 1 source_family)
+  recency:      1.5 * exp(-0.84/24) [newest item 10:14 = 0.84h ago] = 1.5 * 0.965 = 1.448
+  engagement:   0
+  severity:     0
+  novelty:      0
+  TOTAL:        2.834
+SELECTED as #5.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DROPPED CLUSTERS (scores below top-5 threshold of 2.834):
+
+  F5/NGINX Critical Vulns [securityweek/news, ts=2026-06-18T09:39:24Z]
+    score=2.801 — just missed cut; RCE + unauthenticated = very significant editorially
+    but no severity_phrase in body → no boost
+
+  Kodak Data Breach (ShinyHunters) [securityweek/news, ts=2026-06-18T07:18:51Z]
+    score=2.667
+
+  AMD silently removes memory encryption [hn, ts=2026-06-18T08:08:00Z]
+    score=2.336 — z(engagement)=-0.373 (dominated by 1462-point Lore VCS item)
+
+  SSH Brute Force Behavior [sans_isc/news, ts=2026-06-18T01:49:29Z]
+    score=2.404
+
+  Google EU IP ad personalization [bleepingcomputer/news, ts=2026-06-17T21:02:42Z]
+    score=2.223
+
+  INC Ransomware healthcare [darkreading/news, ts=2026-06-17T19:46:25Z]
+    score=2.178
+
+  Crypto Clipper Campaign [thehackernews/news, ts=2026-06-17T18:14:24Z]
+    score=2.131
+
+  Junior Hacker Tailscale/OpenSSH persistence [thehackernews/news, ts=2026-06-17T16:00:56Z]
+    score=2.063
+
+  Malicious JetBrains Plugins (AI API keys) [thehackernews/news, ts=2026-06-17T13:51:58Z]
+    score=2.007
+
+  FORTINET FORTIBLEED — EDITORIAL NOTE:
+    score=2.040  [bleepingcomputer+darkreading/news, newest=2026-06-17T15:12:57Z]
+    73,932 VPN credentials leaked across ~200 countries — editorially very significant.
+    Scored low due to: (a) ~20h recency penalty, (b) "actively targeting" does NOT match
+    "actively exploited" severity_phrase exactly, (c) both sources in same news family.
+    Would have scored ~3.5 with a severity boost. User may want to tune severity_phrases
+    to include "actively targeting" or "credential" leak for future runs.
+
+  Rockwell Automation ICS patches [securityweek/news, ts=2026-06-17T11:32:44Z]
+    score=1.950 — at edge of 24h window
+
+  Mandiant YouTube — SecOps AI agent [youtube, ts=2026-06-17T13:29:13Z]
+    score not computed — editorial (product promotion)
+
+  Non-security HN items: Adam CAD, I hate compilers, Walnut Creek housing,
+    Madrid metro, AI chemist, 8-bit baseball, Lore VCS — all dropped (off-topic)
+  Sponsored/webinar items: dropped (BleepingComputer ATO, THN exposure validation,
+    SecurityWeek MFA webinar)
+
+DIVERSITY FILTER CHECKS (applied greedy):
+  Pick #1 (B: Microsoft/CVE-2026-50656) vs Pick #5 (C: Microsoft,Windows / no CVE):
+    Shared vendors: {Microsoft} = 1 token. Rule requires ≥2 AND shared CVE.
+    → 1 < 2, C not filtered. ✓
+  All other pairs: no shared CVE IDs, no 2-vendor overlap across different vendor pools.
+
+SIGNAL STATS:
+  Total items fetched:    38
+  New (post-dedup):       38
+  Clusters formed:        ~18 (including dropped single-item non-security clusters)
+  Security-relevant clusters scored: 15
+  Top 5 selected from:    15 candidate clusters
