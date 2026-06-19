@@ -1,0 +1,144 @@
+## Cluster/Rank Log — 2026-06-19
+
+Collection stats: 60 total fetched, 60 new, 0 repeats
+Source families: news=41, hn=9, cisa=10
+Novelty window: Jun 12–19. Last run: 2026-06-11 (outside window, no novelty penalties apply).
+Note: CVE-2026-20253 appeared in Jun 11 featured.jsonl (#2 story) but that run is >7d ago, no penalty.
+
+Bluesky: 403 Forbidden on all queries (all 5 failed — possible rate-limit or auth issue).
+Mastodon: 422 Unprocessable Entity on all tags (infosec.exchange issue).
+Reddit: skipped — missing credentials.
+NVD: collector failed (timeout or network).
+YouTube: 0 items fetched.
+GitHub Advisories RSS: 406 Not Acceptable.
+(All per-source failures are non-fatal per design.)
+
+---
+
+## Clusters Formed
+
+### Cluster A: Splunk CVE-2026-20253 (KEV, actively exploited)
+Members:
+  - https://www.bleepingcomputer.com/news/security/cisa-splunk-enterprise-flaw-actively-exploited-patch-by-sunday (news, ts=2026-06-19T10:39:58)
+  - https://www.securityweek.com/splunk-enterprise-vulnerability-exploited-in-attacks-days-after-disclosure (news, ts=2026-06-19T04:10:34)
+  - https://www.cisa.gov/news-events/alerts/2026/06/18/cisa-adds-one-known-exploited-vulnerability-catalog (cisa, ts=2026-06-18T12:00:00)
+Cluster reason: CVE-2026-20253 shared across items.
+Distinct source families: 2 (news, cisa)
+Newest timestamp: 2026-06-19T10:39:58 → hours_since ≈ 0.4h
+Score breakdown:
+  diversity:   2.0 × log(1+2) = 2.0 × 1.099 = 2.198
+  recency:     1.5 × exp(-0.4/24) = 1.5 × 0.983 = 1.475
+  engagement:  1.0 × 0 (all news/cisa items have 0 engagement, z=0)
+  severity:    2.5 × 1.0 (+0.5 KEV, +0.5 "actively exploited") = 2.500
+  novelty:     0 (not seen in last 7d)
+TOTAL SCORE: 6.17 ✓ SELECTED (rank 1)
+
+### Cluster E: F5 NGINX CVE-2026-42530 (CVSS 9.2, out-of-band patches)
+Members:
+  - https://www.bleepingcomputer.com/news/security/f5-issues-out-of-band-patches-for-critical-nginx-vulnerabilities (news, ts=2026-06-18T11:33:00)
+  - https://thehackernews.com/2026/06/f5-patches-two-critical-nginx-open.html (news, ts=2026-06-18T17:32:14)
+Cluster reason: CVE-2026-42530 shared; same vendor F5/NGINX; fuzzy title match ≥85.
+Distinct source families: 1 (news)
+Newest timestamp: 2026-06-18T17:32:14 → hours_since ≈ 17.5h
+Score breakdown:
+  diversity:   2.0 × log(1+1) = 2.0 × 0.693 = 1.386
+  recency:     1.5 × exp(-17.5/24) = 1.5 × 0.479 = 0.719
+  engagement:  1.0 × 0 = 0
+  severity:    2.5 × 1.5 (+1.0 CVSS≥9, +0.5 "out-of-band patch") = 3.750
+  novelty:     0
+TOTAL SCORE: 5.85 ✓ SELECTED (rank 2)
+Diversity check vs rank 1: no shared CVEs, no shared vendors → pass
+
+### Cluster H: GitHub 10k Trojan repos
+Members:
+  - https://orchidfiles.com/github-repositories-distributing-malware (hn, ts=2026-06-18T11:45:43, engagement=917.5)
+Cluster reason: single high-engagement HN item.
+Distinct source families: 1 (hn)
+Newest timestamp: 2026-06-18T11:45:43 → hours_since ≈ 23.3h
+HN engagement z-score computation:
+  All 9 HN items engagements: [201.5, 58.5, 167.0, 917.5, 65.0, 459.5, 64.5, 183.5, 147.5]
+  Mean = 251.67, Std ≈ 262.2
+  z(917.5) = (917.5 - 251.67) / 262.2 ≈ 2.54
+Score breakdown:
+  diversity:   2.0 × log(1+1) = 1.386
+  recency:     1.5 × exp(-23.3/24) = 1.5 × 0.382 = 0.573
+  engagement:  1.0 × 2.54 = 2.540
+  severity:    2.5 × 0 = 0 (no CVE, no CVSS, no KEV)
+  novelty:     0
+TOTAL SCORE: 4.50 ✓ SELECTED (rank 3)
+Diversity check vs ranks 1-2: no shared CVEs, no 2+ shared vendor tokens → pass
+
+### Cluster AVer: AVer PTC cameras CVE-2026-40624 (CVSS 9.8)
+Members:
+  - https://www.cisa.gov/news-events/ics-advisories/icsa-26-169-01 (cisa, ts=2026-06-18T12:00:00)
+Cluster reason: single CISA ICS advisory with CVSS 9.8 critical.
+Distinct source families: 1 (cisa)
+Newest timestamp: 2026-06-18T12:00:00 → hours_since ≈ 23.0h
+Score breakdown:
+  diversity:   2.0 × log(1+1) = 1.386
+  recency:     1.5 × exp(-23/24) = 1.5 × 0.386 = 0.579
+  engagement:  1.0 × 0 (all cisa items same engagement, z=0)
+  severity:    2.5 × 1.0 (CVSS 9.8 ≥ 9) = 2.500
+  novelty:     0
+TOTAL SCORE: 4.47 ✓ SELECTED (rank 4)
+Diversity check vs ranks 1-3: no shared CVEs, no 2+ shared vendor tokens → pass
+
+### Cluster B: FortiBleed (Fortinet credential leak)
+Members:
+  - https://www.bleepingcomputer.com/news/security/cisa-warns-fortinet-users-to-secure-devices-after-fortibleed-leak (news, ts=2026-06-19T06:47:55)
+  - https://www.bleepingcomputer.com/news/security/fortibleed-leak-exposes-fortinet-vpn-credentials-for-73-000-devices (news, ts=2026-06-18T12:54:39)
+  - https://www.securityweek.com/fortibleed-86000-fortinet-device-credentials-compromised (news, ts=2026-06-19T10:48:08)
+  - https://www.cisa.gov/news-events/alerts/2026/06/18/cisa-urges-hardening-fortinet-devices-after-reports-credential-exposure (cisa, ts=2026-06-18T12:00:00)
+  - https://news.risky.biz/risky-bulletin-canadas-spy-agency-allowed-to-remove-a-botnet-from-canadian-devices (news, ts=2026-06-19T05:29:23) [partial mention]
+Cluster reason: shared vendor "Fortinet" across all items, timestamps within 24h, fuzzy title match ≥85 on core items.
+Distinct source families: 2 (news, cisa)
+Newest timestamp: 2026-06-19T10:48:08 → hours_since ≈ 0.27h
+Score breakdown:
+  diversity:   2.0 × log(1+2) = 2.0 × 1.099 = 2.198
+  recency:     1.5 × exp(-0.27/24) = 1.5 × 0.989 = 1.484
+  engagement:  1.0 × 0 (news and cisa both z=0)
+  severity:    2.5 × 0 (no CVE in KEV, no CVSS≥9, no "actively exploited" phrase in titles)
+  novelty:     0
+TOTAL SCORE: 3.68 ✓ SELECTED (rank 5)
+Diversity check vs ranks 1-4: no shared CVEs (Splunk's CVE-2026-20253 vs none), no 2+ shared vendor tokens → pass
+
+---
+
+## All Other Clusters (dropped)
+
+Cluster C: Klue/Salesforce OAuth/Icarus (4 items, score 2.78) — DROPPED: score below rank 5
+  Members: bleepingcomputer + thehackernews + darkreading + securityweek
+  diversity=1.386, recency=1.395, engagement=0, severity=0 → 2.78
+
+Cluster D: SocGholish/Evil Corp takedown (2 items, score 2.64) — DROPPED
+  Members: bleepingcomputer + securityweek
+  diversity=1.386, recency=1.251, engagement=0, severity=0 → 2.64
+
+Cluster G: Apple Beats CVE-2025-20701 (2 items, score 2.63) — DROPPED
+  Members: bleepingcomputer + thehackernews (CVSS 8.8, <9 threshold)
+  diversity=1.386, recency=1.245, engagement=0, severity=0 → 2.63
+
+Cluster J: Anthropic Fable export controls (2 items, score 3.38) — DROPPED: score below rank 5
+  Members: schneier + hackernews (167.0 engagement, z≈-0.32)
+  diversity=2.198, recency=1.5, engagement=-0.32, severity=0 → 3.38
+
+Cluster I: Popa Botnet/Android/Alarum (1 item, score 2.11) — DROPPED
+Cluster K: Gentlemen ransomware EDR killers (1 item, score ~2.1) — DROPPED
+Cluster L: INC Ransomware 830+ victims (1 item) — DROPPED
+Cluster M: DragonForce/MS Teams relay (1 item) — DROPPED
+Cluster N: Novo Nordisk GitHub token (1 item) — DROPPED
+Cluster O: FIFA World Cup bug (1 item) — DROPPED
+CISA ICS (Mitsubishi, Schneider, Rockwell, Apollo) — DROPPED: CVSS ≤7.8, below AVer
+
+Notable drops:
+- Klue/Salesforce: impactful (hit Huntress, Recorded Future) but single source family and no severity boost pulls score below FortiBleed.
+- Anthropic Fable export controls: very novel policy story, but below-average HN engagement for the item and no severity boost. Rank 6 in scoring.
+- GitHub malware repos was only on HN but record-breaking 917.5 engagement (812 upvotes, 211 comments) propels it to rank 3.
+
+---
+
+## Signal stats
+- Total items processed: 60
+- New (post-dedup): 60
+- Clusters formed: ~18 meaningful clusters
+- Top 5 selected from: top 10 scored clusters
