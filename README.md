@@ -1,13 +1,13 @@
 # security-summary
 
-A nightly OSINT cybersecurity digest. Runs as a [Claude Routine](https://code.claude.com/docs/en/claude-code-on-the-web), collects across RSS / Reddit / Hacker News / Mastodon / Bluesky / CISA KEV / NVD, picks the top 5 stories of the last 24 hours, and emails a text + audio (MP3) summary.
+A nightly **channel brief** for cybersecurity sales professionals — resellers/VARs/MSSPs carrying CrowdStrike, Zscaler, Proofpoint, Palo Alto, Cisco, Fortinet, Okta, CyberArk, Wiz, and the rest of the stack, plus advisory and pentest services. Runs as a [Claude Routine](https://code.claude.com/docs/en/claude-code-on-the-web), collects across security trade press, channel/business publications, Reddit, HN, CISA KEV, and NVD, then picks **five things to bring up on customer calls today** — framed by vendor, conversation angle, and pitch angle (advisory · pentest · displace · expand · renew · upsell). Delivered as a text email + audio (MP3) digest.
 
 ## How it runs
 
 The Routine executes [`ROUTINE_PROMPT.md`](./ROUTINE_PROMPT.md). The pipeline:
 
 1. `python -m src.collect` — async fan-out across all sources → `state/inbox.json`.
-2. Claude (in-session) reads the inbox, clusters / ranks / picks the top 5, writes `state/runs/<date>/summary.md` and `script.txt`.
+2. Claude (in-session) reads the inbox, filters NVD-only noise, clusters / ranks / picks the top 5 against the editorial brief in [`ROUTINE_PROMPT.md`](./ROUTINE_PROMPT.md), writes `state/runs/<date>/summary.md` and `script.txt`.
 3. `python -m src.deliver` — OpenAI TTS → `digest.mp3`, then Resend → email with MP3 attached.
 4. `git commit && git push` — dedup state and the per-run artifacts go back to the repo.
 
@@ -26,7 +26,6 @@ api.resend.com
 oauth.reddit.com
 www.reddit.com
 infosec.exchange
-public.api.bsky.app
 hn.algolia.com
 services.nvd.nist.gov
 www.cisa.gov
@@ -35,14 +34,19 @@ www.bleepingcomputer.com
 feeds.feedburner.com
 www.darkreading.com
 www.schneier.com
-googleprojectzero.blogspot.com
 msrc.microsoft.com
-github.com
 isc.sans.edu
 news.risky.biz
 www.zetter-zeroday.com
 srslyriskybiz.substack.com
 www.youtube.com
+# Channel/business press (added with the channel-brief pivot)
+www.crn.com
+www.msspalert.com
+www.channelfutures.com
+techcrunch.com
+www.reuters.com
+therecord.media
 ```
 After the first run, check the routine logs for any other domains your RSS feeds redirect through and add them.
 

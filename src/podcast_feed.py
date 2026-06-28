@@ -100,17 +100,23 @@ def show_notes(summary_md: str) -> tuple[str, str]:
     html = MarkdownIt("commonmark", {"linkify": True}).render(body_md)
 
     plain_parts: list[str] = []
-    in_tldr = False
+    in_summary = False
     for line in body_md.splitlines():
         stripped = line.strip()
-        if stripped.lower().startswith("## tl;dr") or stripped.lower().startswith("## tldr"):
-            in_tldr = True
+        low = stripped.lower()
+        if (
+            low.startswith("## tl;dr")
+            or low.startswith("## tldr")
+            or low.startswith("## today's talking points")
+            or low.startswith("## todays talking points")
+        ):
+            in_summary = True
             continue
-        if in_tldr and stripped.startswith("## "):
+        if in_summary and stripped.startswith("## "):
             break
-        if in_tldr and stripped:
+        if in_summary and stripped:
             plain_parts.append(stripped)
-    plain = " ".join(plain_parts) or "Daily security digest — top 5 stories from news and social sources."
+    plain = " ".join(plain_parts) or "Daily channel brief — five things to bring up on customer calls today."
     return html, plain
 
 
@@ -119,7 +125,7 @@ def _render_item(cfg: dict, run: dict[str, Any]) -> str:
     mp3_size = run["mp3"].stat().st_size
     duration = _mp3_duration(run["mp3"])
     summary_md = run["summary"].read_text()
-    title = _extract_title(summary_md, f"Security Digest — {date_str}")
+    title = _extract_title(summary_md, f"Channel Brief — {date_str}")
     html, plain = show_notes(summary_md)
     try:
         author = persona.for_date(run["date_obj"]).name

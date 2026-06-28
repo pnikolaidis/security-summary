@@ -46,7 +46,7 @@ def main(date_str: str | None = None) -> int:
     log.info("deliver.persona name=%s voice=%s", p.name, p.voice)
 
     tts.synthesize(script_text, mp3_path, voice=p.voice)
-    subject = f"Security Digest — {today_str} ({p.name})"
+    subject = f"Channel Brief — {today_str} ({p.name})"
     html = email_client.render_html(summary_md, subject)
     resp = email_client.send(subject, html, mp3_path, from_name=p.name)
     print(
