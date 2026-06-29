@@ -58,6 +58,19 @@ def test_show_notes_extracts_tldr_plaintext():
     assert "Detail" not in plain  # stops at next H2
 
 
+def test_show_notes_extracts_talking_points_plaintext():
+    md = (
+        "# Channel Brief — 2026-06-28\n"
+        "## Today's talking points\n"
+        "Zscaler raised guidance. Proofpoint renewal cycle warning.\n\n"
+        "## 1. Story\nDetail."
+    )
+    _, plain = show_notes(md)
+    assert "Zscaler raised guidance" in plain
+    assert "Proofpoint renewal cycle warning" in plain
+    assert "Detail" not in plain
+
+
 def test_show_notes_strips_h1_from_html():
     md = "# Episode title\n\nSome body."
     html, _ = show_notes(md)

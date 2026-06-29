@@ -1,16 +1,22 @@
-# Ranking weights for the top-5 selection. Tunable after observing real runs.
+# Ranking weights for top-5 selection. Tuned for the channel reseller audience:
+# vendor news + commercial signals + named-brand breaches outrank generic CVSS.
 
 weights:
-  diversity: 2.0     # log(1 + distinct_source_families)
-  recency: 1.5       # exp(-hours_since_newest / 24)
-  engagement: 1.0    # z-scored engagement_sum within source_family
-  severity: 2.5      # +1.0 CVSS>=9, +0.5 KEV, +0.5 "actively exploited"
-  novelty: 1.5       # subtracted if cluster touched in last 7d
+  diversity: 2.0          # log(1 + distinct_source_families)
+  recency: 1.5            # exp(-hours_since_newest / 24)
+  engagement: 1.0         # z-scored engagement_sum within source_family
+  severity: 1.0           # CVSS / KEV / "actively exploited" — kept but no longer dominant
+  novelty: 1.5            # subtracted if cluster touched in last 7d
+  vendor_match: 1.5       # +1.0 per distinct vendor-of-interest in cluster (cap +3.0)
+  commercial_signal: 2.5  # +0.5 per phrase from commercial_phrases, additive across phrases (cap +2.0)
+  brand_breach: 2.0       # +1.0 if a named enterprise/brand/agency is the named victim
 
 thresholds:
   min_cluster_size: 1
   min_score: 0.5
   top_n: 5
+  # NVD-only clusters (source_families == {"nvd"}) are dropped unless at least
+  # one vendor-of-interest token appears in the title. Enforced in ROUTINE_PROMPT.md.
 
 severity_phrases:
   - "actively exploited"
@@ -19,3 +25,97 @@ severity_phrases:
   - "0-day"
   - "emergency patch"
   - "out-of-band patch"
+
+# M&A, earnings, leadership, channel program, funding — drives the
+# conversation-starter scoring boost.
+commercial_phrases:
+  - "acquires"
+  - "acquired"
+  - "acquisition"
+  - "to acquire"
+  - "merger"
+  - "merges with"
+  - "buys"
+  - "buyout"
+  - "go private"
+  - "taken private"
+  - "spin off"
+  - "spinoff"
+  - "IPO"
+  - "files to go public"
+  - "earnings"
+  - "Q1 results"
+  - "Q2 results"
+  - "Q3 results"
+  - "Q4 results"
+  - "guidance"
+  - "raised guidance"
+  - "cut guidance"
+  - "lowered guidance"
+  - "missed estimates"
+  - "beat estimates"
+  - "layoffs"
+  - "lays off"
+  - "restructuring"
+  - "workforce reduction"
+  - "RIF"
+  - "new CEO"
+  - "new CRO"
+  - "new CISO"
+  - "new CFO"
+  - "appoints"
+  - "steps down"
+  - "resigns"
+  - "promoted to"
+  - "channel partner"
+  - "partner program"
+  - "deal registration"
+  - "MDF"
+  - "co-sell"
+  - "GSI"
+  - "Series A"
+  - "Series B"
+  - "Series C"
+  - "Series D"
+  - "Series E"
+  - "funding round"
+  - "raises $"
+  - "valued at"
+  - "valuation"
+  - "Gartner Magic Quadrant"
+  - "Forrester Wave"
+  - "IDC MarketScape"
+  - "leader"  # only meaningful next to MQ/Wave; bias accepted
+  - "challenger"
+  - "visionary"
+  - "niche player"
+  - "FedRAMP"
+  - "StateRAMP"
+  - "IL5"
+  - "IL6"
+  - "DORA"
+  - "NIS2"
+  - "SEC cyber disclosure"
+  - "SEC Form 8-K"
+  - "Form 8-K"
+  - "material cybersecurity incident"
+
+# Phrases that signal a *named enterprise/agency* is the breach victim.
+# A named-brand breach is gold for resellers — it's a direct conversation opener
+# with similar accounts.
+brand_breach_phrases:
+  - "confirms breach"
+  - "discloses breach"
+  - "data breach affecting"
+  - "ransomware attack on"
+  - "hit by ransomware"
+  - "suffered a cyberattack"
+  - "8-K filing"
+  - "files 8-K"
+  - "customer data exposed"
+  - "employee data exposed"
+  - "patient data exposed"
+  - "investigating an incident"
+  - "operational disruption"
+  - "production halted"
+  - "systems offline"

@@ -1,27 +1,28 @@
-# Persona/voice rotation for the daily digest.
+# Persona/voice rotation for the daily channel brief.
 # Indexed by weekday: 0=Monday, 1=Tuesday, ..., 6=Sunday.
 # `voice` must be a valid OpenAI TTS voice (alloy, echo, fable, onyx, nova, shimmer).
 # `intro_hint` is a suggested first sentence for the audio script; Claude can adapt it.
+# Tone: sales briefing for resellers, not analyst voiceover.
 
 personas:
   - name: Allie
     voice: alloy
-    intro_hint: "Good morning. I'm Allie with your Monday security briefing."
+    intro_hint: "Good morning. Allie here with your Monday channel brief — five things to bring up on calls today."
   - name: Adam Insight
     voice: onyx
-    intro_hint: "This is Adam Insight with Tuesday's security digest."
+    intro_hint: "This is Adam Insight with Tuesday's channel brief. Here's what your customers are reading this morning."
   - name: Ada Iverson
     voice: nova
-    intro_hint: "Ada Iverson here. Wednesday's signal, coming up."
+    intro_hint: "Ada Iverson here. Wednesday's brief — what to raise on calls today, who's hot in the market, and where the pipeline triggers are."
   - name: Aiden Iyer
     voice: fable
-    intro_hint: "Aiden Iyer reporting in for Thursday."
+    intro_hint: "Aiden Iyer reporting in for Thursday. Today's channel brief, kept tight."
   - name: Avery Ito
     voice: echo
-    intro_hint: "It's Friday. Avery Ito with what mattered this week."
+    intro_hint: "It's Friday. Avery Ito with the week's biggest moves in the channel."
   - name: Aria Inoue
     voice: shimmer
-    intro_hint: "Saturday digest from Aria Inoue."
+    intro_hint: "Saturday brief from Aria Inoue. Quieter day in the channel, but here's what carried over."
   - name: Andi
     voice: nova
-    intro_hint: "Andi here with your Sunday catch-up."
+    intro_hint: "Andi here with your Sunday catch-up — what to read before the week starts."
