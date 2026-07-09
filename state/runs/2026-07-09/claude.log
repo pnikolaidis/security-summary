@@ -1,0 +1,36 @@
+Channel Brief run — 2026-07-09
+Collect: 61 new items (news=46, nvd=14, youtube=1), 0 repeats. Reddit/mastodon/bluesky skipped (no creds configured this run). HN keyword search calls failed with 400 Bad Request on every query (numericFilters param malformed upstream or Algolia API change) — 0 HN items, non-fatal, run continued. NVD floor min_cvss=8.5, all 14 items >= that.
+
+Cross-day dedup: `src.featured load 7` returned [] — nothing featured in the last 7 days (most recent prior entry in state/featured.jsonl is dated 2026-06-11, well outside the window; there appears to have been a long gap since the last run). All candidates therefore classified "different" trivially — confirmed via one spot-check call to `src.featured classify` on the GhostApproval cluster, which returned {"status": "different", "reason": "no recent match"}. No suppression, no "Developing:" follow-ups today.
+
+Known data-quality issue (not fixed, per scope discipline — noted for the user): the vendor-tagging tokens "SEC" and "SSE" show up on a large fraction of items regardless of actual content (e.g. "SEC" tagged on articles with no SEC/regulatory angle at all, likely a substring match against words containing "sec"/"...sec..." such as "security"). Treated these two tokens as noise throughout scoring and did not count them toward vendor_match or as genuine regulatory signal. Real vendor tags (Microsoft, Wiz, Google, AWS, NIS2, Sophos, etc.) look correct.
+
+NVD-only filter: all 14 NVD items dropped per ROUTINE_PROMPT.md step 4 filter rule (source_families == {"nvd"}, no vendor-of-interest token in title). Checked each title against config/sources.yaml's `vendors:` list — none matched (Dell, HashiCorp, Snowflake, NATS, Bitwarden, IBM, n8n, Dgraph, Appium, Plate are not tracked vendor tokens). No CVE overlap between the 14 NVD items and any news item, so none rescued via CVE-cluster merge either.
+
+Clustering summary (61 items -> 55 clusters):
+- Multi-item clusters (rule engine, in order tried — CVE match, then URL, then fuzzy title >=85 within 48h, then >=1 shared vendor token + <24h since the vendor-token rule in this iteration of ROUTINE_PROMPT.md is ">=1" not ">=2"):
+  1. Microsoft Defender "RoguePlanet" zero-day, CVE-2026-50656 — bleepingcomputer + thehackernews + securityweek (3 posts, CVE match)
+  2. AssuranceAmerica driver's-license breach — bleepingcomputer + techcrunch_security (2 posts; techcrunch didn't name the company in its title, confirmed same underlying breach by reading both bodies — techcrunch says "cyberattack targeting a U.S. insurance giant... largest known breach of driver's license numbers so far in 2026", bleepingcomputer names AssuranceAmerica directly, 6.9M drivers)
+  3. Mount Royal University ransomware/breach — bleepingcomputer + securityweek (2 posts, fuzzy title + shared context)
+  4. GodDamn ransomware (PoisonX/BYOVD driver) — thehackernews + darkreading (2 posts, fuzzy title + shared vendor tokens)
+  5. Wiz "GhostApproval" AI-coding-agent symlink flaw — thehackernews + securityweek (2 posts, shared vendor token "Wiz" within 24h; confirmed same Wiz research by reading both bodies)
+- Remaining 45 items were each their own single-item cluster (35 news solo + 14 nvd... wait 14 nvd counted separately as noted, 1 youtube solo). Notable solo items considered and passed over: Accenture breach (single source, real brand-breach signal but no vendor-of-interest match and only 1 outlet), KDDI telco breach (single source, strong recency + brand breach, made the cut), Cash App/Block $45M settlement (single source, no listed commercial/brand-breach phrase literally matched), Entra passkey vishing (single source but strong vendor match on Microsoft/Entra, made the cut), EU NIS2 court referral (single source, NIS2 counts as both a vendor-of-interest token AND a commercial_signal phrase per config/ranking.yaml, made the cut), four separate AI-coding-agent-security stories today (Wiz/GhostApproval, AI Now Institute's "Friendly Fire", Sophos endpoint-detection false positives, "HalluSquatting") treated as distinct clusters since each names a different researcher/technique with no shared vendor token or CVE — only the Wiz one had a tracked vendor-of-interest token and multi-outlet coverage, so only it was scored competitively.
+
+Scoring (weights per config/ranking.yaml: diversity 2.0, recency 1.5, engagement 1.0, severity 1.0, novelty 1.5, vendor_match 1.5, commercial_signal 2.5, brand_breach 2.0). Engagement was 0 across the board this run (no Reddit/HN social data collected), so the engagement term contributed nothing to any cluster. Approximate scores for the candidates considered (all times relative to run time ~2026-07-09T13:28Z):
+
+1. Wiz GhostApproval — diversity(1 fam)=1.39, recency(4.6h)=1.24, vendor_match(Wiz+Google+AWS, capped at 3)=4.5, severity=0, commercial=0, brand_breach=0 -> ~7.12. SELECTED (#1).
+2. EU NIS2 court referral — diversity=1.39, recency(0.3h)=1.48, vendor_match(NIS2 counted as regulatory-vendor token)=1.5, commercial_signal(NIS2 phrase)=1.25, severity=0, brand_breach=0 -> ~5.62. SELECTED (#2).
+3. Entra passkey vishing — diversity=1.39, recency(20.7h)=0.64, vendor_match(Microsoft+Microsoft 365, capped at 2 distinct)=3.0 -> ~5.02. SELECTED (#3).
+4. KDDI breach — diversity=1.39, recency(1.2h)=1.43, brand_breach=2.0 -> ~4.82. SELECTED (#4).
+5. Microsoft Defender RoguePlanet — diversity=1.39, recency(3.0h)=1.32, severity(zero-day phrase)=0.5, vendor_match(Microsoft)=1.5 -> ~4.71. SELECTED (#5).
+6. Mount Royal Univ breach — diversity=1.39, recency(3.4h)=1.30, brand_breach=2.0 -> ~4.69. Narrowly missed cut.
+7. AssuranceAmerica breach — diversity=1.39, recency(5.7h)=1.18, brand_breach=2.0 -> ~4.57. Narrowly missed cut.
+8. Accenture breach — diversity=1.39, recency(21.3h)=0.62, brand_breach=2.0 -> ~4.00. Missed cut.
+9. GodDamn ransomware (BYOVD) — diversity=1.39, recency(2.8h)=1.34, no vendor/severity/brand match (no named vendor product flaw, no literal "actively exploited"/"in the wild" phrase) -> ~2.73. Missed cut.
+10. Cash App $45M settlement — diversity=1.39, recency(17.2h)=0.73, no phrase matches in either commercial_phrases or brand_breach_phrases list as literally written -> ~2.12. Missed cut.
+
+Diversity/dedup filter check on the top 5: Entra vishing and Microsoft Defender RoguePlanet both tag "Microsoft" but that's only 1 shared vendor token (not >=2) and no shared CVE, so the "skip if shares >=2 vendor tokens AND a CVE with an already-picked cluster" rule does not trigger. Kept both, spread across the running order (#3 and #5) per the rule's guidance for distinct commercial angles on the same vendor.
+
+Judgment call flagged for the user: the vendor_match term's cap at 3 distinct vendors (contributing up to 4.5 points) let the Wiz/GhostApproval story significantly outscore three solid named-brand-breach stories (Mount Royal, AssuranceAmerica, Accenture) that arguably fit the "pipeline trigger" editorial criterion just as well. Went with the formula as documented rather than overriding it, but wanted this visible in case the vendor_match cap/weight needs retuning for future runs.
+
+Featured log: appended today's 5 picks via `src.featured append` (see picks.json for the exact payload).

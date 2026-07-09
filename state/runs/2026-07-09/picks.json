@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Wiz uncovers \"GhostApproval\" symlink flaw across six AI coding agents",
+    "cves": [],
+    "vendors": ["Wiz", "Google", "AWS"],
+    "source_families": ["news"],
+    "score": 7.12,
+    "status": "fresh",
+    "representative_url": "https://thehackernews.com/2026/07/ghostapproval-symlink-flaws-could-let.html"
+  },
+  {
+    "title": "EU takes member states to court over unimplemented NIS2 law",
+    "cves": [],
+    "vendors": ["NIS2"],
+    "source_families": ["news"],
+    "score": 5.62,
+    "status": "fresh",
+    "representative_url": "https://therecord.media/eu-cyber-filing-ireland-spain-france-netherlands-nis2"
+  },
+  {
+    "title": "Vishing campaign walks victims through Entra passkey enrollment",
+    "cves": [],
+    "vendors": ["Microsoft", "Microsoft 365"],
+    "source_families": ["news"],
+    "score": 5.02,
+    "status": "fresh",
+    "representative_url": "https://www.bleepingcomputer.com/news/security/entra-passkey-enrollment-vishing-targets-microsoft-365-users"
+  },
+  {
+    "title": "KDDI discloses breach impacting 12 million records",
+    "cves": [],
+    "vendors": [],
+    "source_families": ["news"],
+    "score": 4.82,
+    "status": "fresh",
+    "representative_url": "https://www.securityweek.com/12-million-impacted-by-data-breach-at-japanese-telco-kddi"
+  },
+  {
+    "title": "Microsoft patches Defender \"RoguePlanet\" zero-day (CVE-2026-50656)",
+    "cves": ["CVE-2026-50656"],
+    "vendors": ["Microsoft"],
+    "source_families": ["news"],
+    "score": 4.71,
+    "status": "fresh",
+    "representative_url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-patches-rogueplanet-defender-zero-day-vulnerability"
+  }
+]
