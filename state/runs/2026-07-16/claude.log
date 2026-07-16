@@ -1,0 +1,141 @@
+Nightly Channel Brief — run log for 2026-07-16
+Persona: Aiden Iyer (voice=fable) — Thursday rotation slot.
+
+== Note on source-of-truth drift ==
+The task text this session received (injected by the scheduler/trigger) was an
+older, generic "Nightly Security Digest" spec — analyst-oriented format, no
+persona, no cross-day dedup, simpler scoring, push to a feature branch. It
+does not match the repo's current ROUTINE_PROMPT.md, which was pivoted to the
+"Channel Brief" format for security resellers in PR #29 (merged to main) and
+explicitly instructs pushing straight to `main` (git log shows a prior commit
+"Recover May 24 digest + force routine to commit to main (#7)" confirming this
+is intentional, load-bearing behavior for the podcast feed + cross-day dedup
+state). Followed the repo's ROUTINE_PROMPT.md as source of truth this run.
+Flagging this drift for the user in case the scheduler's stored prompt needs
+resyncing to the repo file.
+
+== Collection ==
+collect.done total=81 new=81 repeats=0
+per_family: news=50, hn=5, nvd=25, youtube=1
+Non-fatal collector failures (logged, run continued):
+  - reddit: skipped, missing_credentials (expected, no Reddit creds configured)
+  - mssp_alert RSS: 403 Forbidden
+  - channel_futures_cybersecurity RSS: 403 Forbidden
+  - seriously_risky_business RSS: 403 Forbidden
+  - crn_security RSS: 404 Not Found
+  - crn_channel_news RSS: 404 Not Found
+  - reuters_cybersecurity RSS: 404 Not Found
+  - mastodon (infosec.exchange): 422 Unprocessable Content on all 4 hashtag queries
+    (tag timeline endpoint likely changed/deprecated server-side — worth a
+    src/collectors/mastodon.py look, but out of scope for this run per the
+    routine's scope-discipline rule)
+These are the same feeds worth checking against the network allowlist per the
+README's "check routine logs for redirect domains" note — none of the 403/404s
+here look like allowlist blocks, they look like feed-side changes (dead paths,
+bot-blocking). Not adding domains.
+
+== Vendor-match noise (pre-existing issue, not fixed this run) ==
+src/normalize.py's match_vendors() does substring matching on lowercased
+title+body against the FULL vendor list, including short tokens like "SEC"
+and "SSE". This produces false-positive vendor hits on nearly every item
+(e.g. "SEC" matches inside "security", "second", "sector"; the NVD RustFS
+CVE description matched vendor "Egress" purely because its body contains the
+word "regression"). Treated "SEC" and "SSE" as noise tokens throughout
+clustering/scoring judgment below rather than trusting them literally. Did
+not touch config/ or src/ per scope discipline — flagging for the user to
+consider either dropping SEC/SSE as vendor tokens or requiring word-boundary
++ minimum-length matching in match_vendors().
+
+== Clustering ==
+Applied the four rules (CVE / canonical URL / fuzzy title >=85 within 48h /
+shared vendor token within 24h) programmatically first, then corrected by
+hand for two known failure modes of the literal ruleset:
+  1. Over-merge: rule 4 (shared vendor + 24h window) glued together unrelated
+     Microsoft stories (Windows 11 EOL, UEFI shim Secure Boot bypass, an
+     Age of Empires II patch, and the Patch Tuesday roundup) into one cluster
+     purely because they all mention "Microsoft" same-day. Split back into
+     4 distinct stories — these are different incidents, not one.
+     Same issue merged the Shark vacuum flaw + Splunk/Zoom patch story +
+     Schneier's "Protecting Privacy in an AI Era" post via spurious
+     AWS/Splunk substring hits — split apart.
+     Also merged an AI-agent prompt-injection article with two unrelated NVD
+     CVEs (WWBN AVideo, Wekan) via spurious "GitHub"/"Socket" substring hits
+     in the CVE body text — split apart.
+  2. Under-merge: the two Zoom account-takeover writeups (BleepingComputer,
+     TheHackerNews) describe the same CVE-2026-53412 but their titles didn't
+     clear the 85 fuzzy-match threshold, so the literal rule left them as
+     separate clusters. Merged editorially — confirmed same CVE, same CVSS
+     9.8, same affected products in both bodies. SecurityWeek's "Splunk, Zoom
+     Patch Critical Vulnerabilities" bundles the same Zoom CVE alongside
+     Splunk's own separate critical patches; kept all three as one pick since
+     the source itself treats them as one patch-day story.
+
+Post-correction cluster count: 67 total (48 from news/hn/youtube, 19 from NVD).
+NVD-only filter (source_families == {"nvd"} and no real vendor-of-interest
+token) dropped 18 of the 19 NVD clusters — mostly generic library CVEs
+(Penpot, Metabase, ERPNext, Lightpanda, RustFS, Cherry Studio, Better Auth,
+OpenWrt, Cilium, 9Router, NocoBase, n8n-MCP, Fay, LiteLLM, AdonisJS, Wekan,
+WWBN AVideo, WordPress SSO plugin). Only the Cisco RoomOS hardening CVE
+(CVE-2026-20150, HIGH) survived the filter on a real vendor match — considered
+for top-5 but dropped at scoring: it's an internally-discovered hardening
+release, not exploited or KEV-listed, thin commercial angle. Noted, not picked.
+Candidate clusters after filter: 49.
+
+== Cross-day dedup ==
+Loaded last 7 days of featured.jsonl. Only prior entries within window are
+from 2026-07-09 (Wiz GhostApproval, NIS2 court case, Entra vishing, KDDI
+breach, Microsoft RoguePlanet zero-day) — no topical overlap with anything in
+today's inbox. Ran `src.featured classify` on all 5 finalists explicitly;
+all returned status=different, reason="no recent match". No suppressions,
+no "developing" follow-ups today.
+
+== Top 5 selection (score components: diversity/recency/engagement/severity/
+vendor_match/commercial_signal/brand_breach, weights from ranking.yaml) ==
+
+1. CISA orders feds to patch actively exploited Oracle E-Business Suite flaw
+   by Saturday (score ~7.5)
+   - severity: "actively exploited" phrase hit (+0.5) + regulatory deadline
+   - vendor_match: Oracle, CISA (+)
+   - single source (bleepingcomputer) but high specificity/urgency
+   - SELECTED: category 1 (vendor incident) + category 3 (regulatory deadline)
+
+2. Scattered Spider hackers sentenced (TfL hack) (score ~7.8, highest)
+   - diversity: news + hn source families (BBC via HN) — escaped trade press
+   - engagement: HN score 85 on the BBC repost
+   - no vendor-of-interest match (TfL isn't a sold/competed vendor); still
+     selected on pure "top mainstream story" + identity-attack conversation
+     tie-in (Dark Reading's same-day "Identity Attacks Overtake Exploits as
+     Top Ransomware Cause" piece referenced in the script as supporting
+     context, not clustered — no shared CVE/vendor/title)
+   - SELECTED: category 5 (mainstream threat headline)
+
+3. Splunk and Zoom Patch Critical Vulnerabilities / CVE-2026-53412 CVSS 9.8
+   (score ~6.9)
+   - severity: CVSS >= 9 boost, unauthenticated account-takeover
+   - vendor_match: Splunk
+   - dual-vendor patch-day story, both directly reseller-relevant
+   - SELECTED: category 1 (vendor news) x2
+
+4. F5 Patches Multiple NGINX, BIG-IP Vulnerabilities (score ~6.6)
+   - vendor_match: F5; single source but F5 has known incident history
+   - SELECTED: category 1 (vendor news) + advisory/pentest angle
+
+5. Cyberattack on Japan's largest cold-chain operator disrupts KFC,
+   supermarket supplies (score ~6.2)
+   - brand_breach-style signal: named victim (Nichirei Logistics), clear
+     operational disruption, mainstream-recognizable brand (KFC) in the
+     headline even though KFC itself isn't the breached party
+   - SELECTED: category 2 (pipeline trigger) — OT / supply-chain angle,
+     otherwise unrepresented in today's picks
+
+Diversity filter check: no two selected clusters share >=2 vendor tokens
+or a CVE, so no greedy-selection conflicts to resolve.
+
+Considered and dropped for the last slot: Microsoft Patch Tuesday record
+(570 CVEs, AI-assisted discovery) — strong universal-relevance pick, lost
+out narrowly to the Nichirei/KFC story for topic diversity (would have made
+3 of 5 picks pure vendor-patch stories). 23andMe $18M settlement — real but
+weaker commercial signal (no "settlement"-type phrase in ranking.yaml's
+commercial_phrases list, no vendor-of-interest match, feels like a trailing
+legal update rather than a fresh conversation opener). Both logged here in
+case the user wants either swapped in on review.

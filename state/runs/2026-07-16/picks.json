@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Scattered Spider Hackers Sentenced to 5.5 Years Over Transport for London Hack",
+    "cves": [],
+    "vendors": [],
+    "source_families": ["news", "hn"],
+    "score": 7.8,
+    "status": "fresh",
+    "representative_url": "https://www.bleepingcomputer.com/news/security/scattered-spider-members-behind-transport-for-london-hack-get-five-years-in-prison"
+  },
+  {
+    "title": "CISA Orders Feds to Patch Actively Exploited Oracle E-Business Suite Flaw by Saturday",
+    "cves": [],
+    "vendors": ["Oracle", "CISA"],
+    "source_families": ["news"],
+    "score": 7.5,
+    "status": "fresh",
+    "representative_url": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-oracle-flaw-by-saturday"
+  },
+  {
+    "title": "Splunk and Zoom Patch Critical Vulnerabilities (CVE-2026-53412, CVSS 9.8)",
+    "cves": ["CVE-2026-53412"],
+    "vendors": ["Splunk"],
+    "source_families": ["news"],
+    "score": 6.9,
+    "status": "fresh",
+    "representative_url": "https://www.securityweek.com/splunk-zoom-patch-critical-vulnerabilities"
+  },
+  {
+    "title": "F5 Patches Multiple NGINX, BIG-IP Vulnerabilities",
+    "cves": [],
+    "vendors": ["F5"],
+    "source_families": ["news"],
+    "score": 6.6,
+    "status": "fresh",
+    "representative_url": "https://www.securityweek.com/f5-patches-multiple-nginx-big-ip-vulnerabilities"
+  },
+  {
+    "title": "Cyberattack on Japan's Largest Cold-Chain Operator Disrupts KFC, Supermarket Supplies",
+    "cves": [],
+    "vendors": [],
+    "source_families": ["news"],
+    "score": 6.2,
+    "status": "fresh",
+    "representative_url": "https://therecord.media/cyberattack-japan-nichirei-logistics-impacts-kfc"
+  }
+]
