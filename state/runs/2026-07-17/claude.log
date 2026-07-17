@@ -1,0 +1,120 @@
+Channel Brief run — 2026-07-17 (UTC)
+Persona: Avery Ito (voice: echo)
+
+=== Collect ===
+uv run python -m src.collect
+total_fetched=86 new=84 repeats=2
+per_source_family: news=41, hn=13, nvd=30, youtube=2
+Collector failures (non-fatal, logged by src/collectors):
+- reddit: skipped, missing credentials (expected — Reddit creds not configured this run)
+- mastodon: all 4 hashtag queries returned 422 Unprocessable Content (infosec.exchange API
+  appears to have changed/broken the timeline-by-tag endpoint used) — 0 items from mastodon
+- rss: channel_futures_cybersecurity (403), mssp_alert (403), crn_channel_news (404),
+  crn_security (404), reuters_cybersecurity (404), seriously_risky_business (403) all failed
+  to fetch. These are the same channel/business-press feeds the README flags as needing
+  allowlist/URL upkeep — crn.com in particular looks like the RSS paths moved (404 on both
+  crn feeds). Worth a config/sources.yaml URL check outside this run's scope.
+
+=== Filtering ===
+NVD family: 30 items, all HIGH/CRITICAL CVSS (min_cvss 8.5 floor already applied by collector).
+Checked each for a vendor-of-interest token per the NVD-only-drop rule:
+- 29/30 had no genuine vendor-of-interest match. One item (CVE-2026-14890, SGLang ZeroMQ
+  auth-bypass) was auto-tagged vendor="Socket" by the extractor, but the article body is about
+  SGLang's own backup subsystem, not Socket's product — false-positive substring match, not a
+  real Socket-relevant story. Treated as an NVD-only drop per the "generic library CVE unless
+  tied to a named enterprise breach" rule.
+- 10 of the 30 are a single OpenClaw release's CVE wave (auth bypass / privilege escalation
+  across device-pairing, exec approvals, browser routes). No vendor-of-interest tie-in, no named
+  enterprise breach attached — dropped as a block.
+- Net: 30/30 NVD items dropped at the filter stage. None came close enough to a vendor-of-interest
+  token to flag as a near-miss beyond the Socket false positive above.
+- Observation for the user: several vendor tags across both NVD and news items (e.g. "SEC", "SSE"
+  appearing as vendors on unrelated stories) look like substring false positives out of the vendor
+  extractor in src/normalize.py — not touched this run per scope discipline, but worth a look.
+
+=== Clustering (news/hn/youtube, 54 items after NVD drop) ===
+Rules applied in order (CVE match -> URL match -> fuzzy title >=85 within 48h -> shared vendor
+token + 24h window). Notable clusters:
+
+1. Fairlife/Coca-Cola ransomware — merged 4 items via fuzzy title + same-incident content read:
+   bleepingcomputer, securityweek, techcrunch_security, the_record. All published within a
+   ~17h window, all describing the same Fairlife production halt. Highest source diversity
+   of any cluster this run within the "news" family.
+
+2. SharePoint CVE-2026-58644 KEV zero-day — merged 2 items (thehackernews, securityweek) via
+   vendor token match (Microsoft/SharePoint) + same-day timestamps; thehackernews carries the
+   CVE ID explicitly, securityweek's "Fresh SharePoint Vulnerability Exploited Soon After
+   Disclosure" piece was confirmed as the same underlying flaw by content, not just title fuzz
+   (title similarity alone was below the 85 threshold — merged on vendor+timeframe rule 4
+   plus manual content read).
+
+3. Fortinet FortiSandbox KEV — single bleepingcomputer item, no cross-posting found elsewhere
+   in this run's collection window.
+
+4. Ernst & Young breach — single bleepingcomputer item.
+
+5. CMMC Phase 2 suspension (securityweek) — single item. Note: commercial_phrases in
+   config/ranking.yaml does not include "CMMC" itself (has FedRAMP, StateRAMP, IL5, IL6, DORA,
+   NIS2, SEC 8-K, etc.) so this cluster scored 0 on commercial_signal despite being squarely a
+   regulatory/compliance-deadline story per editorial angle #3. Flagging as a config gap —
+   consider adding "CMMC" to commercial_phrases. Not changed this run (scope discipline).
+
+6. Beacon Security $13M raise, Risk Ledger $32M Series B raise (securityweek) — legitimate
+   commercial_signal phrase hits ("Raises $", "Series B") but neither company is a vendor of
+   interest and neither is a household name for this audience — scored but not competitive
+   with the top 5, held as bench candidates.
+
+7. New Windows LegacyHive zero-day (bleepingcomputer) — real zero-day, Microsoft-adjacent, but
+   no CVE assigned yet and no KEV/CISA action to hang urgency on — held as a bench candidate,
+   lower recency/severity than the two CISA KEV picks above.
+
+8. 1M+ Emails Use Hidden Text to Dupe AI Security Filters (darkreading) — good angle for
+   Proofpoint/Mimecast/Abnormal resellers but single-source and no named vendor tie-in in the
+   piece itself — held as a bench candidate.
+
+9. Cyberattack Disrupts Operations of Japanese Frozen Food Giant Nichirei (securityweek) —
+   checked against yesterday's featured.jsonl entry "Cyberattack on Japan's Largest Cold-Chain
+   Operator Disrupts KFC, Supermarket Supplies" (2026-07-16, rank 5). Both are almost certainly
+   the same underlying Nichirei incident, but src.featured classify returned "different" —
+   fuzzy title score fell below the 70 strong-match floor (KFC/cold-chain vs. Nichirei/frozen-food
+   phrasing shares little token overlap) and no CVE/vendor overlap since Nichirei isn't a listed
+   vendor token. Editorial judgment: likely the same story continuing, but score was well below
+   the top 5 regardless (no brand-breach phrase hit on a name in scope, no commercial_signal),
+   so it didn't change the outcome. Not selected either way — noted here so it's clear why a
+   familiar-looking headline didn't reappear as a "Developing:" pick.
+
+=== Cross-day dedup (src.featured, last 7 days) ===
+All 5 selected picks classified "different" — no strong match against the last 7 days of
+state/featured.jsonl. No "same" suppressions, no "developing" follow-ups today.
+
+=== Scoring (config/ranking.yaml weights: diversity 2.0, recency 1.5, engagement 1.0,
+severity 1.0, novelty 1.5, vendor_match 1.5, commercial_signal 2.5, brand_breach 2.0) ===
+Engagement z-scores were flat at 0 across the board — RSS/news items report engagement=0.0
+(no likes/upvotes signal on this collection run; hackernews/reddit would carry real engagement
+but reddit was skipped and no HN items made the top 5). Manual score breakdown for each pick:
+
+1. Fortinet FortiSandbox KEV — diversity 1.39, recency 1.06, severity 1.0 (actively-exploited
+   +0.5, implicit KEV +0.5), vendor_match 3.0 (Fortinet + CISA, capped), commercial 0,
+   brand_breach 0 => ~6.45
+2. SharePoint CVE-2026-58644 KEV — diversity 1.39, recency 1.05, severity 2.0 (CVSS>=9 +1.0,
+   KEV +0.5, zero-day/actively-exploited +0.5), vendor_match 1.5 (Microsoft), commercial 0,
+   brand_breach 0 => ~5.93
+3. Ernst & Young breach — diversity 1.39, recency 1.48, severity 0, vendor_match 0,
+   commercial 0, brand_breach 2.0 ("discloses breach") => ~4.86
+4. Fairlife/Coca-Cola ransomware — diversity 1.39, recency 0.70, severity 0, vendor_match 0,
+   commercial 0, brand_breach 2.0 ("ransomware attack on" / "production halted") => ~4.09
+5. CMMC Phase 2 suspension — diversity 1.39, recency 1.26, all other components 0
+   (see commercial_phrases gap noted above) => ~2.65
+
+Diversity filter check: no two picks share >=2 vendor tokens + a CVE, so no greedy-selection
+skips were needed among the top 5.
+
+=== Selection ===
+Top 5 selected from 8 realistic candidate clusters (5 picks + 3 bench items #6-8 above);
+Nichirei (#9) considered and excluded on merit independent of the dedup ambiguity.
+Final order in summary.md/script.txt follows the computed score, highest first:
+Fortinet KEV > SharePoint KEV > Ernst & Young > Fairlife/Coca-Cola > CMMC.
+
+=== Outputs ===
+Wrote state/runs/2026-07-17/{summary.md, script.txt, picks.json, claude.log}.
+script.txt: 663 words (target 600-900, within range).

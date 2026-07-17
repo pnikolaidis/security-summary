@@ -1,0 +1,47 @@
+[
+  {
+    "title": "CISA urges immediate action on actively exploited Fortinet flaws",
+    "cves": [],
+    "vendors": ["Fortinet", "CISA"],
+    "source_families": ["news"],
+    "score": 6.45,
+    "status": "different",
+    "representative_url": "https://www.bleepingcomputer.com/news/security/cisa-warns-feds-to-patch-exploited-fortinet-fortisandbox-flaws-by-sunday"
+  },
+  {
+    "title": "CISA Adds Exploited SharePoint RCE Zero-Day CVE-2026-58644 to KEV",
+    "cves": ["CVE-2026-58644"],
+    "vendors": ["Microsoft"],
+    "source_families": ["news"],
+    "score": 5.93,
+    "status": "different",
+    "representative_url": "https://thehackernews.com/2026/07/cisa-adds-exploited-sharepoint-rce-zero.html"
+  },
+  {
+    "title": "Ernst & Young discloses data breach after support system hack",
+    "cves": [],
+    "vendors": [],
+    "source_families": ["news"],
+    "score": 4.86,
+    "status": "different",
+    "representative_url": "https://www.bleepingcomputer.com/news/security/ernst-and-young-discloses-data-breach-after-support-system-hack"
+  },
+  {
+    "title": "Coca-Cola says Fairlife ransomware attack halts US dairy production",
+    "cves": [],
+    "vendors": [],
+    "source_families": ["news"],
+    "score": 4.09,
+    "status": "different",
+    "representative_url": "https://www.bleepingcomputer.com/news/security/coca-cola-says-fairlife-ransomware-attack-halts-us-dairy-production"
+  },
+  {
+    "title": "Industry Reactions to Pentagon Suspending CMMC Phase 2",
+    "cves": [],
+    "vendors": [],
+    "source_families": ["news"],
+    "score": 2.65,
+    "status": "different",
+    "representative_url": "https://www.securityweek.com/industry-reactions-to-pentagon-suspending-cmmc-phase-2-feedback-friday"
+  }
+]
