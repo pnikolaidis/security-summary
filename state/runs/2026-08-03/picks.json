@@ -1,0 +1,47 @@
+[
+  {
+    "title": "N-able N-central Attackers Regain Access After First Patch Falls Short",
+    "cves": ["CVE-2026-18577"],
+    "vendors": ["N-able"],
+    "source_families": ["news"],
+    "score": 5.09,
+    "status": "different",
+    "representative_url": "https://thehackernews.com/2026/08/n-able-says-attackers-take-over-n.html"
+  },
+  {
+    "title": "Brinks Home Confirms Data Breach as Hackers Leak Stolen Files",
+    "cves": [],
+    "vendors": [],
+    "source_families": ["news"],
+    "score": 4.86,
+    "status": "different",
+    "representative_url": "https://www.securityweek.com/brinks-home-discloses-data-breach-as-hackers-leak-files"
+  },
+  {
+    "title": "SonicWall SMA1000 Flaws Under Active Ransomware Exploitation",
+    "cves": [],
+    "vendors": ["SonicWall"],
+    "source_families": ["news"],
+    "score": 4.80,
+    "status": "different",
+    "representative_url": "https://www.securityweek.com/recent-sonicwall-vulnerabilities-exploited-in-ransomware-attacks"
+  },
+  {
+    "title": "CrowdStrike Drops Its 2026 Threat Hunting Report",
+    "cves": [],
+    "vendors": ["CrowdStrike"],
+    "source_families": ["youtube"],
+    "score": 4.38,
+    "status": "different",
+    "representative_url": "https://www.youtube.com/watch?v=Zh_LoS7Glto"
+  },
+  {
+    "title": "Russian State Hackers Tied to Hotel Wi-Fi Credential-Theft Campaign Against Microsoft Accounts",
+    "cves": [],
+    "vendors": ["Microsoft"],
+    "source_families": ["news"],
+    "score": 4.22,
+    "status": "different",
+    "representative_url": "https://www.securityweek.com/russian-state-apt-linked-to-recent-public-wi-fi-gateway-hacking"
+  }
+]

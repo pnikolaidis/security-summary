@@ -1,0 +1,151 @@
+Channel Brief — 2026-08-03 — claude.log
+=========================================
+
+INPUT
+-----
+state/inbox.json: total_fetched=33, new=33, repeats=0
+per_source_family: news=17, hn=9, nvd=6, youtube=1
+Reddit collector: skipped (no REDDIT_* env vars set in this environment). Non-fatal.
+Mastodon collector: 0 items (infosec.exchange tag timelines returned 422 Unprocessable Content for all
+  four tags — ransomware, cybersecurity, threatintel, infosec. Looks like an API/auth or endpoint-shape
+  issue, not a content issue. Worth checking mastodon collector against current infosec.exchange API docs.)
+CISA collector: 0 items (no new KEV entries in the fetch window).
+RSS fetch failures (non-fatal, logged by collector): channelfutures MSSP feed 403, crn.com channel-news
+  and security feeds both 404 (likely retired/moved — consider updating or dropping from sources.yaml),
+  reuters cybersecurity feed 404 (same).
+
+CROSS-DAY DEDUP
+---------------
+`uv run python -m src.featured load 7` returned an empty list — no featured stories in the last 7 days.
+This is expected: the last run in this repo was 2026-07-17, 17 days before today, well outside the
+7-day window. Every candidate cluster today classified as "different" by default; none checked via
+`src.featured classify` needed a same/developing determination since the load-7 window was empty.
+NOTE: the ~2.5 week gap between runs means state/seen.jsonl's 14-day rolling dedup window has likely
+expired for anything from before ~2026-07-20, so no URL-level dedup impact from the gap either — but
+flagging the gap itself in case it reflects a missed/broken schedule the user wants to look into.
+
+FILTER STAGE
+------------
+NVD-only clusters (source_families == {"nvd"}), dropped per rule (no vendor-of-interest token in title):
+  - CVE-2025-71399 (Better Auth / rou3 router path-normalization bypass, HIGH) — library-level, no vendor match.
+  - CVE-2026-67356 (ArcadeDB JS trigger privilege escalation, HIGH) — library-level, no vendor match.
+  - CVE-2026-68579 (FreeRDP heap overflow, CRITICAL 9.6) — open-source client, no vendor-of-interest match,
+    no confirmed in-the-wild exploitation in the fetched text. Near-miss: FreeRDP is widely embedded in RDP
+    tooling; if a customer-facing vendor product bundling FreeRDP surfaces, revisit.
+  - CVE-2026-65321 (PyAthena SQL injection, CRITICAL 9.8) — library-level, no vendor match.
+  - CVE-2026-18588 / CVE-2026-18589 (Wavlink WL-NU516U1 stack overflows, CRITICAL 9.8 each) — consumer
+    router, not a vendor-of-interest, no named-enterprise breach tie.
+  All 6 dropped. None had a vendor-of-interest token close enough to save them.
+
+Off-topic HN noise filtered (false-positive keyword matches from the HN collector's broad query set —
+  "vulnerability", "exploit", "breach", "acquires" etc. matched threads with no actual security content):
+  - Europe EV Sales BEVs Jump 50% & Reach 26% Market Share
+  - Show HN: Isopolis – Isometric pixel map of SF
+  - Why Book Corners won't sync contributions back to OpenStreetMap
+  - AI poster wins Ohio State Fair contest
+  - My personal AI benchmark: "Generate an SVG of a frog with a Habsburg jaw"
+  - Show HN: NixOS-DGX-Spark
+  - Show HN: Kakehashi – macOS binaries on Linux ARM
+  - Show HN: Sprocket – AI Agent for Hardware and Software Development
+  8 filtered. Kept 1 HN item as a candidate: "Critical CVE issued for hallucinated SQLite vulnerability"
+  (research.jfrog.com, 79 pts / 20 comments) — genuinely on-topic (AI-hallucinated CVE polluting NVD) but
+  weak commercial angle for this audience and no vendor-of-interest tie; did not make top 5. Score ~2.1
+  (diversity 1.386 + recency ~1.3 + engagement z-bonus, no severity/vendor/commercial/brand-breach credit).
+
+DATA QUALITY NOTE — vendor extraction
+--------------------------------------
+Several items were tagged with vendor token "SEC" (e.g. Brinks Home, Chrome extension story, Thermo
+Fisher, water-utility story, Hugging Face Diffusers story) despite having nothing to do with the U.S.
+Securities and Exchange Commission or SEC disclosure rules. This looks like a substring-matching bug in
+src/normalize.py's vendor extractor — likely matching "sec" inside the word "security", which appears in
+nearly every headline in this feed. Treated "SEC" as noise throughout clustering/scoring below (did not
+use it as a shared-vendor-token clustering signal, and did not count it toward vendor_match scoring).
+Flagging for the user per scope discipline — not fixed in this run.
+
+Separately: N-able (N-central RMM) is not in config/sources.yaml's vendor list, despite RMM/MSP tooling
+being squarely relevant to this audience (many resellers are MSPs or serve MSPs directly). Editorial
+judgment credited it on severity/brand-breach-adjacent grounds instead of vendor_match. Worth adding
+N-able, plus other major RMM/PSA vendors (ConnectWise, Kaseya, Datto, Atera, NinjaOne) to the vendor
+list given today's story.
+
+CLUSTERING
+----------
+33 items -> 6 dropped (NVD-only) -> 8 dropped (HN noise) -> 19 remaining candidates -> merged into 18
+clusters. Only one multi-item cluster formed:
+  - "Russian State APT Linked to Recent Public Wi-Fi Gateway Hacking" (SecurityWeek) +
+    "Risky Bulletin: Russia is behind the recent hotel WiFi hacks" (Risky Business News)
+    Clustered via rule 4 (shared vendor token "Microsoft" is present on the SecurityWeek item; both cover
+    the same Midnight Blizzard hotel-Wi-Fi campaign within a 24h window — topical/entity match on
+    "Midnight Blizzard" / "hotel Wi-Fi" / "Russia"). Treated as same underlying story.
+All other candidates were singleton clusters (one source each).
+
+SCORING (weights from config/ranking.yaml; "SEC" excluded from vendor_match per note above)
+---------------------------------------------------------------------------------------------
+1. N-able N-central auth bypass, fix incomplete (CVE-2026-18577)
+   diversity 1.39 (log(1+1)*2.0) + recency 1.20 (~5.5h old) + engagement 0 + severity 0.5
+   (ongoing active intrusion, editorial credit — no literal "actively exploited" phrase but the
+   substance qualifies: attackers had live administrative access after the first patch failed)
+   + vendor_match 0 (N-able not in vendor list — see note above) + commercial_signal 0
+   + brand_breach 2.0 (editorial credit: vendor platform itself compromised, downstream customer risk —
+   not a literal "confirms breach" phrase match but same substance) + novelty 0
+   = ~5.09
+
+2. Brinks Home data breach, files leaked
+   diversity 1.39 + recency 1.47 (~25min old) + engagement 0 + severity 0 + vendor_match 0
+   + brand_breach 2.0 ("discloses data breach" is a near-exact match to brand_breach_phrases
+   "discloses breach") + novelty 0 = ~4.86
+
+3. SonicWall SMA1000 exploited by INC ransomware
+   diversity 1.39 + recency 1.41 (~1.5h old) + engagement 0 + severity 0.5 (active ransomware
+   exploitation) + vendor_match 1.5 (SonicWall, 1 vendor token, cap 3.0) + commercial_signal 0
+   + brand_breach 0 (no single named victim) + novelty 0 = ~4.80
+
+4. CrowdStrike 2026 Threat Hunting Report (YouTube)
+   diversity 1.39 + recency 1.49 (~10min old) + engagement 0 + severity 0 + vendor_match 1.5
+   (CrowdStrike) + commercial_signal 0 + brand_breach 0 + novelty 0 = ~4.38
+
+5. Midnight Blizzard / Microsoft credential theft via hotel Wi-Fi (2-source cluster)
+   diversity 1.39 (both outlets are source_family "news", so no diversity bump beyond 1 family —
+   formula limitation, noted for the user) + recency 1.33 (~2.9h old, newest item in cluster)
+   + engagement 0 + severity 0 (no literal severity phrase; editorial judgment kept this at 0 to stay
+   conservative) + vendor_match 1.5 (Microsoft) + commercial_signal 0 + brand_breach 0
+   (no single named commercial victim — "hospitality organizations" generic) + novelty 0 = ~4.22
+
+Runner-up not selected: hallucinated-SQLite-CVE HN story, ~2.1 (see filter-stage note above) — cut for
+weak commercial angle relative to the five above, all above min_score 0.5 threshold by a wide margin.
+
+Runner-up not selected: "US Water Cyberattacks Extend Beyond Minnesota to at Least 6 Other States"
+(SecurityWeek) — critical-infrastructure / nation-state story, strong mainstream-news candidate, but
+no vendor-of-interest match and no single named commercial victim (brand_breach doesn't apply to a
+sector-wide description). Estimated score ~2.69, well below today's top 5. Cut in favor of the
+Midnight Blizzard / Microsoft cluster, which scores higher (vendor_match credit + 2-source coverage)
+and has a conversation angle that applies across nearly every account (traveling staff / hotel Wi-Fi),
+not just critical-infrastructure verticals. Logging this explicitly since it's a plausible alternate
+pick a human editor might make differently.
+
+FINAL SELECTION
+----------------
+Top 5 (score order): N-able (5.09) > Brinks Home (4.86) > SonicWall (4.80) > CrowdStrike (4.38) >
+Midnight Blizzard/Microsoft (4.22). No two picks share >=2 vendor tokens plus a CVE, so the diversity
+filter did not need to exclude anything.
+
+DELIVERY
+--------
+Persona for 2026-08-03 (Monday): Allie / voice=alloy.
+
+`uv run python -m src.deliver` FAILED at the TTS step:
+  openai.RateLimitError: 429 insufficient_quota / credit_balance_exhausted —
+  "You have no credits remaining. Add credits to continue using the API."
+This is a billing/quota exhaustion on OPENAI_API_KEY, not a transient rate limit — the SDK's built-in
+retries (2 automatic retries with backoff) all hit the same error, confirming it's not transient.
+No MP3 was generated and no email was sent — deliver.py runs TTS synthesis before the Resend call, and
+the OpenAI call raised before any audio was produced, so there is nothing to attach or send.
+Per ROUTINE_PROMPT.md failure handling, the run directory (summary.md, script.txt, claude.log,
+picks.json) is still being committed so today's editorial work isn't lost — it can be redelivered by
+re-running `uv run python -m src.deliver 2026-08-03` once the OpenAI account has credits again.
+The 0-byte placeholder digest.mp3 that tts.synthesize() created before failing was deleted rather than
+committed, so this run is correctly excluded from `src.podcast_feed`'s scan (which requires a real
+digest.mp3) until a real one exists — no broken episode/enclosure was published to the feed.
+No email fallback path exists in src/deliver.py (email always ships with the MP3 attached, no
+text-only branch) — flagging this as a potential resiliency gap for the user to consider, but not
+adding it in this session per scope discipline.
