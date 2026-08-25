@@ -1,0 +1,153 @@
+Nightly Channel Brief — run log for 2026-08-25
+Persona: Adam Insight (voice: onyx)
+
+NOTE ON GAP: last committed run before this one was 2026-07-17 (state/runs/2026-07-17/).
+No runs landed between 2026-07-18 and 2026-08-24 — 5+ week gap, cause unknown (outside
+this routine's scope to diagnose; flagging for the user). Featured-story lookback (7d)
+was therefore empty, so no candidate was suppressed as "same" or classified "developing" —
+every cluster below classified "different".
+
+=== Collection ===
+collect.done total=84 new=84 repeats=0 per_family={'news': 37, 'hn': 11, 'nvd': 30, 'youtube': 6}
+Non-fatal collector failures (logged, run continued):
+  - reddit: skipped, missing credentials (REDDIT_CLIENT_ID/SECRET/USERNAME/PASSWORD not set)
+  - bluesky: 0 items (no error surfaced, just empty)
+  - srslyriskybiz.substack.com: 403 Forbidden
+  - channelfutures.com/mssp-insider feed: 403 Forbidden
+  - msspalert.com feed: 403 Forbidden
+  - infosec.exchange mastodon tags (ransomware/cybersecurity/infosec/threatintel): 422 Unprocessable Content (all 4 tag timelines)
+  - crn.com security + channel-news feeds: 404 Not Found
+  - reuters cybersecurity feed: 404 Not Found
+  mastodon and reddit collectors effectively contributed 0 items this run — trade-press
+  and channel-press coverage leaned entirely on RSS (news family) + HN + NVD + a few
+  YouTube channels. Worth the user checking whether MSSPAlert/ChannelFutures/CRN changed
+  their feed URLs or started blocking the collector's UA/IP, and whether the Mastodon tag
+  timeline API changed shape (422 suggests a malformed/rejected query param, not just a
+  dead tag).
+
+=== Known false-positive vendor extraction (pre-existing, not fixed per scope discipline) ===
+src/normalize.py:match_vendors() does plain substring matching on lowercased text, so
+short vendor/category tokens in config/sources.yaml collide with ordinary English words:
+  - "SEC" (regulatory-entity token) matches any occurrence of "sec" as a substring —
+    "security", "insecure", "sector", "second", etc. Hit ~15 of the 84 items today, almost
+    all false positives (e.g. item "phpIPAM... insecure object cache keying" tagged vendor=SEC).
+  - "SSE" (category token) similarly false-matched at least one item with no SSE/SASE
+    relevance (Konami Metal Gear Online 3 buffer overflow, item #57, tagged vendor=SSE).
+  - "Hunters" (SIEM/security-data vendor) false-matched both ReliaQuest/ShinyHunters items
+    (ShinyHunters contains "Hunters" as a substring) — coincidentally topically adjacent
+    here (both are about the ShinyHunters group) but NOT actually about the vendor Hunters,
+    so it was NOT counted as a vendor-of-interest match in scoring.
+Manually discounted SEC/SSE/Hunters vendor tags throughout clustering and scoring below
+unless the article body genuinely concerned that vendor/entity. Logging this for the user
+to consider anchoring match_vendors() to word boundaries in a future change — out of scope
+for this run.
+
+=== Clustering ===
+Ran a script implementing the four clustering rules (CVE, canonical URL, fuzzy title
+token_set_ratio>=85 within 48h, shared vendor token within 24h) over all 84 items.
+Raw result: 76 clusters. Two of those raw clusters are algorithmic over-merges caused by
+generic tokens matching rule 4:
+  - Item #6 (Microsoft Teams bot-blocking feature) merged with item #8 (Mirage2FA/M365
+    phishing) purely because both share the vendor token "Microsoft" within 24h. Treated
+    as two separate, unrelated stories editorially — Teams admin feature did not make the
+    candidate pool for a top-5 pick (not commercially interesting enough on its own).
+  - Item #13 (Oracle WebLogic KEV) merged with item #17 (Zimbra KEV) purely because both
+    share the vendor token "CISA" within 24h. Treated as two separate stories — different
+    vendor, different CVE, different product. Oracle WebLogic made the top 5; Zimbra did
+    not (see "Notable drops" below).
+This is a known limitation of rule 4 when clustering on regulatory/platform tokens that
+appear across unrelated stories (CISA, Microsoft, SEC, SSE) — worth the user tightening
+rule 4 to require a vendor token that isn't in a "generic" allowlist, or requiring 2+
+shared tokens. Not fixed here per scope discipline.
+
+=== Filter stage ===
+NVD-only clusters (source_families == {"nvd"}) dropped: 25 of 26 NVD-only clusters —
+none matched a vendor-of-interest title (WordPress plugin CVEs disguised as "Subscriber
+Privilege Escalation in Booking Hub", library CVEs in phpIPAM/RustDesk/Xinference/act/
+WebKitGTK/Zephyr/Netis/rConfig/DrayTek/Label Studio/OAuth2 Proxy/AzuraCast/Hi.Events/
+Combodo iTop/WooBeWoo/Boost/UltimateAI/MagicAI/ACPT — none tied to a named enterprise
+breach, none referencing a channel vendor). The one NVD-only cluster that survived the
+filter: Zscaler Client Connector (4 CVEs — CVE-2026-59564/59565/59567/59568), because
+"Zscaler" is a genuine vendor-of-interest match appearing directly in each title.
+
+Other generic-library-CVE drop (not NVD-only, but same editorial rule): miniOrange SAML/
+auth-bypass WordPress plugin cluster (items #3 bleepingcomputer + #12 thehackernews,
+CVE-2026-61979) — cross-source but a WordPress plugin CVE with no named-enterprise
+breach tie. Dropped.
+
+=== Candidate scoring (top contenders, manual weights per config/ranking.yaml) ===
+1. Zscaler Client Connector (4 CVEs) — vendor_match: Zscaler (+1.0*1.5=1.5); severity:
+   CVSS>=9 present on 2 of 4 (+1.0*1.0=1.0); diversity: 1 family (nvd) → log(2)*2.0≈1.39;
+   recency: ~23h old → exp(-23/24)*1.5≈0.56; commercial_signal 0; brand_breach 0.
+   Est. total ≈ 4.45. SELECTED (#1).
+2. Oracle WebLogic KEV (CVE-2026-21962, CVSS 10.0) — vendor_match: Oracle (+1.5);
+   severity: "actively exploited" + CISA KEV (+0.5*1.0=0.5); diversity: 1 family (news,
+   2 outlets) → 1.39; recency: ~6h old → exp(-6/24)*1.5≈1.17. Est. total ≈ 4.56.
+   SELECTED (#2).
+3. Mirage2FA / M365 AiTM phishing (4,500 companies) — vendor_match: Microsoft, Microsoft
+   365 (+2.0*1.5=... capped contribution, treated as 2 distinct vendor tokens → ~+1.5-2.0
+   range under the cap); diversity: 1 family (news); recency: ~1h old, high. Est. total
+   ≈ 3.2-3.6 (rough — no CVSS/severity phrase present, no brand_breach). SELECTED (#3) —
+   editorial priority: broad impact (4,500 orgs) + named platform (M365) + clear advisory
+   angle outweighs a modest formula score relative to #1/#2.
+4. ReliaQuest / ShinyHunters — vendor_match: 0 (ReliaQuest not in vendor-of-interest
+   list; "Hunters" match discounted as false positive, see above); brand_breach: partial
+   credit (security vendor's own incident, not a *customer* brand-breach in the strict
+   sense) → treated as +0.5 rather than full +1.0; diversity: 1 family (news, 2 outlets)
+   → 1.39; recency: ~20h → exp(-20/24)*1.5≈0.66. Est. total ≈ 3.0-3.3. SELECTED (#4) —
+   editorial priority: directly matches brief category 1 ("a vendor... [had] a security
+   incident of their own") and offers a clean MDR-competitor displacement angle.
+5. Blackstone/Beam Living SSN exposure (HN) — vendor_match: 0 (Blackstone/Beam Living not
+   vendor-of-interest); brand_breach: named enterprise victim with PII exposure verb →
+   +1.0*2.0=2.0; diversity: 1 family (hn) → 1.39; engagement: raw 143.5, BUT z-scored
+   within today's HN cohort (mean ≈336, driven by high-engagement general-tech posts like
+   "Coding expertise... collapse" at 777 and "MS Paint watermark" at 944) — z-score is
+   likely negative (~ -0.4 to -0.6), so engagement weight actually *penalizes* this pick
+   under the literal formula despite 143.5 being a strong absolute number for a security
+   story. Recency: ~20.5h → exp(-20.5/24)*1.5≈0.64. Est. total ≈ 3.4-3.6 with the
+   engagement penalty. SELECTED (#5) on editorial override — this is exactly the brief's
+   category 2 "pipeline trigger" (named enterprise/PE-portfolio brand, SSN/DOB exposure),
+   and the raw-vs-z-scored engagement mismatch is a known quirk worth flagging: security
+   stories on HN compete against a much higher-engagement general-tech baseline, so
+   z-scoring within source_family=hn systematically undersells them relative to their
+   absolute reach. Also note: underlying disclosure is dated 2026-07-16 (a month-old
+   researcher writeup), only reaching HN's front page today — still a legitimate "new to
+   this audience" story since it wasn't featured in any prior run, but recency scoring
+   should arguably use the HN-submission date (which it does, correctly) rather than the
+   original-publication date.
+
+=== Notable drops (scored, but not selected) ===
+- Zimbra: 270+ servers compromised, CISA 3-day patch deadline (CVE-2026-73570), 2 outlets
+  (bleepingcomputer + darkreading). Strong "actively exploited" story but Zimbra is not a
+  vendor-of-interest and doesn't map cleanly to a channel-partner conversation the way the
+  Oracle WebLogic KEV does; displaced by #2 for the "actively exploited, patch now" slot to
+  keep vendor diversity in the top 5 (Oracle already covers that angle).
+- UK power-plant attack by Iranian actors + US sanctions (the_record): strong mainstream-
+  news threat headline (brief category 5) but single-source, no CVE/vendor-of-interest tie,
+  no clear conversation angle beyond "OT is scary" — held back in favor of stories with a
+  more concrete rep-facing hook.
+- Norway DDoS on public services (the_record): single-source, no named vendor, no clear
+  commercial angle for a reseller call.
+- 24 npm packages / fake Cloudflare CAPTCHA pages (thehackernews): Cloudflare vendor-of-
+  interest match present, but this is a narrow supply-chain/npm story with limited
+  reseller-facing urgency; passed over for broader-impact picks.
+- Weekly Recap roundup (thehackernews): a compilation of stories already covered
+  individually elsewhere in the inbox; not counted as an independent pick.
+
+=== Cross-day dedup ===
+`python -m src.featured load 7` → [] (empty; last run was 2026-07-17, well outside the
+7-day window). All 5 selected clusters classified "different" via `src.featured classify`
+(spot-checked the Zscaler cluster explicitly; the rest trivially classify the same way
+against an empty featured log). No suppressions, no "developing" follow-ups this run.
+picks.json appended to state/featured.jsonl via `src.featured append` after this log was
+written (see step 5 of ROUTINE_PROMPT.md).
+
+=== Stats ===
+Total items processed: 84
+New (post-dedup): 84
+Clusters formed (raw algorithmic): 76 (2 over-merged on generic tokens, see above)
+NVD-only clusters dropped: 25 of 26 (1 saved: Zscaler)
+Other generic-library-CVE cluster dropped: 1 (miniOrange WordPress SAML)
+Same-as-recent suppressed: 0
+Developing follow-ups: 0
+Top 5 selected from: ~49 candidate clusters remaining after filters

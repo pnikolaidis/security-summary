@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Zscaler Client Connector: four new CVEs, including unauthenticated RCE and auth bypass",
+    "cves": ["CVE-2026-59564", "CVE-2026-59565", "CVE-2026-59567", "CVE-2026-59568"],
+    "vendors": ["Zscaler"],
+    "source_families": ["nvd"],
+    "score": 4.47,
+    "status": "different",
+    "representative_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59568"
+  },
+  {
+    "title": "Actively exploited Oracle WebLogic flaw (CVSS 10.0) added to CISA's KEV catalog",
+    "cves": ["CVE-2026-21962"],
+    "vendors": ["Oracle", "CISA"],
+    "source_families": ["news"],
+    "score": 4.56,
+    "status": "different",
+    "representative_url": "https://thehackernews.com/2026/08/actively-exploited-oracle-weblogic-flaw.html"
+  },
+  {
+    "title": "Mirage2FA AiTM phishing kit hits 4,500 companies abusing Microsoft 365 logins",
+    "cves": [],
+    "vendors": ["Microsoft 365", "Microsoft"],
+    "source_families": ["news"],
+    "score": 3.2,
+    "status": "different",
+    "representative_url": "https://thehackernews.com/2026/08/mirage2fa-surge-hits-4500-us-and-eu.html"
+  },
+  {
+    "title": "ReliaQuest confirms ShinyHunters breach via social-engineered employee",
+    "cves": [],
+    "vendors": [],
+    "source_families": ["news"],
+    "score": 3.1,
+    "status": "different",
+    "representative_url": "https://www.securityweek.com/reliaquest-confirms-shinyhunters-hack-but-says-impact-was-limited"
+  },
+  {
+    "title": "Blackstone real estate subsidiary exposes SSNs, DOBs and addresses",
+    "cves": [],
+    "vendors": [],
+    "source_families": ["hn"],
+    "score": 3.53,
+    "status": "different",
+    "representative_url": "https://alexschapiro.com/security/vulnerability/2026/07/16/beam-living-graphql-data-exposure"
+  }
+]

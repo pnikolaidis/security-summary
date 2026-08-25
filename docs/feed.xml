@@ -10,12 +10,86 @@
     <description>Daily OSINT cybersecurity digest. Top five stories surfaced from news, social,
 and authoritative sources, narrated by a rotating cast of hosts.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Jul 2026 15:24:25 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 13:03:57 +0000</lastBuildDate>
     <itunes:author>pnikolaidis</itunes:author>
     <itunes:category text="Technology"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:summary>Daily OSINT cybersecurity digest. Top five stories surfaced from news, social,
 and authoritative sources, narrated by a rotating cast of hosts.</itunes:summary>
+    <item>
+      <title>Channel Brief — 2026-08-25</title>
+      <description>Zscaler just shipped four Client Connector CVEs, including an unauthenticated RCE — a same-day renewal/patch-urgency call for every Zscaler account. CISA added an Oracle WebLogic flaw with a perfect 10.0 CVSS to its KEV catalog with evidence of active exploitation, so any customer running Oracle HTTP Server or WebLogic needs an emergency-patch conversation now. A phishing-as-a-service kit called Mirage2FA has hit 4,500 companies by bypassing Microsoft 365's built-in two-factor auth — a clean opener for a phishing-resistant MFA advisory engagement. Security vendor ReliaQuest confirmed one of its own employees was social-engineered by the ShinyHunters extortion crew, giving competitors in the MDR space a reposition angle. And a Blackstone-owned real estate platform exposed tenant SSNs and dates of birth, which is exactly the kind of headline that turns a cold prospect into a pentest or advisory lead.</description>
+      <content:encoded><![CDATA[<p><em>Today's brief by Adam Insight. Five things to bring up on customer calls today.</em></p>
+<h2>Today's talking points</h2>
+<p>Zscaler just shipped four Client Connector CVEs, including an unauthenticated RCE — a same-day renewal/patch-urgency call for every Zscaler account. CISA added an Oracle WebLogic flaw with a perfect 10.0 CVSS to its KEV catalog with evidence of active exploitation, so any customer running Oracle HTTP Server or WebLogic needs an emergency-patch conversation now. A phishing-as-a-service kit called Mirage2FA has hit 4,500 companies by bypassing Microsoft 365's built-in two-factor auth — a clean opener for a phishing-resistant MFA advisory engagement. Security vendor ReliaQuest confirmed one of its own employees was social-engineered by the ShinyHunters extortion crew, giving competitors in the MDR space a reposition angle. And a Blackstone-owned real estate platform exposed tenant SSNs and dates of birth, which is exactly the kind of headline that turns a cold prospect into a pentest or advisory lead.</p>
+<h2>1. Zscaler Client Connector: four new CVEs, including unauthenticated RCE and auth bypass</h2>
+<p><strong>Vendors implicated:</strong> Zscaler
+<strong>Conversation angle:</strong> Ask every Zscaler Client Connector customer whether they've patched yet — one of the four flaws lets an unauthenticated attacker run arbitrary code in the ZCC context, and another is a straight auth-bypass between the client and its own portal.
+<strong>Pitch angle:</strong> renew (patch-cycle check-in), advisory (config/patch-management review)</p>
+<p>NVD published four new Zscaler Client Connector CVEs on the same day: an authentication bypass between ZCC and its portal (CVE-2026-59564, critical), a remotely triggerable buffer overflow causing kernel DoS on Windows (CVE-2026-59565), a local privilege-escalation chain (CVE-2026-59567), and an unauthenticated remote code execution bug in the ZCC agent itself (CVE-2026-59568, critical). No public reports of active exploitation yet, but the RCE and auth-bypass combination is the kind of thing attackers move fast on.</p>
+<p><em>Covered in: NVD — 4 CVE entries across 1 source</em></p>
+<ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-59564">CVE-2026-59564</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-59565">CVE-2026-59565</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-59567">CVE-2026-59567</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-59568">CVE-2026-59568</a></li>
+</ul>
+<h2>2. Actively exploited Oracle WebLogic flaw (CVSS 10.0) added to CISA's KEV catalog</h2>
+<p><strong>Vendors implicated:</strong> Oracle, CISA
+<strong>Conversation angle:</strong> Any customer running Oracle HTTP Server or WebLogic Server needs to hear about this today — CISA confirmed active, unauthenticated exploitation against a maximum-severity flaw, not a theoretical risk.
+<strong>Pitch angle:</strong> advisory (emergency exposure assessment), pentest (external attack-surface validation)</p>
+<p>CVE-2026-21962 (CVSS 10.0) lets an unauthenticated attacker with network access reach critical data on unpatched Oracle HTTP Server and WebLogic Server deployments. CISA added it to the Known Exploited Vulnerabilities catalog citing evidence of in-the-wild exploitation, and both trade outlets covering it framed it as a &quot;patch immediately&quot; situation rather than a routine advisory.</p>
+<p><em>Covered in: TheHackerNews, SecurityWeek — 2 posts across 1 source family (both citing CISA KEV)</em></p>
+<ul>
+<li><a href="https://thehackernews.com/2026/08/actively-exploited-oracle-weblogic-flaw.html">Actively Exploited Oracle WebLogic Flaw Lets Unauthenticated Attackers Access Critical Data</a></li>
+<li><a href="https://www.securityweek.com/cisa-warns-of-exploited-oracle-weblogic-vulnerability">CISA Warns of Exploited Oracle WebLogic Vulnerability</a></li>
+</ul>
+<h2>3. Mirage2FA AiTM phishing kit hits 4,500 companies abusing Microsoft 365 logins</h2>
+<p><strong>Vendors implicated:</strong> Microsoft, Microsoft 365
+<strong>Conversation angle:</strong> If a customer's MFA story is &quot;we use whatever Microsoft ships by default,&quot; this is your opener — Mirage2FA is a commercial adversary-in-the-middle kit that's already compromised nearly half its targeted mailboxes by relaying legitimate M365 login flows.
+<strong>Pitch angle:</strong> advisory (phishing-resistant MFA / conditional-access review), upsell (email security add-on)</p>
+<p>Researchers at ANY.RUN tracked the Mirage2FA phishing-as-a-service toolkit running since 2024, now hitting roughly 4,500 US and EU companies by abusing legitimate Microsoft 365 login flows to sit between the user and Microsoft and relay session tokens — defeating standard SMS/app-based 2FA. An estimated 48% of targeted addresses were potentially compromised.</p>
+<p><em>Covered in: TheHackerNews — 1 post</em></p>
+<ul>
+<li><a href="https://thehackernews.com/2026/08/mirage2fa-surge-hits-4500-us-and-eu.html">Mirage2FA Surge Hits 4,500 US and EU Companies, Abusing Microsoft 365 Login Flows</a></li>
+</ul>
+<h2>4. ReliaQuest confirms ShinyHunters breach via social-engineered employee</h2>
+<p><strong>Vendors implicated:</strong> —
+<strong>Conversation angle:</strong> A security vendor's own team got phished — good ammunition for MDR competitors (Arctic Wolf, eSentire, Expel, Red Canary) to ask prospects how their current provider handles insider social engineering, and a reminder for everyone else that &quot;we're a security company&quot; isn't immunity.
+<strong>Pitch angle:</strong> displace (MDR competitive opening), advisory (social-engineering resilience review)</p>
+<p>ReliaQuest confirmed that hackers impersonating a member of its own security team social-engineered an employee, gaining access to an internal dashboard as part of the broader ShinyHunters extortion campaign. The company says the attempted data theft failed and customer impact was limited, but the intrusion vector — a trusted-team impersonation — is the same one hitting many of the Salesforce/Salesloft-adjacent breaches this year.</p>
+<p><em>Covered in: BleepingComputer, SecurityWeek — 2 posts across 1 source family</em></p>
+<ul>
+<li><a href="https://www.bleepingcomputer.com/news/security/reliaquest-confirms-failed-data-theft-attack-after-shinyhunters-breach">ReliaQuest confirms failed data-theft attack after ShinyHunters breach</a></li>
+<li><a href="https://www.securityweek.com/reliaquest-confirms-shinyhunters-hack-but-says-impact-was-limited">ReliaQuest Confirms ShinyHunters Hack, but Says Impact Was Limited</a></li>
+</ul>
+<h2>5. Blackstone real estate subsidiary exposes SSNs, DOBs and addresses</h2>
+<p><strong>Vendors implicated:</strong> —
+<strong>Conversation angle:</strong> A Blackstone-owned property-management platform (Beam Living) leaked tenant Social Security digits, dates of birth, and addresses through an exposed GraphQL API — a concrete, named-brand example to raise with any real estate, property-management, or PE-portfolio prospect about API security testing.
+<strong>Pitch angle:</strong> pentest (API security assessment), advisory (data-exposure incident response readiness)</p>
+<p>A researcher disclosure (originally published in mid-July, picked up on Hacker News today with strong engagement) details how Beam Living, a Blackstone real estate portfolio company, exposed partial SSNs, dates of birth, and addresses via an unauthenticated GraphQL endpoint. It's a clean, named-brand example of API-layer data exposure — the kind of story that opens a pentest or advisory conversation with any customer running customer-facing APIs.</p>
+<p><em>Covered in: Hacker News — 1 post (high engagement)</em></p>
+<ul>
+<li><a href="https://alexschapiro.com/security/vulnerability/2026/07/16/beam-living-graphql-data-exposure">A Blackstone real estate company exposed SSN digits, DOBs, addresses and more</a></li>
+</ul>
+<h2>Signal stats</h2>
+<ul>
+<li>Total items processed: 84</li>
+<li>New (post-dedup): 84</li>
+<li>NVD-only clusters dropped: 25</li>
+<li>Clusters formed: 76 (raw algorithmic count; 2 involve over-merging on generic tokens — see claude.log)</li>
+<li>Same-as-recent suppressed: 0</li>
+<li>Developing follow-ups: 0</li>
+<li>Top 5 selected from: ~49 candidate clusters after NVD-only and generic library-CVE filtering</li>
+</ul>
+]]></content:encoded>
+      <pubDate>Tue, 25 Aug 2026 12:00:00 +0000</pubDate>
+      <guid isPermaLink="false">security-summary-2026-08-25</guid>
+      <enclosure url="https://raw.githubusercontent.com/pnikolaidis/security-summary/main/state/runs/2026-08-25/digest.mp3" length="3836544" type="audio/mpeg"/>
+      <itunes:duration>00:03:59</itunes:duration>
+      <itunes:author>Adam Insight</itunes:author>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Channel Brief — 2026-07-17</title>
       <description>CISA dropped two Sunday-deadline patch orders overnight — one for actively-exploited Fortinet FortiSandbox flaws, one for a critical Microsoft SharePoint zero-day already in the KEV catalog — both are urgent-call material for anyone running that gear on-prem. Ernst &amp; Young disclosed a breach through a third-party support-ticket system, a clean opener for vendor-risk conversations even with customers who don't touch EY directly. Coca-Cola's Fairlife dairy unit is still down after a ransomware hit that halted US production, a mainstream story every manufacturing and CPG customer will have seen. And the Pentagon's CMMC Phase 2 suspension doesn't kill the underlying compliance obligation — it's a window to sell readiness work before audits resume.</description>
