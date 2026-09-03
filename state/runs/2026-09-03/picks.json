@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Cisco patches critical IOS XR and Nexus 9000 flaws — one is unauthenticated root RCE",
+    "cves": ["CVE-2026-20212", "CVE-2026-20274", "CVE-2026-20275", "CVE-2026-20276", "CVE-2026-20278", "CVE-2026-20279", "CVE-2026-20280"],
+    "vendors": ["Cisco"],
+    "source_families": ["news", "nvd"],
+    "score": 6.4,
+    "status": "different",
+    "representative_url": "https://www.securityweek.com/cisco-warns-of-unpatched-secure-email-flaws-patches-critical-switch-vulnerabilities"
+  },
+  {
+    "title": "HiddenLayer raises $100M for AI runtime security",
+    "cves": [],
+    "vendors": ["HiddenLayer"],
+    "source_families": ["news"],
+    "score": 5.6,
+    "status": "different",
+    "representative_url": "https://www.securityweek.com/hiddenlayer-raises-100-million-for-ai-runtime-security"
+  },
+  {
+    "title": "SonicWall's third edge-device zero-day this summer — now on CISA's KEV",
+    "cves": ["CVE-2026-83548"],
+    "vendors": ["SonicWall", "CISA"],
+    "source_families": ["news"],
+    "score": 5.5,
+    "status": "different",
+    "representative_url": "https://www.darkreading.com/vulnerabilities-threats/sonicwall-sma-1000-zero-days-unauthenticated-rce"
+  },
+  {
+    "title": "Thomson Reuters breach exposes sealed U.S. and Canadian court data",
+    "cves": [],
+    "vendors": [],
+    "source_families": ["news"],
+    "score": 4.8,
+    "status": "different",
+    "representative_url": "https://therecord.media/thomson-reuters-cyberattack-data"
+  },
+  {
+    "title": "CrowdStrike's Fal.Con 2026 keynote: agentic SOC and SafeMind go live",
+    "cves": [],
+    "vendors": ["CrowdStrike"],
+    "source_families": ["youtube"],
+    "score": 4.1,
+    "status": "different",
+    "representative_url": "https://www.youtube.com/watch?v=r9XqC9I0PwE"
+  }
+]

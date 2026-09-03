@@ -1,0 +1,157 @@
+Channel Brief run — 2026-09-03 (UTC)
+Persona: Aiden Iyer (voice: fable)
+
+=== Note on ROUTINE_PROMPT mismatch ===
+The scheduled task fired with a stored prompt describing an older, generic
+"Nightly Security Digest" pipeline (no persona step, no cross-day dedup via
+src.featured, no podcast_feed rebuild, generic analyst-toned output format,
+and instructions to push to a feature branch). That does not match this
+repo's actual, current ROUTINE_PROMPT.md ("Nightly Channel Brief"), which the
+README states is what the routine executes, and which the last several
+committed runs (2026-07-09 through 2026-08-25) already follow. Ran the
+in-repo ROUTINE_PROMPT.md instead, since it's the authoritative, current spec
+committed by the user's own prior sessions. Flag: the scheduler's stored
+prompt for this routine looks stale and should be resynced to
+ROUTINE_PROMPT.md so future scheduled fires don't drift from the repo.
+
+=== Collection ===
+uv run python -m src.collect -> total=87 new=87 repeats=0
+  per_family: news=43, hn=9, nvd=27, youtube=8
+Collector failures (non-fatal, logged by src/collectors/__init__.py):
+  - mssp_alert (403), crn_security (404), crn_channel_news (404),
+    srslyriskybiz.substack.com (403), channel_futures_cybersecurity (403),
+    reuters_cybersecurity (404), infosec.exchange mastodon tags x3 (422 —
+    endpoint appears to reject the query params PRAW-style, same as prior
+    runs), reddit (skipped, no credentials configured for this run).
+  These are all pre-existing gaps also visible in the network allowlist /
+  feed URL list in README.md — worth revisiting feed URLs (several look like
+  they've moved / been renamed since the routine was set up) but out of
+  scope for this run per "scope discipline".
+
+=== Vendor tagger bug (important, not fixed — out of scope) ===
+src/normalize.py:match_vendors() does a raw case-insensitive substring match
+of each configured vendor token against the full text, with no word
+boundaries. Confirmed false positives during this run:
+  - "SEC" matches inside "security", "San Francisco" (!), etc. — appeared on
+    the large majority of items regardless of actual SEC-8-K relevance.
+  - "SSE" matches inside ordinary words.
+  - "AWS" matched inside "flaws" (item 12, item 15) — no actual AWS mention
+    in either article.
+  - "Cisco" matched inside "San Francisco" (item 40, "Russian national
+    facing 20 years..." — a Ktulaev malware-campaign sentencing story with
+    no real Cisco connection; the tag is spurious).
+This makes the vendor list on inbox items unreliable as-is, and it also
+undermines automated clustering rule 4 ("shared vendor token AND within
+24h") when applied literally / transitively — a naive union-find pass over
+rule 4 produced garbage mega-clusters (e.g. merged the SonicWall/CISA KEV
+story with the Cisco patch story and an unrelated sentencing story, purely
+via "SEC"/"AWS"/"Cisco" substring collisions). Recommend switching
+match_vendors() to a word-boundary regex per vendor token. Did not fix per
+scope discipline — flagging for the user to action.
+
+Because of this, clustering and vendor-match scoring below were done by
+reading full article text for every candidate that mattered, not by trusting
+the vendor tag field alone. Two vendor+time (rule 4) merges were manually
+verified against full text and applied:
+  - SonicWall SMA 1000 zero-day (darkreading, item 20) + CISA KEV addition
+    covering the same SonicWall SMA 1000 SSRF flaw (thehackernews, item 12,
+    CVE-2026-83548) — confirmed same vendor/product family, ~8.6h apart.
+  - CrowdStrike Fal.Con 2026 conference: 7 YouTube posts from the
+    `crowdstrike` channel (items 80-86) editorially grouped as one story
+    (same live event, day 2) even though they don't share a CVE/URL and
+    titles don't fuzzy-match >=85 against each other — this is an editorial
+    grouping decision, not a mechanical cluster, made because rule 4 can't be
+    trusted here (no reliable per-video vendor tag) and treating 7 separate
+    Fal.Con video posts as 7 unrelated "clusters" would be a worse read of
+    the actual news (one vendor conference, one story).
+
+=== Clustering (mechanical baseline, rules 1-3 + the 2 verified rule-4
+merges above; rule 4 not applied blindly elsewhere due to the tagger bug) ===
+Total clusters: 81 (of 87 items)
+NVD-only clusters (source_families == {"nvd"}): 22
+  - All 22 dropped per the NVD-only filter. One (CVE-2026-84672, Jenkins
+    Microsoft Entra ID Plugin) technically has a vendor-of-interest token
+    ("Microsoft Entra ID") appearing verbatim in its title, which would
+    mechanically save it from the drop filter — but it's a third-party
+    Jenkins plugin permission bug, not a flaw in the Entra ID product
+    itself. Judged this a "bad pick" (library/plugin CVE, no enterprise
+    breach tie) per the editorial brief and excluded it anyway.
+  - Remaining 21 are generic library/plugin CVEs (WordPress plugins,
+    Jenkins plugins/core, Drupal Commerce PayPal, Joro, submariner, FIDO2
+    credential registration, Looking Glass/Anchore) with no vendor-of-
+    interest signal — correctly dropped.
+Candidate (non-NVD-only) clusters after the filter: 59
+
+=== Scoring notes for the 5 picks (weights per config/ranking.yaml;
+approximate hand-computed components, novelty=0 for all — confirmed via
+`src.featured load 7` returning [] and `src.featured classify` returning
+"different" for all 5 finalists) ===
+
+1. Cisco IOS XR/Nexus critical bundle (items 29, 69-75; 8 items)
+   diversity(news+nvd, 2 families)=2.20, recency(~2.7h)=1.34,
+   severity(CVSS 9.8 present -> +1.0)=1.00, vendor_match(Cisco)=1.50
+   ~= 6.3-6.5 total. Highest score. #1 pick.
+
+2. HiddenLayer $100M funding (items 25, 38)
+   diversity(news,1 family)=1.39, recency(~0.9h)=1.45,
+   vendor_match(HiddenLayer)=1.50, commercial_signal("raises $" match)=1.25
+   ~= 5.6. #2 pick.
+
+3. SonicWall SMA 1000 zero-day + CISA KEV (items 20, 12)
+   diversity(news,1 family)=1.39, recency(~7.9h)=1.08,
+   severity(CVSS 10.0 + "zero-day" phrase)=1.50, vendor_match(SonicWall)=1.50
+   ~= 5.5. #3 pick.
+
+4. Thomson Reuters court-data breach (item 39, single source)
+   diversity=1.39, recency(~1.2h)=1.43, brand_breach(named victim)=2.00
+   ~= 4.8. #4 pick. Named-brand breach, strong pipeline-trigger angle even
+   though no portfolio vendor is implicated and diversity/vendor_match are
+   both 0.
+
+5. CrowdStrike Fal.Con 2026 (items 80-86, editorial grouping; 7 items)
+   diversity(youtube,1 family)=1.39, recency(~5.8h to newest)=1.18,
+   vendor_match(CrowdStrike)=1.50
+   ~= 4.1. #5 pick — lowest raw score of the five, but kept in the top 5 on
+   editorial grounds: CrowdStrike is a flagship portfolio vendor and this is
+   its marquee annual product-launch event; the formula underweights it
+   because YouTube engagement isn't fetched (view counts) and the auto
+   vendor-tagger missed "CrowdStrike" on several of the individual video
+   titles (see tagger bug note above).
+
+Runner-up candidates reviewed and dropped (in descending rough score):
+  - Researcher FalconFlank PoC — CrowdStrike Falcon privilege-escalation PoC
+    (item 11). Shares vendor token + 24h window with the Fal.Con cluster
+    above, and a strict reading of rule 4 would merge them, but mixing a
+    vulnerability PoC into a product-launch story would be confusing and
+    editorially wrong (different angle entirely) — kept as a separate,
+    unselected item. Worth a look tomorrow if it develops (patch response,
+    CrowdStrike statement).
+  - Fake installers disabling Windows Update / weakening Microsoft Defender
+    (item 14) — decent displace/reposition angle against Defender, but
+    scored below the cutoff (~3.5).
+  - US-targeted RMM phishing campaign, 46 countries (item 7) — relevant to
+    MSP audience but no vendor-of-interest tie and no CVE/severity signal
+    (~2.8).
+  - AIR Security $50M funding from stealth (item 26) — same theme as
+    HiddenLayer (AI agent security funding) but smaller round, single
+    source, and HiddenLayer's dual-source coverage scored higher; not a
+    top-5 diversity conflict (different company/vendor) so both could have
+    run, but capped at 5 total.
+  - Shai-Hulud npm worm credential-harvesting expansion (item 9) and
+    Node.js-runtime-as-malware-delivery report (item 8) — legitimate threat
+    news but no vendor-of-interest tie and reads closer to SOC-analyst
+    threat-hunting trivia than a channel-sales conversation starter per the
+    editorial brief's "bad pick" criteria; both scored low (~2.8) on
+    diversity+recency alone.
+  - "153 Million Driver License Images Offered on Dark Web" (item 27,
+    securityweek) — likely tied to IDScan.net per the article body, but
+    IDScan.net isn't a named victim in the headline/title and isn't a
+    portfolio vendor; borderline pipeline-trigger candidate, didn't clear
+    the top 5.
+
+=== Cross-day dedup ===
+`src.featured load 7` returned [] — last run in the log was 2026-08-25 (9
+days prior day-over-day gap; the routine evidently didn't fire for over a
+week), so nothing in the trailing-7-day window. All 5 finalists classified
+"different" via `src.featured classify`. picks.json appended via
+`src.featured append` after this log was written.
