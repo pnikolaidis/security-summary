@@ -1,0 +1,52 @@
+[
+  {
+    "rank": 1,
+    "title": "Cisco ISE zero-day under active exploitation — emergency patch out",
+    "cves": ["CVE-2026-20234", "CVE-2026-20305", "CVE-2026-20306", "CVE-2026-20307", "CVE-2026-20331", "CVE-2026-76420"],
+    "vendors": ["Cisco"],
+    "source_families": ["news", "nvd"],
+    "score": 6.64,
+    "status": "different",
+    "representative_url": "https://www.bleepingcomputer.com/news/security/cisco-warns-of-identity-service-engine-zero-day-exploited-in-attacks"
+  },
+  {
+    "rank": 2,
+    "title": "ShinyHunters leak Florida DMV driver data after ransom refusal",
+    "cves": [],
+    "vendors": [],
+    "source_families": ["news"],
+    "score": 4.06,
+    "status": "different",
+    "representative_url": "https://techcrunch.com/2026/09/16/hackers-publish-thousands-of-drivers-data-after-breaching-florida-motor-vehicle-database"
+  },
+  {
+    "rank": 3,
+    "title": "Google confirms Pixel modem zero-day exploited in targeted attacks",
+    "cves": [],
+    "vendors": ["Google"],
+    "source_families": ["news"],
+    "score": 3.98,
+    "status": "different",
+    "representative_url": "https://techcrunch.com/2026/09/16/google-says-some-pixel-phone-owners-were-hacked-in-zero-day-attacks"
+  },
+  {
+    "rank": 4,
+    "title": "Shai-Hulud worm spreads via hijacked AI coding-assistant session across ~100 repos",
+    "cves": [],
+    "vendors": ["Mend"],
+    "source_families": ["news"],
+    "score": 3.45,
+    "status": "different",
+    "representative_url": "https://thehackernews.com/2026/09/attacker-hijacks-ai-coding-assistant.html"
+  },
+  {
+    "rank": 5,
+    "title": "Ransomware attacks on manufacturers surge 40% as supply-chain risk grows",
+    "cves": [],
+    "vendors": [],
+    "source_families": ["news"],
+    "score": 2.84,
+    "status": "different",
+    "representative_url": "https://www.securityweek.com/ransomware-attacks-on-manufacturers-surge-as-supply-chain-risk-grows"
+  }
+]
