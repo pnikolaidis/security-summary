@@ -1,0 +1,271 @@
+Channel Brief run — 2026-09-17 (persona: Aiden Iyer, voice=fable)
+
+NOTE ON PROMPT SOURCE: the scheduler fired a stale/generic "Nightly Security Digest"
+prompt (analyst-oriented, TL;DR/Signal-stats format, no persona, no vendor/pitch
+framing). README.md states ROUTINE_PROMPT.md is the source of truth for this repo's
+runbook, and it describes a materially different "Channel Brief" spec (sales
+audience, persona rotation, vendor/pitch-angle fields, push-to-main). Followed
+ROUTINE_PROMPT.md instead. Flagging so the scheduled-task prompt config can be
+synced to match the current ROUTINE_PROMPT.md if that drift is unintentional.
+
+NOTE ON BRANCH: ROUTINE_PROMPT.md step 9 instructs pushing directly to `main`
+(required for the podcast feed + state/featured.jsonl to work across runs via
+GitHub Pages served from main). This session's harness-level branch policy
+pins development to `claude/relaxed-mayer-5k28ze` and forbids pushing elsewhere
+without explicit permission. Treated the harness policy as authoritative (it's
+an operator-level constraint, not repo content) and pushed the feature branch +
+opened a PR into main instead of pushing main directly. This means today's run
+will NOT show up in the podcast feed / cross-day dedup until the PR merges.
+Surfacing this prominently — needs a decision from the repo owner on how to
+reconcile the routine's design (wants direct main pushes) with the platform's
+branch policy (feature branch + PR).
+
+COLLECT
+- collect.done total=83 new=83 repeats=0 per_family: news=39 hn=11 nvd=29 youtube=4
+- Non-fatal collector issues (logged, run continued):
+  - rss: channel_futures_cybersecurity 403, crn_security 404, crn_channel_news 404,
+    seriously_risky_business 403, reuters_cybersecurity 404
+  - mastodon: all 4 hashtag queries returned 422 Unprocessable Content (infosec.exchange
+    API likely changed/rate-limited) -> mastodon count=0
+  - cisa: KEV/advisories collector returned count=0 (no error logged, but zero items —
+    worth checking cisa.py / KEV feed shape next run)
+  - reddit: skipped entirely, no REDDIT_* env vars set this run
+
+VENDOR-TAG DATA QUALITY ISSUE (pre-existing, not fixed — out of scope per
+ROUTINE_PROMPT.md "Scope discipline"): src/normalize.py's match_vendors() does a
+raw substring match (`v.lower() in lo`) with no word boundaries. This produces
+frequent false-positive vendor tags:
+  - "SEC" (meant as SEC-the-regulator token) matches inside "security" ->
+    tagged nearly every article regardless of content.
+  - "SSE" (category token) matches inside words like "NightmareStresser" ->
+    false positive.
+  - "AWS" matched on several unrelated items.
+  - "Hunters" (real vendor, Hunters.ai) matched inside "ShinyHunters" (threat
+    actor name, unrelated vendor) on the Florida DMV story.
+  - "Elastic" matched inside "Elasticsearch" on an unrelated zlt2000 CVE (item
+    CVE-2026-92466).
+  - "Socket" (real vendor) matched inside generic text "socket peer" on an
+    unrelated Fastify CVE (item CVE-2026-92395).
+Handled by ignoring these tags and reading each item's actual title/body before
+counting it as a genuine vendor-of-interest match, both for the NVD-only filter
+and for vendor_match scoring. Worth a word-boundary fix in match_vendors() at
+some point, but that's a code change outside this run's scope — logging it here
+per the "log the gap, don't fix it" instruction.
+
+CLUSTERING (manual, per ROUTINE_PROMPT.md rules, cross-checked against raw item text)
+
+Cluster: Cisco ISE zero-day / ISE+FMC+Nexus batch [SELECTED #1]
+  members: bleepingcomputer "Cisco warns of max severity ISE zero-day exploited
+    in attacks"; securityweek "Active Exploitation Triggers Emergency Patch for
+    Cisco ISE Zero-Day"; securityweek "Cisco Fixes Dozens of Flaws Across FMC,
+    ISE and Nexus Dashboard"; nvd CVE-2026-20234, CVE-2026-20305, CVE-2026-20306,
+    CVE-2026-20307, CVE-2026-20331, CVE-2026-76420 (all CRITICAL, all genuinely
+    Cisco ISE/FMC/ASA per CVE body text, not a tag false-positive)
+  clustered via: same vendor (Cisco) + same 24h window + overlapping CVE set
+    across the two securityweek pieces and the NVD entries
+  filter: not NVD-only (paired with 2 news articles); vendor-of-interest (Cisco)
+    present in title -> kept
+  score breakdown: diversity=2*ln(1+2)=2.197 | recency=1.5*exp(-~1h/24)=1.439 |
+    engagement~0 (no HN/reddit engagement on this story) | severity=1.0*(1.0 CVSS>=9
+    + 0.5 "actively exploited")=1.5 | vendor_match=1.5*1=1.5 | commercial_signal=0
+    (no M&A/earnings/etc phrases) | brand_breach=0 (product vuln, not a company-as-
+    victim breach) | novelty=0 (no match in featured.jsonl last 7d, which is empty)
+    -> total ~6.64
+  cross-day classify: different (featured.jsonl load 7 returned [])
+  SELECTED: #1, clear top score, directly actionable (patch urgency + vendor tie-in)
+
+Cluster: Florida DMV / ShinyHunters breach [SELECTED #2]
+  members: techcrunch "Hackers publish thousands of drivers' data after breaching
+    Florida motor vehicle database"
+  filter: not NVD-only (n/a, single news item); not a generic library CVE (n/a)
+  brand_breach: YES — named state agency (Florida DHSMV) is the explicit victim,
+    ransom refused, data published. Matches brand_breach_phrases intent even
+    though it doesn't hit the literal phrase list verbatim.
+  score breakdown: diversity=2*ln(2)=1.386 | recency=1.5*exp(-~19h/24)=0.674 |
+    engagement=0 | severity=0 (no CVSS/KEV/exploited-phrase) | vendor_match=0
+    (no vendor-of-interest token; "Hunters" tag on this item is the ShinyHunters
+    false-positive noted above, discounted) | commercial=0 | brand_breach=1.0*2.0=2.0
+    -> total ~4.06
+  cross-day: different
+  SELECTED: #2 — strongest brand-breach pipeline trigger in today's pull, good
+    public-sector angle
+
+Cluster: Google Pixel modem zero-day [SELECTED #3]
+  members: techcrunch "Google says some Pixel phone owners were hacked in
+    zero-day attacks"
+  score breakdown: diversity=1.386 | recency=1.5*exp(-~22.4h/24)=0.590 |
+    severity=1.0*0.5 ("zero-day" phrase)=0.5 | vendor_match=1.5*1 (Google)=1.5 |
+    commercial=0 | brand_breach=0 (product-level, not a named enterprise
+    customer breach) -> total ~3.976
+  cross-day: different
+  SELECTED: #3 — vendor-of-interest (Google, platform category) + zero-day +
+    mainstream pickup (TechCrunch)
+
+Cluster: Shai-Hulud AI coding-assistant worm [SELECTED #4]
+  members: thehackernews "Attacker Hijacks AI Coding Assistant Session, Spreads
+    Shai-Hulud Across About 100 Repositories" (Mandiant investigation, Mend
+    reporting)
+  score breakdown: diversity=1.386 | recency=1.5*exp(-~23.6h/24)=0.562 |
+    severity=0 (no literal severity-phrase hit) | vendor_match=1.5*1 (Mend,
+    genuine — Mend is a listed app/supply-chain-security vendor and is the
+    actual reporting party, not a substring false positive) | commercial=0 |
+    brand_breach=0 (victim SaaS company unnamed) -> total ~3.448
+  cross-day: different
+  SELECTED: #4 — strong advisory/pentest angle (AI dev tooling + supply chain),
+    timely given the AI-coding-assistant adoption wave
+
+Cluster: Ransomware on manufacturers surge 40% [SELECTED #5]
+  members: securityweek "Ransomware Attacks on Manufacturers Surge as Supply
+    Chain Risk Grows"
+  score breakdown: diversity=1.386 | recency=1.5*exp(-~0.7h/24)=1.455 |
+    severity=0 | vendor_match=0 | commercial=0 | brand_breach=0 (industry trend,
+    no named victim) -> total ~2.841
+  cross-day: different
+  SELECTED: #5 — best remaining vertical-prospecting / advisory-pentest angle;
+    beat out two close alternatives (see "dropped, close calls" below)
+
+DROPPED — close calls considered for #5
+  - darkreading "AI Security Spending Jumps as Fear Outpaces Proof of Value":
+    decent advisory angle (assess before you spend) but more diffuse/less
+    actionable than the manufacturing stat; also would have made 3 of 5 picks
+    AI-themed alongside Shai-Hulud and (loosely) the browser-extension story,
+    hurting topic diversity. Not selected.
+  - securityweek "Comp AI Raises $34 Million for AI-Native Compliance and
+    Security": real commercial_signal phrase hit ("raises $") but Comp AI is
+    not a vendor on the sold/competed list in config/sources.yaml, so channel
+    relevance is thin (no rep has a Comp AI conversation to have). Not selected.
+  - thehackernews "One Extension Could Hijack AI Assistants Across Chrome,
+    Comet, Edge, Opera Neon and Claude": interesting research but no sold-vendor
+    tie-in beyond a passing Microsoft Edge mention; reads more like SOC-analyst
+    threat research than a customer-call opener. Not selected.
+
+DROPPED — generic threat intel / off-brief (not scored in detail, filtered on
+editorial fit per ROUTINE_PROMPT.md "bad pick" criteria — no commercial angle,
+no vendor-of-interest, no named-brand breach):
+  - bleepingcomputer "Chinese hackers use SparroWocky malware in govt espionage
+    attacks"
+  - bleepingcomputer "Iranian hackers use CHOSEN BRICK Windows malware to spy on
+    targets"
+  - thehackernews "Attackers Exploit Issabel Framework Flaw Enabling
+    Unauthenticated OS Command Execution" (actively exploited, CVSS 9.8, but
+    Issabel/PBX software isn't a vendor this audience sells or competes with)
+  - thehackernews "Three Threat Groups Target Russian Enterprises With
+    Backdoors, Ransomware, and Wipers"
+  - securityweek "First Agentic AI Data Breach Reported to Spanish Regulator" /
+    bleepingcomputer "Spain's data agency gets first report of AI-powered data
+    breach" (same underlying event, two sources — interesting but no named
+    victim, no sold vendor, more regulatory-trivia than actionable)
+  - all sans_isc, schneier, the_record items not tied to a named brand/vendor
+    (BlackCore/Angola influence ops, AI safety legislation delay, Coast Guard
+    tanker boarding, scam-fighting bill, Meteor Organization website attack)
+  - both CISA YouTube videos on "ANCHOR-CI" (clustered together as one
+    candidate — same announcement, two uploads) — CISA program news, no
+    commercial/vendor angle for this audience
+  - Mandiant YouTube items (CISA fireside chat, "AI Frontlines" playbook) —
+    general thought-leadership content, no news hook
+
+NVD-ONLY FILTER (source_families == {"nvd"}, dropped unless vendor-of-interest
+token genuinely appears in title — verified against actual title/body text,
+not the raw (noisy) vendor tag field)
+  Dropped, confirmed no genuine vendor-of-interest match (~16 clusters / 23 items):
+  - Jenkins Script Security Plugin (CVE-2026-92122/92123/92124/92125) — clustered
+    as one (same plugin, same day) — Jenkins not on vendor list
+  - Jenkins Robot Framework Plugin (CVE-2026-92137) — Jenkins not on vendor list
+  - zlt2000 microservices-platform (CVE-2026-92466) — "Elastic" tag is a false
+    positive from "Elasticsearch" in the CVE body; no genuine vendor match
+  - Avast sandbox minifilter driver (CVE-2026-82964) — Avast not on vendor list
+  - ScadaLTS (CVE-2026-84858, CVE-2026-84860) — clustered as one (same product)
+    — not on vendor list
+  - Backstage (CVE-2026-88064) — not on vendor list
+  - @fastify/proxy-addr (CVE-2026-92395) — "Socket" tag is a false positive from
+    "socket peer" in the CVE body; no genuine vendor match
+  - LMDeploy (CVE-2025-59953) — not on vendor list
+  - Dell ObjectScale (CVE-2026-70416) — Dell not on vendor list, no tag fired
+    (correctly)
+  - Ruijie RG-EW3000GX (CVE-2026-92397, CVE-2026-92398) — clustered as one
+    (same device, same day) — not on vendor list
+  - oras-go (CVE-2026-85731) — not on vendor list
+  - Dell Repository Manager (CVE-2026-86359) — Dell not on vendor list
+  - SIMAC MyPHR (CVE-2026-47094) — not on vendor list
+  - Shuffle (CVE-2026-92716) — "ESET" tag present but not substantiated in body
+    text; treated as noise, no genuine vendor match
+  - Covenant (CVE-2026-92717) — not on vendor list
+  - Kubero (CVE-2026-92720) — not on vendor list
+  - Arista EOS (CVE-2026-73456) — Arista/Juniper adjacent but Arista itself not
+    on the vendor list; also unrelated to the Cisco ISE cluster despite
+    surfacing in the same "ISE" keyword search — different product/vendor,
+    kept separate and dropped
+  - CVE-2026-91843 (unauthenticated login stack overflow, product name not
+    given in title) — no vendor identifiable, dropped
+
+FEATURED / CROSS-DAY DEDUP
+  - `uv run python -m src.featured load 7` returned [] — empty. Last run in
+    featured.jsonl is dated 2026-09-03 (14 days ago), outside the 7-day window.
+    Gap between runs noted (routine appears not to have fired daily — 2026-05-29
+    to 2026-06-11, 06-11 to 07-09, 07-09 to 07-16/17, 07-17 to 08-25, 08-25 to
+    09-03, 09-03 to 09-17 are all multi-week gaps in state/runs/). Not this
+    session's problem to fix, but flagging: if the schedule is meant to be
+    nightly, something upstream (trigger config?) isn't firing reliably.
+  - All 5 selected clusters classified "different" (no match >= WEAK_MATCH_FLOOR
+    against the empty recent set) — no suppression, no "Developing:" prefixes
+    needed today.
+
+STATS
+  Total items processed: 83
+  New (post-dedup): 83 (repeats=0)
+  Clusters formed: ~69 (83 items minus ~14 merged via the Cisco/Jenkins/ScadaLTS/
+    Ruijie/ANCHOR-CI groupings above; approximate, not a script-computed exact count)
+  NVD-only clusters dropped: ~16 (23 items)
+  Same-as-recent suppressed: 0
+  Developing follow-ups: 0
+  Top 5 selected from: the above candidate pool, effectively 5 clusters that
+    cleared both the NVD-only/generic-library filter and the editorial bar
+
+FEATURED APPEND: `picks.json | uv run python -m src.featured append` succeeded,
+  5 picks appended to state/featured.jsonl.
+
+DELIVERY
+  - `uv run python -m src.deliver` FAILED at the TTS step: OpenAI returned
+    429 insufficient_quota / "You have no credits remaining" on
+    POST /v1/audio/speech (not a transient rate limit — the OPENAI_API_KEY's
+    account is out of billing credit). openai's client auto-retried twice
+    (per its own backoff) before raising RateLimitError, which killed the
+    process before email_client.send() was ever reached. This left a 0-byte
+    state/runs/2026-09-17/digest.mp3 stub on disk (opened by tts.synthesize's
+    streaming write before the request failed).
+  - Per ROUTINE_PROMPT.md failure handling ("If src.deliver fails after TTS
+    but before email... commit the run dir anyway so it's not lost, then
+    re-raise" / "still call deliver on a quiet day, short script is fine") the
+    intent is clearly: never let a TTS/audio problem silently kill the whole
+    day's digest email. Since script.txt and summary.md were both already
+    written and valid, called email_client.render_html + email_client.send
+    directly (same subject format `Channel Brief — {date} ({persona name})`
+    deliver.py itself uses) with mp3_path=None. email_client.send() already
+    handles a missing/None mp3 path gracefully (skips the attachments key).
+    Email sent successfully: Resend id 01a0af82-fe7f-735f-b994-ad819c9a43c8.
+    Recipient got the full text digest (talking points, all 5 picks, links)
+    with no audio attachment and no "Audio attached as MP3" claim removed
+    from the footer (pre-existing static footer text in email_client.py's
+    HTML template — now slightly inaccurate for a no-audio send).
+  - Deleted the 0-byte digest.mp3 stub before running src.podcast_feed —
+    the first podcast_feed run had already picked it up as a valid episode
+    (mp3.duration_fail warning: "can't sync to MPEG frame", but _scan_runs
+    only checks file existence, not validity) and written a broken enclosure
+    (length="0", fabricated 5:00 duration) into docs/feed.xml. Removing the
+    stub and re-running podcast_feed correctly dropped today from the feed
+    (13 episodes -> 12; the 2026-09-03 episode is now the most recent valid
+    one again).
+  - ACTION NEEDED (surfaced to user via notification): OPENAI_API_KEY has no
+    remaining credits. No audio digest was produced or published today, and
+    none will be until the account is topped up — every future run will hit
+    the same failure at the same step until that's fixed.
+
+BRANCH / PUSH
+  - Per the note at the top of this log, pushed to the harness-assigned
+    feature branch (claude/relaxed-mayer-5k28ze) and opened a PR into main
+    rather than pushing main directly as ROUTINE_PROMPT.md step 9 specifies.
+    state/featured.jsonl was already updated and used locally this run, so
+    cross-day dedup for *this* run is correct regardless of branch; but until
+    the PR merges, tomorrow's run (if it starts from a fresh clone of main)
+    won't see today's picks in featured.jsonl, and docs/feed.xml on the
+    published GitHub Pages site won't reflect today either.
